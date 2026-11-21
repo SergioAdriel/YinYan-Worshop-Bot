@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-18T21:28:11.753Z",
+  "passed": true,
+  "version_id": "861484ac-3558-43d4-a997-959aeec83d47",
+  "dataset_version": "fe8a9f036c9034573f51a2848d51b7adeb8a8d636a23c49f2842c1033b8a4105",
+  "notebook_code_cells": 12,
+  "notebook_errors": 0,
+  "pdf_pages": 9,
+  "main_content_pages": 7,
+  "active_model": "logistic_regression",
+  "active_accuracy": 0.875,
+  "four_members_present": true,
+  "reference_files_intact": 119,
+  "artifact_hashes": {
+    "notebooks/experimentacion.ipynb": "267eca0e97fcd230b47d507983f16b013728f01dc7898647da82046fc9ade1d5",
+    "docs/reporte-tecnico.pdf": "d0734851e5c56dce3f8518324cf30ac68969453955434f1ccc6162e7538ab265",
+    "docs/pdf-verification.json": "f64a315ac5c637cb246755f38175cdfca4c31afe32ea522feb80ddddc4fe2749",
+    "reports/current-experiment.json": "82656aff1bd666feee1e392d50d48b48c3cddff3afebf5d7d5821eec0199576d"
+  }
+}

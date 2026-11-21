@@ -1,0 +1,29 @@
+{
+  "pdf": "docs/reporte-tecnico.pdf",
+  "cutoff_date": "2026-11-18",
+  "pages": 9,
+  "main_content_pages": 7,
+  "cover_pages": 1,
+  "reference_pages": 1,
+  "metrics_path": "reports/current-experiment.json",
+  "metrics_sha256": "cfafc76532493da4e84f1a723caca9d97b5a1afa32b6f2c80d0e6191a52ba7fc",
+  "active_model": "naive_bayes",
+  "cv_winner": "logistic_regression",
+  "selected_model": "naive_bayes",
+  "actual_errors_available": 11,
+  "reported_error_texts": [
+    "Hasta otra ocasión, taller",
+    "¿Qué consultas de soporte admites?",
+    "Mi portátil pierde toda la autonomía al quitar el adaptador"
+  ],
+  "notebook": {
+    "code_cells": 12,
+    "executed_cells": 12,
+    "error_outputs": 0,
+    "png_outputs": 4,
+    "sha256": "39e42381e201340e2f010d6b394a6a5bc6d0b6affd269737a40ceb077715cb4f"
+  },
+  "team_information_pending": true,
+  "provenance_note": "Quince etapas sintéticas; no se afirma historial real de quince días.",
+  "test_is_development_evaluation": true
+}

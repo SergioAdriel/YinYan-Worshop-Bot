@@ -1,0 +1,96 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#315340">
+  <meta name="description" content="Bot local YinYan: consultas, revisión de ejemplos y entrenamiento en equipo.">
+  <title>YinYan · Prototipo funcional</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./">YinYan <small>Bot del equipo</small></a>
+    <div class="header-right">
+      <label for="active-author">Estoy trabajando como
+        <select id="active-author"><option value="alumno-a">Erick Mendoza Mendoza</option><option value="alumno-b">Daniel Gibran Luciano Tellez</option><option value="sergio">Sergio Adriel Muñoz Camarena</option><option value="raynier">Raynier Jetsahe Torres Flores</option></select>
+      </label>
+      <span class="model-status" id="model-status" role="status">Cargando modelo…</span>
+    </div>
+  </header>
+  <main>
+    <div class="prototype-heading"><p class="eyebrow">PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026</p><p>Entrega final: 4 de diciembre de 2026 · El equipo puede seguir incorporando y revisando ejemplos.</p></div>
+    <p class="local-note"><span id="author-role">Datos: incorporación y revisión de ejemplos.</span> Las operaciones se guardan con responsable y hora real de Ciudad de México. Esta selección no es un inicio de sesión.</p>
+    <nav class="tabs" aria-label="Secciones">
+      <button id="tab-chat" class="tab active" data-view="chat" aria-current="page">Chat</button>
+      <button id="tab-queries" class="tab" data-view="queries">Consultas</button>
+      <button id="tab-teach" class="tab" data-view="teach">Ejemplos y entrenar</button>
+      <button id="tab-versions" class="tab" data-view="versions">Jornadas</button>
+      <button id="tab-progress" class="tab" data-view="progress">Progreso</button>
+    </nav>
+    <div class="error-banner" id="model-error" role="alert" hidden><p id="model-error-text"></p><button id="retry-model" class="button small">Reintentar carga</button></div>
+    <div class="error-banner" id="query-save-error" role="alert" hidden><p id="query-save-error-text"></p><button id="retry-queries" class="button small">Reintentar guardado</button></div>
+    <section id="view-chat" class="view" aria-labelledby="tab-chat">
+      <div class="chat-layout">
+        <section class="card chat-card" aria-label="Chat con YinYan">
+          <div class="card-heading"><div><h1>Bot YinYan</h1><p id="chat-model-label">Modelo local · Día 15</p></div><button id="new-chat" class="text-button" disabled>Nueva consulta ↻</button></div>
+          <div id="chat-scroll" class="chat-scroll"><div id="messages" role="log" aria-live="polite" aria-relevant="additions text"></div><div id="quick-start" class="quick-start"><p>Por ejemplo:</p><div><button data-prompt="mi compu esta bien lenta" disabled>mi compu esta bien lenta</button><button data-prompt="el cel no me carga" disabled>el cel no me carga</button></div></div></div>
+          <div id="suggestions" class="suggestions" aria-label="Respuestas sugeridas"></div>
+          <form id="chat-form" class="composer"><label class="sr-only" for="message-input">Escribe tu consulta</label><textarea id="message-input" rows="2" maxlength="1200" placeholder="¿Qué le pasa a tu equipo?" disabled></textarea><button id="send-button" type="submit" class="button" disabled>Enviar</button></form>
+          <p id="query-save-status" class="chat-footer" role="status">Cada mensaje y su respuesta se guardan al enviarlos.</p>
+        </section>
+        <aside class="chat-aside">
+          <section class="card snapshot"><h2 id="snapshot-title">Modelo activo</h2><p id="snapshot-description">Consultando la versión aprobada.</p><dl><div><dt>Ejemplos</dt><dd id="snapshot-examples">—</dd></div><div><dt>Aciertos de desarrollo</dt><dd id="snapshot-result">—</dd></div></dl><p class="small muted">El benchmark de desarrollo y la prueba final reservada se muestran por separado.</p><button id="restore-active-model" class="button secondary small" hidden>Volver al modelo activo</button><button class="text-button" data-open-view="teach">Agregar ejemplos y entrenar</button></section>
+          <section class="card context-card"><h2>Esta consulta</h2><dl><div><dt>Equipo</dt><dd id="context-device">Por identificar</dd></div><div><dt>Problema</dt><dd id="context-issue">Por identificar</dd></div></dl><button id="copy-summary" class="text-button" disabled>Copiar resumen</button></section>
+        </aside>
+      </div>
+    </section>
+    <section id="view-queries" class="view" aria-labelledby="tab-queries" hidden>
+      <div class="section-heading"><div><h2>Consultas guardadas</h2><p>Revisen una consulta y corrijan su categoría antes de usarla para entrenar.</p></div><button id="refresh-queries" class="button secondary small">Actualizar</button></div>
+      <p id="queries-status" class="form-status" role="status">Cargando consultas…</p>
+      <div id="query-history" class="query-history"></div>
+      <details id="simulation-details" class="card simulation-details">
+        <summary>Referencia inicial: 15 etapas de entrenamiento</summary>
+        <div class="details-content">
+          <p class="small muted">Base sintética de referencia: los perfiles y horarios de estos registros son de práctica. Las jornadas nuevas y las consultas del equipo llevan su fecha real. Probar una etapa histórica no cambia el modelo activo.</p>
+          <div class="day-selector"><div><label for="day-select">Probar el modelo del día</label><div class="day-control"><button id="previous-day" class="arrow-button" aria-label="Día anterior" disabled>←</button><select id="day-select" disabled><option value="15">Día 15</option></select><button id="next-day" class="arrow-button" aria-label="Día siguiente" disabled>→</button></div></div><p id="day-note">Cargando práctica…</p><div class="day-score"><strong id="day-accuracy">—</strong><span id="day-score-caption">aciertos en pruebas</span></div></div>
+          <div id="participants" class="participants"></div>
+          <section class="evolution"><div class="section-heading"><h3>Aciertos por día</h3><span id="chart-goal" class="small"></span></div><p id="evaluation-description" class="small muted"></p><div id="day-chart" class="day-chart" aria-label="Evolución de aciertos por día"></div></section>
+          <div class="day-detail-heading"><div><p id="detail-day-label" class="small">DÍA 15</p><h3 id="detail-day-title">Actividad del día</h3></div><p id="detail-count"></p></div>
+          <div class="records-grid"><section class="card"><div class="card-heading"><h3>Ejemplos</h3><span id="day-added" class="count-label">—</span></div><div id="day-examples" class="example-list"></div></section><section class="card"><div class="card-heading"><h3>Consultas de práctica</h3><span id="day-query-count" class="count-label">—</span></div><div id="day-queries" class="query-list"></div></section></div>
+          <details class="results-details"><summary>Resultados de los 15 días</summary><div class="table-scroll"><table><thead><tr><th>Día</th><th>Ejemplos</th><th>Aciertos</th><th>Exactitud</th><th>Precisión macro</th></tr></thead><tbody id="all-results"></tbody></table></div></details>
+        </div>
+      </details>
+    </section>
+    <section id="view-teach" class="view" aria-labelledby="tab-teach" hidden>
+      <div class="section-heading"><div><h2>Incorporar, revisar y entrenar</h2><p>Los nuevos registros quedan pendientes. Solo los aprobados se incorporan al entrenamiento.</p></div></div>
+      <div class="error-banner" id="storage-error" role="alert" hidden><p id="storage-error-text"></p><button id="retry-storage" class="button small">Reintentar</button></div>
+      <div class="teach-layout">
+        <section class="card"><div class="card-heading"><h3 id="example-form-title">Agregar un ejemplo</h3><span id="example-author-label" class="small">Erick Mendoza Mendoza</span></div><form id="example-form" class="example-form"><label for="example-text">Consulta<textarea id="example-text" rows="3" maxlength="1200" placeholder="ej. mi laptop tarda un buen en abrir las cosas" required disabled></textarea><span class="field-hint">Usa una expresión completa y diferente. Puede incluir abreviaciones; revisa su categoría.</span></label><label for="example-intent">Categoría correcta<select id="example-intent" required disabled></select></label><div class="row-actions"><button id="save-example" class="button" type="submit" disabled>Guardar pendiente</button><button id="cancel-edit" class="button secondary" type="button" hidden>Cancelar edición</button></div><p class="form-status" id="example-status" role="status"></p></form></section>
+        <section class="card train-card"><h3>Nueva jornada de entrenamiento</h3><p>Cada ejecución compara Naive Bayes y regresión logística con la misma instantánea de ejemplos aprobados. Elige por F1 macro de validación.</p><p class="custom-count"><strong id="saved-count">0</strong> ejemplos adicionales aprobados</p><p id="dataset-version" class="small muted">Versión del dataset: —</p><button id="train-button" class="button" disabled>Entrenar modelo</button><p id="training-status" class="training-status" role="status">Cargando estado del entrenamiento…</p><div id="custom-results" hidden><dl><div><dt>Exactitud de desarrollo</dt><dd id="custom-accuracy">—</dd></div><div><dt>Aciertos</dt><dd id="custom-correct">—</dd></div><div><dt>Ejemplos usados</dt><dd id="custom-examples">—</dd></div><div><dt>Entrenado</dt><dd id="custom-trained-at">—</dd></div></dl><p class="small muted">La versión nueva queda provisional. Revisen sus resultados antes de activarla.</p><button id="use-custom-model" class="button secondary" disabled>Revisar nueva jornada</button></div></section>
+      </div>
+      <section class="card saved-card"><div class="card-heading"><div><h3>Ejemplos del equipo</h3><p>Aprobar confirma que revisaste pertinencia, categoría y diversidad. Para cambiar un aprobado o rechazado, primero reábrelo.</p></div><label class="filter-label" for="example-filter">Mostrar<select id="example-filter"><option value="all">Todos</option><option value="pending">Pendientes</option><option value="approved">Aprobados</option><option value="rejected">Rechazados</option></select></label></div><p id="saved-empty" class="empty-state">Cargando ejemplos…</p><div id="saved-examples" class="saved-examples"></div></section>
+    </section>
+    <section id="view-versions" class="view" aria-labelledby="tab-versions" hidden>
+      <div class="section-heading"><div><h2>Jornadas y versiones</h2><p>Las ejecuciones conservan sus fechas reales, datos y modelos. Una versión provisional no reemplaza la activa.</p></div><button id="refresh-versions" class="button secondary small">Actualizar</button></div>
+      <p id="versions-status" class="form-status" role="status">Cargando jornadas…</p><div id="version-history" class="version-history"></div>
+      <section id="version-detail" class="card version-detail" hidden><div class="card-heading"><div><h3 id="version-detail-title">Resultados</h3><p id="version-detail-meta"></p></div></div><div id="version-detail-content" class="details-content"></div></section>
+    </section>
+    <section id="view-progress" class="view" aria-labelledby="tab-progress" hidden>
+      <div class="section-heading"><div><h2>Progreso del prototipo</h2><p>Estado calculado a partir de los ejemplos guardados, las jornadas y las verificaciones disponibles.</p></div><button id="refresh-progress" class="button secondary small">Actualizar</button></div>
+      <p id="progress-status" class="form-status" role="status">Cargando progreso…</p><div id="progress-counters" class="progress-counters"></div>
+      <section class="card progress-section"><h3>Ejemplos por intención</h3><p class="small muted">El entrenamiento usa la base y los ejemplos aprobados. Faltan se calcula respecto a 20 ejemplos por intención.</p><div class="table-scroll"><table><thead><tr><th>Intención</th><th>Base</th><th>Aprobados nuevos</th><th>Pendientes</th><th>Rechazados</th><th>Faltan</th></tr></thead><tbody id="progress-intents"></tbody></table></div></section>
+      <section class="card progress-section"><h3>Modelo y evaluación</h3><dl id="progress-model"></dl><p class="small muted">La prueba final se reserva para una evaluación controlada. Las 80 consultas de desarrollo se usan como benchmark y no se presentan como una nueva prueba final.</p></section>
+      <section class="card progress-section"><h3>Cumplimiento de la rúbrica</h3><div id="rubric-status"></div></section>
+      <section class="card progress-section"><h3>Equipo y responsabilidades</h3><dl class="team-roles"><div><dt>Erick Mendoza Mendoza</dt><dd>Incorporación de ejemplos, expresiones y revisión de categorías.</dd></div><div><dt>Daniel Gibran Luciano Tellez</dt><dd>Organización del dataset, etiquetas y diversidad de expresiones.</dd></div><div><dt>Sergio Adriel Muñoz Camarena</dt><dd>Desarrollo principal, diálogo, integración e interfaz.</dd></div><div><dt>Raynier Jetsahe Torres Flores</dt><dd>Desarrollo, entrenamiento, comparación y verificación.</dd></div></dl><p class="small muted">La asignación de responsabilidades no acredita cantidades individuales ni sesiones históricas.</p></section>
+    </section>
+    <footer class="site-footer">YinYan Workshop · Incorporar → revisar → aprobar → entrenar → evaluar → guardar jornada.</footer>
+  </main>
+  <dialog id="review-dialog" aria-labelledby="review-title">
+    <form id="review-form" class="example-form"><h2 id="review-title">Preparar ejemplo desde una consulta</h2><p class="small">Se guardará pendiente. Completa el equipo y la falla si el mensaje dependía de la conversación; después podrás revisarlo y aprobarlo en Ejemplos.</p><p id="review-author" class="small"></p><label for="review-text">Consulta completa<textarea id="review-text" rows="4" maxlength="1200" minlength="3" required></textarea></label><label for="review-intent">Categoría correcta<select id="review-intent" required></select></label><p id="review-status" class="form-status" role="status"></p><div class="review-actions"><button id="save-review" type="submit" class="button">Guardar pendiente</button><button id="cancel-review" type="button" class="button secondary">Cancelar</button></div></form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

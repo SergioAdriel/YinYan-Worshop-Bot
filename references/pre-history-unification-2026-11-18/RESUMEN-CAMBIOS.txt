@@ -1,0 +1,37 @@
+YINYAN WORKSHOP - PROTOTIPO FUNCIONAL
+AVANCE AL 18 DE NOVIEMBRE DE 2026. ENTREGA FINAL: 4 DE DICIEMBRE.
+
+ANTES: chatbot local con base de 240 ejemplos, reentrenamiento de un algoritmo,
+bitacora y una curva de referencia. El modelo personalizado se sobrescribia.
+
+AHORA: cuatro responsables con los nombres indicados por el equipo; ejemplos
+pendientes, aprobados y rechazados; edicion, reapertura y duplicados controlados.
+Cada entrenamiento ajusta Naive Bayes y regresion logistica con validacion
+comparable, guarda una jornada provisional y conserva las anteriores.
+
+PARA TRABAJAR:
+1. Recibir aportes desde Git y abrir iniciar.cmd.
+2. Elegir responsable. Guardar ejemplos en Ejemplos y entrenar.
+3. Revisar texto, categoria y diversidad; aprobar los preparados.
+4. Pulsar Entrenar modelo. Solo se incorporan los aprobados.
+5. Revisar resultados en Jornadas y activar explicitamente cuando corresponda.
+6. Usar subir-aportes.cmd para compartir registros e historial.
+
+JORNADAS: cada ejecucion recibe UUID, numero y hora reales; varias en un dia
+son diferentes. Los fallos se conservan como fallos. Una version nueva no
+sustituye automaticamente el modelo activo. Se puede recuperar una anterior.
+
+GUARDADO: data/team/ contiene consultas, ejemplos y revisiones. data/training/
+conserva jornadas, modelos, vectorizadores, configuracion, matrices y active.json.
+data/local/ guarda caches; references/avance-2026-11-18/ conserva el estado previo.
+
+DOCUMENTACION: reproducir-notebook.cmd y generar-reporte.cmd admiten --version
+UUID. El PDF comprueba el notebook y los artefactos al regenerarse. README y
+docs/FLUJO-DE-TRABAJO.md explican el proceso y ESTADO-RUBRICA.md los requisitos.
+
+PENDIENTE: incorporar 80 ejemplos de entrenamiento aprobados, con al menos
+20 por intencion; aportar 50 consultas adicionales al conjunto final reservado
+data/final-test.csv, completar su revision y ejecutar la evaluacion final.
+El benchmark de 80 consultas es de desarrollo y no elige el clasificador.
+Verificar la URL de GitHub y practicar la defensa de todos los integrantes.
+No hacen falta nuevos componentes basicos para continuar ese flujo.

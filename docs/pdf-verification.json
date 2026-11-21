@@ -1,0 +1,31 @@
+{
+  "pdf": "docs/reporte-tecnico.pdf",
+  "cutoff_date": "2026-11-18",
+  "pages": 9,
+  "main_content_pages": 7,
+  "cover_pages": 1,
+  "reference_pages": 1,
+  "metrics_path": "reports/current-experiment.json",
+  "metrics_sha256": "82656aff1bd666feee1e392d50d48b48c3cddff3afebf5d7d5821eec0199576d",
+  "active_model": "logistic_regression",
+  "cv_winner": "logistic_regression",
+  "selected_model": "logistic_regression",
+  "actual_errors_available": 10,
+  "reported_error_texts": [
+    "Hasta otra ocasión, taller",
+    "¿Qué consultas de soporte admites?",
+    "Al presionar power mi portátil sigue completamente apagada"
+  ],
+  "notebook": {
+    "code_cells": 12,
+    "executed_cells": 12,
+    "error_outputs": 0,
+    "png_outputs": 4,
+    "sha256": "267eca0e97fcd230b47d507983f16b013728f01dc7898647da82046fc9ade1d5"
+  },
+  "team_information_pending": true,
+  "version_id": "861484ac-3558-43d4-a997-959aeec83d47",
+  "dataset_version": "fe8a9f036c9034573f51a2848d51b7adeb8a8d636a23c49f2842c1033b8a4105",
+  "provenance_note": "Base sintética identificada; jornadas posteriores con hora real y versiones conservadas.",
+  "test_is_development_evaluation": true
+}

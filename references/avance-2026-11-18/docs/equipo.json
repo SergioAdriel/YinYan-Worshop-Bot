@@ -1,0 +1,18 @@
+{
+  "proyecto": "YinYan Workshop: chatbot de soporte técnico informático",
+  "asignatura": "Proyecto Final I · Chatbot Inteligente mediante Aprendizaje Automático",
+  "docente": "VICTOR MANUEL SANCHEZ SANCHEZ",
+  "integrantes": ["Sergio Adriel Muñoz Camarena"],
+  "desarrollador_principal": "Sergio Adriel Muñoz Camarena",
+  "organizacion": "Distribución de funciones para cuatro perfiles: dos de desarrollo y dos de aportación y revisión de datos. Esta distribución no acredita sesiones pasadas ni identifica a integrantes cuyos nombres no se han proporcionado.",
+  "roles": [
+    {"id": "desarrollo-1", "nombre": "Sergio Adriel Muñoz Camarena", "funcion": "Desarrollador principal", "alcance": "Plataforma, integración del modelo y coordinación técnica", "estado": "Autoría declarada por el responsable del proyecto"},
+    {"id": "desarrollo-2", "nombre": "Segundo perfil de desarrollo", "funcion": "Desarrollo y validación", "alcance": "Reproducción del experimento y comprobación del diálogo", "estado": "Distribución propuesta; nombre no proporcionado"},
+    {"id": "alumno-a", "nombre": "Compañero A", "funcion": "Aportación y revisión de datos", "alcance": "Consultas, ejemplos etiquetados y revisión de categorías", "estado": "Identificador de la plataforma; nombre no proporcionado"},
+    {"id": "alumno-b", "nombre": "Compañero B", "funcion": "Aportación y revisión de datos", "alcance": "Consultas, ejemplos etiquetados y revisión de categorías", "estado": "Identificador de la plataforma; nombre no proporcionado"}
+  ],
+  "grupo": "Por completar",
+  "institucion": "Por completar",
+  "fecha": "18 de noviembre de 2026",
+  "fecha_corte": "2026-11-18"
+}

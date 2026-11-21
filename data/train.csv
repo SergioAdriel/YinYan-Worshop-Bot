@@ -1,0 +1,385 @@
+text,intent
+"Hola, buen día",saludo
+"Qué tal, buenas tardes",saludo
+"Buenas noches, ¿hay alguien?",saludo
+Hola equipo de YinYan,saludo
+"Buen día, vengo a consultar",saludo
+"Qué onda, ¿cómo están?",saludo
+Saludos al taller,saludo
+"Hola, mucho gusto",saludo
+"Buenas, acabo de llegar",saludo
+"Hey, qué gusto encontrarlos",saludo
+Hola de nuevo por aquí,saludo
+Muy buenas a todos,saludo
+"Hola, ¿qué tal va el día?",saludo
+Buenas tardes al equipo,saludo
+Les mando un saludo,saludo
+"Hola taller, buen lunes",saludo
+Qué tal amigos,saludo
+Buen día por acá,saludo
+"Hola, espero estén bien",saludo
+"Buenas noches, saludos",saludo
+"Hola, ¿andas por aquí?",saludo
+"Saludos, primera vez que escribo",saludo
+Qué onda YinYan,saludo
+"Hola hola, buenos días",saludo
+"Gracias, hasta luego",despedida
+"Adiós, buen día",despedida
+Nos vemos después,despedida
+"Eso era todo, gracias",despedida
+Ya terminé mi consulta,despedida
+Muchas gracias por la orientación,despedida
+Hasta pronto equipo,despedida
+"Me retiro, gracias",despedida
+Nos hablamos luego,despedida
+"Gracias, ya quedó claro",despedida
+"Bueno, hasta mañana",despedida
+"Listo, eso necesitaba",despedida
+Gracias por atenderme,despedida
+"Que tengan linda tarde, adiós",despedida
+Con eso termino por hoy,despedida
+Hasta la próxima,despedida
+"Te agradezco, nos vemos",despedida
+"Bye, muchas gracias",despedida
+Ya no tengo más preguntas,despedida
+"Cierro la conversación, gracias",despedida
+"Perfecto, me despido",despedida
+Gracias por tu tiempo,despedida
+"Luego seguimos, adiós",despedida
+"Cuídense, hasta luego",despedida
+¿En qué me puedes ayudar?,ayuda
+¿Qué problemas puedes revisar?,ayuda
+Quiero conocer tus funciones,ayuda
+Explícame cómo usar este asistente,ayuda
+¿Qué tipo de preguntas aceptas?,ayuda
+Necesito ayuda para empezar,ayuda
+¿Cómo funciona el diagnóstico?,ayuda
+Muéstrame las opciones disponibles,ayuda
+¿Sobre qué equipos puedo preguntarte?,ayuda
+No sé cómo iniciar mi consulta,ayuda
+¿Eres capaz de orientar sobre celulares?,ayuda
+Dame ejemplos de preguntas,ayuda
+¿Qué sabes hacer en el taller?,ayuda
+Quiero ver el menú de ayuda,ayuda
+¿Puedes explicar tus alcances?,ayuda
+¿Cómo describo una falla?,ayuda
+Oriéntame para usar el chat,ayuda
+¿Qué temas atiende este bot?,ayuda
+Necesito instrucciones del asistente,ayuda
+¿Qué síntomas puedo consultar aquí?,ayuda
+Quiero saber qué información necesitas,ayuda
+¿Me explicas las funciones del chatbot?,ayuda
+¿Se puede preguntar por consolas?,ayuda
+"Ayuda, es la primera vez que entro",ayuda
+Mi computadora no enciende,encendido
+Aprieto el botón y la consola no hace nada,encendido
+El celular está muerto y no arranca,encendido
+La laptop no prende ni un foco,encendido
+Al intentar encender la PC no responde,encendido
+Mi Xbox no logra arrancar,encendido
+La pantalla está apagada y no hay ninguna luz de encendido,encendido
+No puedo prender mi teléfono,encendido
+El equipo se apaga justo al arrancar,encendido
+La computadora no da señales de vida,encendido
+Pulso encendido y no gira el ventilador,encendido
+La consola se queda sin iniciar,encendido
+Mi portátil prende un segundo y se apaga,encendido
+Desde ayer mi PC no quiere encender,encendido
+El botón de power no produce ninguna reacción,encendido
+No veo luces ni escucho sonido al prender,encendido
+La computadora parece totalmente muerta,encendido
+Mi PlayStation no prende aunque oprima power,encendido
+El teléfono dejó de encender después de apagarse,encendido
+La torre no arranca al pulsar su botón,encendido
+Quiero revisar por qué no inicia mi laptop,encendido
+La consola intenta arrancar y se apaga enseguida,encendido
+No hay señal de encendido en el equipo,encendido
+El celular no muestra nada al intentar prenderlo,encendido
+Mi celular no carga la batería,carga
+La laptop solo funciona conectada al cargador,carga
+El teléfono carga demasiado lento,carga
+La batería se descarga en una hora,carga
+Conecto el cable y no aumenta el porcentaje,carga
+El cargador no reconoce mi celular,carga
+La batería del portátil dura muy poco,carga
+Se desconecta la carga al mover el cable,carga
+El teléfono dice conectado pero no está cargando,carga
+Tengo que acomodar el cargador para que cargue,carga
+El puerto de carga parece flojo,carga
+La batería se queda siempre en cero,carga
+Mi equipo deja de cargar al llegar al veinte por ciento,carga
+El celular pierde batería aun conectado,carga
+Necesito revisar la autonomía de mi laptop,carga
+El indicador de batería no sube,carga
+Mi teléfono ya no retiene la carga,carga
+La computadora se apaga cuando desconecto el cargador,carga
+El conector de carga no hace contacto,carga
+La pila se agota aunque casi no use el equipo,carga
+El cable carga otro celular pero no el mío,carga
+La batería aparece conectada sin cargar,carga
+El mando no recarga su batería,carga
+Mi consola portátil dejó de recibir carga,carga
+Mi computadora se calienta muchísimo,temperatura
+El celular está muy caliente al usarlo,temperatura
+La consola muestra una alerta de temperatura,temperatura
+Los ventiladores suenan fuerte y sale aire caliente,temperatura
+Mi laptop se apaga por sobrecalentamiento,temperatura
+El teléfono quema al tocarlo,temperatura
+Quiero revisar por qué sube tanto la temperatura,temperatura
+Mi PS5 se sobrecalienta al jugar,temperatura
+La PC se pone hirviendo después de unos minutos,temperatura
+El ventilador no enfría suficiente,temperatura
+La portátil se calienta incluso sin programas abiertos,temperatura
+El equipo da un aviso de exceso de calor,temperatura
+Mi consola se apaga cuando está caliente,temperatura
+Siento demasiado calor en la parte de atrás del teléfono,temperatura
+Necesito orientación sobre el sobrecalentamiento,temperatura
+El procesador alcanza temperaturas muy altas,temperatura
+Mi Xbox está expulsando aire demasiado caliente,temperatura
+El ventilador parece obstruido y el equipo arde,temperatura
+La temperatura de mi laptop aumenta enseguida,temperatura
+El móvil se calienta mucho mientras juego,temperatura
+Tengo un problema de refrigeración en mi computadora,temperatura
+La consola pide apagarse para enfriarse,temperatura
+Sale mucho calor por las rejillas,temperatura
+El equipo se pone caliente y hace ruido de ventilación,temperatura
+Mi computadora está muy lenta,rendimiento
+El celular tarda mucho en responder,rendimiento
+La laptop se queda trabada todo el tiempo,rendimiento
+Los juegos van a pocos cuadros por segundo,rendimiento
+Mi consola tiene mucho lag en los menús,rendimiento
+La PC demora varios minutos en abrir programas,rendimiento
+El teléfono se congela cuando cambio de aplicación,rendimiento
+Quiero mejorar la velocidad de mi equipo,rendimiento
+Las ventanas tardan demasiado en aparecer,rendimiento
+Mi computadora se pone lenta al trabajar,rendimiento
+La consola tiene tirones al jugar sin conexión,rendimiento
+El equipo responde con mucho retraso,rendimiento
+Hasta escribir en el teclado se siente lento,rendimiento
+La laptop se congela con tareas sencillas,rendimiento
+Mi móvil ya no tiene la fluidez de antes,rendimiento
+Los programas se traban al mismo tiempo,rendimiento
+El rendimiento de la computadora bajó muchísimo,rendimiento
+La PC tarda una eternidad en iniciar el escritorio,rendimiento
+Todo funciona pero va exageradamente despacio,rendimiento
+Los juegos se ven entrecortados en mi laptop,rendimiento
+El sistema se queda pensando cada vez que hago clic,rendimiento
+Mi teléfono se bloquea unos segundos al abrir fotos,rendimiento
+La consola tarda mucho en navegar por la biblioteca,rendimiento
+Necesito revisar la lentitud de mi portátil,rendimiento
+Mi computadora no se conecta a internet,conexion
+El celular no detecta la red wifi,conexion
+Mi consola se desconecta de la red,conexion
+La laptop dice conectado sin internet,conexion
+No puedo emparejar mis audífonos por Bluetooth,conexion
+La PC no reconoce el cable Ethernet,conexion
+El wifi se cae a cada rato en mi teléfono,conexion
+Mi Xbox no logra conectarse al router,conexion
+Quiero revisar una falla de conexión inalámbrica,conexion
+No aparecen redes disponibles en la laptop,conexion
+El equipo no acepta la contraseña del wifi,conexion
+Mi PlayStation tiene un error de conexión de red,conexion
+El Bluetooth no encuentra dispositivos,conexion
+Tengo señal de wifi pero no abren páginas,conexion
+El internet funciona en otros equipos y aquí no,conexion
+La computadora pierde la conexión al rato,conexion
+No puedo conectar mi celular al wifi de casa,conexion
+La consola no detecta el cable de red,conexion
+La laptop no tiene acceso a internet,conexion
+Mi teléfono se desconecta del Bluetooth,conexion
+No consigo enlazar un dispositivo inalámbrico,conexion
+El adaptador de red aparece deshabilitado,conexion
+La conexión por Ethernet no funciona,conexion
+Mi consola no encuentra ninguna red inalámbrica,conexion
+La pantalla de mi celular está rota,pantalla
+Mi computadora prende pero no da imagen,pantalla
+El monitor muestra rayas de colores,pantalla
+El táctil no responde a mis dedos,pantalla
+La consola enciende pero la televisión dice sin señal,pantalla
+La pantalla de mi laptop parpadea,pantalla
+Veo manchas negras en el display,pantalla
+El teléfono tiene la pantalla completamente blanca,pantalla
+Mi monitor no muestra video aunque la PC está encendida,pantalla
+El cristal de mi celular se quebró,pantalla
+La imagen se ve muy oscura incluso con brillo alto,pantalla
+Hay una línea verde en la pantalla,pantalla
+El touch toca cosas por sí solo,pantalla
+La laptop tiene imagen solo si muevo la tapa,pantalla
+El HDMI de la consola no muestra imagen,pantalla
+Mi pantalla tiene píxeles dañados,pantalla
+El teléfono suena pero el display sigue negro,pantalla
+La imagen del monitor se corta por momentos,pantalla
+No funciona una zona de la pantalla táctil,pantalla
+Quiero revisar una falla de video en mi computadora,pantalla
+El display se quedó congelado en un color,pantalla
+La pantalla está estrellada y no puedo tocar nada,pantalla
+Mi consola da audio pero no video,pantalla
+El monitor pierde la imagen sin apagarse la torre,pantalla
+Mi computadora no tiene sonido,sonido
+El altavoz del celular se escucha muy bajo,sonido
+No me escuchan cuando hablo por el micrófono,sonido
+La consola da imagen pero no audio,sonido
+Mis audífonos se oyen solo de un lado,sonido
+El sonido de la laptop sale distorsionado,sonido
+El teléfono no reproduce audio por la bocina,sonido
+El micrófono no funciona en las videollamadas,sonido
+Escucho un zumbido en los altavoces,sonido
+Mi equipo aparece en silencio aunque suba el volumen,sonido
+No sale sonido por los audífonos conectados,sonido
+El audio de los juegos se corta,sonido
+La bocina del celular truena al reproducir música,sonido
+Quiero revisar una falla de audio,sonido
+El micrófono graba puro ruido,sonido
+Mi PC no detecta la salida de sonido,sonido
+El volumen está al máximo y no se oye nada,sonido
+Mi consola dejó de mandar audio al televisor,sonido
+Se escucha una estática en los auriculares,sonido
+El sonido del teléfono está muy apagado,sonido
+No puedo escuchar a nadie en las llamadas,sonido
+La laptop reproduce el audio entrecortado,sonido
+El micrófono del mando no capta mi voz,sonido
+Las bocinas hacen un ruido extraño,sonido
+Mi celular dice que no tiene espacio,almacenamiento
+La computadora no reconoce el disco duro,almacenamiento
+Quiero liberar almacenamiento en mi consola,almacenamiento
+El SSD no aparece en el explorador,almacenamiento
+No puedo guardar fotos porque la memoria está llena,almacenamiento
+Mi disco externo no se detecta,almacenamiento
+La consola dice almacenamiento insuficiente,almacenamiento
+Necesito ampliar el espacio de mi laptop,almacenamiento
+La PC no reconoce mi memoria USB,almacenamiento
+El teléfono no encuentra la tarjeta microSD,almacenamiento
+Me aparece un aviso de disco lleno,almacenamiento
+No tengo espacio para instalar un juego,almacenamiento
+Quiero saber por qué desapareció mi unidad de almacenamiento,almacenamiento
+Mi memoria está saturada aunque borré archivos,almacenamiento
+La computadora pide formatear el disco externo,almacenamiento
+La consola no encuentra su disco de almacenamiento,almacenamiento
+El celular no puede guardar videos por falta de espacio,almacenamiento
+Quiero pasar archivos para vaciar la memoria,almacenamiento
+La unidad USB aparece con capacidad incorrecta,almacenamiento
+Mi laptop muestra que el disco está al cien por ciento de capacidad,almacenamiento
+El teléfono tiene todo el almacenamiento ocupado,almacenamiento
+Necesito orientación para respaldar archivos del disco,almacenamiento
+La tarjeta de memoria no permite guardar nada,almacenamiento
+Mi equipo no reconoce una unidad SSD nueva,almacenamiento
+Mi computadora muestra una pantalla azul de error,software
+Una aplicación se cierra sola al abrirla,software
+La actualización del sistema se quedó atascada,software
+Mi celular entra en un bucle en el logotipo,software
+No puedo instalar un programa,software
+Windows muestra un error al iniciar sesión,software
+Mi consola falla al actualizar su sistema,software
+Creo que tengo un virus en la computadora,software
+El teléfono abre anuncios sin que yo toque nada,software
+Necesito ayuda con un error del sistema operativo,software
+Un juego se cierra con un código de error,software
+El equipo reinicia y vuelve a mostrar el mismo mensaje,software
+La instalación se detiene antes de terminar,software
+Mi laptop se quedó en preparando reparación automática,software
+Una app dejó de funcionar después de actualizar,software
+La computadora tiene ventanas emergentes sospechosas,software
+El sistema pide recuperar el inicio,software
+Mi celular no pasa del logo de Android,software
+La consola no termina de instalar la actualización,software
+Recibo un aviso de archivo dañado al abrir el programa,software
+El sistema operativo se reinicia inesperadamente,software
+El antivirus detectó una amenaza,software
+No puedo abrir una aplicación por un error,software
+Mi computadora quedó bloqueada después de instalar una actualización,software
+El joystick de mi control se mueve solo,controles
+Mi mando tiene drift en la palanca izquierda,controles
+El teclado de mi laptop no escribe algunas letras,controles
+El botón de salto del control no responde,controles
+El mouse hace doble clic sin querer,controles
+Una tecla se quedó hundida,controles
+Mi consola no reconoce el mando por cable,controles
+El gatillo del control se atora,controles
+La palanca analógica está muy floja,controles
+El touchpad de la computadora no mueve el cursor,controles
+El botón de volumen del teléfono se trabó,controles
+El teclado escribe caracteres repetidos,controles
+Mi ratón no responde a los clics,controles
+Quiero revisar los botones de mi consola portátil,controles
+El personaje camina sin tocar el control,controles
+El mando no registra cuando pulso el botón A,controles
+Mi teclado dejó de funcionar por completo,controles
+La rueda del mouse gira pero no desplaza,controles
+La tecla de espacio no regresa a su sitio,controles
+El botón lateral de mi celular está hundido,controles
+El control no vibra y tiene botones fallando,controles
+La cruceta de mi mando solo detecta una dirección,controles
+La laptop no reconoce el teclado externo,controles
+El joystick se queda apuntando hacia arriba,controles
+Se me cayó agua sobre la laptop,liquidos
+Mi celular se cayó al lavabo,liquidos
+Derramé café en el teclado de la computadora,liquidos
+La consola se mojó por una gotera,liquidos
+El teléfono se sumergió en agua,liquidos
+Le cayó refresco a mi equipo,liquidos
+Mi celular tiene humedad en el conector,liquidos
+La computadora recibió un derrame de líquido,liquidos
+Quiero saber qué hacer si mojé mi laptop,liquidos
+Se derramó cerveza encima de la consola,liquidos
+Mi teléfono se mojó con la lluvia,liquidos
+El equipo cayó en una cubeta con agua,liquidos
+Le entró líquido al control,liquidos
+Mi laptop quedó mojada por accidente,liquidos
+Me salió una alerta de humedad en el celular,liquidos
+El vaso se volteó sobre mi computadora,liquidos
+La consola recibió agua mientras estaba conectada,liquidos
+Mi móvil se cayó al inodoro,liquidos
+Se filtró agua por la mochila hasta la laptop,liquidos
+La pantalla tiene gotas por dentro después de mojarse,liquidos
+Derramaron jugo cerca de los puertos del equipo,liquidos
+El celular tiene líquido adentro,liquidos
+Mi computadora se mojó y sigue encendida,liquidos
+Necesito orientación por daño de humedad,liquidos
+¿Cuánto cuesta reparar mi computadora?,presupuesto
+Quisiera una cotización para mi celular,presupuesto
+¿Me pueden dar un presupuesto?,presupuesto
+Quiero saber el precio de una reparación,presupuesto
+¿Cuánto cobran por revisar una consola?,presupuesto
+¿La revisión tiene algún costo?,presupuesto
+Necesito cotizar el arreglo de mi laptop,presupuesto
+¿Qué precio tiene cambiar una pantalla?,presupuesto
+¿Cuánto saldría reparar el control?,presupuesto
+Quisiera conocer sus tarifas,presupuesto
+¿Pueden estimar el costo antes de reparar?,presupuesto
+¿Cuánto cuesta el servicio técnico?,presupuesto
+Busco un presupuesto para cambiar la batería,presupuesto
+¿La cotización es gratis?,presupuesto
+¿Cuál sería el importe de arreglar mi equipo?,presupuesto
+¿Cómo solicito una cotización del trabajo?,presupuesto
+Me interesa saber cuánto cobran,presupuesto
+¿Puedo pedir un cálculo del precio?,presupuesto
+¿Qué costo tiene reparar una falla de carga?,presupuesto
+Quiero comparar el presupuesto de la reparación,presupuesto
+¿Cuánto dinero necesito para el arreglo?,presupuesto
+¿Cobran el diagnóstico por separado?,presupuesto
+Dime el costo aproximado de reparar mi teléfono,presupuesto
+¿Me cotizan un mantenimiento de consola?,presupuesto
+¿Cómo contacto al taller?,contacto
+¿Cuál es su Instagram?,contacto
+Quiero hablar con una persona,contacto
+¿Dónde están ubicados?,contacto
+¿Qué horario de atención tienen?,contacto
+¿Tienen un teléfono para escribir?,contacto
+¿Cómo puedo llevarles mi equipo?,contacto
+Quiero agendar una revisión,contacto
+Necesito comunicarme con un técnico,contacto
+¿Me pasan sus redes sociales?,contacto
+¿En qué dirección se encuentra el negocio?,contacto
+¿A qué hora abren?,contacto
+¿Cómo hago una cita en YinYan?,contacto
+Quiero enviarles un mensaje directo,contacto
+¿Dónde les puedo preguntar por disponibilidad?,contacto
+¿Cuál es el canal oficial de contacto?,contacto
+¿Tienen WhatsApp del taller?,contacto
+Necesito coordinar la entrega de mi computadora,contacto
+¿Puedo hablar con el dueño?,contacto
+¿Dónde puedo llevar mi consola?,contacto
+¿Trabajan los fines de semana?,contacto
+Muéstrame el perfil de YinYan Workshop,contacto
+¿Cómo me comunico para una reparación?,contacto
+Quiero consultar la ubicación y horario del local,contacto

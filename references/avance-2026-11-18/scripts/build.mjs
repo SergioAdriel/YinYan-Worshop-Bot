@@ -1,0 +1,14 @@
+import {cp,mkdir,readFile,writeFile,stat} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+await mkdir(resolve(root,'dist'),{recursive:true});
+await cp(resolve(root,'web'),resolve(root,'dist'),{recursive:true});
+for(const required of ['index.html','app.js','style.css','dialogue.js','ml.js','model.json','simulation/manifest.json'])await stat(resolve(root,'dist',required));
+await cp(resolve(root,'reports/metrics.json'),resolve(root,'dist/metrics.json'));
+await mkdir(resolve(root,'dist/downloads'),{recursive:true});
+for(const [from,to] of [['docs/reporte-tecnico.pdf','reporte-tecnico.pdf'],['notebooks/experimentacion.ipynb','experimentacion.ipynb']])await cp(resolve(root,from),resolve(root,'dist/downloads',to));
+await writeFile(resolve(root,'dist/_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n');
+const simulation=JSON.parse(await readFile(resolve(root,'dist/simulation/manifest.json'),'utf8'));
+const last=simulation.days.at(-1);
+console.log(`Sitio preparado en dist/: ${simulation.days.length} días simulados; último modelo ${last.correct}/${last.total} aciertos. Para guardar ejemplos, usa el servidor local.`);

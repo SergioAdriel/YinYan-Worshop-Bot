@@ -1,0 +1,13 @@
+{
+  "name": "yinyan-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Taller local de aprendizaje supervisado: simulación de 15 días con estudiantes",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "simulate": "runtime\\python\\python.exe -m src.simulation",
+    "start": "node scripts/serve.mjs"
+  }
+}

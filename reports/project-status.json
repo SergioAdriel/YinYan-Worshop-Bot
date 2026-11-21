@@ -1,0 +1,3797 @@
+{
+  "generated_at": "2026-11-18T21:28:11.811478+00:00",
+  "active_id": "861484ac-3558-43d4-a997-959aeec83d47",
+  "requirements": [
+    {
+      "requirement": "Dominio único y delimitado, opción B",
+      "status": "Cumplido",
+      "evidence": "docs/dominio-e-intenciones.md: soporte de computadoras, celulares y consolas."
+    },
+    {
+      "requirement": "Diez intenciones con significado y acciones",
+      "status": "Cumplido",
+      "evidence": "16 intenciones en data/simulation.json y docs/dominio-e-intenciones.md."
+    },
+    {
+      "requirement": "Doscientos ejemplos de entrenamiento",
+      "status": "Cumplido",
+      "evidence": "240 muestras de base y aportaciones aprobadas."
+    },
+    {
+      "requirement": "Veinte ejemplos por intención",
+      "status": "Pendiente de datos",
+      "evidence": "Faltan 80 ejemplos aprobados; tabla por intención más abajo."
+    },
+    {
+      "requirement": "Procedencia y datos estructurados",
+      "status": "Cumplido",
+      "evidence": "JSON/CSV; base sintética identificada y eventos reales nuevos en data/team/."
+    },
+    {
+      "requirement": "Diversidad y revisión humana de los ejemplos nuevos",
+      "status": "Pendiente de datos",
+      "evidence": "Flujo de revisión implementado; completar y revisar las expresiones que faltan."
+    },
+    {
+      "requirement": "Ausencia de duplicados y etiquetas contradictorias",
+      "status": "Cumplido",
+      "evidence": "Tokenización compartida y rechazo de coincidencias con base, benchmark y prueba final; tests/example-review.test.mjs."
+    },
+    {
+      "requirement": "Prueba final independiente de al menos 50 consultas",
+      "status": "Pendiente de datos",
+      "evidence": "data/final-test.csv: 0 consultas; benchmark conocido separado de 80 mensajes."
+    },
+    {
+      "requirement": "Normalización, limpieza y caracteres especiales",
+      "status": "Cumplido",
+      "evidence": "src/preprocessing.py; web/ml.js; pruebas de paridad."
+    },
+    {
+      "requirement": "Tokenización y lematización ligera",
+      "status": "Cumplido",
+      "evidence": "Diccionario explícito, negación conservada y mismo proceso en entrenamiento e inferencia."
+    },
+    {
+      "requirement": "TF-IDF ajustado dentro de cada partición",
+      "status": "Cumplido",
+      "evidence": "Pipeline unigramas/bigramas, frecuencia sublineal y normalización L2."
+    },
+    {
+      "requirement": "Dos clasificadores supervisados propios",
+      "status": "Cumplido",
+      "evidence": "Naive Bayes y regresión logística por jornada; pipelines guardados con joblib."
+    },
+    {
+      "requirement": "Validación comparable y selección justificada",
+      "status": "Cumplido",
+      "evidence": "Cinco pliegues estratificados, semilla 42 y máximo F1 macro; benchmark y prueba final no eligen el modelo."
+    },
+    {
+      "requirement": "Vectorizador y clasificador almacenados",
+      "status": "Cumplido",
+      "evidence": "data/training/runs/<UUID>/: ambos pipelines y exportaciones JSON verificadas."
+    },
+    {
+      "requirement": "Accuracy, precision, recall y F1 macro",
+      "status": "Cumplido",
+      "evidence": "run.json y las dos tablas de modelos de cada jornada."
+    },
+    {
+      "requirement": "Dos matrices de confusión",
+      "status": "Cumplido",
+      "evidence": "JSON y figuras confusion-*.png dentro de cada jornada."
+    },
+    {
+      "requirement": "Tres errores reales interpretados, cuando existen",
+      "status": "Cumplido",
+      "evidence": "Errores observados en run.json, notebook y PDF; no se fabrican si hay menos."
+    },
+    {
+      "requirement": "Clasificación automática y respuestas coherentes",
+      "status": "Cumplido",
+      "evidence": "web/ml.js; web/dialogue.js; comprobación funcional de la versión aprobada."
+    },
+    {
+      "requirement": "Tres variantes de respuesta cuando corresponde",
+      "status": "Cumplido",
+      "evidence": "Modo sencillo conserva variantes sociales y orientaciones; tests/concise.test.mjs."
+    },
+    {
+      "requirement": "Contexto efectivo durante tres turnos",
+      "status": "Cumplido",
+      "evidence": "Equipo, falla y respuestas pendientes modifican el siguiente mensaje y el resumen."
+    },
+    {
+      "requirement": "Ambigüedad, desconocidos y temas ajenos",
+      "status": "Cumplido",
+      "evidence": "Aclaración incluso con clasificación confiada de una frase sin síntoma; recuperación guiada."
+    },
+    {
+      "requirement": "Reinicio del contexto",
+      "status": "Cumplido",
+      "evidence": "Nueva consulta y comando explícito de reinicio; historial y estado de conversación reiniciados."
+    },
+    {
+      "requirement": "Interfaz web funcional y móvil",
+      "status": "Cumplido",
+      "evidence": "reports/automated-tests.json; tests/; reports/workflow-browser-results.json"
+    },
+    {
+      "requirement": "Guardar ejemplos antes del entrenamiento",
+      "status": "Cumplido",
+      "evidence": "UUID, autor, hora, estado y versión; eventos inmutables y persistencia tras reinicio."
+    },
+    {
+      "requirement": "Pendiente, aprobado y rechazado",
+      "status": "Cumplido",
+      "evidence": "Edición/retiro de pendientes y reapertura controlada de revisados; solo aprobados se entrenan."
+    },
+    {
+      "requirement": "Jornadas reales y numeración automática",
+      "status": "Cumplido",
+      "evidence": "Reserva exclusiva, ID único, instante UTC real y estado failed si no termina."
+    },
+    {
+      "requirement": "Modelos provisional, activo e histórico",
+      "status": "Cumplido",
+      "evidence": "Activación explícita, validación de artefactos y recuperación de versiones anteriores."
+    },
+    {
+      "requirement": "Comparación con entrenamiento anterior",
+      "status": "Cumplido",
+      "evidence": "Métricas y diferencias por jornada, sin forzar mejora ni reemplazo automático."
+    },
+    {
+      "requirement": "Panel de progreso y cumplimiento",
+      "status": "Cumplido",
+      "evidence": "Conteos, distribución, faltantes, versiones, fecha y estados basados en evidencia."
+    },
+    {
+      "requirement": "Evaluación final preparada y protegida",
+      "status": "Cumplido",
+      "evidence": "Acción explícita; mínimo 50, separación de datos y recibo semántico que impide reutilizar la prueba para comparar otra versión."
+    },
+    {
+      "requirement": "Cuatro responsables consistentes",
+      "status": "Cumplido",
+      "evidence": "docs/equipo.json y selector: Erick, Daniel, Sergio y Raynier; no se afirma autenticación por roles."
+    },
+    {
+      "requirement": "Repositorio compartible con instalación Windows",
+      "status": "Cumplido",
+      "evidence": "README, .cmd, requirements-lock.txt y ayudantes Git probados con dos clones temporales."
+    },
+    {
+      "requirement": "Notebook ejecutable de la versión elegida",
+      "status": "Cumplido",
+      "evidence": "notebooks/experimentacion.ipynb; --version; CV y métricas reproducidas con su instantánea."
+    },
+    {
+      "requirement": "PDF de máximo ocho cuartillas principales",
+      "status": "Cumplido",
+      "evidence": "docs/reporte-tecnico.pdf: 7 páginas principales; hashes en docs/pdf-verification.json."
+    },
+    {
+      "requirement": "Referencia anterior conservada",
+      "status": "Cumplido",
+      "evidence": "references/avance-2026-11-18/REFERENCE.json y copia recuperable de 119 archivos."
+    },
+    {
+      "requirement": "URL del repositorio GitHub entregada al profesor",
+      "status": "Pendiente de verificación",
+      "evidence": "Configuración preparada; no se proporcionó una URL de repositorio para verificar publicación o entrega."
+    },
+    {
+      "requirement": "Defensa y comprensión de todos los integrantes",
+      "status": "Pendiente de verificación",
+      "evidence": "Guía de demostración disponible; la presentación en vivo corresponde al equipo."
+    }
+  ],
+  "progress": {
+    "counts": {
+      "base": 240,
+      "total": 240,
+      "approved": 240,
+      "approved_additional": 0,
+      "pending": 0,
+      "rejected": 0
+    },
+    "per_intent": [
+      {
+        "intent": "saludo",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "despedida",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "ayuda",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "encendido",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "carga",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "temperatura",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "rendimiento",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "conexion",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "pantalla",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "sonido",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "almacenamiento",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "software",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "controles",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "liquidos",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "presupuesto",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      },
+      {
+        "intent": "contacto",
+        "base": 15,
+        "approved": 15,
+        "pending": 0,
+        "rejected": 0,
+        "missing": 5
+      }
+    ],
+    "intents": {
+      "saludo": "Saludo",
+      "despedida": "Despedida",
+      "ayuda": "Ayuda",
+      "encendido": "Encendido",
+      "carga": "Carga y batería",
+      "temperatura": "Temperatura",
+      "rendimiento": "Rendimiento",
+      "conexion": "Conexión",
+      "pantalla": "Pantalla",
+      "sonido": "Sonido",
+      "almacenamiento": "Almacenamiento",
+      "software": "Software",
+      "controles": "Controles",
+      "liquidos": "Líquidos",
+      "presupuesto": "Presupuesto",
+      "contacto": "Contacto"
+    },
+    "missing_examples_total": 80,
+    "dataset_version": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "active": {
+      "active_id": "861484ac-3558-43d4-a997-959aeec83d47",
+      "model_url": "./api/versions/861484ac-3558-43d4-a997-959aeec83d47/model.json",
+      "version": {
+        "format_version": 2,
+        "id": "861484ac-3558-43d4-a997-959aeec83d47",
+        "journey": 1,
+        "created_at": "2026-11-18T19:00:38.991Z",
+        "started_at": "2026-11-18T19:00:38.991Z",
+        "finished_at": "2026-11-18T19:00:45.060Z",
+        "author": "system",
+        "initiated_by": "programmatic_execution",
+        "timezone": "America/Mexico_City",
+        "timestamp_kind": "recorded",
+        "status": "succeeded",
+        "approval_status": "approved",
+        "dataset_version": "fe8a9f036c9034573f51a2848d51b7adeb8a8d636a23c49f2842c1033b8a4105",
+        "approved_revision": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "message": "Dos clasificadores evaluados. Versión provisional lista para revisar y activar.",
+        "counts": {
+          "base": 240,
+          "additional": 0,
+          "total": 240,
+          "test": 80,
+          "intents": 16,
+          "per_intent": {
+            "almacenamiento": 15,
+            "ayuda": 15,
+            "carga": 15,
+            "conexion": 15,
+            "contacto": 15,
+            "controles": 15,
+            "despedida": 15,
+            "encendido": 15,
+            "liquidos": 15,
+            "pantalla": 15,
+            "presupuesto": 15,
+            "rendimiento": 15,
+            "saludo": 15,
+            "software": 15,
+            "sonido": 15,
+            "temperatura": 15
+          }
+        },
+        "labels": [
+          "almacenamiento",
+          "ayuda",
+          "carga",
+          "conexion",
+          "contacto",
+          "controles",
+          "despedida",
+          "encendido",
+          "liquidos",
+          "pantalla",
+          "presupuesto",
+          "rendimiento",
+          "saludo",
+          "software",
+          "sonido",
+          "temperatura"
+        ],
+        "process_id": null,
+        "storage_path": "runs/861484ac-3558-43d4-a997-959aeec83d47",
+        "selected_model": "logistic_regression",
+        "cv_winner": "logistic_regression",
+        "active_model": "logistic_regression",
+        "cv": {
+          "naive_bayes": {
+            "f1_macro_mean": 0.41723901098901106,
+            "f1_macro_std": 0.07550477193433694,
+            "accuracy_mean": 0.425,
+            "fold_f1_macro": [
+              0.49508928571428573,
+              0.3549450549450549,
+              0.4044642857142857,
+              0.5117559523809524,
+              0.31994047619047616
+            ]
+          },
+          "logistic_regression": {
+            "f1_macro_mean": 0.4562409812409813,
+            "f1_macro_std": 0.05661045488319222,
+            "accuracy_mean": 0.4708333333333333,
+            "fold_f1_macro": [
+              0.5013392857142858,
+              0.4520833333333333,
+              0.48333333333333334,
+              0.4961309523809524,
+              0.34831800144300146
+            ]
+          }
+        },
+        "models": {
+          "naive_bayes": {
+            "accuracy": 0.8625,
+            "precision_macro": 0.8811011904761905,
+            "recall_macro": 0.8625,
+            "f1_macro": 0.8599747474747476,
+            "confusion_matrix": [
+              [
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                3,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                4
+              ]
+            ],
+            "per_class": {
+              "almacenamiento": {
+                "precision": 0.7142857142857143,
+                "recall": 1.0,
+                "f1-score": 0.8333333333333334,
+                "support": 5.0
+              },
+              "ayuda": {
+                "precision": 1.0,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5.0
+              },
+              "carga": {
+                "precision": 0.6666666666666666,
+                "recall": 0.8,
+                "f1-score": 0.7272727272727273,
+                "support": 5.0
+              },
+              "conexion": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "contacto": {
+                "precision": 1.0,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5.0
+              },
+              "controles": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "despedida": {
+                "precision": 0.6666666666666666,
+                "recall": 0.8,
+                "f1-score": 0.7272727272727273,
+                "support": 5.0
+              },
+              "encendido": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "liquidos": {
+                "precision": 1.0,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5.0
+              },
+              "pantalla": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "presupuesto": {
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1-score": 0.6666666666666666,
+                "support": 5.0
+              },
+              "rendimiento": {
+                "precision": 1.0,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5.0
+              },
+              "saludo": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "software": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "sonido": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "temperatura": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5.0
+              },
+              "accuracy": 0.8625,
+              "macro avg": {
+                "precision": 0.8811011904761905,
+                "recall": 0.8625,
+                "f1-score": 0.8599747474747476,
+                "support": 80.0
+              },
+              "weighted avg": {
+                "precision": 0.8811011904761905,
+                "recall": 0.8625,
+                "f1-score": 0.8599747474747474,
+                "support": 80.0
+              }
+            },
+            "correct": 69,
+            "total": 80
+          },
+          "logistic_regression": {
+            "accuracy": 0.875,
+            "precision_macro": 0.8953125000000001,
+            "recall_macro": 0.875,
+            "f1_macro": 0.8733925796425797,
+            "confusion_matrix": [
+              [
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                4
+              ]
+            ],
+            "per_class": {
+              "almacenamiento": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "ayuda": {
+                "precision": 1.0,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5.0
+              },
+              "carga": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5.0
+              },
+              "conexion": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "contacto": {
+                "precision": 0.625,
+                "recall": 1.0,
+                "f1-score": 0.7692307692307693,
+                "support": 5.0
+              },
+              "controles": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "despedida": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5.0
+              },
+              "encendido": {
+                "precision": 1.0,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5.0
+              },
+              "liquidos": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5.0
+              },
+              "pantalla": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "presupuesto": {
+                "precision": 1.0,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5.0
+              },
+              "rendimiento": {
+                "precision": 1.0,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5.0
+              },
+              "saludo": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "software": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1-score": 1.0,
+                "support": 5.0
+              },
+              "sonido": {
+                "precision": 0.8333333333333334,
+                "recall": 1.0,
+                "f1-score": 0.9090909090909091,
+                "support": 5.0
+              },
+              "temperatura": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5.0
+              },
+              "accuracy": 0.875,
+              "macro avg": {
+                "precision": 0.8953125000000001,
+                "recall": 0.875,
+                "f1-score": 0.8733925796425797,
+                "support": 80.0
+              },
+              "weighted avg": {
+                "precision": 0.8953125,
+                "recall": 0.875,
+                "f1-score": 0.8733925796425798,
+                "support": 80.0
+              }
+            },
+            "correct": 70,
+            "total": 80
+          }
+        },
+        "errors": [
+          {
+            "model": "naive_bayes",
+            "text": "Hasta otra ocasión, taller",
+            "expected": "despedida",
+            "predicted": "saludo",
+            "correct": false,
+            "interpretation": "Un cierre indirecto sin fórmulas habituales puede carecer de las señales léxicas aprendidas. Resultado observado: saludo; etiqueta esperada: despedida."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "¿Qué consultas de soporte admites?",
+            "expected": "ayuda",
+            "predicted": "almacenamiento",
+            "correct": false,
+            "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: almacenamiento; etiqueta esperada: ayuda."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "¿Cuál es el alcance de tu orientación?",
+            "expected": "ayuda",
+            "predicted": "despedida",
+            "correct": false,
+            "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: despedida; etiqueta esperada: ayuda."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+            "expected": "carga",
+            "predicted": "conexion",
+            "correct": false,
+            "interpretation": "La dependencia del cable puede expresarse sin mencionar batería o cargador. Resultado observado: conexion; etiqueta esperada: carga."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Sale una advertencia térmica en medio de mis partidas",
+            "expected": "temperatura",
+            "predicted": "sonido",
+            "correct": false,
+            "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: sonido; etiqueta esperada: temperatura."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Aunque funciona, la laptop va a paso de tortuga",
+            "expected": "rendimiento",
+            "predicted": "carga",
+            "correct": false,
+            "interpretation": "La lentitud se expresa con metáforas y efectos que también aparecen en software o almacenamiento. Resultado observado: carga; etiqueta esperada: rendimiento."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+            "expected": "rendimiento",
+            "predicted": "temperatura",
+            "correct": false,
+            "interpretation": "La lentitud se expresa con metáforas y efectos que también aparecen en software o almacenamiento. Resultado observado: temperatura; etiqueta esperada: rendimiento."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Volqué mi taza de té sobre el portátil",
+            "expected": "liquidos",
+            "predicted": "carga",
+            "correct": false,
+            "interpretation": "Una bebida o situación nueva puede no compartir los términos agua, humedad o derrame del corpus. Resultado observado: carga; etiqueta esperada: liquidos."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "¿Hay que pagar por que revisen el equipo?",
+            "expected": "presupuesto",
+            "predicted": "despedida",
+            "correct": false,
+            "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: despedida; etiqueta esperada: presupuesto."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Quisiera que me cotizaran un cambio de pieza",
+            "expected": "presupuesto",
+            "predicted": "almacenamiento",
+            "correct": false,
+            "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: almacenamiento; etiqueta esperada: presupuesto."
+          },
+          {
+            "model": "naive_bayes",
+            "text": "Quiero saber si hoy está abierto el taller",
+            "expected": "contacto",
+            "predicted": "presupuesto",
+            "correct": false,
+            "interpretation": "Los canales, citas y horarios tienen vocabulario heterogéneo y pueden compartir una petición de presupuesto. Resultado observado: presupuesto; etiqueta esperada: contacto."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Hasta otra ocasión, taller",
+            "expected": "despedida",
+            "predicted": "contacto",
+            "correct": false,
+            "interpretation": "Un cierre indirecto sin fórmulas habituales puede carecer de las señales léxicas aprendidas. Resultado observado: contacto; etiqueta esperada: despedida."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "¿Qué consultas de soporte admites?",
+            "expected": "ayuda",
+            "predicted": "contacto",
+            "correct": false,
+            "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: contacto; etiqueta esperada: ayuda."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "¿Cuál es el alcance de tu orientación?",
+            "expected": "ayuda",
+            "predicted": "despedida",
+            "correct": false,
+            "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: despedida; etiqueta esperada: ayuda."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Al presionar power mi portátil sigue completamente apagada",
+            "expected": "encendido",
+            "predicted": "almacenamiento",
+            "correct": false,
+            "interpretation": "Una paráfrasis de falta de arranque puede confundirse con síntomas de carga o pantalla. Resultado observado: almacenamiento; etiqueta esperada: encendido."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+            "expected": "carga",
+            "predicted": "conexion",
+            "correct": false,
+            "interpretation": "La dependencia del cable puede expresarse sin mencionar batería o cargador. Resultado observado: conexion; etiqueta esperada: carga."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Sale una advertencia térmica en medio de mis partidas",
+            "expected": "temperatura",
+            "predicted": "sonido",
+            "correct": false,
+            "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: sonido; etiqueta esperada: temperatura."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+            "expected": "rendimiento",
+            "predicted": "temperatura",
+            "correct": false,
+            "interpretation": "La lentitud se expresa con metáforas y efectos que también aparecen en software o almacenamiento. Resultado observado: temperatura; etiqueta esperada: rendimiento."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Volqué mi taza de té sobre el portátil",
+            "expected": "liquidos",
+            "predicted": "carga",
+            "correct": false,
+            "interpretation": "Una bebida o situación nueva puede no compartir los términos agua, humedad o derrame del corpus. Resultado observado: carga; etiqueta esperada: liquidos."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "¿Hay que pagar por que revisen el equipo?",
+            "expected": "presupuesto",
+            "predicted": "liquidos",
+            "correct": false,
+            "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: liquidos; etiqueta esperada: presupuesto."
+          },
+          {
+            "model": "logistic_regression",
+            "text": "Quisiera que me cotizaran un cambio de pieza",
+            "expected": "presupuesto",
+            "predicted": "contacto",
+            "correct": false,
+            "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: contacto; etiqueta esperada: presupuesto."
+          }
+        ],
+        "predictions": {
+          "naive_bayes": [
+            {
+              "text": "Buenísima tarde, gente del taller",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Hola YinYan, les saludo",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Qué hay, buenas",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Saludos y buen comienzo de día",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Hola, ando pasando a saludar",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Se resolvió mi duda, te agradezco",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Me voy por ahora, nos leemos",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Con esa información es suficiente, gracias",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Hasta otra ocasión, taller",
+              "expected": "despedida",
+              "predicted": "saludo",
+              "correct": false
+            },
+            {
+              "text": "Finalizo aquí, muchas gracias",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Antes de comenzar, dime para qué sirves",
+              "expected": "ayuda",
+              "predicted": "ayuda",
+              "correct": true
+            },
+            {
+              "text": "¿Qué consultas de soporte admites?",
+              "expected": "ayuda",
+              "predicted": "almacenamiento",
+              "correct": false
+            },
+            {
+              "text": "Me interesa saber cómo conversar contigo",
+              "expected": "ayuda",
+              "predicted": "ayuda",
+              "correct": true
+            },
+            {
+              "text": "¿Cuál es el alcance de tu orientación?",
+              "expected": "ayuda",
+              "predicted": "despedida",
+              "correct": false
+            },
+            {
+              "text": "Enséñame a reportar el problema de mi equipo",
+              "expected": "ayuda",
+              "predicted": "ayuda",
+              "correct": true
+            },
+            {
+              "text": "Al presionar power mi portátil sigue completamente apagada",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "Mi consola no tiene ninguna señal de vida",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "Desde que la apagué no consigo arrancar la computadora",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "El móvil no reacciona al botón de encendido",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "El ventilador ni siquiera se mueve cuando intento prender la torre",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "El porcentaje sigue bajando aunque tengo puesto el cargador",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "Tengo que dejar el cable en cierta posición para cargar",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+              "expected": "carga",
+              "predicted": "conexion",
+              "correct": false
+            },
+            {
+              "text": "Apenas dura la pila de mi móvil",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "La consola portátil no detecta que la estoy cargando",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "Sale una advertencia térmica en medio de mis partidas",
+              "expected": "temperatura",
+              "predicted": "sonido",
+              "correct": false
+            },
+            {
+              "text": "Mi portátil está ardiendo cerca de las rejillas",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "El teléfono se pone hirviendo tras usarlo un rato",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "Mi torre necesita enfriarse para seguir funcionando",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "El sistema de refrigeración parece insuficiente porque se calienta",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "Cada clic tarda varios segundos en hacer algo",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Aunque funciona, la laptop va a paso de tortuga",
+              "expected": "rendimiento",
+              "predicted": "carga",
+              "correct": false
+            },
+            {
+              "text": "Los menús de la consola se mueven a tirones",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Mi celular se congela al alternar entre aplicaciones",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+              "expected": "rendimiento",
+              "predicted": "temperatura",
+              "correct": false
+            },
+            {
+              "text": "Puedo ver mi red pero el equipo no consigue conectarse",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "El adaptador Ethernet no da acceso a la red",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "Mis audífonos no se emparejan con el Bluetooth de la laptop",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "La consola tiene wifi y aun así no entra a internet",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "La PC tiene luces y ventiladores pero el monitor está negro",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "El panel táctil del teléfono falla en la mitad inferior",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "La televisión no recibe imagen por el HDMI de mi consola",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "Aparecen franjas verticales en el display",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "La pantalla titila cuando cambio el ángulo de la tapa",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "Veo el video normal pero no escucho absolutamente nada",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Mi voz no queda grabada en el micrófono del equipo",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "El altavoz suena rasposo al subir el volumen",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Únicamente se oye el auricular izquierdo",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Los demás no reciben mi voz durante una llamada",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Ya no caben más fotos en el almacenamiento del móvil",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "Conecto el disco externo y no figura ninguna unidad",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "Necesito hacer sitio en la consola para otro juego",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "El sistema no detecta mi tarjeta de memoria",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "El explorador no muestra el SSD que acabo de conectar",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "El sistema se queda repitiendo el logotipo una y otra vez",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "La app se cierra inmediatamente después de iniciarla",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "No termina de aplicar el parche del sistema de la consola",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "Me salen anuncios extraños en el escritorio sin abrir nada",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "Windows lanza un código de error con fondo azul",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "El personaje se desplaza aunque nadie toque la palanca",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "Algunas letras del teclado dejaron de responder",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "El gatillo derecho de mi mando se queda presionado",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "Mi ratón registra dos clics cuando hago uno",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "La cruceta del control no responde hacia la izquierda",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "Volqué mi taza de té sobre el portátil",
+              "expected": "liquidos",
+              "predicted": "carga",
+              "correct": false
+            },
+            {
+              "text": "Mi móvil terminó dentro de una alberca",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "Entró refresco por las rejillas de la consola",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "Me advierte que hay humedad en el puerto del teléfono",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "Le cayó lluvia a la computadora en la mochila",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "¿En cuánto me saldría llevarla a reparar?",
+              "expected": "presupuesto",
+              "predicted": "presupuesto",
+              "correct": true
+            },
+            {
+              "text": "Antes de autorizar el trabajo necesito conocer el presupuesto",
+              "expected": "presupuesto",
+              "predicted": "presupuesto",
+              "correct": true
+            },
+            {
+              "text": "¿Hay que pagar por que revisen el equipo?",
+              "expected": "presupuesto",
+              "predicted": "despedida",
+              "correct": false
+            },
+            {
+              "text": "Quisiera que me cotizaran un cambio de pieza",
+              "expected": "presupuesto",
+              "predicted": "almacenamiento",
+              "correct": false
+            },
+            {
+              "text": "¿Qué tarifa manejan para la revisión técnica?",
+              "expected": "presupuesto",
+              "predicted": "presupuesto",
+              "correct": true
+            },
+            {
+              "text": "Pásame un medio para hablar directamente con ustedes",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "¿A dónde debo llevar el teléfono para revisión?",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "Quiero saber si hoy está abierto el taller",
+              "expected": "contacto",
+              "predicted": "presupuesto",
+              "correct": false
+            },
+            {
+              "text": "Necesito concertar una cita con el técnico",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "¿Cuál es la cuenta oficial para mandarles un DM?",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            }
+          ],
+          "logistic_regression": [
+            {
+              "text": "Buenísima tarde, gente del taller",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Hola YinYan, les saludo",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Qué hay, buenas",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Saludos y buen comienzo de día",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Hola, ando pasando a saludar",
+              "expected": "saludo",
+              "predicted": "saludo",
+              "correct": true
+            },
+            {
+              "text": "Se resolvió mi duda, te agradezco",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Me voy por ahora, nos leemos",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Con esa información es suficiente, gracias",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Hasta otra ocasión, taller",
+              "expected": "despedida",
+              "predicted": "contacto",
+              "correct": false
+            },
+            {
+              "text": "Finalizo aquí, muchas gracias",
+              "expected": "despedida",
+              "predicted": "despedida",
+              "correct": true
+            },
+            {
+              "text": "Antes de comenzar, dime para qué sirves",
+              "expected": "ayuda",
+              "predicted": "ayuda",
+              "correct": true
+            },
+            {
+              "text": "¿Qué consultas de soporte admites?",
+              "expected": "ayuda",
+              "predicted": "contacto",
+              "correct": false
+            },
+            {
+              "text": "Me interesa saber cómo conversar contigo",
+              "expected": "ayuda",
+              "predicted": "ayuda",
+              "correct": true
+            },
+            {
+              "text": "¿Cuál es el alcance de tu orientación?",
+              "expected": "ayuda",
+              "predicted": "despedida",
+              "correct": false
+            },
+            {
+              "text": "Enséñame a reportar el problema de mi equipo",
+              "expected": "ayuda",
+              "predicted": "ayuda",
+              "correct": true
+            },
+            {
+              "text": "Al presionar power mi portátil sigue completamente apagada",
+              "expected": "encendido",
+              "predicted": "almacenamiento",
+              "correct": false
+            },
+            {
+              "text": "Mi consola no tiene ninguna señal de vida",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "Desde que la apagué no consigo arrancar la computadora",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "El móvil no reacciona al botón de encendido",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "El ventilador ni siquiera se mueve cuando intento prender la torre",
+              "expected": "encendido",
+              "predicted": "encendido",
+              "correct": true
+            },
+            {
+              "text": "El porcentaje sigue bajando aunque tengo puesto el cargador",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "Tengo que dejar el cable en cierta posición para cargar",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+              "expected": "carga",
+              "predicted": "conexion",
+              "correct": false
+            },
+            {
+              "text": "Apenas dura la pila de mi móvil",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "La consola portátil no detecta que la estoy cargando",
+              "expected": "carga",
+              "predicted": "carga",
+              "correct": true
+            },
+            {
+              "text": "Sale una advertencia térmica en medio de mis partidas",
+              "expected": "temperatura",
+              "predicted": "sonido",
+              "correct": false
+            },
+            {
+              "text": "Mi portátil está ardiendo cerca de las rejillas",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "El teléfono se pone hirviendo tras usarlo un rato",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "Mi torre necesita enfriarse para seguir funcionando",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "El sistema de refrigeración parece insuficiente porque se calienta",
+              "expected": "temperatura",
+              "predicted": "temperatura",
+              "correct": true
+            },
+            {
+              "text": "Cada clic tarda varios segundos en hacer algo",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Aunque funciona, la laptop va a paso de tortuga",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Los menús de la consola se mueven a tirones",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Mi celular se congela al alternar entre aplicaciones",
+              "expected": "rendimiento",
+              "predicted": "rendimiento",
+              "correct": true
+            },
+            {
+              "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+              "expected": "rendimiento",
+              "predicted": "temperatura",
+              "correct": false
+            },
+            {
+              "text": "Puedo ver mi red pero el equipo no consigue conectarse",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "El adaptador Ethernet no da acceso a la red",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "Mis audífonos no se emparejan con el Bluetooth de la laptop",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "La consola tiene wifi y aun así no entra a internet",
+              "expected": "conexion",
+              "predicted": "conexion",
+              "correct": true
+            },
+            {
+              "text": "La PC tiene luces y ventiladores pero el monitor está negro",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "El panel táctil del teléfono falla en la mitad inferior",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "La televisión no recibe imagen por el HDMI de mi consola",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "Aparecen franjas verticales en el display",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "La pantalla titila cuando cambio el ángulo de la tapa",
+              "expected": "pantalla",
+              "predicted": "pantalla",
+              "correct": true
+            },
+            {
+              "text": "Veo el video normal pero no escucho absolutamente nada",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Mi voz no queda grabada en el micrófono del equipo",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "El altavoz suena rasposo al subir el volumen",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Únicamente se oye el auricular izquierdo",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Los demás no reciben mi voz durante una llamada",
+              "expected": "sonido",
+              "predicted": "sonido",
+              "correct": true
+            },
+            {
+              "text": "Ya no caben más fotos en el almacenamiento del móvil",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "Conecto el disco externo y no figura ninguna unidad",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "Necesito hacer sitio en la consola para otro juego",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "El sistema no detecta mi tarjeta de memoria",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "El explorador no muestra el SSD que acabo de conectar",
+              "expected": "almacenamiento",
+              "predicted": "almacenamiento",
+              "correct": true
+            },
+            {
+              "text": "El sistema se queda repitiendo el logotipo una y otra vez",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "La app se cierra inmediatamente después de iniciarla",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "No termina de aplicar el parche del sistema de la consola",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "Me salen anuncios extraños en el escritorio sin abrir nada",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "Windows lanza un código de error con fondo azul",
+              "expected": "software",
+              "predicted": "software",
+              "correct": true
+            },
+            {
+              "text": "El personaje se desplaza aunque nadie toque la palanca",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "Algunas letras del teclado dejaron de responder",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "El gatillo derecho de mi mando se queda presionado",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "Mi ratón registra dos clics cuando hago uno",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "La cruceta del control no responde hacia la izquierda",
+              "expected": "controles",
+              "predicted": "controles",
+              "correct": true
+            },
+            {
+              "text": "Volqué mi taza de té sobre el portátil",
+              "expected": "liquidos",
+              "predicted": "carga",
+              "correct": false
+            },
+            {
+              "text": "Mi móvil terminó dentro de una alberca",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "Entró refresco por las rejillas de la consola",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "Me advierte que hay humedad en el puerto del teléfono",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "Le cayó lluvia a la computadora en la mochila",
+              "expected": "liquidos",
+              "predicted": "liquidos",
+              "correct": true
+            },
+            {
+              "text": "¿En cuánto me saldría llevarla a reparar?",
+              "expected": "presupuesto",
+              "predicted": "presupuesto",
+              "correct": true
+            },
+            {
+              "text": "Antes de autorizar el trabajo necesito conocer el presupuesto",
+              "expected": "presupuesto",
+              "predicted": "presupuesto",
+              "correct": true
+            },
+            {
+              "text": "¿Hay que pagar por que revisen el equipo?",
+              "expected": "presupuesto",
+              "predicted": "liquidos",
+              "correct": false
+            },
+            {
+              "text": "Quisiera que me cotizaran un cambio de pieza",
+              "expected": "presupuesto",
+              "predicted": "contacto",
+              "correct": false
+            },
+            {
+              "text": "¿Qué tarifa manejan para la revisión técnica?",
+              "expected": "presupuesto",
+              "predicted": "presupuesto",
+              "correct": true
+            },
+            {
+              "text": "Pásame un medio para hablar directamente con ustedes",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "¿A dónde debo llevar el teléfono para revisión?",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "Quiero saber si hoy está abierto el taller",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "Necesito concertar una cita con el técnico",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            },
+            {
+              "text": "¿Cuál es la cuenta oficial para mandarles un DM?",
+              "expected": "contacto",
+              "predicted": "contacto",
+              "correct": true
+            }
+          ]
+        },
+        "acceptance": {
+          "accepted": 54,
+          "total": 80,
+          "correct_accepted": 51,
+          "coverage": 0.675,
+          "accuracy_among_accepted": 0.9444444444444444
+        },
+        "comparison": {
+          "previous_id": null,
+          "accuracy_delta": null,
+          "f1_macro_delta": null
+        },
+        "checks": {
+          "dataset_valid": true,
+          "two_models": true,
+          "metrics_valid": true,
+          "export_parity": true,
+          "python_javascript_parity": true,
+          "artifacts_complete": true
+        },
+        "parity": {
+          "passed": true,
+          "export_max_difference": 0.0,
+          "javascript_verified": true,
+          "javascript_max_difference": 2.220446049250313e-16,
+          "texts_checked": 13
+        },
+        "requirements": {
+          "minimum_training": 200,
+          "minimum_intents": 10,
+          "minimum_per_intent": 20,
+          "minimum_test": 50,
+          "training_total_met": true,
+          "intents_met": true,
+          "per_intent_met": false,
+          "test_total_met": false,
+          "per_intent_missing": {
+            "almacenamiento": 5,
+            "ayuda": 5,
+            "carga": 5,
+            "conexion": 5,
+            "contacto": 5,
+            "controles": 5,
+            "despedida": 5,
+            "encendido": 5,
+            "liquidos": 5,
+            "pantalla": 5,
+            "presupuesto": 5,
+            "rendimiento": 5,
+            "saludo": 5,
+            "software": 5,
+            "sonido": 5,
+            "temperatura": 5
+          },
+          "missing_examples_total": 80
+        },
+        "protocol": {
+          "seed": 42,
+          "cv": "StratifiedKFold(5, shuffle=True, random_state=42)",
+          "selection": "Mayor F1 macro medio de validación cruzada; empate: regresión logística.",
+          "parameters": {
+            "naive_bayes": {
+              "alpha": 0.25
+            },
+            "logistic_regression": {
+              "C": 8.0,
+              "max_iter": 2000
+            }
+          },
+          "evaluation_policy": "80 consultas conocidas de desarrollo; el conjunto final reservado no participa en entrenamiento ni selección."
+        },
+        "artifact_hashes": {
+          "snapshot.json": "0e8c943abe61935090b555d15f155d724eefbd2d3f18e7cdd39c40ee728711c1",
+          "benchmark.json": "be49dd1e70aa600831f9101fe60c4bd6cf6e0e1e1495e771fe8296922a1785e5",
+          "model.json": "9b3fd9bf45719823a5a0d044ae5e886e55b69835d28a196313fae3f1c6b1aa62",
+          "naive_bayes.json": "01669acb13e057144b554a82699a82feaa376797db185461de67f952545333f6",
+          "naive_bayes.joblib": "76a1cfe62d86496e4de8e8dc36b271cf4efdce22a52ec98ce06f8ddc78ae2be5",
+          "logistic_regression.json": "9b3fd9bf45719823a5a0d044ae5e886e55b69835d28a196313fae3f1c6b1aa62",
+          "logistic_regression.joblib": "85cf493c558d4d583f48797baabc6cbb831f11929c054b2f7858bd11ff1778ef",
+          "confusion-naive_bayes.png": "c48e26b5067690c684d088172dd8c53fa330087e22dec4ce97057dece1790fd3",
+          "confusion-logistic_regression.png": "5fadf8ec1271572a54a078261fb69f93388349f68c04b6b69fab3b7d74c847e0"
+        },
+        "hashes": {
+          "base_file_sha256": "7af90b4134f51e9fa01c144f11f981078029a177df1001493b85818404c64e08",
+          "evaluation_file_sha256": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271",
+          "training_snapshot_sha256": "0e8c943abe61935090b555d15f155d724eefbd2d3f18e7cdd39c40ee728711c1",
+          "preprocessing_sha256": "44957ef65209bbc557d9d8b706c85cad797ec41fab1dd7e37f1048cb05df11f6"
+        },
+        "curve": [
+          {
+            "day": 1,
+            "total_examples": 16,
+            "accuracy": 0.1625,
+            "precision_macro": 0.4788773148148148,
+            "correct": 13,
+            "total": 80,
+            "accepted": 3
+          },
+          {
+            "day": 2,
+            "total_examples": 32,
+            "accuracy": 0.25,
+            "precision_macro": 0.5178934378629501,
+            "correct": 20,
+            "total": 80,
+            "accepted": 9
+          },
+          {
+            "day": 3,
+            "total_examples": 48,
+            "accuracy": 0.325,
+            "precision_macro": 0.5000496031746031,
+            "correct": 26,
+            "total": 80,
+            "accepted": 10
+          },
+          {
+            "day": 4,
+            "total_examples": 64,
+            "accuracy": 0.4375,
+            "precision_macro": 0.5665349616858237,
+            "correct": 35,
+            "total": 80,
+            "accepted": 10
+          },
+          {
+            "day": 5,
+            "total_examples": 80,
+            "accuracy": 0.55,
+            "precision_macro": 0.60625,
+            "correct": 44,
+            "total": 80,
+            "accepted": 9
+          },
+          {
+            "day": 6,
+            "total_examples": 96,
+            "accuracy": 0.625,
+            "precision_macro": 0.6630252100840337,
+            "correct": 50,
+            "total": 80,
+            "accepted": 11
+          },
+          {
+            "day": 7,
+            "total_examples": 112,
+            "accuracy": 0.625,
+            "precision_macro": 0.6351190476190477,
+            "correct": 50,
+            "total": 80,
+            "accepted": 16
+          },
+          {
+            "day": 8,
+            "total_examples": 128,
+            "accuracy": 0.6625,
+            "precision_macro": 0.6860863095238094,
+            "correct": 53,
+            "total": 80,
+            "accepted": 17
+          },
+          {
+            "day": 9,
+            "total_examples": 144,
+            "accuracy": 0.675,
+            "precision_macro": 0.6975040584415584,
+            "correct": 54,
+            "total": 80,
+            "accepted": 20
+          },
+          {
+            "day": 10,
+            "total_examples": 160,
+            "accuracy": 0.7625,
+            "precision_macro": 0.8229166666666667,
+            "correct": 61,
+            "total": 80,
+            "accepted": 21
+          },
+          {
+            "day": 11,
+            "total_examples": 176,
+            "accuracy": 0.775,
+            "precision_macro": 0.8363095238095238,
+            "correct": 62,
+            "total": 80,
+            "accepted": 22
+          },
+          {
+            "day": 12,
+            "total_examples": 192,
+            "accuracy": 0.7875,
+            "precision_macro": 0.8488095238095238,
+            "correct": 63,
+            "total": 80,
+            "accepted": 25
+          },
+          {
+            "day": 13,
+            "total_examples": 208,
+            "accuracy": 0.7875,
+            "precision_macro": 0.8227678571428572,
+            "correct": 63,
+            "total": 80,
+            "accepted": 25
+          },
+          {
+            "day": 14,
+            "total_examples": 224,
+            "accuracy": 0.825,
+            "precision_macro": 0.8602678571428571,
+            "correct": 66,
+            "total": 80,
+            "accepted": 26
+          },
+          {
+            "day": 15,
+            "total_examples": 240,
+            "accuracy": 0.8625,
+            "precision_macro": 0.8811011904761905,
+            "correct": 69,
+            "total": 80,
+            "accepted": 29
+          }
+        ],
+        "curve_verified": true,
+        "kind": "active",
+        "model_url": "./api/versions/861484ac-3558-43d4-a997-959aeec83d47/model.json"
+      }
+    },
+    "last_training": {
+      "format_version": 2,
+      "id": "861484ac-3558-43d4-a997-959aeec83d47",
+      "journey": 1,
+      "created_at": "2026-11-18T19:00:38.991Z",
+      "started_at": "2026-11-18T19:00:38.991Z",
+      "finished_at": "2026-11-18T19:00:45.060Z",
+      "author": "system",
+      "initiated_by": "programmatic_execution",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "status": "succeeded",
+      "approval_status": "approved",
+      "dataset_version": "fe8a9f036c9034573f51a2848d51b7adeb8a8d636a23c49f2842c1033b8a4105",
+      "approved_revision": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "message": "Dos clasificadores evaluados. Versión provisional lista para revisar y activar.",
+      "counts": {
+        "base": 240,
+        "additional": 0,
+        "total": 240,
+        "test": 80,
+        "intents": 16,
+        "per_intent": {
+          "almacenamiento": 15,
+          "ayuda": 15,
+          "carga": 15,
+          "conexion": 15,
+          "contacto": 15,
+          "controles": 15,
+          "despedida": 15,
+          "encendido": 15,
+          "liquidos": 15,
+          "pantalla": 15,
+          "presupuesto": 15,
+          "rendimiento": 15,
+          "saludo": 15,
+          "software": 15,
+          "sonido": 15,
+          "temperatura": 15
+        }
+      },
+      "labels": [
+        "almacenamiento",
+        "ayuda",
+        "carga",
+        "conexion",
+        "contacto",
+        "controles",
+        "despedida",
+        "encendido",
+        "liquidos",
+        "pantalla",
+        "presupuesto",
+        "rendimiento",
+        "saludo",
+        "software",
+        "sonido",
+        "temperatura"
+      ],
+      "process_id": null,
+      "storage_path": "runs/861484ac-3558-43d4-a997-959aeec83d47",
+      "selected_model": "logistic_regression",
+      "cv_winner": "logistic_regression",
+      "active_model": "logistic_regression",
+      "cv": {
+        "naive_bayes": {
+          "f1_macro_mean": 0.41723901098901106,
+          "f1_macro_std": 0.07550477193433694,
+          "accuracy_mean": 0.425,
+          "fold_f1_macro": [
+            0.49508928571428573,
+            0.3549450549450549,
+            0.4044642857142857,
+            0.5117559523809524,
+            0.31994047619047616
+          ]
+        },
+        "logistic_regression": {
+          "f1_macro_mean": 0.4562409812409813,
+          "f1_macro_std": 0.05661045488319222,
+          "accuracy_mean": 0.4708333333333333,
+          "fold_f1_macro": [
+            0.5013392857142858,
+            0.4520833333333333,
+            0.48333333333333334,
+            0.4961309523809524,
+            0.34831800144300146
+          ]
+        }
+      },
+      "models": {
+        "naive_bayes": {
+          "accuracy": 0.8625,
+          "precision_macro": 0.8811011904761905,
+          "recall_macro": 0.8625,
+          "f1_macro": 0.8599747474747476,
+          "confusion_matrix": [
+            [
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              4,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              4
+            ]
+          ],
+          "per_class": {
+            "almacenamiento": {
+              "precision": 0.7142857142857143,
+              "recall": 1.0,
+              "f1-score": 0.8333333333333334,
+              "support": 5.0
+            },
+            "ayuda": {
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1-score": 0.75,
+              "support": 5.0
+            },
+            "carga": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "f1-score": 0.7272727272727273,
+              "support": 5.0
+            },
+            "conexion": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "contacto": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1-score": 0.8888888888888888,
+              "support": 5.0
+            },
+            "controles": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "despedida": {
+              "precision": 0.6666666666666666,
+              "recall": 0.8,
+              "f1-score": 0.7272727272727273,
+              "support": 5.0
+            },
+            "encendido": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "liquidos": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1-score": 0.8888888888888888,
+              "support": 5.0
+            },
+            "pantalla": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "presupuesto": {
+              "precision": 0.75,
+              "recall": 0.6,
+              "f1-score": 0.6666666666666666,
+              "support": 5.0
+            },
+            "rendimiento": {
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1-score": 0.75,
+              "support": 5.0
+            },
+            "saludo": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "software": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "sonido": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "temperatura": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1-score": 0.8,
+              "support": 5.0
+            },
+            "accuracy": 0.8625,
+            "macro avg": {
+              "precision": 0.8811011904761905,
+              "recall": 0.8625,
+              "f1-score": 0.8599747474747476,
+              "support": 80.0
+            },
+            "weighted avg": {
+              "precision": 0.8811011904761905,
+              "recall": 0.8625,
+              "f1-score": 0.8599747474747474,
+              "support": 80.0
+            }
+          },
+          "correct": 69,
+          "total": 80
+        },
+        "logistic_regression": {
+          "accuracy": 0.875,
+          "precision_macro": 0.8953125000000001,
+          "recall_macro": 0.875,
+          "f1_macro": 0.8733925796425797,
+          "confusion_matrix": [
+            [
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              4,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              4,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              4
+            ]
+          ],
+          "per_class": {
+            "almacenamiento": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "ayuda": {
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1-score": 0.75,
+              "support": 5.0
+            },
+            "carga": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1-score": 0.8,
+              "support": 5.0
+            },
+            "conexion": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "contacto": {
+              "precision": 0.625,
+              "recall": 1.0,
+              "f1-score": 0.7692307692307693,
+              "support": 5.0
+            },
+            "controles": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "despedida": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1-score": 0.8,
+              "support": 5.0
+            },
+            "encendido": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1-score": 0.8888888888888888,
+              "support": 5.0
+            },
+            "liquidos": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1-score": 0.8,
+              "support": 5.0
+            },
+            "pantalla": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "presupuesto": {
+              "precision": 1.0,
+              "recall": 0.6,
+              "f1-score": 0.75,
+              "support": 5.0
+            },
+            "rendimiento": {
+              "precision": 1.0,
+              "recall": 0.8,
+              "f1-score": 0.8888888888888888,
+              "support": 5.0
+            },
+            "saludo": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "software": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 5.0
+            },
+            "sonido": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 5.0
+            },
+            "temperatura": {
+              "precision": 0.8,
+              "recall": 0.8,
+              "f1-score": 0.8,
+              "support": 5.0
+            },
+            "accuracy": 0.875,
+            "macro avg": {
+              "precision": 0.8953125000000001,
+              "recall": 0.875,
+              "f1-score": 0.8733925796425797,
+              "support": 80.0
+            },
+            "weighted avg": {
+              "precision": 0.8953125,
+              "recall": 0.875,
+              "f1-score": 0.8733925796425798,
+              "support": 80.0
+            }
+          },
+          "correct": 70,
+          "total": 80
+        }
+      },
+      "acceptance": {
+        "accepted": 54,
+        "total": 80,
+        "correct_accepted": 51,
+        "coverage": 0.675,
+        "accuracy_among_accepted": 0.9444444444444444
+      },
+      "comparison": {
+        "previous_id": null,
+        "accuracy_delta": null,
+        "f1_macro_delta": null
+      },
+      "checks": {
+        "dataset_valid": true,
+        "two_models": true,
+        "metrics_valid": true,
+        "export_parity": true,
+        "python_javascript_parity": true,
+        "artifacts_complete": true
+      },
+      "parity": {
+        "passed": true,
+        "export_max_difference": 0.0,
+        "javascript_verified": true,
+        "javascript_max_difference": 2.220446049250313e-16,
+        "texts_checked": 13
+      },
+      "requirements": {
+        "minimum_training": 200,
+        "minimum_intents": 10,
+        "minimum_per_intent": 20,
+        "minimum_test": 50,
+        "training_total_met": true,
+        "intents_met": true,
+        "per_intent_met": false,
+        "test_total_met": false,
+        "per_intent_missing": {
+          "almacenamiento": 5,
+          "ayuda": 5,
+          "carga": 5,
+          "conexion": 5,
+          "contacto": 5,
+          "controles": 5,
+          "despedida": 5,
+          "encendido": 5,
+          "liquidos": 5,
+          "pantalla": 5,
+          "presupuesto": 5,
+          "rendimiento": 5,
+          "saludo": 5,
+          "software": 5,
+          "sonido": 5,
+          "temperatura": 5
+        },
+        "missing_examples_total": 80
+      },
+      "protocol": {
+        "seed": 42,
+        "cv": "StratifiedKFold(5, shuffle=True, random_state=42)",
+        "selection": "Mayor F1 macro medio de validación cruzada; empate: regresión logística.",
+        "parameters": {
+          "naive_bayes": {
+            "alpha": 0.25
+          },
+          "logistic_regression": {
+            "C": 8.0,
+            "max_iter": 2000
+          }
+        },
+        "evaluation_policy": "80 consultas conocidas de desarrollo; el conjunto final reservado no participa en entrenamiento ni selección."
+      },
+      "hashes": {
+        "base_file_sha256": "7af90b4134f51e9fa01c144f11f981078029a177df1001493b85818404c64e08",
+        "evaluation_file_sha256": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271",
+        "training_snapshot_sha256": "0e8c943abe61935090b555d15f155d724eefbd2d3f18e7cdd39c40ee728711c1",
+        "preprocessing_sha256": "44957ef65209bbc557d9d8b706c85cad797ec41fab1dd7e37f1048cb05df11f6"
+      },
+      "curve": [
+        {
+          "day": 1,
+          "total_examples": 16,
+          "accuracy": 0.1625,
+          "precision_macro": 0.4788773148148148,
+          "correct": 13,
+          "total": 80,
+          "accepted": 3
+        },
+        {
+          "day": 2,
+          "total_examples": 32,
+          "accuracy": 0.25,
+          "precision_macro": 0.5178934378629501,
+          "correct": 20,
+          "total": 80,
+          "accepted": 9
+        },
+        {
+          "day": 3,
+          "total_examples": 48,
+          "accuracy": 0.325,
+          "precision_macro": 0.5000496031746031,
+          "correct": 26,
+          "total": 80,
+          "accepted": 10
+        },
+        {
+          "day": 4,
+          "total_examples": 64,
+          "accuracy": 0.4375,
+          "precision_macro": 0.5665349616858237,
+          "correct": 35,
+          "total": 80,
+          "accepted": 10
+        },
+        {
+          "day": 5,
+          "total_examples": 80,
+          "accuracy": 0.55,
+          "precision_macro": 0.60625,
+          "correct": 44,
+          "total": 80,
+          "accepted": 9
+        },
+        {
+          "day": 6,
+          "total_examples": 96,
+          "accuracy": 0.625,
+          "precision_macro": 0.6630252100840337,
+          "correct": 50,
+          "total": 80,
+          "accepted": 11
+        },
+        {
+          "day": 7,
+          "total_examples": 112,
+          "accuracy": 0.625,
+          "precision_macro": 0.6351190476190477,
+          "correct": 50,
+          "total": 80,
+          "accepted": 16
+        },
+        {
+          "day": 8,
+          "total_examples": 128,
+          "accuracy": 0.6625,
+          "precision_macro": 0.6860863095238094,
+          "correct": 53,
+          "total": 80,
+          "accepted": 17
+        },
+        {
+          "day": 9,
+          "total_examples": 144,
+          "accuracy": 0.675,
+          "precision_macro": 0.6975040584415584,
+          "correct": 54,
+          "total": 80,
+          "accepted": 20
+        },
+        {
+          "day": 10,
+          "total_examples": 160,
+          "accuracy": 0.7625,
+          "precision_macro": 0.8229166666666667,
+          "correct": 61,
+          "total": 80,
+          "accepted": 21
+        },
+        {
+          "day": 11,
+          "total_examples": 176,
+          "accuracy": 0.775,
+          "precision_macro": 0.8363095238095238,
+          "correct": 62,
+          "total": 80,
+          "accepted": 22
+        },
+        {
+          "day": 12,
+          "total_examples": 192,
+          "accuracy": 0.7875,
+          "precision_macro": 0.8488095238095238,
+          "correct": 63,
+          "total": 80,
+          "accepted": 25
+        },
+        {
+          "day": 13,
+          "total_examples": 208,
+          "accuracy": 0.7875,
+          "precision_macro": 0.8227678571428572,
+          "correct": 63,
+          "total": 80,
+          "accepted": 25
+        },
+        {
+          "day": 14,
+          "total_examples": 224,
+          "accuracy": 0.825,
+          "precision_macro": 0.8602678571428571,
+          "correct": 66,
+          "total": 80,
+          "accepted": 26
+        },
+        {
+          "day": 15,
+          "total_examples": 240,
+          "accuracy": 0.8625,
+          "precision_macro": 0.8811011904761905,
+          "correct": 69,
+          "total": 80,
+          "accepted": 29
+        }
+      ],
+      "curve_verified": true,
+      "kind": "active",
+      "model_url": "./api/versions/861484ac-3558-43d4-a997-959aeec83d47/model.json"
+    },
+    "final_test_size": 0,
+    "rubric": [
+      {
+        "id": "dataset",
+        "title": "20 ejemplos por intención",
+        "status": "Pendiente de datos",
+        "evidence": "Faltan 80 ejemplos aprobados."
+      },
+      {
+        "id": "pln",
+        "title": "PLN e inferencia consistente",
+        "status": "Cumplido",
+        "evidence": "Tokenizador compartido, TF-IDF y comprobación de exportación en cada jornada."
+      },
+      {
+        "id": "models",
+        "title": "Dos clasificadores y selección",
+        "status": "Cumplido",
+        "evidence": "CV estratificada de cinco pliegues; selección por F1 macro."
+      },
+      {
+        "id": "final",
+        "title": "Prueba final independiente",
+        "status": "Pendiente de datos",
+        "evidence": "0/50 consultas; evaluación explícita por versión y recibo de apertura."
+      },
+      {
+        "id": "context",
+        "title": "Contexto, variantes y reinicio",
+        "status": "Cumplido",
+        "evidence": "Pruebas funcionales de la versión y hashes de código en reports/."
+      },
+      {
+        "id": "documents",
+        "title": "Notebook y PDF de la versión",
+        "status": "Cumplido",
+        "evidence": "Notebook ejecutado, PDF verificado y hashes de la versión activa."
+      }
+    ]
+  }
+}

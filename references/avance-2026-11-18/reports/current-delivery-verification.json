@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-18T16:29:52.313050+00:00",
+  "passed": true,
+  "notebook_code_cells": 12,
+  "notebook_errors": 0,
+  "pdf_pages": 9,
+  "main_content_pages": 7,
+  "pdf_effective_body_font_min_pt_by_main_page": [
+    9.2,
+    9.2,
+    9.2,
+    9.2,
+    9.2,
+    9.2,
+    9.2
+  ],
+  "active_accuracy": 0.8625,
+  "comparison_accuracy": 0.875,
+  "current_model_dialogue_checks": 7,
+  "roles": 4,
+  "zip_absent": true
+}

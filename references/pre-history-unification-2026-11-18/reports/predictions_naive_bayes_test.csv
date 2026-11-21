@@ -1,0 +1,81 @@
+text,intent,predicted,confidence,correct
+"Buenísima tarde, gente del taller",saludo,contacto,0.12869274210383408,False
+"Hola YinYan, les saludo",saludo,saludo,0.5754883167403316,True
+"Qué hay, buenas",saludo,saludo,0.4235337259861818,True
+Saludos y buen comienzo de día,saludo,saludo,0.628278948838196,True
+"Hola, ando pasando a saludar",saludo,saludo,0.5034858923769752,True
+"Se resolvió mi duda, te agradezco",despedida,despedida,0.16522119372998859,True
+"Me voy por ahora, nos leemos",despedida,despedida,0.2949814010105251,True
+"Con esa información es suficiente, gracias",despedida,despedida,0.18593587412432508,True
+"Hasta otra ocasión, taller",despedida,contacto,0.19138587206914667,False
+"Finalizo aquí, muchas gracias",despedida,despedida,0.6454449641952823,True
+"Antes de comenzar, dime para qué sirves",ayuda,presupuesto,0.16853137510174268,False
+¿Qué consultas de soporte admites?,ayuda,almacenamiento,0.0625,False
+Me interesa saber cómo conversar contigo,ayuda,presupuesto,0.28068661197603945,False
+¿Cuál es el alcance de tu orientación?,ayuda,despedida,0.12560206133532362,False
+Enséñame a reportar el problema de mi equipo,ayuda,temperatura,0.1770414067956086,False
+Al presionar power mi portátil sigue completamente apagada,encendido,encendido,0.15902536273228007,True
+Mi consola no tiene ninguna señal de vida,encendido,encendido,0.3329476073095695,True
+Desde que la apagué no consigo arrancar la computadora,encendido,encendido,0.19039282661687687,True
+El móvil no reacciona al botón de encendido,encendido,encendido,0.23501757983907268,True
+El ventilador ni siquiera se mueve cuando intento prender la torre,encendido,encendido,0.23753515852704074,True
+El porcentaje sigue bajando aunque tengo puesto el cargador,carga,carga,0.23469685562530596,True
+Tengo que dejar el cable en cierta posición para cargar,carga,carga,0.4983719326285835,True
+Mi portátil pierde toda la autonomía al quitar el adaptador,carga,carga,0.18887637558914455,True
+Apenas dura la pila de mi móvil,carga,carga,0.14224564449039545,True
+La consola portátil no detecta que la estoy cargando,carga,carga,0.2133842782652592,True
+Sale una advertencia térmica en medio de mis partidas,temperatura,sonido,0.17545216591814058,False
+Mi portátil está ardiendo cerca de las rejillas,temperatura,temperatura,0.12603681715526802,True
+El teléfono se pone hirviendo tras usarlo un rato,temperatura,temperatura,0.27634666650270145,True
+Mi torre necesita enfriarse para seguir funcionando,temperatura,pantalla,0.10415979288417725,False
+El sistema de refrigeración parece insuficiente porque se calienta,temperatura,temperatura,0.24992917034455409,True
+Cada clic tarda varios segundos en hacer algo,rendimiento,rendimiento,0.26953210995233295,True
+"Aunque funciona, la laptop va a paso de tortuga",rendimiento,rendimiento,0.10827481202777942,True
+Los menús de la consola se mueven a tirones,rendimiento,rendimiento,0.20977238165420206,True
+Mi celular se congela al alternar entre aplicaciones,rendimiento,rendimiento,0.19609624717894633,True
+Los cuadros por segundo bajan mucho cuando juego en la PC,rendimiento,rendimiento,0.3961623732905982,True
+Puedo ver mi red pero el equipo no consigue conectarse,conexion,conexion,0.3550685041686463,True
+El móvil pierde el enlace inalámbrico cada pocos minutos,conexion,rendimiento,0.14195286632346274,False
+El adaptador Ethernet no da acceso a la red,conexion,conexion,0.4319920227831299,True
+Mis audífonos no se emparejan con el Bluetooth de la laptop,conexion,conexion,0.3347448545934246,True
+La consola tiene wifi y aun así no entra a internet,conexion,conexion,0.3151528500571416,True
+La PC tiene luces y ventiladores pero el monitor está negro,pantalla,pantalla,0.16893667376705138,True
+El panel táctil del teléfono falla en la mitad inferior,pantalla,pantalla,0.19824175567940563,True
+La televisión no recibe imagen por el HDMI de mi consola,pantalla,pantalla,0.40469420243054194,True
+Aparecen franjas verticales en el display,pantalla,pantalla,0.15291645891286965,True
+La pantalla titila cuando cambio el ángulo de la tapa,pantalla,pantalla,0.21123653188233546,True
+Veo el video normal pero no escucho absolutamente nada,sonido,pantalla,0.19732244946550698,False
+Mi voz no queda grabada en el micrófono del equipo,sonido,sonido,0.2148291252961817,True
+El altavoz suena rasposo al subir el volumen,sonido,sonido,0.21403152876834503,True
+Únicamente se oye el auricular izquierdo,sonido,sonido,0.13985035750808497,True
+Los demás no reciben mi voz durante una llamada,sonido,sonido,0.17024492817584336,True
+Ya no caben más fotos en el almacenamiento del móvil,almacenamiento,almacenamiento,0.2496514793808938,True
+Conecto el disco externo y no figura ninguna unidad,almacenamiento,almacenamiento,0.5056000707819346,True
+Necesito hacer sitio en la consola para otro juego,almacenamiento,ayuda,0.094247263220083,False
+El sistema no detecta mi tarjeta de memoria,almacenamiento,almacenamiento,0.38488047902425465,True
+El explorador no muestra el SSD que acabo de conectar,almacenamiento,almacenamiento,0.15646667169560644,True
+El sistema se queda repitiendo el logotipo una y otra vez,software,rendimiento,0.18183807538466443,False
+La app se cierra inmediatamente después de iniciarla,software,software,0.2911066255357279,True
+No termina de aplicar el parche del sistema de la consola,software,software,0.3200230856918097,True
+Me salen anuncios extraños en el escritorio sin abrir nada,software,software,0.17361630679750867,True
+Windows lanza un código de error con fondo azul,software,software,0.4249124270509588,True
+El personaje se desplaza aunque nadie toque la palanca,controles,controles,0.17650407279288405,True
+Algunas letras del teclado dejaron de responder,controles,controles,0.1984089188227867,True
+El gatillo derecho de mi mando se queda presionado,controles,controles,0.2770694610006148,True
+Mi ratón registra dos clics cuando hago uno,controles,controles,0.21079302667051614,True
+La cruceta del control no responde hacia la izquierda,controles,controles,0.59196504214622,True
+Volqué mi taza de té sobre el portátil,liquidos,carga,0.14667987627030996,False
+Mi móvil terminó dentro de una alberca,liquidos,liquidos,0.1448990773858365,True
+Entró refresco por las rejillas de la consola,liquidos,liquidos,0.177929277600451,True
+Me advierte que hay humedad en el puerto del teléfono,liquidos,liquidos,0.17421942013500905,True
+Le cayó lluvia a la computadora en la mochila,liquidos,liquidos,0.4446539336125636,True
+¿En cuánto me saldría llevarla a reparar?,presupuesto,presupuesto,0.5615348227844205,True
+Antes de autorizar el trabajo necesito conocer el presupuesto,presupuesto,presupuesto,0.3871259986775487,True
+¿Hay que pagar por que revisen el equipo?,presupuesto,liquidos,0.11059648729094589,False
+Quisiera que me cotizaran un cambio de pieza,presupuesto,presupuesto,0.1511449687087146,True
+¿Qué tarifa manejan para la revisión técnica?,presupuesto,presupuesto,0.2336851210321102,True
+Pásame un medio para hablar directamente con ustedes,contacto,contacto,0.2389735877503175,True
+¿A dónde debo llevar el teléfono para revisión?,contacto,contacto,0.20285472535499866,True
+Quiero saber si hoy está abierto el taller,contacto,ayuda,0.14450481737322504,False
+Necesito concertar una cita con el técnico,contacto,contacto,0.2465883951711601,True
+¿Cuál es la cuenta oficial para mandarles un DM?,contacto,contacto,0.16145774227746987,True

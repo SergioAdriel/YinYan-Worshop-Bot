@@ -1,0 +1,1502 @@
+{
+  "generated_at": "2026-11-18T16:24:16.230Z",
+  "model_path": "web/simulation/day-15.json",
+  "model_sha256": "9e7fe08572cc17afd7b7cf9f2da5afe5b0c683557befaafc5767454f542cba7a",
+  "configuration": {
+    "concise": true
+  },
+  "scope": "Pruebas funcionales del modelo base activo; no representan sesiones de alumnos ni una prueba final inédita.",
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "Tres turnos de encendido utilizan equipo y respuestas previas",
+      "passed": true
+    },
+    {
+      "name": "Tres turnos de carga utilizan la comprobación del cable",
+      "passed": true
+    },
+    {
+      "name": "Una expresión ambigua solicita aclaración",
+      "passed": true
+    },
+    {
+      "name": "Una receta fuera del dominio no se contesta como soporte",
+      "passed": true
+    },
+    {
+      "name": "El parpadeo se aclara y conserva el celular durante tres turnos",
+      "passed": true
+    },
+    {
+      "name": "Reiniciar elimina equipo, falla y respuestas pendientes",
+      "passed": true
+    },
+    {
+      "name": "El contexto de líquido conserva la precaución",
+      "passed": true
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "Tres turnos de encendido utilizan equipo y respuestas previas",
+      "transcript": [
+        {
+          "user": "Mi computadora no prende",
+          "response": {
+            "text": "Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?",
+            "intent": "encendido",
+            "confidence": 0.5006913748759103,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "computadora",
+            "issue": "encendido",
+            "stage": "pregunta_1",
+            "turnCount": 1,
+            "details": {
+              "descripcion": "Mi computadora no prende"
+            },
+            "lastIntent": "encendido",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi computadora no prende"
+              },
+              {
+                "role": "assistant",
+                "text": "Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 1
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "No",
+          "response": {
+            "text": "¿Ya probaste otro enchufe y un cargador compatible en buen estado?",
+            "intent": "encendido",
+            "confidence": 0.16551851381345503,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "pregunta_2"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "computadora",
+            "issue": "encendido",
+            "stage": "pregunta_2",
+            "turnCount": 2,
+            "details": {
+              "descripcion": "Mi computadora no prende",
+              "respuesta_1": "no"
+            },
+            "lastIntent": "encendido",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi computadora no prende"
+              },
+              {
+                "role": "assistant",
+                "text": "Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?"
+              },
+              {
+                "role": "user",
+                "text": "No"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Ya probaste otro enchufe y un cargador compatible en buen estado?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 2
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "Sí",
+          "response": {
+            "text": "Revisa el enchufe y las conexiones externas. Prueba un cargador compatible que funcione. Si hay luces pero no imagen, puede ser otro problema y necesita revisión.",
+            "intent": "encendido",
+            "confidence": 0.13598428395372258,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [
+              "¿Cuánto costaría la revisión?",
+              "Nueva conversación"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "orientacion"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "computadora",
+            "issue": "encendido",
+            "stage": "orientacion",
+            "turnCount": 3,
+            "details": {
+              "descripcion": "Mi computadora no prende",
+              "respuesta_1": "no",
+              "respuesta_2": "si"
+            },
+            "lastIntent": "encendido",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi computadora no prende"
+              },
+              {
+                "role": "assistant",
+                "text": "Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?"
+              },
+              {
+                "role": "user",
+                "text": "No"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Ya probaste otro enchufe y un cargador compatible en buen estado?"
+              },
+              {
+                "role": "user",
+                "text": "Sí"
+              },
+              {
+                "role": "assistant",
+                "text": "Revisa el enchufe y las conexiones externas. Prueba un cargador compatible que funcione. Si hay luces pero no imagen, puede ser otro problema y necesita revisión."
+              }
+            ],
+            "pending": null,
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "Tres turnos de carga utilizan la comprobación del cable",
+      "transcript": [
+        {
+          "user": "Mi celular no carga",
+          "response": {
+            "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?",
+            "intent": "carga",
+            "confidence": 0.3773555101734803,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "carga",
+            "stage": "pregunta_1",
+            "turnCount": 1,
+            "details": {
+              "descripcion": "Mi celular no carga"
+            },
+            "lastIntent": "carga",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi celular no carga"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 1
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "No",
+          "response": {
+            "text": "¿El cable o el conector tienen daño visible, suciedad o se desconectan al moverlos?",
+            "intent": "carga",
+            "confidence": 0.16551851381345503,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_2"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "carga",
+            "stage": "pregunta_2",
+            "turnCount": 2,
+            "details": {
+              "descripcion": "Mi celular no carga",
+              "respuesta_1": "no"
+            },
+            "lastIntent": "carga",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi celular no carga"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?"
+              },
+              {
+                "role": "user",
+                "text": "No"
+              },
+              {
+                "role": "assistant",
+                "text": "¿El cable o el conector tienen daño visible, suciedad o se desconectan al moverlos?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 2
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "Sí",
+          "response": {
+            "text": "Prueba otro cable y cargador compatibles, sin forzar el puerto. Si sigue sin cargar, llévalo a revisión.",
+            "intent": "carga",
+            "confidence": 0.13598428395372258,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [
+              "¿Cuánto costaría la revisión?",
+              "Nueva conversación"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "orientacion"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "carga",
+            "stage": "orientacion",
+            "turnCount": 3,
+            "details": {
+              "descripcion": "Mi celular no carga",
+              "respuesta_1": "no",
+              "respuesta_2": "si"
+            },
+            "lastIntent": "carga",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi celular no carga"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?"
+              },
+              {
+                "role": "user",
+                "text": "No"
+              },
+              {
+                "role": "assistant",
+                "text": "¿El cable o el conector tienen daño visible, suciedad o se desconectan al moverlos?"
+              },
+              {
+                "role": "user",
+                "text": "Sí"
+              },
+              {
+                "role": "assistant",
+                "text": "Prueba otro cable y cargador compatibles, sin forzar el puerto. Si sigue sin cargar, llévalo a revisión."
+              }
+            ],
+            "pending": null,
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "Una expresión ambigua solicita aclaración",
+      "transcript": [
+        {
+          "user": "No funciona",
+          "response": {
+            "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones.",
+            "intent": "desconocida",
+            "confidence": 0.18422159056098122,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "No enciende",
+              "No carga",
+              "Falla la pantalla",
+              "Se reinicia y sale el logo"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": null,
+            "issue": null,
+            "stage": "inicio",
+            "turnCount": 1,
+            "details": {},
+            "lastIntent": "desconocida",
+            "history": [
+              {
+                "role": "user",
+                "text": "No funciona"
+              },
+              {
+                "role": "assistant",
+                "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones."
+              }
+            ],
+            "pending": {
+              "kind": "menu_falla"
+            },
+            "recovery": {
+              "attempts": 1,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "Una receta fuera del dominio no se contesta como soporte",
+      "transcript": [
+        {
+          "user": "Escríbeme una receta de pastel de chocolate",
+          "response": {
+            "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones.",
+            "intent": "desconocida",
+            "confidence": 0.0625,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "No enciende",
+              "No carga",
+              "Falla la pantalla",
+              "Se reinicia y sale el logo"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": null,
+            "issue": null,
+            "stage": "inicio",
+            "turnCount": 1,
+            "details": {},
+            "lastIntent": "desconocida",
+            "history": [
+              {
+                "role": "user",
+                "text": "Escríbeme una receta de pastel de chocolate"
+              },
+              {
+                "role": "assistant",
+                "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones."
+              }
+            ],
+            "pending": {
+              "kind": "menu_falla"
+            },
+            "recovery": {
+              "attempts": 1,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "El parpadeo se aclara y conserva el celular durante tres turnos",
+      "transcript": [
+        {
+          "user": "mi telefono parpadia",
+          "response": {
+            "text": "Para entenderlo mejor: ¿se reinicia todo el celular y vuelve a salir el logo, o solo parpadea la pantalla?",
+            "intent": "aclaracion",
+            "confidence": 0.10413115142678062,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Se reinicia y sale el logo",
+              "Solo parpadea la pantalla",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": null,
+              "stage": "aclaracion"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": null,
+            "stage": "aclaracion",
+            "turnCount": 1,
+            "details": {},
+            "lastIntent": "aclaracion",
+            "history": [
+              {
+                "role": "user",
+                "text": "mi telefono parpadia"
+              },
+              {
+                "role": "assistant",
+                "text": "Para entenderlo mejor: ¿se reinicia todo el celular y vuelve a salir el logo, o solo parpadea la pantalla?"
+              }
+            ],
+            "pending": {
+              "kind": "aclarar_sintoma"
+            },
+            "recovery": {
+              "attempts": 1,
+              "description": "mi telefono parpadia",
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "Solo parpadea la pantalla",
+          "response": {
+            "text": "¿La pantalla parpadea también sin abrir ninguna aplicación?",
+            "intent": "pantalla",
+            "confidence": 0.21144221925866544,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "pantalla",
+              "stage": "pregunta_1"
+            },
+            "safety": false,
+            "resolution": "user_choice"
+          },
+          "state": {
+            "device": "celular",
+            "issue": "pantalla",
+            "stage": "pregunta_1",
+            "turnCount": 2,
+            "details": {
+              "variant": "parpadeo",
+              "descripcion": "mi telefono parpadia"
+            },
+            "lastIntent": "pantalla",
+            "history": [
+              {
+                "role": "user",
+                "text": "mi telefono parpadia"
+              },
+              {
+                "role": "assistant",
+                "text": "Para entenderlo mejor: ¿se reinicia todo el celular y vuelve a salir el logo, o solo parpadea la pantalla?"
+              },
+              {
+                "role": "user",
+                "text": "Solo parpadea la pantalla"
+              },
+              {
+                "role": "assistant",
+                "text": "¿La pantalla parpadea también sin abrir ninguna aplicación?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 1
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "Sí",
+          "response": {
+            "text": "¿La pantalla recibió algún golpe antes de empezar a parpadear?",
+            "intent": "pantalla",
+            "confidence": 0.13598428395372258,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "pantalla",
+              "stage": "pregunta_2"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "pantalla",
+            "stage": "pregunta_2",
+            "turnCount": 3,
+            "details": {
+              "variant": "parpadeo",
+              "descripcion": "mi telefono parpadia",
+              "respuesta_1": "si"
+            },
+            "lastIntent": "pantalla",
+            "history": [
+              {
+                "role": "user",
+                "text": "mi telefono parpadia"
+              },
+              {
+                "role": "assistant",
+                "text": "Para entenderlo mejor: ¿se reinicia todo el celular y vuelve a salir el logo, o solo parpadea la pantalla?"
+              },
+              {
+                "role": "user",
+                "text": "Solo parpadea la pantalla"
+              },
+              {
+                "role": "assistant",
+                "text": "¿La pantalla parpadea también sin abrir ninguna aplicación?"
+              },
+              {
+                "role": "user",
+                "text": "Sí"
+              },
+              {
+                "role": "assistant",
+                "text": "¿La pantalla recibió algún golpe antes de empezar a parpadear?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 2
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "Reiniciar elimina equipo, falla y respuestas pendientes",
+      "transcript": [
+        {
+          "user": "Mi celular no carga",
+          "response": {
+            "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?",
+            "intent": "carga",
+            "confidence": 0.3773555101734803,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "carga",
+            "stage": "pregunta_1",
+            "turnCount": 1,
+            "details": {
+              "descripcion": "Mi celular no carga"
+            },
+            "lastIntent": "carga",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi celular no carga"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 1
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "No",
+          "response": {
+            "text": "¿El cable o el conector tienen daño visible, suciedad o se desconectan al moverlos?",
+            "intent": "carga",
+            "confidence": 0.16551851381345503,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_2"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "carga",
+            "stage": "pregunta_2",
+            "turnCount": 2,
+            "details": {
+              "descripcion": "Mi celular no carga",
+              "respuesta_1": "no"
+            },
+            "lastIntent": "carga",
+            "history": [
+              {
+                "role": "user",
+                "text": "Mi celular no carga"
+              },
+              {
+                "role": "assistant",
+                "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?"
+              },
+              {
+                "role": "user",
+                "text": "No"
+              },
+              {
+                "role": "assistant",
+                "text": "¿El cable o el conector tienen daño visible, suciedad o se desconectan al moverlos?"
+              }
+            ],
+            "pending": {
+              "kind": "diagnostico",
+              "index": 2
+            },
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "Nueva conversación",
+          "response": {
+            "text": "Hola, soy el asistente de YinYan. ¿Qué le pasa a tu computadora, celular o consola?",
+            "intent": "saludo",
+            "confidence": null,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Mi computadora no enciende",
+              "Mi celular no carga",
+              "Mi consola se calienta"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": null,
+            "issue": null,
+            "stage": "inicio",
+            "turnCount": 0,
+            "details": {},
+            "lastIntent": "saludo",
+            "history": [
+              {
+                "role": "assistant",
+                "text": "Hola, soy el asistente de YinYan. ¿Qué le pasa a tu computadora, celular o consola?"
+              }
+            ],
+            "pending": null,
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "Sí",
+          "response": {
+            "text": "Necesito una consulta completa para interpretar esa respuesta. Dime qué equipo tienes y qué falla presenta.",
+            "intent": "aclaracion",
+            "confidence": 0.13598428395372258,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Mi computadora no enciende",
+              "Mi celular no carga"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": null,
+            "issue": null,
+            "stage": "inicio",
+            "turnCount": 1,
+            "details": {},
+            "lastIntent": "aclaracion",
+            "history": [
+              {
+                "role": "assistant",
+                "text": "Hola, soy el asistente de YinYan. ¿Qué le pasa a tu computadora, celular o consola?"
+              },
+              {
+                "role": "user",
+                "text": "Sí"
+              },
+              {
+                "role": "assistant",
+                "text": "Necesito una consulta completa para interpretar esa respuesta. Dime qué equipo tienes y qué falla presenta."
+              }
+            ],
+            "pending": {
+              "kind": "menu_falla"
+            },
+            "recovery": {
+              "attempts": 1,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "El contexto de líquido conserva la precaución",
+      "transcript": [
+        {
+          "user": "Le cayó agua a mi celular",
+          "response": {
+            "text": "Si cayó líquido, deja de usarlo, apágalo si es posible sin riesgo y desconecta la alimentación externa. No lo cargues, no uses secadora y no lo metas en arroz. No intentes encenderlo para comprobar si funciona. Necesita revisión física cuanto antes.",
+            "intent": "liquidos",
+            "confidence": null,
+            "accepted": true,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "celular",
+              "issue": "liquidos",
+              "stage": "orientacion"
+            },
+            "safety": true
+          },
+          "state": {
+            "device": "celular",
+            "issue": "liquidos",
+            "stage": "orientacion",
+            "turnCount": 1,
+            "details": {
+              "alerta": "Le cayó agua a mi celular"
+            },
+            "lastIntent": "liquidos",
+            "history": [
+              {
+                "role": "user",
+                "text": "Le cayó agua a mi celular"
+              },
+              {
+                "role": "assistant",
+                "text": "Si cayó líquido, deja de usarlo, apágalo si es posible sin riesgo y desconecta la alimentación externa. No lo cargues, no uses secadora y no lo metas en arroz. No intentes encenderlo para comprobar si funciona. Necesita revisión física cuanto antes."
+              }
+            ],
+            "pending": null,
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "¿Lo puedo conectar para ver si funciona?",
+          "response": {
+            "text": "Un equipo mojado no debe volver a encenderse ni cargarse para probarlo. Desconecta solo lo que puedas hacer con seguridad, evita calor y arroz, y solicita revisión. No puedo evaluar corrosión o daño interno desde el chat.",
+            "intent": "liquidos",
+            "confidence": 0.15058654062275517,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "celular",
+              "issue": "liquidos",
+              "stage": "orientacion"
+            },
+            "safety": true
+          },
+          "state": {
+            "device": "celular",
+            "issue": "liquidos",
+            "stage": "orientacion",
+            "turnCount": 2,
+            "details": {
+              "alerta": "Le cayó agua a mi celular"
+            },
+            "lastIntent": "liquidos",
+            "history": [
+              {
+                "role": "user",
+                "text": "Le cayó agua a mi celular"
+              },
+              {
+                "role": "assistant",
+                "text": "Si cayó líquido, deja de usarlo, apágalo si es posible sin riesgo y desconecta la alimentación externa. No lo cargues, no uses secadora y no lo metas en arroz. No intentes encenderlo para comprobar si funciona. Necesita revisión física cuanto antes."
+              },
+              {
+                "role": "user",
+                "text": "¿Lo puedo conectar para ver si funciona?"
+              },
+              {
+                "role": "assistant",
+                "text": "Un equipo mojado no debe volver a encenderse ni cargarse para probarlo. Desconecta solo lo que puedas hacer con seguridad, evita calor y arroz, y solicita revisión. No puedo evaluar corrosión o daño interno desde el chat."
+              }
+            ],
+            "pending": null,
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        },
+        {
+          "user": "¿Cómo contacto al taller?",
+          "response": {
+            "text": "Puedes escribir a @yinyan_workshop en Instagram. El taller te confirmará dirección, horario y disponibilidad.",
+            "intent": "contacto",
+            "confidence": 0.35165370304000154,
+            "accepted": true,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "celular",
+              "issue": "liquidos",
+              "stage": "orientacion"
+            },
+            "safety": false
+          },
+          "state": {
+            "device": "celular",
+            "issue": "liquidos",
+            "stage": "orientacion",
+            "turnCount": 3,
+            "details": {
+              "alerta": "Le cayó agua a mi celular"
+            },
+            "lastIntent": "contacto",
+            "history": [
+              {
+                "role": "user",
+                "text": "Le cayó agua a mi celular"
+              },
+              {
+                "role": "assistant",
+                "text": "Si cayó líquido, deja de usarlo, apágalo si es posible sin riesgo y desconecta la alimentación externa. No lo cargues, no uses secadora y no lo metas en arroz. No intentes encenderlo para comprobar si funciona. Necesita revisión física cuanto antes."
+              },
+              {
+                "role": "user",
+                "text": "¿Lo puedo conectar para ver si funciona?"
+              },
+              {
+                "role": "assistant",
+                "text": "Un equipo mojado no debe volver a encenderse ni cargarse para probarlo. Desconecta solo lo que puedas hacer con seguridad, evita calor y arroz, y solicita revisión. No puedo evaluar corrosión o daño interno desde el chat."
+              },
+              {
+                "role": "user",
+                "text": "¿Cómo contacto al taller?"
+              },
+              {
+                "role": "assistant",
+                "text": "Puedes escribir a @yinyan_workshop en Instagram. El taller te confirmará dirección, horario y disponibilidad."
+              }
+            ],
+            "pending": null,
+            "recovery": {
+              "attempts": 0,
+              "description": null,
+              "referred": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "text": "La batería de mi teléfono no aumenta aunque lo dejo conectado",
+      "absent_from_training_after_tokenization": true,
+      "prediction": {
+        "intent": "carga",
+        "confidence": 0.2938066554187232,
+        "margin": 0.22699709681188238,
+        "knownRatio": 0.8571428571428571,
+        "accepted": true,
+        "alternatives": [
+          {
+            "intent": "carga",
+            "confidence": 0.2938066554187232
+          },
+          {
+            "intent": "conexion",
+            "confidence": 0.06680955860684082
+          },
+          {
+            "intent": "encendido",
+            "confidence": 0.06618312155016454
+          }
+        ],
+        "probabilities": [
+          0.04304584123288091,
+          0.036590376590195726,
+          0.2938066554187232,
+          0.06680955860684082,
+          0.03297322200967783,
+          0.04203969440581869,
+          0.036325720737145704,
+          0.06618312155016454,
+          0.04400243814114322,
+          0.055842531132814455,
+          0.043360571807751914,
+          0.033955061419608065,
+          0.03268310751179544,
+          0.0584303090654456,
+          0.06426454183777448,
+          0.04968724853221919
+        ],
+        "tokens": [
+          "bateria",
+          "telefono",
+          "no",
+          "aumenta",
+          "aunque",
+          "dejo",
+          "conectar"
+        ],
+        "model": "naive_bayes"
+      },
+      "response": {
+        "text": "¿Aparece el indicador de carga al conectar un cable y cargador compatibles?",
+        "intent": "carga",
+        "confidence": 0.2938066554187232,
+        "accepted": true,
+        "actions": [],
+        "suggestions": [
+          "Sí",
+          "No",
+          "No estoy seguro"
+        ],
+        "context": {
+          "device": "celular",
+          "issue": "carga",
+          "stage": "pregunta_1"
+        },
+        "safety": false
+      }
+    },
+    {
+      "text": "Cada que abro varias aplicaciones mi laptop se queda trabada",
+      "absent_from_training_after_tokenization": true,
+      "prediction": {
+        "intent": "rendimiento",
+        "confidence": 0.2611640352647142,
+        "margin": 0.17888841639936132,
+        "knownRatio": 0.8333333333333334,
+        "accepted": true,
+        "alternatives": [
+          {
+            "intent": "rendimiento",
+            "confidence": 0.2611640352647142
+          },
+          {
+            "intent": "software",
+            "confidence": 0.0822756188653529
+          },
+          {
+            "intent": "liquidos",
+            "confidence": 0.06118804518117128
+          }
+        ],
+        "probabilities": [
+          0.0532984680026896,
+          0.04229825389457818,
+          0.05335052826275039,
+          0.040228298842839016,
+          0.04285777808418313,
+          0.05375158193253979,
+          0.04246210533811499,
+          0.052001406611439996,
+          0.06118804518117128,
+          0.03991161317602833,
+          0.05253560774866057,
+          0.2611640352647142,
+          0.042471582019053516,
+          0.0822756188653529,
+          0.0401780597565878,
+          0.04002701701929624
+        ],
+        "tokens": [
+          "abro",
+          "varias",
+          "aplicacion",
+          "laptop",
+          "queda",
+          "trabada"
+        ],
+        "model": "naive_bayes"
+      },
+      "response": {
+        "text": "¿La lentitud afecta a todo el equipo o solo a un programa, juego o página?",
+        "intent": "rendimiento",
+        "confidence": 0.2611640352647142,
+        "accepted": true,
+        "actions": [],
+        "suggestions": [
+          "Sí",
+          "No",
+          "No estoy seguro"
+        ],
+        "context": {
+          "device": "computadora",
+          "issue": "rendimiento",
+          "stage": "pregunta_1"
+        },
+        "safety": false
+      }
+    },
+    {
+      "text": "Mi consola tiene imagen pero las bocinas no suenan",
+      "absent_from_training_after_tokenization": true,
+      "prediction": {
+        "intent": "sonido",
+        "confidence": 0.20415943201004566,
+        "margin": 0.09938338823683349,
+        "knownRatio": 1,
+        "accepted": false,
+        "alternatives": [
+          {
+            "intent": "sonido",
+            "confidence": 0.20415943201004566
+          },
+          {
+            "intent": "pantalla",
+            "confidence": 0.10477604377321217
+          },
+          {
+            "intent": "encendido",
+            "confidence": 0.06596416242840152
+          }
+        ],
+        "probabilities": [
+          0.056467260660363415,
+          0.04870801704732692,
+          0.05462256893868614,
+          0.06553079454877314,
+          0.04185328708152184,
+          0.05520550395916354,
+          0.03646698244366817,
+          0.06596416242840152,
+          0.047294659257728654,
+          0.10477604377321217,
+          0.04026245999118541,
+          0.04368715422131628,
+          0.03237667827520662,
+          0.04966392232958341,
+          0.20415943201004566,
+          0.0529610730338172
+        ],
+        "tokens": [
+          "consola",
+          "imagen",
+          "bocina",
+          "no",
+          "suenan"
+        ],
+        "model": "naive_bayes"
+      },
+      "response": {
+        "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones.",
+        "intent": "desconocida",
+        "confidence": 0.20415943201004566,
+        "accepted": false,
+        "actions": [],
+        "suggestions": [
+          "No enciende",
+          "No carga",
+          "Falla la pantalla",
+          "Se reinicia y sale el logo"
+        ],
+        "context": {
+          "device": null,
+          "issue": null,
+          "stage": "inicio"
+        },
+        "safety": false
+      }
+    },
+    {
+      "text": "La computadora detecta mi wifi pero no me deja navegar",
+      "absent_from_training_after_tokenization": true,
+      "prediction": {
+        "intent": "almacenamiento",
+        "confidence": 0.16028214360714033,
+        "margin": 0.00883770689780447,
+        "knownRatio": 0.8333333333333334,
+        "accepted": false,
+        "alternatives": [
+          {
+            "intent": "almacenamiento",
+            "confidence": 0.16028214360714033
+          },
+          {
+            "intent": "conexion",
+            "confidence": 0.15144443670933586
+          },
+          {
+            "intent": "encendido",
+            "confidence": 0.07423602472349086
+          }
+        ],
+        "probabilities": [
+          0.16028214360714033,
+          0.04092555278507493,
+          0.04740249489502362,
+          0.15144443670933586,
+          0.03697976467709395,
+          0.06852812825227696,
+          0.040639756059981,
+          0.07423602472349086,
+          0.048757307417848755,
+          0.04542101692415828,
+          0.03527012887692971,
+          0.06377276399210388,
+          0.036654897947037794,
+          0.04256999853957518,
+          0.04978737928526012,
+          0.057328205307668696
+        ],
+        "tokens": [
+          "computadora",
+          "detecta",
+          "wifi",
+          "no",
+          "deja",
+          "navegar"
+        ],
+        "model": "naive_bayes"
+      },
+      "response": {
+        "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones.",
+        "intent": "desconocida",
+        "confidence": 0.16028214360714033,
+        "accepted": false,
+        "actions": [],
+        "suggestions": [
+          "No enciende",
+          "No carga",
+          "Falla la pantalla",
+          "Se reinicia y sale el logo"
+        ],
+        "context": {
+          "device": null,
+          "issue": null,
+          "stage": "inicio"
+        },
+        "safety": false
+      }
+    },
+    {
+      "text": "Mi celular se pone muy caliente al jugar durante un rato",
+      "absent_from_training_after_tokenization": true,
+      "prediction": {
+        "intent": "temperatura",
+        "confidence": 0.2607716351282292,
+        "margin": 0.1920217662577982,
+        "knownRatio": 0.6666666666666666,
+        "accepted": true,
+        "alternatives": [
+          {
+            "intent": "temperatura",
+            "confidence": 0.2607716351282292
+          },
+          {
+            "intent": "conexion",
+            "confidence": 0.068749868870431
+          },
+          {
+            "intent": "liquidos",
+            "confidence": 0.06098700687733138
+          }
+        ],
+        "probabilities": [
+          0.05567249944620183,
+          0.04354153233994321,
+          0.055270267626889094,
+          0.068749868870431,
+          0.04406592173851716,
+          0.041225409343450495,
+          0.04369515846905768,
+          0.04108781478628026,
+          0.06098700687733138,
+          0.04129770746680908,
+          0.060505408520412446,
+          0.05628837513266957,
+          0.04370404213195341,
+          0.04158856218912496,
+          0.041548789932699295,
+          0.2607716351282292
+        ],
+        "tokens": [
+          "celular",
+          "pone",
+          "calentar",
+          "jugar",
+          "durante",
+          "rato"
+        ],
+        "model": "naive_bayes"
+      },
+      "response": {
+        "text": "¿Se calienta incluso en reposo o principalmente al jugar o usar aplicaciones exigentes?",
+        "intent": "temperatura",
+        "confidence": 0.2607716351282292,
+        "accepted": true,
+        "actions": [],
+        "suggestions": [
+          "Sí",
+          "No",
+          "No estoy seguro"
+        ],
+        "context": {
+          "device": "celular",
+          "issue": "temperatura",
+          "stage": "pregunta_1"
+        },
+        "safety": false
+      }
+    },
+    {
+      "text": "Mi laptop tarda una eternidad en abrir una carpeta",
+      "absent_from_training_after_tokenization": true,
+      "prediction": {
+        "intent": "rendimiento",
+        "confidence": 0.17170836609869553,
+        "margin": 0.09254914528656247,
+        "knownRatio": 0.6,
+        "accepted": false,
+        "alternatives": [
+          {
+            "intent": "rendimiento",
+            "confidence": 0.17170836609869553
+          },
+          {
+            "intent": "liquidos",
+            "confidence": 0.07915922081213306
+          },
+          {
+            "intent": "temperatura",
+            "confidence": 0.07094034465375453
+          }
+        ],
+        "probabilities": [
+          0.0662639915819485,
+          0.04421677636299497,
+          0.06648905462498869,
+          0.04267341612348569,
+          0.04463014054828947,
+          0.042377517915658774,
+          0.04433799059507886,
+          0.06371114784543365,
+          0.07915922081213306,
+          0.0424352727558857,
+          0.06324259252210783,
+          0.17170836609869553,
+          0.0443449970851934,
+          0.07083349684451765,
+          0.042635673629833844,
+          0.07094034465375453
+        ],
+        "tokens": [
+          "laptop",
+          "tarda",
+          "eternidad",
+          "abrir",
+          "carpeta"
+        ],
+        "model": "naive_bayes"
+      },
+      "response": {
+        "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones.",
+        "intent": "desconocida",
+        "confidence": 0.17170836609869553,
+        "accepted": false,
+        "actions": [],
+        "suggestions": [
+          "No enciende",
+          "No carga",
+          "Falla la pantalla",
+          "Se reinicia y sale el logo"
+        ],
+        "context": {
+          "device": null,
+          "issue": null,
+          "stage": "inicio"
+        },
+        "safety": false
+      }
+    }
+  ],
+  "limitations": {
+    "repeated_greeting_unique_responses": 1,
+    "note": "El modo sencillo sustituye algunas variantes de plantilla por una respuesta fija. Las consultas exploratorias se muestran sin atribuirles una exactitud general."
+  }
+}

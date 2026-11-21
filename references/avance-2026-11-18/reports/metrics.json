@@ -1,0 +1,2034 @@
+{
+  "selected_model": "logistic_regression",
+  "selection_reason": "Mayor F1 macro medio de validación cruzada estratificada sobre entrenamiento: 0.6458. La prueba final no participa en la decisión.",
+  "counts": {
+    "train": 384,
+    "test": 80,
+    "challenge": 16,
+    "intents": 16
+  },
+  "labels": [
+    "almacenamiento",
+    "ayuda",
+    "carga",
+    "conexion",
+    "contacto",
+    "controles",
+    "despedida",
+    "encendido",
+    "liquidos",
+    "pantalla",
+    "presupuesto",
+    "rendimiento",
+    "saludo",
+    "software",
+    "sonido",
+    "temperatura"
+  ],
+  "cv": {
+    "logistic_regression": {
+      "f1_macro_mean": 0.6457579920079921,
+      "f1_macro_std": 0.08061309791854188,
+      "accuracy_mean": 0.6461722488038276,
+      "folds": [
+        0.6724594849594849,
+        0.6587551337551338,
+        0.5481338106338107,
+        0.57372002997003,
+        0.7757215007215008
+      ]
+    },
+    "naive_bayes": {
+      "f1_macro_mean": 0.6160486041736042,
+      "f1_macro_std": 0.06279576827177837,
+      "accuracy_mean": 0.6226589200273411,
+      "folds": [
+        0.6210993867243868,
+        0.6600042318792319,
+        0.5440774503274503,
+        0.5490599678099678,
+        0.7060019841269841
+      ]
+    }
+  },
+  "models": {
+    "logistic_regression": {
+      "accuracy": 0.8375,
+      "precision_macro": 0.8395833333333333,
+      "recall_macro": 0.8375,
+      "f1_macro": 0.8321654040404041,
+      "confusion_matrix": [
+        [
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "ayuda": {
+          "precision": 0.3333333333333333,
+          "recall": 0.2,
+          "f1-score": 0.25,
+          "support": 5.0
+        },
+        "carga": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "conexion": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "contacto": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7272727272727273,
+          "support": 5.0
+        },
+        "controles": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "despedida": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "encendido": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "liquidos": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "pantalla": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "presupuesto": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7272727272727273,
+          "support": 5.0
+        },
+        "rendimiento": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "saludo": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "software": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "sonido": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "temperatura": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7272727272727273,
+          "support": 5.0
+        },
+        "accuracy": 0.8375,
+        "macro avg": {
+          "precision": 0.8395833333333333,
+          "recall": 0.8375,
+          "f1-score": 0.8321654040404041,
+          "support": 80.0
+        },
+        "weighted avg": {
+          "precision": 0.8395833333333332,
+          "recall": 0.8375,
+          "f1-score": 0.8321654040404042,
+          "support": 80.0
+        }
+      }
+    },
+    "naive_bayes": {
+      "accuracy": 0.8,
+      "precision_macro": 0.7840773809523809,
+      "recall_macro": 0.8,
+      "f1_macro": 0.7852272727272727,
+      "confusion_matrix": [
+        [
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "ayuda": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 5.0
+        },
+        "carga": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "conexion": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "contacto": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7272727272727273,
+          "support": 5.0
+        },
+        "controles": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "despedida": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "encendido": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "liquidos": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "pantalla": {
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1-score": 0.8333333333333334,
+          "support": 5.0
+        },
+        "presupuesto": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7272727272727273,
+          "support": 5.0
+        },
+        "rendimiento": {
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1-score": 0.8333333333333334,
+          "support": 5.0
+        },
+        "saludo": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "software": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "sonido": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "temperatura": {
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1-score": 0.6666666666666666,
+          "support": 5.0
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+          "precision": 0.7840773809523809,
+          "recall": 0.8,
+          "f1-score": 0.7852272727272727,
+          "support": 80.0
+        },
+        "weighted avg": {
+          "precision": 0.7840773809523809,
+          "recall": 0.8,
+          "f1-score": 0.7852272727272727,
+          "support": 80.0
+        }
+      }
+    }
+  },
+  "challenge_models": {
+    "logistic_regression": {
+      "accuracy": 0.625,
+      "precision_macro": 0.5512820512820513,
+      "recall_macro": 0.6153846153846154,
+      "f1_macro": 0.5487179487179488,
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "ayuda": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "carga": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 1.0
+        },
+        "conexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "contacto": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "controles": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 2.0
+        },
+        "despedida": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 1.0
+        },
+        "encendido": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "liquidos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "pantalla": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 2.0
+        },
+        "presupuesto": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 1.0
+        },
+        "rendimiento": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "saludo": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "software": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1-score": 0.8,
+          "support": 2.0
+        },
+        "sonido": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "temperatura": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "accuracy": 0.625,
+        "macro avg": {
+          "precision": 0.44791666666666663,
+          "recall": 0.5,
+          "f1-score": 0.4458333333333333,
+          "support": 16.0
+        },
+        "weighted avg": {
+          "precision": 0.6145833333333333,
+          "recall": 0.625,
+          "f1-score": 0.5791666666666666,
+          "support": 16.0
+        }
+      }
+    },
+    "naive_bayes": {
+      "accuracy": 0.6875,
+      "precision_macro": 0.5256410256410257,
+      "recall_macro": 0.6538461538461539,
+      "f1_macro": 0.558974358974359,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "ayuda": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "carga": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 1.0
+        },
+        "conexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "contacto": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "controles": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 2.0
+        },
+        "despedida": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 1.0
+        },
+        "encendido": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "liquidos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "pantalla": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1-score": 0.8,
+          "support": 2.0
+        },
+        "presupuesto": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 1.0
+        },
+        "rendimiento": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "saludo": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "software": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1-score": 0.8,
+          "support": 2.0
+        },
+        "sonido": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 1.0
+        },
+        "temperatura": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "accuracy": 0.6875,
+        "macro avg": {
+          "precision": 0.4270833333333333,
+          "recall": 0.53125,
+          "f1-score": 0.4541666666666666,
+          "support": 16.0
+        },
+        "weighted avg": {
+          "precision": 0.5729166666666666,
+          "recall": 0.6875,
+          "f1-score": 0.5958333333333333,
+          "support": 16.0
+        }
+      }
+    }
+  },
+  "errors": [
+    {
+      "text": "Buenísima tarde, gente del taller",
+      "expected": "saludo",
+      "predicted": "contacto",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Una fórmula de saludo coloquial no siempre comparte los términos más frecuentes del entrenamiento. Resultado observado: contacto; etiqueta esperada: saludo."
+    },
+    {
+      "text": "Hasta otra ocasión, taller",
+      "expected": "despedida",
+      "predicted": "contacto",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Un cierre indirecto sin fórmulas habituales puede carecer de las señales léxicas aprendidas. Resultado observado: contacto; etiqueta esperada: despedida."
+    },
+    {
+      "text": "Antes de comenzar, dime para qué sirves",
+      "expected": "ayuda",
+      "predicted": "presupuesto",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: presupuesto; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Me interesa saber cómo conversar contigo",
+      "expected": "ayuda",
+      "predicted": "presupuesto",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: presupuesto; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "¿Cuál es el alcance de tu orientación?",
+      "expected": "ayuda",
+      "predicted": "temperatura",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: temperatura; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Enséñame a reportar el problema de mi equipo",
+      "expected": "ayuda",
+      "predicted": "temperatura",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: temperatura; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Sale una advertencia térmica en medio de mis partidas",
+      "expected": "temperatura",
+      "predicted": "sonido",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: sonido; etiqueta esperada: temperatura."
+    },
+    {
+      "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+      "expected": "conexion",
+      "predicted": "rendimiento",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Una comparación entre dispositivos requiere interpretar que navegar se refiere a acceso a red. Resultado observado: rendimiento; etiqueta esperada: conexion."
+    },
+    {
+      "text": "Veo el video normal pero no escucho absolutamente nada",
+      "expected": "sonido",
+      "predicted": "pantalla",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Expresiones de oír o hablar pueden quedar fuera del vocabulario de entrenamiento. Resultado observado: pantalla; etiqueta esperada: sonido."
+    },
+    {
+      "text": "Necesito hacer sitio en la consola para otro juego",
+      "expected": "almacenamiento",
+      "predicted": "ayuda",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "El espacio y la detección de unidades son distintos, pero aparecen junto con palabras comunes a instalación y rendimiento. Resultado observado: ayuda; etiqueta esperada: almacenamiento."
+    },
+    {
+      "text": "Volqué mi taza de té sobre el portátil",
+      "expected": "liquidos",
+      "predicted": "carga",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Una bebida o situación nueva puede no compartir los términos agua, humedad o derrame del corpus. Resultado observado: carga; etiqueta esperada: liquidos."
+    },
+    {
+      "text": "¿Hay que pagar por que revisen el equipo?",
+      "expected": "presupuesto",
+      "predicted": "liquidos",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: liquidos; etiqueta esperada: presupuesto."
+    },
+    {
+      "text": "Quiero saber si hoy está abierto el taller",
+      "expected": "contacto",
+      "predicted": "ayuda",
+      "model": "logistic_regression",
+      "split": "test",
+      "interpretation": "Los canales, citas y horarios tienen vocabulario heterogéneo y pueden compartir una petición de presupuesto. Resultado observado: ayuda; etiqueta esperada: contacto."
+    },
+    {
+      "text": "El mando se enciende pero no registra los gatillos",
+      "expected": "controles",
+      "predicted": "encendido",
+      "model": "logistic_regression",
+      "split": "challenge",
+      "interpretation": "Los periféricos de entrada abarcan palabras variadas; una referencia indirecta al cursor puede confundirse. Resultado observado: encendido; etiqueta esperada: controles."
+    },
+    {
+      "text": "¿En dónde puedo pedir que me coticen?",
+      "expected": "contacto",
+      "predicted": "presupuesto",
+      "model": "logistic_regression",
+      "split": "challenge",
+      "interpretation": "Los canales, citas y horarios tienen vocabulario heterogéneo y pueden compartir una petición de presupuesto. Resultado observado: presupuesto; etiqueta esperada: contacto."
+    },
+    {
+      "text": "Me cuesta abrir aplicaciones desde que se pone ardiendo",
+      "expected": "temperatura",
+      "predicted": "software",
+      "model": "logistic_regression",
+      "split": "challenge",
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: software; etiqueta esperada: temperatura."
+    },
+    {
+      "text": "Sigue prendida pero no hay señal HDMI",
+      "expected": "pantalla",
+      "predicted": "encendido",
+      "model": "logistic_regression",
+      "split": "challenge",
+      "interpretation": "La ausencia de imagen comparte vocabulario con encendido; conviene distinguir señales de vida y salida de video. Resultado observado: encendido; etiqueta esperada: pantalla."
+    },
+    {
+      "text": "Gracias, pero aún necesito saber cómo iniciar",
+      "expected": "ayuda",
+      "predicted": "despedida",
+      "model": "logistic_regression",
+      "split": "challenge",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: despedida; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Mi portátil dejó de vivir después de un apagón",
+      "expected": "encendido",
+      "predicted": "carga",
+      "model": "logistic_regression",
+      "split": "challenge",
+      "interpretation": "Una paráfrasis de falta de arranque puede confundirse con síntomas de carga o pantalla. Resultado observado: carga; etiqueta esperada: encendido."
+    },
+    {
+      "text": "Buenísima tarde, gente del taller",
+      "expected": "saludo",
+      "predicted": "contacto",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Una fórmula de saludo coloquial no siempre comparte los términos más frecuentes del entrenamiento. Resultado observado: contacto; etiqueta esperada: saludo."
+    },
+    {
+      "text": "Hasta otra ocasión, taller",
+      "expected": "despedida",
+      "predicted": "contacto",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Un cierre indirecto sin fórmulas habituales puede carecer de las señales léxicas aprendidas. Resultado observado: contacto; etiqueta esperada: despedida."
+    },
+    {
+      "text": "Antes de comenzar, dime para qué sirves",
+      "expected": "ayuda",
+      "predicted": "presupuesto",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: presupuesto; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "¿Qué consultas de soporte admites?",
+      "expected": "ayuda",
+      "predicted": "almacenamiento",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: almacenamiento; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Me interesa saber cómo conversar contigo",
+      "expected": "ayuda",
+      "predicted": "presupuesto",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: presupuesto; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "¿Cuál es el alcance de tu orientación?",
+      "expected": "ayuda",
+      "predicted": "despedida",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: despedida; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Enséñame a reportar el problema de mi equipo",
+      "expected": "ayuda",
+      "predicted": "temperatura",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: temperatura; etiqueta esperada: ayuda."
+    },
+    {
+      "text": "Sale una advertencia térmica en medio de mis partidas",
+      "expected": "temperatura",
+      "predicted": "sonido",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: sonido; etiqueta esperada: temperatura."
+    },
+    {
+      "text": "Mi torre necesita enfriarse para seguir funcionando",
+      "expected": "temperatura",
+      "predicted": "pantalla",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: pantalla; etiqueta esperada: temperatura."
+    },
+    {
+      "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+      "expected": "conexion",
+      "predicted": "rendimiento",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Una comparación entre dispositivos requiere interpretar que navegar se refiere a acceso a red. Resultado observado: rendimiento; etiqueta esperada: conexion."
+    },
+    {
+      "text": "Veo el video normal pero no escucho absolutamente nada",
+      "expected": "sonido",
+      "predicted": "pantalla",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Expresiones de oír o hablar pueden quedar fuera del vocabulario de entrenamiento. Resultado observado: pantalla; etiqueta esperada: sonido."
+    },
+    {
+      "text": "Necesito hacer sitio en la consola para otro juego",
+      "expected": "almacenamiento",
+      "predicted": "ayuda",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "El espacio y la detección de unidades son distintos, pero aparecen junto con palabras comunes a instalación y rendimiento. Resultado observado: ayuda; etiqueta esperada: almacenamiento."
+    },
+    {
+      "text": "El sistema se queda repitiendo el logotipo una y otra vez",
+      "expected": "software",
+      "predicted": "rendimiento",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Los bloqueos y errores de aplicaciones comparten palabras con rendimiento y arranque. Resultado observado: rendimiento; etiqueta esperada: software."
+    },
+    {
+      "text": "Volqué mi taza de té sobre el portátil",
+      "expected": "liquidos",
+      "predicted": "carga",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Una bebida o situación nueva puede no compartir los términos agua, humedad o derrame del corpus. Resultado observado: carga; etiqueta esperada: liquidos."
+    },
+    {
+      "text": "¿Hay que pagar por que revisen el equipo?",
+      "expected": "presupuesto",
+      "predicted": "liquidos",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: liquidos; etiqueta esperada: presupuesto."
+    },
+    {
+      "text": "Quiero saber si hoy está abierto el taller",
+      "expected": "contacto",
+      "predicted": "ayuda",
+      "model": "naive_bayes",
+      "split": "test",
+      "interpretation": "Los canales, citas y horarios tienen vocabulario heterogéneo y pueden compartir una petición de presupuesto. Resultado observado: ayuda; etiqueta esperada: contacto."
+    },
+    {
+      "text": "Se llena la memoria y por eso todo se demora",
+      "expected": "almacenamiento",
+      "predicted": "despedida",
+      "model": "naive_bayes",
+      "split": "challenge",
+      "interpretation": "El espacio y la detección de unidades son distintos, pero aparecen junto con palabras comunes a instalación y rendimiento. Resultado observado: despedida; etiqueta esperada: almacenamiento."
+    },
+    {
+      "text": "¿En dónde puedo pedir que me coticen?",
+      "expected": "contacto",
+      "predicted": "presupuesto",
+      "model": "naive_bayes",
+      "split": "challenge",
+      "interpretation": "Los canales, citas y horarios tienen vocabulario heterogéneo y pueden compartir una petición de presupuesto. Resultado observado: presupuesto; etiqueta esperada: contacto."
+    },
+    {
+      "text": "Me cuesta abrir aplicaciones desde que se pone ardiendo",
+      "expected": "temperatura",
+      "predicted": "software",
+      "model": "naive_bayes",
+      "split": "challenge",
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: software; etiqueta esperada: temperatura."
+    },
+    {
+      "text": "Sin tocar nada el puntero salta al conectar el mouse",
+      "expected": "controles",
+      "predicted": "pantalla",
+      "model": "naive_bayes",
+      "split": "challenge",
+      "interpretation": "Los periféricos de entrada abarcan palabras variadas; una referencia indirecta al cursor puede confundirse. Resultado observado: pantalla; etiqueta esperada: controles."
+    },
+    {
+      "text": "Mi portátil dejó de vivir después de un apagón",
+      "expected": "encendido",
+      "predicted": "carga",
+      "model": "naive_bayes",
+      "split": "challenge",
+      "interpretation": "Una paráfrasis de falta de arranque puede confundirse con síntomas de carga o pantalla. Resultado observado: carga; etiqueta esperada: encendido."
+    }
+  ],
+  "thresholds": {
+    "confidence": 0.24,
+    "margin": 0.045,
+    "knownRatio": 0.2
+  },
+  "data_hashes": {
+    "train": "c54a2edfd790302858c4f12cc0e25f55c50e683b36e05db5215cc37fe8d41a78",
+    "test": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271",
+    "challenge": "295c2db549fba1a940845793011e729c1e4dc1b1432e2e3c9ef575c47dcbabb4"
+  },
+  "versions": {
+    "python": "3.12.10",
+    "scikit-learn": "1.7.2",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.7",
+    "joblib": "1.5.2"
+  },
+  "seed": 42,
+  "limitations": [
+    "Corpus sintético pequeño y no validado con clientes reales.",
+    "Reto deliberadamente ambiguo: su etiqueta refleja una convención de intención dominante.",
+    "Probabilidades sin calibración externa; rechazo heurístico con umbrales fijados antes de prueba.",
+    "Lematización ligera por diccionario: no es un analizador morfológico completo.",
+    "El modelo clasifica solicitudes; no identifica componentes dañados ni garantiza una reparación."
+  ]
+}

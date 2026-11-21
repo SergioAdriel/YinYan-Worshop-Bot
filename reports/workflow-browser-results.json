@@ -1,0 +1,1638 @@
+{
+  "browser": "Chrome headless/CDP",
+  "origin": "http://127.0.0.1:4191",
+  "generated_at": "2026-11-18T21:22:37.106Z",
+  "trainRequested": true,
+  "isolatedData": true,
+  "modelDays": 15,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "name": "La interfaz muestra avance, cuatro responsables y cinco secciones",
+      "passed": true
+    },
+    {
+      "name": "El chat mantiene tres turnos y guarda responsable y hora reales",
+      "passed": true
+    },
+    {
+      "name": "Un ejemplo nuevo queda pendiente y puede editarse antes de aprobar",
+      "passed": true
+    },
+    {
+      "name": "Los duplicados se rechazan y la aprobación controla los datos de entrenamiento",
+      "passed": true
+    },
+    {
+      "name": "Una consulta se transforma en pendiente y puede rechazarse sin borrarla",
+      "passed": true
+    },
+    {
+      "name": "El panel muestra distribución, datos faltantes y prueba final reservada",
+      "passed": true
+    },
+    {
+      "name": "Entrenar crea una jornada real con dos algoritmos y mantiene el activo anterior",
+      "passed": true
+    },
+    {
+      "name": "La vista previa muestra resultados y matrices sin activar el modelo",
+      "passed": true
+    },
+    {
+      "name": "La activación aprobada persiste y una segunda jornada conserva la primera",
+      "passed": true
+    },
+    {
+      "name": "Se puede activar la segunda versión y recuperar la anterior",
+      "passed": true
+    },
+    {
+      "name": "Las cinco secciones caben en móvil sin desbordar",
+      "passed": true
+    },
+    {
+      "name": "La interfaz termina sin excepciones ni peticiones externas",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "externalRequests": [],
+  "requestCount": 125,
+  "customTraining": {
+    "status": "succeeded",
+    "message": "Dos clasificadores evaluados. Versión provisional lista para revisar y activar.",
+    "revision": "37e359f337a49fce51807a89fe8b1daa1015f35be05f65e1d9a0279f82128db8",
+    "active_id": null,
+    "runs": [
+      {
+        "format_version": 2,
+        "id": "7381f0d9-b590-421b-b8d1-08dd7c00bf1b",
+        "journey": 1,
+        "created_at": "2026-11-18T21:22:19.180Z",
+        "started_at": "2026-11-18T21:22:19.180Z",
+        "finished_at": "2026-11-18T21:22:25.335Z",
+        "author": "sergio",
+        "initiated_by": "selected_responsible",
+        "timezone": "America/Mexico_City",
+        "timestamp_kind": "recorded",
+        "status": "succeeded",
+        "approval_status": "provisional",
+        "dataset_version": "5baa2c9cb2b2e4e796add16e3926ad91fdb1d028feedf117e4883aa986725192",
+        "approved_revision": "37e359f337a49fce51807a89fe8b1daa1015f35be05f65e1d9a0279f82128db8",
+        "message": "Dos clasificadores evaluados. Versión provisional lista para revisar y activar.",
+        "counts": {
+          "base": 240,
+          "additional": 1,
+          "total": 241,
+          "test": 80,
+          "intents": 16,
+          "per_intent": {
+            "almacenamiento": 15,
+            "ayuda": 15,
+            "carga": 15,
+            "conexion": 15,
+            "contacto": 15,
+            "controles": 15,
+            "despedida": 15,
+            "encendido": 15,
+            "liquidos": 15,
+            "pantalla": 15,
+            "presupuesto": 15,
+            "rendimiento": 16,
+            "saludo": 15,
+            "software": 15,
+            "sonido": 15,
+            "temperatura": 15
+          }
+        },
+        "labels": [
+          "almacenamiento",
+          "ayuda",
+          "carga",
+          "conexion",
+          "contacto",
+          "controles",
+          "despedida",
+          "encendido",
+          "liquidos",
+          "pantalla",
+          "presupuesto",
+          "rendimiento",
+          "saludo",
+          "software",
+          "sonido",
+          "temperatura"
+        ],
+        "process_id": null,
+        "storage_path": "runs/7381f0d9-b590-421b-b8d1-08dd7c00bf1b",
+        "selected_model": "logistic_regression",
+        "cv_winner": "logistic_regression",
+        "active_model": "logistic_regression",
+        "cv": {
+          "naive_bayes": {
+            "f1_macro_mean": 0.4103757353757354,
+            "f1_macro_std": 0.07147136701069487,
+            "accuracy_mean": 0.4144557823129252,
+            "fold_f1_macro": [
+              0.5248511904761904,
+              0.3394688644688645,
+              0.40104166666666663,
+              0.4512896825396826,
+              0.33522727272727276
+            ]
+          },
+          "logistic_regression": {
+            "f1_macro_mean": 0.4538636363636364,
+            "f1_macro_std": 0.06384255415196415,
+            "accuracy_mean": 0.455952380952381,
+            "fold_f1_macro": [
+              0.5603670634920634,
+              0.4029356060606061,
+              0.46706349206349207,
+              0.46365440115440115,
+              0.37529761904761905
+            ]
+          }
+        },
+        "models": {
+          "naive_bayes": {
+            "accuracy": 0.875,
+            "precision_macro": 0.8864583333333333,
+            "recall_macro": 0.875,
+            "f1_macro": 0.8735164141414142,
+            "confusion_matrix": [
+              [
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                3,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                4
+              ]
+            ],
+            "per_class": {
+              "almacenamiento": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "ayuda": {
+                "precision": 1,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5
+              },
+              "carga": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5
+              },
+              "conexion": {
+                "precision": 0.8333333333333334,
+                "recall": 1,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+              },
+              "contacto": {
+                "precision": 1,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5
+              },
+              "controles": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "despedida": {
+                "precision": 0.6666666666666666,
+                "recall": 0.8,
+                "f1-score": 0.7272727272727273,
+                "support": 5
+              },
+              "encendido": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "liquidos": {
+                "precision": 1,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5
+              },
+              "pantalla": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "presupuesto": {
+                "precision": 0.75,
+                "recall": 0.6,
+                "f1-score": 0.6666666666666666,
+                "support": 5
+              },
+              "rendimiento": {
+                "precision": 0.6666666666666666,
+                "recall": 0.8,
+                "f1-score": 0.7272727272727273,
+                "support": 5
+              },
+              "saludo": {
+                "precision": 0.8333333333333334,
+                "recall": 1,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+              },
+              "software": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "sonido": {
+                "precision": 0.8333333333333334,
+                "recall": 1,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+              },
+              "temperatura": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5
+              },
+              "accuracy": 0.875,
+              "macro avg": {
+                "precision": 0.8864583333333333,
+                "recall": 0.875,
+                "f1-score": 0.8735164141414142,
+                "support": 80
+              },
+              "weighted avg": {
+                "precision": 0.8864583333333333,
+                "recall": 0.875,
+                "f1-score": 0.8735164141414142,
+                "support": 80
+              }
+            },
+            "correct": 70,
+            "total": 80
+          },
+          "logistic_regression": {
+            "accuracy": 0.875,
+            "precision_macro": 0.8953125000000001,
+            "recall_macro": 0.875,
+            "f1_macro": 0.8733925796425797,
+            "confusion_matrix": [
+              [
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                3,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                5,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                4
+              ]
+            ],
+            "per_class": {
+              "almacenamiento": {
+                "precision": 0.8333333333333334,
+                "recall": 1,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+              },
+              "ayuda": {
+                "precision": 1,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5
+              },
+              "carga": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5
+              },
+              "conexion": {
+                "precision": 0.8333333333333334,
+                "recall": 1,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+              },
+              "contacto": {
+                "precision": 0.625,
+                "recall": 1,
+                "f1-score": 0.7692307692307693,
+                "support": 5
+              },
+              "controles": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "despedida": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5
+              },
+              "encendido": {
+                "precision": 1,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5
+              },
+              "liquidos": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5
+              },
+              "pantalla": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "presupuesto": {
+                "precision": 1,
+                "recall": 0.6,
+                "f1-score": 0.75,
+                "support": 5
+              },
+              "rendimiento": {
+                "precision": 1,
+                "recall": 0.8,
+                "f1-score": 0.8888888888888888,
+                "support": 5
+              },
+              "saludo": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "software": {
+                "precision": 1,
+                "recall": 1,
+                "f1-score": 1,
+                "support": 5
+              },
+              "sonido": {
+                "precision": 0.8333333333333334,
+                "recall": 1,
+                "f1-score": 0.9090909090909091,
+                "support": 5
+              },
+              "temperatura": {
+                "precision": 0.8,
+                "recall": 0.8,
+                "f1-score": 0.8,
+                "support": 5
+              },
+              "accuracy": 0.875,
+              "macro avg": {
+                "precision": 0.8953125000000001,
+                "recall": 0.875,
+                "f1-score": 0.8733925796425797,
+                "support": 80
+              },
+              "weighted avg": {
+                "precision": 0.8953125,
+                "recall": 0.875,
+                "f1-score": 0.8733925796425798,
+                "support": 80
+              }
+            },
+            "correct": 70,
+            "total": 80
+          }
+        },
+        "acceptance": {
+          "accepted": 54,
+          "total": 80,
+          "correct_accepted": 51,
+          "coverage": 0.675,
+          "accuracy_among_accepted": 0.9444444444444444
+        },
+        "comparison": {
+          "previous_id": null,
+          "accuracy_delta": null,
+          "f1_macro_delta": null
+        },
+        "checks": {
+          "dataset_valid": true,
+          "two_models": true,
+          "metrics_valid": true,
+          "export_parity": true,
+          "python_javascript_parity": true,
+          "artifacts_complete": true
+        },
+        "parity": {
+          "passed": true,
+          "export_max_difference": 0,
+          "javascript_verified": true,
+          "javascript_max_difference": 1.1102230246251565e-16,
+          "texts_checked": 13
+        },
+        "requirements": {
+          "minimum_training": 200,
+          "minimum_intents": 10,
+          "minimum_per_intent": 20,
+          "minimum_test": 50,
+          "training_total_met": true,
+          "intents_met": true,
+          "per_intent_met": false,
+          "test_total_met": false,
+          "per_intent_missing": {
+            "almacenamiento": 5,
+            "ayuda": 5,
+            "carga": 5,
+            "conexion": 5,
+            "contacto": 5,
+            "controles": 5,
+            "despedida": 5,
+            "encendido": 5,
+            "liquidos": 5,
+            "pantalla": 5,
+            "presupuesto": 5,
+            "rendimiento": 4,
+            "saludo": 5,
+            "software": 5,
+            "sonido": 5,
+            "temperatura": 5
+          },
+          "missing_examples_total": 79
+        },
+        "protocol": {
+          "seed": 42,
+          "cv": "StratifiedKFold(5, shuffle=True, random_state=42)",
+          "selection": "Mayor F1 macro medio de validación cruzada; empate: regresión logística.",
+          "parameters": {
+            "naive_bayes": {
+              "alpha": 0.25
+            },
+            "logistic_regression": {
+              "C": 8,
+              "max_iter": 2000
+            }
+          },
+          "evaluation_policy": "80 consultas conocidas de desarrollo; el conjunto final reservado no participa en entrenamiento ni selección."
+        },
+        "hashes": {
+          "base_file_sha256": "7af90b4134f51e9fa01c144f11f981078029a177df1001493b85818404c64e08",
+          "evaluation_file_sha256": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271",
+          "training_snapshot_sha256": "2138c99209230d60f2e18f290c616334519b107678daac3b22d4487409ff1aba",
+          "preprocessing_sha256": "44957ef65209bbc557d9d8b706c85cad797ec41fab1dd7e37f1048cb05df11f6"
+        },
+        "curve": [
+          {
+            "day": 1,
+            "total_examples": 16,
+            "accuracy": 0.1625,
+            "precision_macro": 0.4788773148148148,
+            "correct": 13,
+            "total": 80,
+            "accepted": 3
+          },
+          {
+            "day": 2,
+            "total_examples": 32,
+            "accuracy": 0.25,
+            "precision_macro": 0.5178934378629501,
+            "correct": 20,
+            "total": 80,
+            "accepted": 9
+          },
+          {
+            "day": 3,
+            "total_examples": 48,
+            "accuracy": 0.325,
+            "precision_macro": 0.5000496031746031,
+            "correct": 26,
+            "total": 80,
+            "accepted": 10
+          },
+          {
+            "day": 4,
+            "total_examples": 64,
+            "accuracy": 0.4375,
+            "precision_macro": 0.5665349616858237,
+            "correct": 35,
+            "total": 80,
+            "accepted": 10
+          },
+          {
+            "day": 5,
+            "total_examples": 80,
+            "accuracy": 0.55,
+            "precision_macro": 0.60625,
+            "correct": 44,
+            "total": 80,
+            "accepted": 9
+          },
+          {
+            "day": 6,
+            "total_examples": 96,
+            "accuracy": 0.625,
+            "precision_macro": 0.6630252100840337,
+            "correct": 50,
+            "total": 80,
+            "accepted": 11
+          },
+          {
+            "day": 7,
+            "total_examples": 112,
+            "accuracy": 0.625,
+            "precision_macro": 0.6351190476190477,
+            "correct": 50,
+            "total": 80,
+            "accepted": 16
+          },
+          {
+            "day": 8,
+            "total_examples": 128,
+            "accuracy": 0.6625,
+            "precision_macro": 0.6860863095238094,
+            "correct": 53,
+            "total": 80,
+            "accepted": 17
+          },
+          {
+            "day": 9,
+            "total_examples": 144,
+            "accuracy": 0.675,
+            "precision_macro": 0.6975040584415584,
+            "correct": 54,
+            "total": 80,
+            "accepted": 20
+          },
+          {
+            "day": 10,
+            "total_examples": 160,
+            "accuracy": 0.7625,
+            "precision_macro": 0.8229166666666667,
+            "correct": 61,
+            "total": 80,
+            "accepted": 21
+          },
+          {
+            "day": 11,
+            "total_examples": 176,
+            "accuracy": 0.775,
+            "precision_macro": 0.8363095238095238,
+            "correct": 62,
+            "total": 80,
+            "accepted": 22
+          },
+          {
+            "day": 12,
+            "total_examples": 192,
+            "accuracy": 0.7875,
+            "precision_macro": 0.8488095238095238,
+            "correct": 63,
+            "total": 80,
+            "accepted": 25
+          },
+          {
+            "day": 13,
+            "total_examples": 208,
+            "accuracy": 0.7875,
+            "precision_macro": 0.8227678571428572,
+            "correct": 63,
+            "total": 80,
+            "accepted": 25
+          },
+          {
+            "day": 14,
+            "total_examples": 224,
+            "accuracy": 0.825,
+            "precision_macro": 0.8602678571428571,
+            "correct": 66,
+            "total": 80,
+            "accepted": 26
+          },
+          {
+            "day": 15,
+            "total_examples": 240,
+            "accuracy": 0.8625,
+            "precision_macro": 0.8811011904761905,
+            "correct": 69,
+            "total": 80,
+            "accepted": 29
+          }
+        ],
+        "curve_verified": true,
+        "kind": "provisional",
+        "model_url": "./api/versions/7381f0d9-b590-421b-b8d1-08dd7c00bf1b/model.json"
+      }
+    ],
+    "run_id": "7381f0d9-b590-421b-b8d1-08dd7c00bf1b",
+    "trained_revision": "37e359f337a49fce51807a89fe8b1daa1015f35be05f65e1d9a0279f82128db8",
+    "trained_at": "2026-11-18T21:22:25.335Z",
+    "journey": 1,
+    "stale": false,
+    "result": {
+      "accuracy": 0.875,
+      "precision_macro": 0.8953125000000001,
+      "recall_macro": 0.875,
+      "f1_macro": 0.8733925796425797,
+      "confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 0.8333333333333334,
+          "recall": 1,
+          "f1-score": 0.9090909090909091,
+          "support": 5
+        },
+        "ayuda": {
+          "precision": 1,
+          "recall": 0.6,
+          "f1-score": 0.75,
+          "support": 5
+        },
+        "carga": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5
+        },
+        "conexion": {
+          "precision": 0.8333333333333334,
+          "recall": 1,
+          "f1-score": 0.9090909090909091,
+          "support": 5
+        },
+        "contacto": {
+          "precision": 0.625,
+          "recall": 1,
+          "f1-score": 0.7692307692307693,
+          "support": 5
+        },
+        "controles": {
+          "precision": 1,
+          "recall": 1,
+          "f1-score": 1,
+          "support": 5
+        },
+        "despedida": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5
+        },
+        "encendido": {
+          "precision": 1,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5
+        },
+        "liquidos": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5
+        },
+        "pantalla": {
+          "precision": 1,
+          "recall": 1,
+          "f1-score": 1,
+          "support": 5
+        },
+        "presupuesto": {
+          "precision": 1,
+          "recall": 0.6,
+          "f1-score": 0.75,
+          "support": 5
+        },
+        "rendimiento": {
+          "precision": 1,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5
+        },
+        "saludo": {
+          "precision": 1,
+          "recall": 1,
+          "f1-score": 1,
+          "support": 5
+        },
+        "software": {
+          "precision": 1,
+          "recall": 1,
+          "f1-score": 1,
+          "support": 5
+        },
+        "sonido": {
+          "precision": 0.8333333333333334,
+          "recall": 1,
+          "f1-score": 0.9090909090909091,
+          "support": 5
+        },
+        "temperatura": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5
+        },
+        "accuracy": 0.875,
+        "macro avg": {
+          "precision": 0.8953125000000001,
+          "recall": 0.875,
+          "f1-score": 0.8733925796425797,
+          "support": 80
+        },
+        "weighted avg": {
+          "precision": 0.8953125,
+          "recall": 0.875,
+          "f1-score": 0.8733925796425798,
+          "support": 80
+        }
+      },
+      "correct": 70,
+      "total": 80,
+      "trained_at": "2026-11-18T21:22:25.335Z",
+      "total_examples": 241,
+      "additional_examples": 1,
+      "selected_model": "logistic_regression",
+      "model_url": "./api/versions/7381f0d9-b590-421b-b8d1-08dd7c00bf1b/model.json",
+      "run_id": "7381f0d9-b590-421b-b8d1-08dd7c00bf1b",
+      "journey": 1,
+      "dataset_version": "5baa2c9cb2b2e4e796add16e3926ad91fdb1d028feedf117e4883aa986725192",
+      "approval_status": "provisional"
+    }
+  },
+  "failure": null,
+  "screenshots": [
+    "workflow-desktop.png",
+    "workflow-jornadas.png",
+    "workflow-progreso.png",
+    "workflow-mobile.png"
+  ],
+  "desktop": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844
+  }
+}

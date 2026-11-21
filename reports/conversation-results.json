@@ -1,0 +1,1184 @@
+{
+  "scope": "20 pruebas deterministas aíslan el gestor con clasificación inyectada; 9 pruebas de integración utilizan el modelo supervisado realmente entrenado. source distingue cada caso. realConversations conserva evidencia de respuestas reales.",
+  "total": 29,
+  "passed": 29,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "Tres turnos relacionados conservan y utilizan equipo y síntoma",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "El primer seguimiento cambia según la respuesta de encendido",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Solicitud de dispositivo recupera la falla pendiente",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Un nuevo síntoma no se confunde con la selección de dispositivo",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Cambio de síntoma durante seguimiento conserva equipo y reinicia preguntas",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Cambiar de equipo evita heredar respuestas del equipo anterior",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Una respuesta sí aislada solicita una consulta completa",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Pregunta ajena al dominio no avanza un seguimiento activo",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Una pregunta de precio no se procesa como respuesta de audio",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Entidad dentro de consulta rechazada no reemplaza al equipo activo",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Síntomas múltiples solicitan una prioridad",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Líquidos activan orientación segura incluso con clasificación rechazada",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Batería hinchada interrumpe diagnóstico ordinario",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Contacto no inventa dirección, horario o cita",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Nueva conversación elimina contexto e historial anteriores",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "El resumen usa detalles del seguimiento sin prometer un servicio",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Un seguimiento explícito después de la orientación utiliza el síntoma anterior",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Tres variantes de respuesta evitan un saludo repetido literal",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Mensaje vacío y longitud excesiva se manejan sin clasificar",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Error del clasificador produce un mensaje recuperable",
+      "source": "deterministic",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: tres turnos de encendido y seguimiento contextual",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: paráfrasis de fallas distintas",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: consulta ambigua y pregunta fuera de dominio",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: precios y contacto no inventan datos del negocio",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: reinicio no conserva equipo ni interpreta sí/no aislados",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: cinco consultas rápidas de la interfaz",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: tres turnos de carga con detalles del indicador y cable",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: una receta recibe rechazo o redirección explícita al soporte",
+      "source": "real_model",
+      "passed": true
+    },
+    {
+      "name": "Modelo real: contexto de líquido impide volver a conectar el equipo y permite contacto",
+      "source": "real_model",
+      "passed": true
+    }
+  ],
+  "realConversations": [
+    {
+      "scenario": "encendido_multiturno",
+      "transcript": [
+        {
+          "user": "Mi computadora no enciende",
+          "response": {
+            "text": "Vamos a revisar las señales de encendido. Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?",
+            "intent": "encendido",
+            "confidence": 0.792719510908801,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "No",
+          "response": {
+            "text": "Gracias. Seguimos con tu computadora: ¿Ya probaste otro enchufe y un cargador compatible en buen estado?",
+            "intent": "encendido",
+            "confidence": 0.4792562399683219,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "pregunta_2"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "Sí",
+          "response": {
+            "text": "Para tu computadora, con el problema de no enciende: Una falla de encendido puede venir del cargador, batería o circuitos internos. Limita las pruebas a conexiones externas compatibles; si no cambia, hace falta diagnóstico en taller antes de reemplazar piezas.\n\nEsto es orientación inicial, no un diagnóstico confirmado. Puedes copiar el resumen de esta conversación y compartirlo con el taller por Instagram.",
+            "intent": "encendido",
+            "confidence": 0.2365971183877635,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [
+              "¿Cuánto costaría la revisión?",
+              "Nueva conversación"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "orientacion"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "¿Y ahora qué hago?",
+          "response": {
+            "text": "Si tu computadora sigue con el problema de no enciende después de las comprobaciones, solicita revisión física. Si no hay ninguna señal, revisa solo el enchufe y un cable o cargador compatible en buen estado. Si hay luz o sonido pero no imagen, la revisión debe concentrarse en la pantalla o salida de video. No abras la fuente ni hagas puentes eléctricos.",
+            "intent": "encendido",
+            "confidence": 0.2100495636623625,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "orientacion"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "parafrasis",
+      "evidence": [
+        {
+          "text": "Mi laptop está lentísima al abrir programas",
+          "expected": "rendimiento",
+          "prediction": {
+            "intent": "rendimiento",
+            "confidence": 0.3544672221263244,
+            "margin": 0.1139760970053331,
+            "knownRatio": 0.75,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "rendimiento",
+                "confidence": 0.3544672221263244
+              },
+              {
+                "intent": "software",
+                "confidence": 0.24049112512099133
+              },
+              {
+                "intent": "temperatura",
+                "confidence": 0.04735218283517798
+              }
+            ],
+            "probabilities": [
+              0.024192487125618736,
+              0.024415285277460883,
+              0.029352983634159172,
+              0.028835068290227403,
+              0.024047837292203302,
+              0.029340544298625794,
+              0.022573589885931736,
+              0.025868279724704055,
+              0.04162595000877713,
+              0.029414132838426556,
+              0.028193239805849483,
+              0.3544672221263244,
+              0.021327859363727577,
+              0.24049112512099133,
+              0.028502212371794334,
+              0.04735218283517798
+            ],
+            "tokens": [
+              "laptop",
+              "lentisima",
+              "abrir",
+              "programa"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a ubicar cuándo se vuelve lento. ¿La lentitud afecta a todo el equipo o solo a un programa, juego o página?",
+            "intent": "rendimiento",
+            "confidence": 0.3544672221263244,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "rendimiento",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "El teléfono dejó de reconocer el cargador",
+          "expected": "carga",
+          "prediction": {
+            "intent": "carga",
+            "confidence": 0.3608375700054277,
+            "margin": 0.2631820943071049,
+            "knownRatio": 0.75,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "carga",
+                "confidence": 0.3608375700054277
+              },
+              {
+                "intent": "encendido",
+                "confidence": 0.09765547569832285
+              },
+              {
+                "intent": "sonido",
+                "confidence": 0.051972908368832206
+              }
+            ],
+            "probabilities": [
+              0.03433554716628113,
+              0.032231189118750364,
+              0.3608375700054277,
+              0.03168490058014602,
+              0.04157506055782517,
+              0.049450349900007295,
+              0.028725322395844122,
+              0.09765547569832285,
+              0.039825520458092,
+              0.03656560404841008,
+              0.03327403426300667,
+              0.04233261387060171,
+              0.027029688305044063,
+              0.050541356968864914,
+              0.051972908368832206,
+              0.041962858294543944
+            ],
+            "tokens": [
+              "telefono",
+              "dejo",
+              "reconocer",
+              "cargador"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Revisemos la carga sin abrir el equipo. ¿Aparece el indicador de carga al conectar un cable y cargador compatibles?",
+            "intent": "carga",
+            "confidence": 0.3608375700054277,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "No puedo conectar mi PC a la red inalámbrica",
+          "expected": "conexion",
+          "prediction": {
+            "intent": "conexion",
+            "confidence": 0.8293686659438021,
+            "margin": 0.809315019519421,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "conexion",
+                "confidence": 0.8293686659438021
+              },
+              {
+                "intent": "contacto",
+                "confidence": 0.020053646424381125
+              },
+              {
+                "intent": "encendido",
+                "confidence": 0.018927061161874224
+              }
+            ],
+            "probabilities": [
+              0.011651804959800914,
+              0.01067835585637937,
+              0.013705442215068987,
+              0.8293686659438021,
+              0.020053646424381125,
+              0.007682161346856236,
+              0.007092286605293964,
+              0.018927061161874224,
+              0.006610778302497522,
+              0.0113054448777225,
+              0.007171269494989639,
+              0.009347317266602994,
+              0.005970762330729683,
+              0.014691289141690824,
+              0.017770456016286885,
+              0.00797325805602298
+            ],
+            "tokens": [
+              "no",
+              "puedo",
+              "conectar",
+              "pc",
+              "red",
+              "inalambrica"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a separar una falla de la red de una falla del equipo. ¿Otros dispositivos pueden navegar usando la misma red?",
+            "intent": "conexion",
+            "confidence": 0.8293686659438021,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "conexion",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "La pantalla de mi celular tiene rayas",
+          "expected": "pantalla",
+          "prediction": {
+            "intent": "pantalla",
+            "confidence": 0.68957453656904,
+            "margin": 0.6495389275844947,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "pantalla",
+                "confidence": 0.68957453656904
+              },
+              {
+                "intent": "liquidos",
+                "confidence": 0.04003560898454527
+              },
+              {
+                "intent": "software",
+                "confidence": 0.028865075821567335
+              }
+            ],
+            "probabilities": [
+              0.016740574688623257,
+              0.021500129892792316,
+              0.021476580204129514,
+              0.014812577672804163,
+              0.01724361775461132,
+              0.017134594063723727,
+              0.01541044223037478,
+              0.019819577242841495,
+              0.04003560898454527,
+              0.68957453656904,
+              0.02559588270441365,
+              0.018910058769072736,
+              0.014302069886089178,
+              0.028865075821567335,
+              0.019960462517457388,
+              0.01861821099791373
+            ],
+            "tokens": [
+              "pantalla",
+              "celular",
+              "rayas"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a revisar las señales de imagen sin desmontar nada. ¿La pantalla está negra, tiene líneas o muestra imagen pero no responde al tacto?",
+            "intent": "pantalla",
+            "confidence": 0.68957453656904,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "pantalla",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "ambiguedad_fuera_dominio",
+      "responses": [
+        {
+          "user": "No funciona",
+          "response": {
+            "text": "Dime qué equipo tienes y qué ocurre exactamente: por ejemplo, si no enciende, no carga o falla la pantalla.",
+            "intent": "aclaracion",
+            "confidence": 0.2377666393581851,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "No enciende",
+              "No carga",
+              "Falla la pantalla",
+              "Se reinicia y sale el logo"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "¿Quién ganó el partido de fútbol?",
+          "response": {
+            "text": "No entendí bien esa consulta. Dime qué le pasa a tu computadora, celular o consola, o elige una de las opciones.",
+            "intent": "desconocida",
+            "confidence": 0.08031608043920331,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "No enciende",
+              "No carga",
+              "Falla la pantalla",
+              "Se reinicia y sale el logo"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "presupuesto_contacto",
+      "responses": [
+        {
+          "user": "¿Cuánto cuesta reparar mi equipo?",
+          "response": {
+            "text": "El costo depende del equipo, el diagnóstico y las piezas necesarias. No tengo una tarifa confirmada ni puedo emitir una cotización. Contacta a YinYan Workshop por Instagram y comparte el modelo y el resumen de la falla.",
+            "intent": "presupuesto",
+            "confidence": 0.8484332034285553,
+            "accepted": true,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [
+              "Quiero contactar al taller",
+              "Nueva conversación"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "¿Dónde están ubicados?",
+          "response": {
+            "text": "El canal de contacto disponible es @yinyan_workshop en Instagram. Pregunta directamente por el horario, dirección y cómo llevar tu equipo. Esta conversación no crea una cita ni una orden de servicio.",
+            "intent": "contacto",
+            "confidence": 0.6322455920917075,
+            "accepted": true,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "reinicio",
+      "responses": [
+        {
+          "user": "Nueva conversación",
+          "response": {
+            "text": "Soy el asistente de YinYan Workshop. Cuéntame qué le pasa a tu computadora, celular o consola. Te haré unas preguntas para orientarte antes de la revisión.",
+            "intent": "saludo",
+            "confidence": null,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Mi computadora no enciende",
+              "Mi celular no carga",
+              "Mi consola se calienta"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "No",
+          "response": {
+            "text": "Necesito una consulta completa para interpretar esa respuesta. Dime qué equipo tienes y qué falla presenta.",
+            "intent": "aclaracion",
+            "confidence": 0.4792562399683219,
+            "accepted": false,
+            "actions": [],
+            "suggestions": [
+              "Mi computadora no enciende",
+              "Mi celular no carga"
+            ],
+            "context": {
+              "device": null,
+              "issue": null,
+              "stage": "inicio"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "consultas_rapidas_interfaz",
+      "evidence": [
+        {
+          "text": "Mi computadora está muy lenta",
+          "expected": "rendimiento",
+          "prediction": {
+            "intent": "rendimiento",
+            "confidence": 0.7460969296686918,
+            "margin": 0.7189491416995888,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "rendimiento",
+                "confidence": 0.7460969296686918
+              },
+              {
+                "intent": "software",
+                "confidence": 0.02714778796910301
+              },
+              {
+                "intent": "liquidos",
+                "confidence": 0.026538656207136788
+              }
+            ],
+            "probabilities": [
+              0.014505836663696155,
+              0.01408366831542731,
+              0.018740733547850226,
+              0.014178662448824719,
+              0.017628787345483274,
+              0.013704600268283374,
+              0.01274757859020137,
+              0.016763340174771588,
+              0.026538656207136788,
+              0.018030711110654664,
+              0.014090597809452092,
+              0.7460969296686918,
+              0.011796513485102699,
+              0.02714778796910301,
+              0.01485421488933788,
+              0.019091381505983055
+            ],
+            "tokens": [
+              "computadora",
+              "lento"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a ubicar cuándo se vuelve lento. ¿La lentitud afecta a todo el equipo o solo a un programa, juego o página?",
+            "intent": "rendimiento",
+            "confidence": 0.7460969296686918,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "rendimiento",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "Mi celular no carga",
+          "expected": "carga",
+          "prediction": {
+            "intent": "carga",
+            "confidence": 0.8016329766868403,
+            "margin": 0.768646804272444,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "carga",
+                "confidence": 0.8016329766868403
+              },
+              {
+                "intent": "encendido",
+                "confidence": 0.03298617241439629
+              },
+              {
+                "intent": "conexion",
+                "confidence": 0.019367597620716933
+              }
+            ],
+            "probabilities": [
+              0.01877636482547024,
+              0.009034139735040697,
+              0.8016329766868403,
+              0.019367597620716933,
+              0.0062836929494106885,
+              0.012325705227327198,
+              0.007514840897380492,
+              0.03298617241439629,
+              0.012782821180254623,
+              0.01347102449039899,
+              0.009572217841199594,
+              0.007495266412546655,
+              0.005891619095645038,
+              0.01936373554076688,
+              0.015722883733966873,
+              0.007778941348638248
+            ],
+            "tokens": [
+              "celular",
+              "no",
+              "cargar"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Revisemos la carga sin abrir el equipo. ¿Aparece el indicador de carga al conectar un cable y cargador compatibles?",
+            "intent": "carga",
+            "confidence": 0.8016329766868403,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "Mi consola se calienta mucho",
+          "expected": "temperatura",
+          "prediction": {
+            "intent": "temperatura",
+            "confidence": 0.7590749384679473,
+            "margin": 0.6984862138389799,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "temperatura",
+                "confidence": 0.7590749384679473
+              },
+              {
+                "intent": "rendimiento",
+                "confidence": 0.06058872462896735
+              },
+              {
+                "intent": "liquidos",
+                "confidence": 0.014911895356438037
+              }
+            ],
+            "probabilities": [
+              0.012581123905978295,
+              0.014175731926115737,
+              0.00920507917027028,
+              0.011743355633657306,
+              0.013698547544112101,
+              0.013535487436758333,
+              0.010077940703144144,
+              0.013022100279519467,
+              0.014911895356438037,
+              0.014696961127441475,
+              0.014672826296863282,
+              0.06058872462896735,
+              0.01273419118683855,
+              0.013226617375098046,
+              0.012054478960850329,
+              0.7590749384679473
+            ],
+            "tokens": [
+              "consola",
+              "calentar",
+              "mucho"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a revisar cuándo aparece el calentamiento. ¿Se calienta incluso en reposo o principalmente al jugar o usar aplicaciones exigentes?",
+            "intent": "temperatura",
+            "confidence": 0.7590749384679473,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "consola",
+              "issue": "temperatura",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "Mi computadora no enciende",
+          "expected": "encendido",
+          "prediction": {
+            "intent": "encendido",
+            "confidence": 0.792719510908801,
+            "margin": 0.7697114869190754,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "encendido",
+                "confidence": 0.792719510908801
+              },
+              {
+                "intent": "conexion",
+                "confidence": 0.02300802398972558
+              },
+              {
+                "intent": "sonido",
+                "confidence": 0.022760638839175375
+              }
+            ],
+            "probabilities": [
+              0.01909793442524905,
+              0.007811051328367191,
+              0.011791049292971771,
+              0.02300802398972558,
+              0.008498256899165495,
+              0.01807747088992967,
+              0.007921461007276528,
+              0.792719510908801,
+              0.016188737063892004,
+              0.02056104854154565,
+              0.007254286807450969,
+              0.012357637058979869,
+              0.006361382380040705,
+              0.015744796799122003,
+              0.022760638839175375,
+              0.009846713768306974
+            ],
+            "tokens": [
+              "computadora",
+              "no",
+              "encender"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a revisar las señales de encendido. Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?",
+            "intent": "encendido",
+            "confidence": 0.792719510908801,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "computadora",
+              "issue": "encendido",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "text": "El control de mi consola no responde",
+          "expected": "controles",
+          "prediction": {
+            "intent": "controles",
+            "confidence": 0.5631404436799488,
+            "margin": 0.4732972255205183,
+            "knownRatio": 1,
+            "accepted": true,
+            "alternatives": [
+              {
+                "intent": "controles",
+                "confidence": 0.5631404436799488
+              },
+              {
+                "intent": "encendido",
+                "confidence": 0.08984321815943047
+              },
+              {
+                "intent": "pantalla",
+                "confidence": 0.0761754337898587
+              }
+            ],
+            "probabilities": [
+              0.027045712816901702,
+              0.014884514981657946,
+              0.0166226268177247,
+              0.04413726265265697,
+              0.013023174207468256,
+              0.5631404436799488,
+              0.012543616538279907,
+              0.08984321815943047,
+              0.024152754641524693,
+              0.0761754337898587,
+              0.019287635710040524,
+              0.026178418658508104,
+              0.010124612722293395,
+              0.024080285742942503,
+              0.021699141635503467,
+              0.017061147245259867
+            ],
+            "tokens": [
+              "control",
+              "consola",
+              "no",
+              "responde"
+            ],
+            "model": "logistic_regression"
+          },
+          "response": {
+            "text": "Vamos a revisar la conexión y respuesta del control. ¿El control no se conecta o se conecta y fallan botones o palancas?",
+            "intent": "controles",
+            "confidence": 0.5631404436799488,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "consola",
+              "issue": "controles",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "carga_multiturno",
+      "transcript": [
+        {
+          "user": "Mi celular no carga",
+          "response": {
+            "text": "Revisemos la carga sin abrir el equipo. ¿Aparece el indicador de carga al conectar un cable y cargador compatibles?",
+            "intent": "carga",
+            "confidence": 0.8016329766868403,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "No aparece el indicador de carga",
+          "response": {
+            "text": "Gracias. Seguimos con tu celular: ¿El cable o el conector tienen daño visible, suciedad o se desconectan al moverlos?",
+            "intent": "carga",
+            "confidence": 0.5485478751981884,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Sí",
+              "No",
+              "No estoy seguro"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_2"
+            },
+            "safety": false
+          }
+        },
+        {
+          "user": "El cable está dañado",
+          "response": {
+            "text": "Para tu celular, con el problema de carga o batería: Comprueba únicamente conexiones externas y accesorios compatibles. Si el porcentaje no sube, se apaga al desconectarlo o el puerto está flojo, requiere revisión física; no se puede determinar la pieza solo por chat.\n\nEsto es orientación inicial, no un diagnóstico confirmado. Puedes copiar el resumen de esta conversación y compartirlo con el taller por Instagram.",
+            "intent": "carga",
+            "confidence": 0.13443708970836998,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [
+              "¿Cuánto costaría la revisión?",
+              "Nueva conversación"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "orientacion"
+            },
+            "safety": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "fuera_dominio_redireccion",
+      "responses": [
+        {
+          "user": "Dame una receta de pastel",
+          "response": {
+            "text": "Empecemos con una falla a la vez. Por ejemplo: «mi celular no carga» o «mi computadora está lenta». Haré preguntas de seguimiento y te daré comprobaciones básicas sin desmontar el equipo.",
+            "intent": "ayuda",
+            "confidence": 0.24250522831668717,
+            "accepted": true,
+            "actions": [],
+            "suggestions": [
+              "Mi laptop no enciende",
+              "No tengo internet",
+              "Quiero contactar al taller"
+            ],
+            "context": {
+              "device": "celular",
+              "issue": "carga",
+              "stage": "pregunta_1"
+            },
+            "safety": false
+          }
+        }
+      ],
+      "note": "El clasificador puede asignar ayuda a peticiones genéricas; el gestor redirige al soporte sin inventar una respuesta fuera del dominio."
+    },
+    {
+      "scenario": "liquidos_contexto_seguro",
+      "transcript": [
+        {
+          "user": "Se cayó agua sobre mi laptop",
+          "response": {
+            "text": "Si cayó líquido, deja de usarlo, apágalo si es posible sin riesgo y desconecta la alimentación externa. No lo cargues, no uses secadora y no lo metas en arroz. No intentes encenderlo para comprobar si funciona. Necesita revisión física cuanto antes.",
+            "intent": "liquidos",
+            "confidence": 0.8402170177000419,
+            "accepted": true,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "computadora",
+              "issue": "liquidos",
+              "stage": "orientacion"
+            },
+            "safety": true
+          }
+        },
+        {
+          "user": "¿La puedo conectar para ver si funciona?",
+          "response": {
+            "text": "Un equipo mojado no debe volver a encenderse ni cargarse para probarlo. Desconecta solo lo que puedas hacer con seguridad, evita calor y arroz, y solicita revisión. No puedo evaluar corrosión o daño interno desde el chat.",
+            "intent": "liquidos",
+            "confidence": 0.18203359559564045,
+            "accepted": false,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "computadora",
+              "issue": "liquidos",
+              "stage": "orientacion"
+            },
+            "safety": true
+          }
+        },
+        {
+          "user": "¿Cómo contacto al taller?",
+          "response": {
+            "text": "Abre el perfil de Instagram de YinYan Workshop para coordinar la revisión. Comparte el tipo de equipo, modelo y resumen del síntoma; el taller confirmará los siguientes pasos.",
+            "intent": "contacto",
+            "confidence": 0.7015491856131315,
+            "accepted": true,
+            "actions": [
+              {
+                "label": "Contactar por Instagram",
+                "url": "https://www.instagram.com/yinyan_workshop/"
+              }
+            ],
+            "suggestions": [],
+            "context": {
+              "device": "computadora",
+              "issue": "liquidos",
+              "stage": "orientacion"
+            },
+            "safety": false
+          }
+        }
+      ]
+    }
+  ]
+}

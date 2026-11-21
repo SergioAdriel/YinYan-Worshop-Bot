@@ -1,0 +1,21 @@
+{
+  "proyecto": "YinYan Workshop: chatbot de soporte técnico informático",
+  "asignatura": "Proyecto Final I · Chatbot Inteligente mediante Aprendizaje Automático",
+  "docente": "VICTOR MANUEL SANCHEZ SANCHEZ",
+  "integrantes": ["Erick Mendoza Mendoza", "Daniel Gibran Luciano Tellez", "Sergio Adriel Muñoz Camarena", "Raynier Jetsahe Torres Flores"],
+  "desarrollador_principal": "Sergio Adriel Muñoz Camarena",
+  "organizacion": "Responsabilidades indicadas por el equipo: Erick y Daniel construyen y revisan el dataset; Sergio y Raynier desarrollan, integran y evalúan el sistema. Las ejecuciones y aportaciones nuevas se registran con sus fechas reales.",
+  "roles": [
+    {"id": "sergio", "nombre": "Sergio Adriel Muñoz Camarena", "funcion": "Desarrollador principal", "alcance": "Programación del chatbot, gestor de diálogo, integración e interfaz", "estado": "Responsabilidad indicada por el equipo"},
+    {"id": "raynier", "nombre": "Raynier Jetsahe Torres Flores", "funcion": "Desarrollo, entrenamiento y evaluación", "alcance": "Integración, entrenamiento, comparación de clasificadores y verificación", "estado": "Responsabilidad indicada por el equipo"},
+    {"id": "alumno-a", "nombre": "Erick Mendoza Mendoza", "funcion": "Construcción y revisión del dataset", "alcance": "Ejemplos, expresiones lingüísticas, clasificación por intención y revisión de datos", "estado": "Responsabilidad indicada por el equipo"},
+    {"id": "alumno-b", "nombre": "Daniel Gibran Luciano Tellez", "funcion": "Construcción y revisión del dataset", "alcance": "Ejemplos, organización del conjunto, revisión de etiquetas y diversidad lingüística", "estado": "Responsabilidad indicada por el equipo"}
+  ],
+  "grupo": "Por completar",
+  "institucion": "Por completar",
+  "fecha": "18 de noviembre de 2026",
+  "fecha_corte": "2026-11-18",
+  "fecha_entrega": "2026-12-04",
+  "titulo_avance": "PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026",
+  "estado": "Prototipo funcional en avance; ampliación de datos y evaluación final pendientes"
+}

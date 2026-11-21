@@ -1,0 +1,75 @@
+YINYAN WORKSHOP
+PROTOTIPO FUNCIONAL - AVANCE AL 18 DE NOVIEMBRE DE 2026
+Entrega final prevista: 4 de diciembre de 2026. El proyecto sigue en desarrollo.
+
+EQUIPO
+Erick Mendoza Mendoza: incorporacion y revision de ejemplos.
+Daniel Gibran Luciano Tellez: dataset, etiquetas y diversidad.
+Sergio Adriel Muñoz Camarena: desarrollo principal, dialogo e interfaz.
+Raynier Jetsahe Torres Flores: desarrollo, entrenamiento y evaluacion.
+La seleccion de responsable registra operaciones; no es un inicio de sesion.
+
+PARA EMPEZAR CADA TURNO
+1. Abre recibir-aportes.cmd para traer los cambios del equipo.
+2. Haz doble clic en iniciar.cmd y deja abierta la consola.
+3. Abre http://127.0.0.1:4173 si el navegador no aparece.
+4. Selecciona tu nombre antes de trabajar.
+
+FLUJO DE LOS EJEMPLOS
+- Chat guarda consultas y respuestas con responsable y hora real.
+- Consultas permite preparar un ejemplo a partir de un mensaje.
+- Ejemplos y entrenar permite guardar nuevas expresiones como PENDIENTES.
+- Revisa texto, categoria, pertinencia, diversidad y duplicados.
+- APRUEBA o RECHAZA. Solo los APROBADOS se usan para entrenar.
+- Los pendientes se pueden editar o retirar. Para cambiar un registro
+  aprobado o rechazado, primero REABRELO como pendiente.
+- Los cambios se conservan al cerrar la aplicacion.
+
+ENTRENAR Y ACTIVAR
+1. Pulsa Entrenar modelo para crear una jornada nueva con fecha real.
+2. Se comparan Naive Bayes y regresion logistica con los mismos datos.
+3. La version nueva es PROVISIONAL: no cambia el chatbot automaticamente.
+4. En Jornadas revisa metricas, matrices, errores y comparacion anterior.
+5. Prueba la vista previa y activa la version cuando corresponda.
+6. Las versiones anteriores se conservan y pueden recuperarse.
+Una jornada fallida no reemplaza la activa ni se marca completada.
+
+En consola, entrenar.cmd tambien crea una jornada provisional.
+Ejemplo: entrenar.cmd --author sergio
+Sin responsable explicito, el comando registra system.
+
+QUE SE COMPARTE POR GIT
+Al terminar abre subir-aportes.cmd. Confirma data/team/ y data/training/
+y hace push. Recibir-aportes.cmd hace pull; no envia tus cambios.
+No hay sincronizacion automatica al escribir en el chat.
+Los modelos versionados y las jornadas estan en data/training/runs/.
+El modelo activo se indica en data/training/active.json.
+data/local/ contiene caches y estado local, excluidos de Git.
+Despues de recibir modelos aprobados, recarga la pagina.
+
+ESTADO Y PENDIENTES
+La base tiene 240 ejemplos, 16 intenciones y 15 ejemplos por intencion.
+Faltan 80 ejemplos revisados y aprobados: cinco por cada categoria.
+Progreso recalcula lo que falta y distingue los estados de la rubrica.
+Las 80 consultas de data/test.csv son un benchmark conocido de desarrollo.
+data/final-test.csv necesita al menos 50 consultas independientes reservadas
+para la evaluacion final. Ahora contiene solo la cabecera.
+Las fechas de los registros originales no se reescriben.
+
+DOCUMENTOS Y PRUEBAS
+El notebook y el PDF describen la version seleccionada del prototipo.
+reproducir-notebook.cmd --version UUID-DE-LA-JORNADA
+generar-reporte.cmd --version UUID-DE-LA-JORNADA
+notebook.cmd abre Jupyter.
+node scripts/run-tests.mjs ejecuta la suite automatica.
+node scripts/workflow-browser-check.mjs comprueba el flujo en Chrome
+con datos temporales separados del proyecto.
+
+Cada integrante clona el repositorio y ejecuta la aplicacion en local.
+La carpeta actual incluye runtime/; Git no incluye esos interpretes.
+Para entrenar necesitas Python y requirements-lock.txt.
+No abras web/index.html directamente; usa iniciar.cmd.
+
+Lee README.md, docs/FLUJO-DE-TRABAJO.md y docs/EJECUTAR-EN-LOCAL.md.
+Para configurar GitHub sigue docs/publicar-en-github.md.
+ESTADO-RUBRICA.md distingue lo verificado de lo pendiente.

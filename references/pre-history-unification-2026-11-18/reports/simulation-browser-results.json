@@ -1,0 +1,99 @@
+{
+  "browser": "Chrome headless/CDP",
+  "origin": "http://127.0.0.1:4189",
+  "simulated": true,
+  "trainRequested": true,
+  "isolatedData": true,
+  "modelDays": 15,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "name": "La página local ofrece chat, consultas y entrenamiento sin intercambio de JSON",
+      "passed": true
+    },
+    {
+      "name": "Los quince días usan modelos reales distintos y permiten volver al día 15",
+      "passed": true
+    },
+    {
+      "name": "El chat responde y presenta el texto del alumno sin ejecutar HTML",
+      "passed": true
+    },
+    {
+      "name": "Día 8: reinicios y parpadia piden aclaración, las opciones avanzan y no hay bucle",
+      "passed": true
+    },
+    {
+      "name": "Las consultas se guardan con autor y fecha real de México y sobreviven a recargar",
+      "passed": true
+    },
+    {
+      "name": "Un estudiante revisa la consulta del otro antes de aprobarla para entrenamiento",
+      "passed": true
+    },
+    {
+      "name": "Los dos alumnos agregan ejemplos y el servidor los conserva al recargar",
+      "passed": true
+    },
+    {
+      "name": "Reentrenar produce un modelo real usando sólo el almacenamiento temporal",
+      "passed": true
+    },
+    {
+      "name": "Eliminar un ejemplo actualiza la lista y el servidor",
+      "passed": true
+    },
+    {
+      "name": "La evolución presenta los quince días y distingue objetivo de resultado",
+      "passed": true
+    },
+    {
+      "name": "Chat, alimentación y resultados caben en móvil sin desbordar",
+      "passed": true
+    },
+    {
+      "name": "La interfaz termina sin excepciones ni recursos externos",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "externalRequests": [],
+  "requestCount": 101,
+  "customTraining": {
+    "status": "succeeded",
+    "message": "Entrenamiento terminado. Ya puedes probar tu modelo.",
+    "trained_revision": "16ea56b14833ec130ea9577f9349a636fa63d40f8903771bade32aad51b1668b",
+    "trained_at": "2026-11-11T19:45:03.245Z",
+    "result": {
+      "trained_at": "2026-11-11T19:45:03.245Z",
+      "accuracy": 0.8375,
+      "precision_macro": 0.8692956349206349,
+      "correct": 67,
+      "total": 80,
+      "total_examples": 243,
+      "additional_examples": 3,
+      "model_url": "./simulation/custom-model.json",
+      "simulated": false,
+      "base_simulated": true,
+      "evaluation_note": "Prueba sintética fija de 80 consultas. Modelo local reentrenado con base simulada del día 15 y los ejemplos añadidos por ustedes. Este resultado de desarrollo no prueba generalización con clientes reales."
+    },
+    "revision": "16ea56b14833ec130ea9577f9349a636fa63d40f8903771bade32aad51b1668b",
+    "stale": false
+  },
+  "failure": null,
+  "screenshots": [
+    "simulation-desktop.png",
+    "simulation-days.png",
+    "simulation-mobile.png"
+  ],
+  "desktop": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844
+  }
+}
