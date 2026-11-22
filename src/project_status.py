@@ -12,14 +12,14 @@ def write_status():
     registry = Registry()
     snapshot = TeamStore(ROOT, registry.runtime).snapshot()
     state = progress(snapshot, registry.runtime)
-    tests = read_json(ROOT / 'reports/automated-tests.json', {})
+    tests = read_json(ROOT / 'reports/test-results.json', {})
     browser = read_json(ROOT / 'reports/workflow-browser-results.json', {})
     delivery = read_json(ROOT / 'reports/current-delivery-verification.json', {})
     active = state['active'].get('version')
     checked = {row['id']: row['status'] for row in state['rubric']}
     verified = tests.get('complete') and checked['context'] == 'Cumplido'
     functionality = 'Cumplido' if verified else 'Pendiente de verificación'
-    evidence = 'reports/automated-tests.json; tests/; reports/workflow-browser-results.json'
+    evidence = 'reports/test-results.json; tests/; reports/workflow-browser-results.json'
     rows = [
         ('Dominio único y delimitado, opción B', 'Cumplido', 'docs/dominio-e-intenciones.md: soporte de computadoras, celulares y consolas.'),
         ('Diez intenciones con significado y acciones', 'Cumplido', '16 intenciones en data/simulation.json y docs/dominio-e-intenciones.md.'),
@@ -59,7 +59,7 @@ def write_status():
         ('URL del repositorio GitHub entregada al profesor', 'Pendiente de verificación', 'Configuración preparada; no se proporcionó una URL de repositorio para verificar publicación o entrega.'),
         ('Defensa y comprensión de todos los integrantes', 'Pendiente de verificación', 'Guía de demostración disponible; la presentación en vivo corresponde al equipo.'),
     ]
-    title = '# PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026'
+    title = '# Prototipo funcional — Avance al 18 de noviembre de 2026'
     lines = [title, '', 'Entrega final prevista: **4 de diciembre de 2026**. Esta matriz distingue infraestructura comprobada, datos pendientes y verificaciones de entrega; no declara terminado el proyecto.', '',
              'Estados: **Cumplido**, **Pendiente de datos**, **Pendiente de verificación**, **No cumplido**.', '',
              '| Requisito | Estado | Evidencia |', '| --- | --- | --- |']
@@ -67,14 +67,14 @@ def write_status():
     lines += ['', '## Distribución del dataset', '', '| Intención | Base | Aprobados con base | Pendientes | Rechazados | Faltan para 20 |', '| --- | ---: | ---: | ---: | ---: | ---: |']
     lines += [f"| {row['intent']} | {row['base']} | {row['approved']} | {row['pending']} | {row['rejected']} | {row['missing']} |" for row in state['per_intent']]
     lines += ['', f"Faltan **{state['missing_examples_total']} ejemplos aprobados de entrenamiento** y **{max(0, 50-state['final_test_size'])} consultas de prueba final**. No se generaron muestras para aparentar cumplimiento.", '', '## Verificación del avance', '',
-              f"Suite automática: {tests.get('passed', 0)}/{tests.get('tests', 0)} aprobadas, {tests.get('failed', 0)} fallidas, {tests.get('skipped', 0)} omitidas.",
+              f"Suite de pruebas: {tests.get('passed', 0)}/{tests.get('tests', 0)} aprobadas, {tests.get('failed', 0)} fallidas, {tests.get('skipped', 0)} omitidas.",
               f"Navegador: {browser.get('passed', 0)} comprobaciones aprobadas y {browser.get('failed', 0)} fallidas; jornadas de QA aisladas en Temp."]
     if active:
         values = active['models'][active['selected_model']]
         lines += ['', f"Modelo activo: **{active['selected_model']}**, jornada **{active['journey']}**, UUID `{active['id']}`.",
                   f"Ejecución real: `{active['created_at']}` a `{active['finished_at']}`; responsable `{active['author']}`.",
                   f"Benchmark conocido: {values['correct']}/{values['total']} aciertos ({100*values['accuracy']:.2f} %), F1 macro {100*values['f1_macro']:.2f} %. Se seleccionó por validación cruzada, no por estas cifras."]
-    lines += ['', 'Las pruebas automáticas verifican componentes y flujos; no sustituyen la revisión lingüística, la nueva prueba reservada ni la demostración con preguntas del docente.', '']
+    lines += ['', 'Las pruebas del sistema verifican componentes y flujos; no sustituyen la revisión lingüística, la nueva prueba reservada ni la demostración con preguntas del docente.', '']
     (ROOT / 'ESTADO-RUBRICA.md').write_text('\n'.join(lines), encoding='utf-8')
     (ROOT / 'docs/trazabilidad.md').write_text('# Trazabilidad del avance\n\nLa matriz vigente se genera a partir de las jornadas y la evidencia comprobada:\n\n[Estado completo de la rúbrica](../ESTADO-RUBRICA.md).\n\n[Flujo de incorporación, aprobación y entrenamiento](FLUJO-DE-TRABAJO.md).\n\nLos documentos históricos están conservados en references/avance-2026-11-18/.\n', encoding='utf-8')
     summary = f'''YINYAN WORKSHOP - PROTOTIPO FUNCIONAL

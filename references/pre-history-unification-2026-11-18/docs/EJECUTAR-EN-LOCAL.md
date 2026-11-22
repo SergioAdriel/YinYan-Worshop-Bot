@@ -60,7 +60,7 @@ El servidor guarda `created_at` en UTC y la página muestra Ciudad de México, c
 
 La base actual tiene 240 ejemplos y 16 intenciones, con 15 por categoría. **Faltan al menos cinco ejemplos aprobados por intención**; el panel Progreso calcula el déficit según las aportaciones existentes.
 
-Las 80 consultas de `data/test.csv` son un benchmark conocido de desarrollo. La selección del modelo utiliza validación, no sus resultados. La prueba final va en **data/final-test.csv**, inicialmente vacío salvo la cabecera `text,intent`. Requiere al menos 50 consultas independientes reservadas. El procedimiento de evaluación registra su apertura y evita utilizar reiteradamente el mismo conjunto para comparar versiones nuevas. Los datos temporales de las pruebas automáticas no completan este requisito.
+Las 80 consultas de `data/test.csv` son un benchmark conocido de desarrollo. La selección del modelo utiliza validación, no sus resultados. La prueba final va en **data/final-test.csv**, inicialmente vacío salvo la cabecera `text,intent`. Requiere al menos 50 consultas independientes reservadas. El procedimiento de evaluación registra su apertura y evita utilizar reiteradamente el mismo conjunto para comparar versiones nuevas. Los datos temporales de las pruebas del sistema no completan este requisito.
 
 ## Notebook, PDF y pruebas
 
@@ -100,7 +100,7 @@ node scripts/serve.mjs --open
 py -3.12 scripts/serve.py --open
 ```
 
-El servidor Python usa la biblioteca estándar para servir la interfaz y los registros. Las operaciones de entrenamiento, evaluación y documentación necesitan las dependencias instaladas. GitHub e Instagram requieren conexión cuando se utilizan; la inferencia no consulta una API generativa.
+El servidor Python usa la biblioteca estándar para servir la interfaz y los registros. Las operaciones de entrenamiento, evaluación y documentación necesitan las dependencias instaladas. GitHub e Instagram requieren conexión cuando se utilizan; la inferencia se ejecuta con el modelo local.
 
 ## Resolver problemas de inicio
 

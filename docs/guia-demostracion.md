@@ -14,7 +14,7 @@ Explicar que `127.0.0.1` o `localhost` es la misma computadora. El profesor admi
 ## Secuencia de demostración
 
 1. **Dominio:** explicar que se eligió la opción B y se limitó el alcance a fallas informáticas frecuentes en computadoras, celulares y consolas.
-2. **Aprendizaje propio:** mostrar los ejemplos etiquetados, los dos algoritmos y el archivo del modelo. Explicar que las respuestas no provienen de una API generativa.
+2. **Aprendizaje propio:** mostrar los ejemplos etiquetados, los dos algoritmos y el archivo del modelo. Explicar cómo el clasificador identifica la intención y el gestor selecciona una plantilla local.
 3. **Paráfrasis nueva:** escribir una falla con palabras diferentes de las utilizadas durante entrenamiento. Observar intención/confianza si la interfaz ofrece esa información.
 4. **Tres turnos relacionados:** describir una falla, responder el tipo de equipo y después una comprobación. Mostrar que el resumen conserva y utiliza los datos.
 5. **Ambigüedad:** escribir «No funciona». El sistema debe pedir información útil en lugar de inventar un diagnóstico.

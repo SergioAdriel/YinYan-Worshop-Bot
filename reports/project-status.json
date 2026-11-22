@@ -115,7 +115,7 @@
     {
       "requirement": "Interfaz web funcional y móvil",
       "status": "Cumplido",
-      "evidence": "reports/automated-tests.json; tests/; reports/workflow-browser-results.json"
+      "evidence": "reports/test-results.json; tests/; reports/workflow-browser-results.json"
     },
     {
       "requirement": "Guardar ejemplos antes del entrenamiento",

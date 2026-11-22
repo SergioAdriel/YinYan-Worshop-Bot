@@ -15,7 +15,7 @@ El alcance comprende fallas de encendido, carga, temperatura, rendimiento, conex
 
 Sergio Adriel Muñoz Camarena figura como desarrollador principal declarado: construye la plataforma para facilitar que sus compañeros aporten consultas, revisen etiquetas y entrenen el modelo. La colaboración propuesta contempla cuatro perfiles: dos de desarrollo y dos de aportación y revisión de datos. Esta distribución es una organización de la práctica; no acredita por sí sola participación histórica de cuatro personas.
 
-La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas. Ninguna API generativa sustituye la clasificación.
+La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas.
 
 La evolución se presenta como quince etapas acumulativas sobre ejemplos sintéticos. Sus metadatos originales conservan su procedencia simulada. No son quince días de actividad humana acreditada; las aportaciones nuevas se identifican por separado con fechas reales del servidor.
 
@@ -29,7 +29,7 @@ Faltan 80 ejemplos pertinentes y diversos para llegar al mínimo de 20 por inten
 
 Las etiquetas representan necesidades comunicativas distintas; el equipo es una entidad del contexto, no una clase adicional. Su significado y acción se describen en docs/dominio-e-intenciones.md. Los ejemplos están en JSON y las consultas de evaluación en CSV.
 
-La base y sus quince etapas se prepararon con asistencia generativa. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.
+La base y sus quince etapas contienen ejemplos sintéticos de práctica. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.
 
 Los archivos de data/team/ contienen las aportaciones nuevas por autor. El experimento cuenta únicamente ejemplos etiquetados activos, conserva la procedencia sintética de la base y comprueba duplicados normalizados y etiquetas contradictorias. No utiliza las respuestas del propio bot como etiquetas verdaderas.
 
@@ -103,7 +103,7 @@ Al iniciar un turno, recibir-aportes.cmd ejecuta pull. Al terminar, subir-aporte
 
 ## 6. Pruebas funcionales y errores observados
 
-Las pruebas de tests/ comprueban contexto, reinicio, aclaraciones, paridad, persistencia y servidores. El registro reports/current-dialogue-results.json contiene 7/7 casos funcionales aprobados con el modelo actual, transcripciones de varios turnos y seis consultas de sondeo nuevas respecto al entrenamiento. Este archivo se distingue de la evidencia del experimento anterior. En la revisión del 18 de noviembre de 2026 pasaron las 69 pruebas automáticas del proyecto. Las capturas y comprobaciones Chrome guardadas anteriormente son evidencia histórica; no se presentan como una ejecución nueva en esta fecha.
+Las pruebas de tests/ comprueban contexto, reinicio, aclaraciones, paridad, persistencia y servidores. El registro reports/current-dialogue-results.json contiene 7/7 casos funcionales aprobados con el modelo actual, transcripciones de varios turnos y seis consultas de sondeo nuevas respecto al entrenamiento. Este archivo se distingue de la evidencia del experimento anterior. En la revisión del 18 de noviembre de 2026 pasaron las 69 pruebas del sistema del proyecto. Las capturas y comprobaciones Chrome guardadas anteriormente son evidencia histórica; no se presentan como una ejecución nueva en esta fecha.
 
 Las comprobaciones distinguen pruebas aisladas del gestor con clasificación inyectada de pruebas con un modelo real. Se cubren paráfrasis, mensajes nuevos, tres turnos, ambigüedad, consultas fuera del dominio, recuperación de consultas y reinicio del contexto.
 

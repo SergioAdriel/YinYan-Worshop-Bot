@@ -20,7 +20,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-MX', {timeZone: TIMEZONE, date
 const dayFormatter = new Intl.DateTimeFormat('es-MX', {timeZone: TIMEZONE, dateStyle: 'long'});
 const percentage = value => Number.isFinite(value) ? `${(value * 100).toLocaleString('es-MX', {maximumFractionDigits: 2})} %` : '—';
 const label = intent => state.manifest?.labels?.[intent] || intent || 'Sin identificar';
-const PEOPLE = {'alumno-a': 'Erick Mendoza Mendoza', 'alumno-b': 'Daniel Gibran Luciano Tellez', sergio: 'Sergio Adriel Muñoz Camarena', raynier: 'Raynier Jetsahe Torres Flores', system: 'Verificación automatizada'};
+const PEOPLE = {'alumno-a': 'Erick Mendoza Mendoza', 'alumno-b': 'Daniel Gibran Luciano Tellez', sergio: 'Sergio Adriel Muñoz Camarena', raynier: 'Raynier Jetsahe Torres Flores', system: 'Verificación del sistema'};
 const person = id => PEOPLE[id] || state.manifest?.participants.find(item => item.id === id)?.name || id;
 const historicalPerson = id => state.manifest?.participants.find(item => item.id === id)?.name || id;
 const modelName = id => ({naive_bayes:'Naive Bayes', logistic_regression:'Regresión logística'}[id]) || id || '—';

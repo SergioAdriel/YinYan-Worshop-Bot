@@ -1,0 +1,322 @@
+[
+  {
+    "text": "Buenísima tarde, gente del taller",
+    "intent": "saludo"
+  },
+  {
+    "text": "Hola YinYan, les saludo",
+    "intent": "saludo"
+  },
+  {
+    "text": "Qué hay, buenas",
+    "intent": "saludo"
+  },
+  {
+    "text": "Saludos y buen comienzo de día",
+    "intent": "saludo"
+  },
+  {
+    "text": "Hola, ando pasando a saludar",
+    "intent": "saludo"
+  },
+  {
+    "text": "Se resolvió mi duda, te agradezco",
+    "intent": "despedida"
+  },
+  {
+    "text": "Me voy por ahora, nos leemos",
+    "intent": "despedida"
+  },
+  {
+    "text": "Con esa información es suficiente, gracias",
+    "intent": "despedida"
+  },
+  {
+    "text": "Hasta otra ocasión, taller",
+    "intent": "despedida"
+  },
+  {
+    "text": "Finalizo aquí, muchas gracias",
+    "intent": "despedida"
+  },
+  {
+    "text": "Antes de comenzar, dime para qué sirves",
+    "intent": "ayuda"
+  },
+  {
+    "text": "¿Qué consultas de soporte admites?",
+    "intent": "ayuda"
+  },
+  {
+    "text": "Me interesa saber cómo conversar contigo",
+    "intent": "ayuda"
+  },
+  {
+    "text": "¿Cuál es el alcance de tu orientación?",
+    "intent": "ayuda"
+  },
+  {
+    "text": "Enséñame a reportar el problema de mi equipo",
+    "intent": "ayuda"
+  },
+  {
+    "text": "Al presionar power mi portátil sigue completamente apagada",
+    "intent": "encendido"
+  },
+  {
+    "text": "Mi consola no tiene ninguna señal de vida",
+    "intent": "encendido"
+  },
+  {
+    "text": "Desde que la apagué no consigo arrancar la computadora",
+    "intent": "encendido"
+  },
+  {
+    "text": "El móvil no reacciona al botón de encendido",
+    "intent": "encendido"
+  },
+  {
+    "text": "El ventilador ni siquiera se mueve cuando intento prender la torre",
+    "intent": "encendido"
+  },
+  {
+    "text": "El porcentaje sigue bajando aunque tengo puesto el cargador",
+    "intent": "carga"
+  },
+  {
+    "text": "Tengo que dejar el cable en cierta posición para cargar",
+    "intent": "carga"
+  },
+  {
+    "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+    "intent": "carga"
+  },
+  {
+    "text": "Apenas dura la pila de mi móvil",
+    "intent": "carga"
+  },
+  {
+    "text": "La consola portátil no detecta que la estoy cargando",
+    "intent": "carga"
+  },
+  {
+    "text": "Sale una advertencia térmica en medio de mis partidas",
+    "intent": "temperatura"
+  },
+  {
+    "text": "Mi portátil está ardiendo cerca de las rejillas",
+    "intent": "temperatura"
+  },
+  {
+    "text": "El teléfono se pone hirviendo tras usarlo un rato",
+    "intent": "temperatura"
+  },
+  {
+    "text": "Mi torre necesita enfriarse para seguir funcionando",
+    "intent": "temperatura"
+  },
+  {
+    "text": "El sistema de refrigeración parece insuficiente porque se calienta",
+    "intent": "temperatura"
+  },
+  {
+    "text": "Cada clic tarda varios segundos en hacer algo",
+    "intent": "rendimiento"
+  },
+  {
+    "text": "Aunque funciona, la laptop va a paso de tortuga",
+    "intent": "rendimiento"
+  },
+  {
+    "text": "Los menús de la consola se mueven a tirones",
+    "intent": "rendimiento"
+  },
+  {
+    "text": "Mi celular se congela al alternar entre aplicaciones",
+    "intent": "rendimiento"
+  },
+  {
+    "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+    "intent": "rendimiento"
+  },
+  {
+    "text": "Puedo ver mi red pero el equipo no consigue conectarse",
+    "intent": "conexion"
+  },
+  {
+    "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+    "intent": "conexion"
+  },
+  {
+    "text": "El adaptador Ethernet no da acceso a la red",
+    "intent": "conexion"
+  },
+  {
+    "text": "Mis audífonos no se emparejan con el Bluetooth de la laptop",
+    "intent": "conexion"
+  },
+  {
+    "text": "La consola tiene wifi y aun así no entra a internet",
+    "intent": "conexion"
+  },
+  {
+    "text": "La PC tiene luces y ventiladores pero el monitor está negro",
+    "intent": "pantalla"
+  },
+  {
+    "text": "El panel táctil del teléfono falla en la mitad inferior",
+    "intent": "pantalla"
+  },
+  {
+    "text": "La televisión no recibe imagen por el HDMI de mi consola",
+    "intent": "pantalla"
+  },
+  {
+    "text": "Aparecen franjas verticales en el display",
+    "intent": "pantalla"
+  },
+  {
+    "text": "La pantalla titila cuando cambio el ángulo de la tapa",
+    "intent": "pantalla"
+  },
+  {
+    "text": "Veo el video normal pero no escucho absolutamente nada",
+    "intent": "sonido"
+  },
+  {
+    "text": "Mi voz no queda grabada en el micrófono del equipo",
+    "intent": "sonido"
+  },
+  {
+    "text": "El altavoz suena rasposo al subir el volumen",
+    "intent": "sonido"
+  },
+  {
+    "text": "Únicamente se oye el auricular izquierdo",
+    "intent": "sonido"
+  },
+  {
+    "text": "Los demás no reciben mi voz durante una llamada",
+    "intent": "sonido"
+  },
+  {
+    "text": "Ya no caben más fotos en el almacenamiento del móvil",
+    "intent": "almacenamiento"
+  },
+  {
+    "text": "Conecto el disco externo y no figura ninguna unidad",
+    "intent": "almacenamiento"
+  },
+  {
+    "text": "Necesito hacer sitio en la consola para otro juego",
+    "intent": "almacenamiento"
+  },
+  {
+    "text": "El sistema no detecta mi tarjeta de memoria",
+    "intent": "almacenamiento"
+  },
+  {
+    "text": "El explorador no muestra el SSD que acabo de conectar",
+    "intent": "almacenamiento"
+  },
+  {
+    "text": "El sistema se queda repitiendo el logotipo una y otra vez",
+    "intent": "software"
+  },
+  {
+    "text": "La app se cierra inmediatamente después de iniciarla",
+    "intent": "software"
+  },
+  {
+    "text": "No termina de aplicar el parche del sistema de la consola",
+    "intent": "software"
+  },
+  {
+    "text": "Me salen anuncios extraños en el escritorio sin abrir nada",
+    "intent": "software"
+  },
+  {
+    "text": "Windows lanza un código de error con fondo azul",
+    "intent": "software"
+  },
+  {
+    "text": "El personaje se desplaza aunque nadie toque la palanca",
+    "intent": "controles"
+  },
+  {
+    "text": "Algunas letras del teclado dejaron de responder",
+    "intent": "controles"
+  },
+  {
+    "text": "El gatillo derecho de mi mando se queda presionado",
+    "intent": "controles"
+  },
+  {
+    "text": "Mi ratón registra dos clics cuando hago uno",
+    "intent": "controles"
+  },
+  {
+    "text": "La cruceta del control no responde hacia la izquierda",
+    "intent": "controles"
+  },
+  {
+    "text": "Volqué mi taza de té sobre el portátil",
+    "intent": "liquidos"
+  },
+  {
+    "text": "Mi móvil terminó dentro de una alberca",
+    "intent": "liquidos"
+  },
+  {
+    "text": "Entró refresco por las rejillas de la consola",
+    "intent": "liquidos"
+  },
+  {
+    "text": "Me advierte que hay humedad en el puerto del teléfono",
+    "intent": "liquidos"
+  },
+  {
+    "text": "Le cayó lluvia a la computadora en la mochila",
+    "intent": "liquidos"
+  },
+  {
+    "text": "¿En cuánto me saldría llevarla a reparar?",
+    "intent": "presupuesto"
+  },
+  {
+    "text": "Antes de autorizar el trabajo necesito conocer el presupuesto",
+    "intent": "presupuesto"
+  },
+  {
+    "text": "¿Hay que pagar por que revisen el equipo?",
+    "intent": "presupuesto"
+  },
+  {
+    "text": "Quisiera que me cotizaran un cambio de pieza",
+    "intent": "presupuesto"
+  },
+  {
+    "text": "¿Qué tarifa manejan para la revisión técnica?",
+    "intent": "presupuesto"
+  },
+  {
+    "text": "Pásame un medio para hablar directamente con ustedes",
+    "intent": "contacto"
+  },
+  {
+    "text": "¿A dónde debo llevar el teléfono para revisión?",
+    "intent": "contacto"
+  },
+  {
+    "text": "Quiero saber si hoy está abierto el taller",
+    "intent": "contacto"
+  },
+  {
+    "text": "Necesito concertar una cita con el técnico",
+    "intent": "contacto"
+  },
+  {
+    "text": "¿Cuál es la cuenta oficial para mandarles un DM?",
+    "intent": "contacto"
+  }
+]

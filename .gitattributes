@@ -1,0 +1,26 @@
+# These preserved sources were hashed with Windows line endings. Check them out
+# consistently, including when core.autocrlf is false or the clone is on Linux.
+/data/simulation.json text eol=crlf
+/data/test.csv text eol=crlf
+/web/simulation/*.json text eol=crlf
+
+# Training artifacts are immutable and their hashes describe their exact bytes.
+# Preserve the original line endings of new imported references and future runs.
+/data/training/**/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# The first real run was committed before this policy: its existing Git blobs
+# contain LF, while its recorded artifact hashes describe the original CRLF.
+/data/training/runs/861484ac-3558-43d4-a997-959aeec83d47/*.json text eol=crlf
+/data/training/runs/861484ac-3558-43d4-a997-959aeec83d47/approvals/*.json text eol=crlf
+
+# Historical captures and document receipts describe the preserved CRLF bytes.
+/references/** text=auto eol=crlf
+/docs/*.json text eol=crlf
+/reports/*.json text eol=crlf
+
+# Preserve packaged documents and their verification hashes exactly.
+*.pdf binary
+*.png binary
+*.joblib binary
+*.sqlite binary
+*.ipynb -text

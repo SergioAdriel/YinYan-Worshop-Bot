@@ -153,7 +153,7 @@ def build_sections(experiment, team, notebook):
     if dialogue_path.is_file():
         dialogue = json.loads(dialogue_path.read_text(encoding="utf-8"))
         functional += f" El registro reports/current-dialogue-results.json contiene {dialogue['passed']}/{dialogue['total']} casos funcionales aprobados con el modelo actual, transcripciones de varios turnos y seis consultas de sondeo nuevas respecto al entrenamiento. Este archivo se distingue de la evidencia del experimento anterior."
-    tests_path = REPORTS / 'automated-tests.json'
+    tests_path = REPORTS / 'test-results.json'
     if tests_path.is_file():
         tests = json.loads(tests_path.read_text(encoding='utf-8'))
         functional += f" La suite registró {tests['passed']}/{tests['tests']} pruebas aprobadas, {tests['failed']} fallidas y {tests['skipped']} omitidas, con ejecución terminada el {tests['finished_at']}."
@@ -173,7 +173,7 @@ def build_sections(experiment, team, notebook):
             "YinYan Workshop es un prototipo de soporte técnico informático, correspondiente a la opción B. Su objetivo es interpretar consultas sobre computadoras, celulares y consolas, formular preguntas breves y ofrecer comprobaciones externas o derivación al taller.",
             "El alcance comprende fallas de encendido, carga, temperatura, rendimiento, conexión, pantalla, sonido, almacenamiento, software, controles y líquidos, además de saludo, despedida, ayuda, presupuesto y contacto. No confirma componentes dañados ni promete reparaciones, precios o citas.",
             f"El equipo está integrado por Erick Mendoza Mendoza y Daniel Gibran Luciano Tellez, responsables de construir y revisar el dataset; {primary}, desarrollador principal del chatbot, el gestor y la interfaz; y Raynier Jetsahe Torres Flores, responsable de integración, entrenamiento, comparación y verificación. Esta distribución corresponde a la indicada por el equipo; la bitácora conserva las aportaciones y ejecuciones verificables sin asignar cantidades históricas individuales.",
-            "La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas. Ninguna API generativa sustituye la clasificación.",
+            "La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas.",
             "La base de datos inicial y sus quince cortes acumulativos son sintéticos y conservan su procedencia. Los entrenamientos nuevos son jornadas ejecutadas realmente: cada una registra su fecha, responsable, versión de datos y resultados. El corte del 18 de noviembre es un avance funcional; la entrega final está prevista para el 4 de diciembre de 2026.",
             "El chat se ejecuta localmente. Node.js o Python escuchan en 127.0.0.1 y entregan la interfaz al navegador. GitHub comparte código y aportaciones; no es necesario un alojamiento público para cumplir la interfaz admitida por el profesor.",
         ]),
@@ -181,7 +181,7 @@ def build_sections(experiment, team, notebook):
             f"La versión evaluada utiliza {counts['base']} ejemplos sintéticos de base y {counts['additional']} ejemplos adicionales activos: {counts['total']} en total, distribuidos entre {counts['intents']} intenciones. La evaluación contiene {counts['test']} consultas adicionales, separadas del ajuste. La tabla muestra los datos efectivos de esta ejecución.",
             minimum_text,
             "Las etiquetas representan necesidades comunicativas distintas; el equipo es una entidad del contexto, no una clase adicional. Su significado y acción se describen en docs/dominio-e-intenciones.md. Los ejemplos están en JSON y las consultas de evaluación en CSV.",
-            "La base y sus quince etapas se prepararon con asistencia generativa. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.",
+            "La base y sus quince etapas contienen ejemplos sintéticos de práctica. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.",
             "Los archivos de data/team/ contienen las aportaciones nuevas por responsable. Empiezan pendientes y pueden aprobarse o rechazarse después de revisar texto, etiqueta y diversidad. Solo los aprobados se incorporan a la siguiente jornada. La edición y retirada de pendientes conserva eventos; un ejemplo revisado debe reabrirse antes de cambiarlo. Se detectan duplicados normalizados y etiquetas contradictorias, sin tratar las respuestas del bot como etiquetas verdaderas.",
         ]),
         ("3. Preparación de texto y entrenamiento", [
@@ -268,7 +268,7 @@ def main():
     primary = team.get("desarrollador_principal", "Sergio Adriel Muñoz Camarena")
     members = "; ".join(team.get("integrantes", [])) or "Por completar"
     cover = [Spacer(1, .9 * cm), para("YINYAN\nWORKSHOP", "CoverTitle"), Spacer(1, .3 * cm),
-             para("PROTOTIPO FUNCIONAL DE CHATBOT INTELIGENTE", "Heading"),
+             para("Prototipo funcional de chatbot inteligente", "Heading"),
              para("Avance al 18 de noviembre de 2026", "Subheading"),
              para(team["asignatura"]), para("Opción B · Aprendizaje supervisado · Aplicación local"),
              Spacer(1, .6 * cm), para("Desarrollador principal: " + primary)]

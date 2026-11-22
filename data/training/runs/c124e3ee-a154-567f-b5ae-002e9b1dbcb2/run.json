@@ -1,0 +1,94 @@
+{
+  "format_version": 2,
+  "id": "c124e3ee-a154-567f-b5ae-002e9b1dbcb2",
+  "run_type": "imported_reference",
+  "reference_stage": 5,
+  "journey": 0,
+  "title": "Más de un equipo",
+  "note": "Probamos computadora, teléfono y consola. Un ejemplo nuevo no garantiza que todas las consultas de ese tema funcionen.",
+  "date": "2026-11-01",
+  "created_at": "2026-11-01T16:00:00-06:00",
+  "started_at": "2026-11-01T16:00:00-06:00",
+  "finished_at": "2026-11-01T18:12:00-06:00",
+  "author": "system",
+  "initiated_by": "reference_import",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "simulated",
+  "simulated": true,
+  "status": "succeeded",
+  "approval_status": "reference",
+  "dataset_version": "561914e95b56271e415f87a3868d40c24ed757b9223cb44873d4fe865f8f20db",
+  "approved_revision": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "message": "Referencia importada de los artefactos originales de la simulación. Sus fechas describen el escenario ficticio; esta importación no ejecuta ni acredita una jornada de entrenamiento real.",
+  "counts": {
+    "base": 80,
+    "additional": 0,
+    "total": 80,
+    "test": 80,
+    "intents": 16,
+    "per_intent": {
+      "almacenamiento": 5,
+      "ayuda": 5,
+      "carga": 5,
+      "conexion": 5,
+      "contacto": 5,
+      "controles": 5,
+      "despedida": 5,
+      "encendido": 5,
+      "liquidos": 5,
+      "pantalla": 5,
+      "presupuesto": 5,
+      "rendimiento": 5,
+      "saludo": 5,
+      "software": 5,
+      "sonido": 5,
+      "temperatura": 5
+    }
+  },
+  "labels": [
+    "almacenamiento",
+    "ayuda",
+    "carga",
+    "conexion",
+    "contacto",
+    "controles",
+    "despedida",
+    "encendido",
+    "liquidos",
+    "pantalla",
+    "presupuesto",
+    "rendimiento",
+    "saludo",
+    "software",
+    "sonido",
+    "temperatura"
+  ],
+  "process_id": null,
+  "storage_path": "runs/c124e3ee-a154-567f-b5ae-002e9b1dbcb2",
+  "selected_model": "naive_bayes",
+  "models": {
+    "naive_bayes": {
+      "accuracy": 0.55,
+      "precision_macro": 0.60625,
+      "correct": 44,
+      "total": 80,
+      "accepted": 9
+    }
+  },
+  "provenance": {
+    "description": "Referencia importada de los artefactos originales de la simulación. Sus fechas describen el escenario ficticio; esta importación no ejecuta ni acredita una jornada de entrenamiento real.",
+    "source_stage": 5,
+    "source_model": "web/simulation/day-05.json"
+  },
+  "source_hashes": {
+    "data/simulation.json": "7af90b4134f51e9fa01c144f11f981078029a177df1001493b85818404c64e08",
+    "web/simulation/manifest.json": "7eb2f25dc1f8ea426d001fc63d12b303919e475f225899c3ded5bfd5cffccab6",
+    "data/test.csv": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271",
+    "web/simulation/day-05.json": "5add83f5c875bf576cf08272520d3bcd8d572c18e64a7a556612c49ce75f3ffc"
+  },
+  "artifact_hashes": {
+    "snapshot.json": "561914e95b56271e415f87a3868d40c24ed757b9223cb44873d4fe865f8f20db",
+    "model.json": "5add83f5c875bf576cf08272520d3bcd8d572c18e64a7a556612c49ce75f3ffc",
+    "benchmark.json": "4da0631d43a1c5bc8b4947da92fc098045c045bfaf5a16143b68d3e769b98105"
+  }
+}

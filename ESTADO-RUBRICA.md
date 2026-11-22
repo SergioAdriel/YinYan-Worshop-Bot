@@ -1,4 +1,4 @@
-# PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026
+# Prototipo funcional — Avance al 18 de noviembre de 2026
 
 Entrega final prevista: **4 de diciembre de 2026**. Esta matriz distingue infraestructura comprobada, datos pendientes y verificaciones de entrega; no declara terminado el proyecto.
 
@@ -28,7 +28,7 @@ Estados: **Cumplido**, **Pendiente de datos**, **Pendiente de verificación**, *
 | Contexto efectivo durante tres turnos | Cumplido | Equipo, falla y respuestas pendientes modifican el siguiente mensaje y el resumen. |
 | Ambigüedad, desconocidos y temas ajenos | Cumplido | Aclaración incluso con clasificación confiada de una frase sin síntoma; recuperación guiada. |
 | Reinicio del contexto | Cumplido | Nueva consulta y comando explícito de reinicio; historial y estado de conversación reiniciados. |
-| Interfaz web funcional y móvil | Cumplido | reports/automated-tests.json; tests/; reports/workflow-browser-results.json |
+| Interfaz web funcional y móvil | Cumplido | reports/test-results.json; tests/; reports/workflow-browser-results.json |
 | Guardar ejemplos antes del entrenamiento | Cumplido | UUID, autor, hora, estado y versión; eventos inmutables y persistencia tras reinicio. |
 | Pendiente, aprobado y rechazado | Cumplido | Edición/retiro de pendientes y reapertura controlada de revisados; solo aprobados se entrenan. |
 | Jornadas reales y numeración automática | Cumplido | Reserva exclusiva, ID único, instante UTC real y estado failed si no termina. |
@@ -69,11 +69,11 @@ Faltan **80 ejemplos aprobados de entrenamiento** y **50 consultas de prueba fin
 
 ## Verificación del avance
 
-Suite automática: 97/97 aprobadas, 0 fallidas, 0 omitidas.
+Suite de pruebas: 97/97 aprobadas, 0 fallidas, 0 omitidas.
 Navegador: 12 comprobaciones aprobadas y 0 fallidas; jornadas de QA aisladas en Temp.
 
 Modelo activo: **logistic_regression**, jornada **1**, UUID `861484ac-3558-43d4-a997-959aeec83d47`.
 Ejecución real: `2026-11-18T19:00:38.991Z` a `2026-11-18T19:00:45.060Z`; responsable `system`.
 Benchmark conocido: 70/80 aciertos (87.50 %), F1 macro 87.34 %. Se seleccionó por validación cruzada, no por estas cifras.
 
-Las pruebas automáticas verifican componentes y flujos; no sustituyen la revisión lingüística, la nueva prueba reservada ni la demostración con preguntas del docente.
+Las pruebas del sistema verifican componentes y flujos; no sustituyen la revisión lingüística, la nueva prueba reservada ni la demostración con preguntas del docente.

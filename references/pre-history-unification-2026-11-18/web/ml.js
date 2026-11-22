@@ -1,6 +1,6 @@
 /** Inferencia del clasificador realmente entrenado en Python.
  * TF-IDF palabras 1/2, tf sublineal, normalización L2 y softmax estable.
- * No hay reglas de síntomas ni llamadas a un servicio generativo.
+ * La inferencia aplica los pesos del modelo supervisado exportado.
  */
 export function createClassifier(model) {
   if (model.format_version !== 1 || !Array.isArray(model.classes) || !Array.isArray(model.features)) {

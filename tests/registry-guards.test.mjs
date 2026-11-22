@@ -34,6 +34,25 @@ async function pythonProbe(directory, script) {
   return JSON.parse(stdout.trim().split('\n').at(-1));
 }
 
+test('Registro: las referencias se leen con almacenamiento aislado sin contarlas como jornadas', async () => isolated(async directory => {
+  const registry = createWorkflowRegistry(root, directory);
+  const config = await registry.config();
+  const reference = await registry.version(config.references.base_id);
+  assert.equal(reference.run_type, 'imported_reference');
+  assert.equal(reference.approval_status, 'reference');
+  assert.equal(reference.kind, 'historical');
+  assert.deepEqual((await registry.versions()).versions, []);
+  const result = await pythonProbe(directory, `catalog=json.loads((Path.cwd()/'data/training/training_history.json').read_text(encoding='utf-8'))
+reference=registry.version(catalog['references']['base_id'])
+assert reference['run_type']=='imported_reference'
+assert reference['approval_status']=='reference'
+assert reference['kind']=='historical'
+assert registry.versions()==[]
+assert json.loads((registry.run_folder(reference['id'])/'snapshot.json').read_text(encoding='utf-8'))['training_examples']
+print(json.dumps({'reference_id':reference['id']}))`);
+  assert.equal(result.reference_id, reference.id);
+}));
+
 test('Registro: un segundo proceso no reclama ni marca fallida una jornada todavía activa', async () => isolated(async directory => {
   const result = await pythonProbe(directory, `run=registry.reserve({'approved_examples':[],'approved_revision':'empty-approved-snapshot'},'system')
 folder=registry.run_folder(run['id'])

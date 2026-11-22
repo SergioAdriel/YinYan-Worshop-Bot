@@ -20,6 +20,6 @@ Antes de trabajar, recibe cambios del equipo. Al terminar, `subir-aportes.cmd`
 confirma las aportaciones y el historial. Si ambos modifican el repositorio sin
 recibir primero los cambios, resuelvan la divergencia de Git sin borrar registros.
 
-Las pruebas automáticas usan `YINYAN_DATA_DIR` dentro de Temp para aislar su
+Las pruebas del sistema usan `YINYAN_DATA_DIR` dentro de Temp para aislar su
 historial del proyecto; `YINYAN_TRAINING_DIR` permite configurar una ubicación
 específica. `data/local/` conserva únicamente estado y cachés propios del servidor.

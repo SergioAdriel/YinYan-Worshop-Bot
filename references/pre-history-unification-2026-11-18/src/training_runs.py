@@ -532,7 +532,7 @@ def verify_export(pipeline, exported, texts):
 
 def verified_evidence(registry):
     """Accept QA evidence only while the tested code and documents still match."""
-    tests = read_json(ROOT / 'reports/automated-tests.json', {})
+    tests = read_json(ROOT / 'reports/test-results.json', {})
     hashes = tests.get('source_hashes', {})
     current = bool(tests.get('complete') and hashes)
     for name, expected in hashes.items() if current else []:

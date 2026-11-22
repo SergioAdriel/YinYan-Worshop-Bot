@@ -167,7 +167,15 @@ class Registry:
         self.runs = self.folder / 'runs'
 
     def run_folder(self, run_id):
-        return self.runs / uuid_value(run_id)
+        run_id = uuid_value(run_id)
+        local = self.runs / run_id
+        if (local / 'run.json').is_file():
+            return local
+        reference = ROOT / 'data/training/runs' / run_id
+        if reference != local and (reference / 'run.json').is_file():
+            if read_json(reference / 'run.json').get('run_type') == 'imported_reference':
+                return reference
+        return local
 
     def raw(self, run_id):
         try:
@@ -194,8 +202,9 @@ class Registry:
         run = dict(self.raw(run_id))
         approvals = self.run_folder(run_id) / 'approvals'
         approved = approvals.is_dir() and any(approvals.glob('*.json'))
-        run['approval_status'] = 'approved' if approved else 'provisional'
-        run['kind'] = 'active' if self.active_id() == run_id else 'historical' if approved else 'provisional'
+        reference = run.get('run_type') == 'imported_reference'
+        run['approval_status'] = 'approved' if approved else 'reference' if reference else 'provisional'
+        run['kind'] = 'active' if self.active_id() == run_id else 'historical' if reference or approved else 'provisional'
         run['model_url'] = f'./api/versions/{run_id}/model.json'
         if full:
             final_results = [read_json(path) for path in self.run_folder(run_id).glob('final-evaluation-*.json')]
@@ -211,7 +220,8 @@ class Registry:
         records = []
         if self.runs.is_dir():
             for path in self.runs.glob('*/run.json'):
-                records.append(self.version(path.parent.name, full=False))
+                if read_json(path).get('run_type') != 'imported_reference':
+                    records.append(self.version(path.parent.name, full=False))
         return sorted(records, key=lambda row: row['journey'], reverse=True)
 
     def active(self):
@@ -532,7 +542,7 @@ def verify_export(pipeline, exported, texts):
 
 def verified_evidence(registry):
     """Accept QA evidence only while the tested code and documents still match."""
-    tests = read_json(ROOT / 'reports/automated-tests.json', {})
+    tests = read_json(ROOT / 'reports/test-results.json', {})
     hashes = tests.get('source_hashes', {})
     current = bool(tests.get('complete') and hashes)
     for name, expected in hashes.items() if current else []:

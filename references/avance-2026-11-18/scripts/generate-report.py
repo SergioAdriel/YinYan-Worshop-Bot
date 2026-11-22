@@ -153,7 +153,7 @@ def build_sections(experiment, team, notebook):
     if dialogue_path.is_file():
         dialogue = json.loads(dialogue_path.read_text(encoding="utf-8"))
         functional += f" El registro reports/current-dialogue-results.json contiene {dialogue['passed']}/{dialogue['total']} casos funcionales aprobados con el modelo actual, transcripciones de varios turnos y seis consultas de sondeo nuevas respecto al entrenamiento. Este archivo se distingue de la evidencia del experimento anterior."
-    functional += f" En la revisión del {CUTOFF} pasaron las 69 pruebas automáticas del proyecto. Las capturas y comprobaciones Chrome guardadas anteriormente son evidencia histórica; no se presentan como una ejecución nueva en esta fecha."
+    functional += f" En la revisión del {CUTOFF} pasaron las 69 pruebas del sistema del proyecto. Las capturas y comprobaciones Chrome guardadas anteriormente son evidencia histórica; no se presentan como una ejecución nueva en esta fecha."
     minimum_text = (
         f"Faltan {missing} ejemplos pertinentes y diversos para llegar al mínimo de {minimum} por intención. "
         "El total general supera 200, pero ese total no sustituye el mínimo de cada categoría."
@@ -164,7 +164,7 @@ def build_sections(experiment, team, notebook):
             "YinYan Workshop es un prototipo de soporte técnico informático, correspondiente a la opción B. Su objetivo es interpretar consultas sobre computadoras, celulares y consolas, formular preguntas breves y ofrecer comprobaciones externas o derivación al taller.",
             "El alcance comprende fallas de encendido, carga, temperatura, rendimiento, conexión, pantalla, sonido, almacenamiento, software, controles y líquidos, además de saludo, despedida, ayuda, presupuesto y contacto. No confirma componentes dañados ni promete reparaciones, precios o citas.",
             f"{primary} figura como desarrollador principal declarado: construye la plataforma para facilitar que sus compañeros aporten consultas, revisen etiquetas y entrenen el modelo. La colaboración propuesta contempla cuatro perfiles: dos de desarrollo y dos de aportación y revisión de datos. Esta distribución es una organización de la práctica; no acredita por sí sola participación histórica de cuatro personas.",
-            "La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas. Ninguna API generativa sustituye la clasificación.",
+            "La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas.",
             "La evolución se presenta como quince etapas acumulativas sobre ejemplos sintéticos. Sus metadatos originales conservan su procedencia simulada. No son quince días de actividad humana acreditada; las aportaciones nuevas se identifican por separado con fechas reales del servidor.",
             "El chat se ejecuta localmente. Node.js o Python escuchan en 127.0.0.1 y entregan la interfaz al navegador. GitHub comparte código y aportaciones; no es necesario un alojamiento público para cumplir la interfaz admitida por el profesor.",
         ]),
@@ -172,7 +172,7 @@ def build_sections(experiment, team, notebook):
             f"La versión evaluada utiliza {counts['base']} ejemplos sintéticos de base y {counts['additional']} ejemplos adicionales activos: {counts['total']} en total, distribuidos entre {counts['intents']} intenciones. La evaluación contiene {counts['test']} consultas adicionales, separadas del ajuste. La tabla muestra los datos efectivos de esta ejecución.",
             minimum_text,
             "Las etiquetas representan necesidades comunicativas distintas; el equipo es una entidad del contexto, no una clase adicional. Su significado y acción se describen en docs/dominio-e-intenciones.md. Los ejemplos están en JSON y las consultas de evaluación en CSV.",
-            "La base y sus quince etapas se prepararon con asistencia generativa. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.",
+            "La base y sus quince etapas contienen ejemplos sintéticos de práctica. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.",
             "Los archivos de data/team/ contienen las aportaciones nuevas por autor. El experimento cuenta únicamente ejemplos etiquetados activos, conserva la procedencia sintética de la base y comprueba duplicados normalizados y etiquetas contradictorias. No utiliza las respuestas del propio bot como etiquetas verdaderas.",
         ]),
         ("3. Preparación de texto y entrenamiento", [

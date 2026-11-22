@@ -1,4 +1,4 @@
-# Prototipo funcional — avance al 18 de noviembre de 2026
+# Prototipo funcional — Avance al 18 de noviembre de 2026
 
 Entrega final prevista: **4 de diciembre de 2026**. El avance incluye la infraestructura para seguir incorporando datos y producir nuevas jornadas verificables. No representa la conclusión definitiva del proyecto.
 
@@ -46,7 +46,7 @@ No se obliga a alcanzar un porcentaje fijo. Una mejora, empate o retroceso se pr
 3. Con la versión elegida, ejecuta la acción **Evaluar prueba final** desde sus detalles. El sistema comprueba cantidad, etiquetas, duplicados y separación de datos antes de evaluar.
 4. Se conserva un recibo de apertura del conjunto. La misma evaluación puede consultarse otra vez; no se usa repetidamente ese conjunto para comparar nuevas versiones. Si se desarrolla después de observarlo, prepara otra prueba reservada.
 
-El archivo vacío no acredita el requisito: **faltan los datos finales**, aunque el procedimiento esté implementado y probado con datos temporales de QA. Esos datos de pruebas automáticas no se incorporan al corpus del proyecto.
+El archivo vacío no acredita el requisito: **faltan los datos finales**, aunque el procedimiento esté implementado y probado con datos temporales de QA. Esos datos de pruebas del sistema no se incorporan al corpus del proyecto.
 
 ## Compartir por Git y conservar modelos
 

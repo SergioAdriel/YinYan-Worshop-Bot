@@ -39,5 +39,5 @@ const result = {
   test_files: names, source_hashes: hashes,
 };
 await mkdir(resolve(root, 'reports'), {recursive: true});
-await writeFile(resolve(root, 'reports/automated-tests.json'), JSON.stringify(result, null, 2) + '\n');
+await writeFile(resolve(root, 'reports/test-results.json'), JSON.stringify(result, null, 2) + '\n');
 if (!result.complete) process.exitCode = exitCode || 1;

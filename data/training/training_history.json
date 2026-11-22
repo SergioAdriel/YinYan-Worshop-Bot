@@ -1,0 +1,219 @@
+{
+  "format_version": 1,
+  "labels": {
+    "saludo": "Saludo",
+    "despedida": "Despedida",
+    "ayuda": "Ayuda",
+    "encendido": "Encendido",
+    "carga": "Carga y batería",
+    "temperatura": "Temperatura",
+    "rendimiento": "Rendimiento",
+    "conexion": "Conexión",
+    "pantalla": "Pantalla",
+    "sonido": "Sonido",
+    "almacenamiento": "Almacenamiento",
+    "software": "Software",
+    "controles": "Controles",
+    "liquidos": "Líquidos",
+    "presupuesto": "Presupuesto",
+    "contacto": "Contacto"
+  },
+  "references": {
+    "base_id": "11ef94ae-66a9-5329-a9fe-95dd2be5c80f",
+    "stages": {
+      "1": "d7383de2-ff28-5940-bd91-f9e5c338ed46",
+      "2": "08923d34-aa2e-560d-b368-1c13a094ee25",
+      "3": "c6cb6637-6ec0-5ead-9a9b-a036a551eb62",
+      "4": "3c5109be-98d2-5c7b-9d75-4d55e5c4a390",
+      "5": "c124e3ee-a154-567f-b5ae-002e9b1dbcb2",
+      "6": "56991de7-57e2-54aa-973c-7f321b2b2171",
+      "7": "37ad3c01-dbf6-5e8d-94d6-682e1dcacaaf",
+      "8": "f2f915c2-d14a-5066-adbe-7355e83e8942",
+      "9": "8c1b46d7-f56c-5196-ad0b-0f296568f5af",
+      "10": "84087ea1-18b4-513a-b693-edf0886ee5e1",
+      "11": "a5e7b57a-7e16-510b-8ff7-08e3649d63ed",
+      "12": "36dd4f96-ad18-5073-a595-d5e87e366290",
+      "13": "726040b8-1811-5001-8ca6-f5152ed7b775",
+      "14": "c38d5c63-5b3f-50d2-8e73-87555d98241f",
+      "15": "11ef94ae-66a9-5329-a9fe-95dd2be5c80f"
+    }
+  },
+  "reference_curve": [
+    {
+      "day": 1,
+      "total_examples": 16,
+      "accuracy": 0.1625,
+      "precision_macro": 0.4788773148148148,
+      "correct": 13,
+      "total": 80,
+      "accepted": 3
+    },
+    {
+      "day": 2,
+      "total_examples": 32,
+      "accuracy": 0.25,
+      "precision_macro": 0.5178934378629501,
+      "correct": 20,
+      "total": 80,
+      "accepted": 9
+    },
+    {
+      "day": 3,
+      "total_examples": 48,
+      "accuracy": 0.325,
+      "precision_macro": 0.5000496031746031,
+      "correct": 26,
+      "total": 80,
+      "accepted": 10
+    },
+    {
+      "day": 4,
+      "total_examples": 64,
+      "accuracy": 0.4375,
+      "precision_macro": 0.5665349616858237,
+      "correct": 35,
+      "total": 80,
+      "accepted": 10
+    },
+    {
+      "day": 5,
+      "total_examples": 80,
+      "accuracy": 0.55,
+      "precision_macro": 0.60625,
+      "correct": 44,
+      "total": 80,
+      "accepted": 9
+    },
+    {
+      "day": 6,
+      "total_examples": 96,
+      "accuracy": 0.625,
+      "precision_macro": 0.6630252100840337,
+      "correct": 50,
+      "total": 80,
+      "accepted": 11
+    },
+    {
+      "day": 7,
+      "total_examples": 112,
+      "accuracy": 0.625,
+      "precision_macro": 0.6351190476190477,
+      "correct": 50,
+      "total": 80,
+      "accepted": 16
+    },
+    {
+      "day": 8,
+      "total_examples": 128,
+      "accuracy": 0.6625,
+      "precision_macro": 0.6860863095238094,
+      "correct": 53,
+      "total": 80,
+      "accepted": 17
+    },
+    {
+      "day": 9,
+      "total_examples": 144,
+      "accuracy": 0.675,
+      "precision_macro": 0.6975040584415584,
+      "correct": 54,
+      "total": 80,
+      "accepted": 20
+    },
+    {
+      "day": 10,
+      "total_examples": 160,
+      "accuracy": 0.7625,
+      "precision_macro": 0.8229166666666667,
+      "correct": 61,
+      "total": 80,
+      "accepted": 21
+    },
+    {
+      "day": 11,
+      "total_examples": 176,
+      "accuracy": 0.775,
+      "precision_macro": 0.8363095238095238,
+      "correct": 62,
+      "total": 80,
+      "accepted": 22
+    },
+    {
+      "day": 12,
+      "total_examples": 192,
+      "accuracy": 0.7875,
+      "precision_macro": 0.8488095238095238,
+      "correct": 63,
+      "total": 80,
+      "accepted": 25
+    },
+    {
+      "day": 13,
+      "total_examples": 208,
+      "accuracy": 0.7875,
+      "precision_macro": 0.8227678571428572,
+      "correct": 63,
+      "total": 80,
+      "accepted": 25
+    },
+    {
+      "day": 14,
+      "total_examples": 224,
+      "accuracy": 0.825,
+      "precision_macro": 0.8602678571428571,
+      "correct": 66,
+      "total": 80,
+      "accepted": 26
+    },
+    {
+      "day": 15,
+      "total_examples": 240,
+      "accuracy": 0.8625,
+      "precision_macro": 0.8811011904761905,
+      "correct": 69,
+      "total": 80,
+      "accepted": 29
+    }
+  ],
+  "participants": [
+    {
+      "id": "alumno-a",
+      "name": "Estudiante A",
+      "role": "training",
+      "simulated": true
+    },
+    {
+      "id": "alumno-b",
+      "name": "Estudiante B",
+      "role": "training",
+      "simulated": true
+    },
+    {
+      "id": "prueba-c",
+      "name": "Compañero C",
+      "role": "testing",
+      "simulated": true
+    },
+    {
+      "id": "prueba-d",
+      "name": "Compañero D",
+      "role": "testing",
+      "simulated": true
+    }
+  ],
+  "calendar": {
+    "start_date": "2026-10-28",
+    "end_date": "2026-11-11",
+    "timezone": "America/Mexico_City",
+    "timestamp_kind": "simulated"
+  },
+  "provenance": {
+    "description": "Referencia importada de los artefactos originales de la simulación. Sus fechas describen el escenario ficticio; esta importación no ejecuta ni acredita una jornada de entrenamiento real.",
+    "original": "Frases y participantes ficticios preparados de una vez. Las fechas y horas del 28 de octubre al 11 de noviembre de 2026 son horarios simulados del escenario, no sesiones reales ni evidencia de trabajo pasado."
+  },
+  "source_hashes": {
+    "data/simulation.json": "7af90b4134f51e9fa01c144f11f981078029a177df1001493b85818404c64e08",
+    "web/simulation/manifest.json": "7eb2f25dc1f8ea426d001fc63d12b303919e475f225899c3ded5bfd5cffccab6",
+    "data/test.csv": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271"
+  }
+}

@@ -40,7 +40,10 @@ export function createWorkflowRegistry(project,runtime){
   }
   async function versions(recover=true){
     let entries=[];try{entries=await readdir(resolve(folder,'runs'),{withFileTypes:true});}catch(error){if(error.code!=='ENOENT')throw error;}
-    const rows=[];for(const entry of entries)if(entry.isDirectory()&&uuid.test(entry.name))rows.push(await version(entry.name,false));
+    const rows=[];for(const entry of entries)if(entry.isDirectory()&&uuid.test(entry.name)){
+      const row=await version(entry.name,false);
+      if(row.run_type!=='imported_reference')rows.push(row);
+    }
     if(recover&&rows.some(row=>{
       if(row.status!=='running')return false;
       if(!row.process_id)return Date.now()-Date.parse(row.created_at)>30000;
@@ -52,7 +55,7 @@ export function createWorkflowRegistry(project,runtime){
     return{versions:rows.sort((a,b)=>(b.journey||0)-(a.journey||0)||(b.reference_stage||0)-(a.reference_stage||0)),active_id:await activeId(),baseline:await baseline()};
   }
   async function evidence(){
-    const tests=await read(resolve(project,'reports/automated-tests.json'),{});
+    const tests=await read(resolve(project,'reports/test-results.json'),{});
     let current=Boolean(tests.complete&&tests.source_hashes&&Object.keys(tests.source_hashes).length);
     if(current)for(const[name,hash]of Object.entries(tests.source_hashes)){
       try{if(createHash('sha256').update(await readFile(resolve(project,name))).digest('hex')!==hash){current=false;break;}}

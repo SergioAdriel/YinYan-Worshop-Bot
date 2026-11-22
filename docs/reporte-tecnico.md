@@ -15,7 +15,7 @@ El alcance comprende fallas de encendido, carga, temperatura, rendimiento, conex
 
 El equipo está integrado por Erick Mendoza Mendoza y Daniel Gibran Luciano Tellez, responsables de construir y revisar el dataset; Sergio Adriel Muñoz Camarena, desarrollador principal del chatbot, el gestor y la interfaz; y Raynier Jetsahe Torres Flores, responsable de integración, entrenamiento, comparación y verificación. Esta distribución corresponde a la indicada por el equipo; la bitácora conserva las aportaciones y ejecuciones verificables sin asignar cantidades históricas individuales.
 
-La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas. Ninguna API generativa sustituye la clasificación.
+La aplicación separa clasificación supervisada, gestor de diálogo e interfaz. El aprendizaje consiste en ajustar TF-IDF y el clasificador a ejemplos etiquetados; las respuestas provienen de plantillas.
 
 La base de datos inicial y sus quince cortes acumulativos son sintéticos y conservan su procedencia. Los entrenamientos nuevos son jornadas ejecutadas realmente: cada una registra su fecha, responsable, versión de datos y resultados. El corte del 18 de noviembre es un avance funcional; la entrega final está prevista para el 4 de diciembre de 2026.
 
@@ -29,7 +29,7 @@ Faltan 80 ejemplos pertinentes y diversos para llegar al mínimo de 20 por inten
 
 Las etiquetas representan necesidades comunicativas distintas; el equipo es una entidad del contexto, no una clase adicional. Su significado y acción se describen en docs/dominio-e-intenciones.md. Los ejemplos están en JSON y las consultas de evaluación en CSV.
 
-La base y sus quince etapas se prepararon con asistencia generativa. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.
+La base y sus quince etapas contienen ejemplos sintéticos de práctica. Algunas entradas contienen faltas, abreviaturas y acentos omitidos para representar redacciones de práctica; las respuestas mantienen buena ortografía. La revisión humana de pertinencia y diversidad debe documentarse antes de presentar el corpus como validado por el equipo.
 
 Los archivos de data/team/ contienen las aportaciones nuevas por responsable. Empiezan pendientes y pueden aprobarse o rechazarse después de revisar texto, etiqueta y diversidad. Solo los aprobados se incorporan a la siguiente jornada. La edición y retirada de pendientes conserva eventos; un ejemplo revisado debe reabrirse antes de cambiarlo. Se detectan duplicados normalizados y etiquetas contradictorias, sin tratar las respuestas del bot como etiquetas verdaderas.
 

@@ -21,9 +21,15 @@
     "executed_cells": 12,
     "error_outputs": 0,
     "png_outputs": 4,
-    "sha256": "39e42381e201340e2f010d6b394a6a5bc6d0b6affd269737a40ceb077715cb4f"
+    "sha256": "e238c1dfbc902cfbca3cbf419ede0f93c4c6a21f0a91370bd1cf89179e80ab88"
   },
   "team_information_pending": true,
   "provenance_note": "Quince etapas sintéticas; no se afirma historial real de quince días.",
-  "test_is_development_evaluation": true
+  "test_is_development_evaluation": true,
+  "editorial_revision": {
+    "revised_at": "2026-11-22T04:36:12.327Z",
+    "original_sha256": "0fcdbfc91c5ea303024a32de9232827f7516150e42e9623817ea0150d87514bc",
+    "original_pdf_sha256": "ff94490cbbb264173cc02845ed75d44965fbd6c7f825b5cae2bf657baad3b55c",
+    "scope": "Actualización de prosa y presentación con las métricas existentes; no se ejecutaron celdas ni se repitió la evaluación."
+  }
 }

@@ -61,7 +61,7 @@ El notebook y el PDF describen la version seleccionada del prototipo.
 reproducir-notebook.cmd --version UUID-DE-LA-JORNADA
 generar-reporte.cmd --version UUID-DE-LA-JORNADA
 notebook.cmd abre Jupyter.
-node scripts/run-tests.mjs ejecuta la suite automatica.
+node scripts/run-tests.mjs ejecuta la suite de pruebas.
 node scripts/workflow-browser-check.mjs comprueba el flujo en Chrome
 con datos temporales separados del proyecto.
 

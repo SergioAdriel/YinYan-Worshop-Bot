@@ -1,4 +1,4 @@
-# PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026
+# Prototipo funcional — Avance al 18 de noviembre de 2026
 
 **YinYan Workshop · Chatbot de soporte técnico informático.** Entrega final prevista: **4 de diciembre de 2026**. Este corte documenta un prototipo funcional preparado para seguir incorporando datos; no representa la conclusión definitiva del proyecto.
 

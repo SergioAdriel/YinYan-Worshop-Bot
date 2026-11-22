@@ -19,9 +19,8 @@ Las aportaciones y jornadas nuevas llevan la fecha real del servidor. Consulta
 ## Experimento anterior conservado como referencia
 
 El dominio es soporte técnico inicial de computadoras, celulares, consolas y sus
-periféricos para YinYan Workshop (opción B de la consigna). Los ejemplos fueron
-propuestos por una herramienta generativa durante la construcción de este
-prototipo; no son conversaciones reales ni fueron recolectados de Instagram.
+periféricos para YinYan Workshop (opción B de la consigna). Los ejemplos son
+sintéticos; no son conversaciones reales ni fueron recolectados de Instagram.
 No contienen información personal. El estudiante debe revisar su pertinencia y
 diversidad antes de presentarlos como un corpus validado por el equipo.
 
@@ -49,7 +48,7 @@ para corregir el modelo y volver a afirmar que esa misma prueba es inédita.
 ## Convenciones de etiquetas
 
 | Intención | Necesidad comunicativa y respuesta |
-|---|---|
+| --- | --- |
 | saludo | Abrir conversación; bienvenida y solicitud del síntoma. |
 | despedida | Cerrar la consulta; cierre sin borrar implícitamente el contexto. |
 | ayuda | Conocer capacidades; menú de fallas y límites. |

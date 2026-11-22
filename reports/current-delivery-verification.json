@@ -12,9 +12,14 @@
   "four_members_present": true,
   "reference_files_intact": 119,
   "artifact_hashes": {
-    "notebooks/experimentacion.ipynb": "267eca0e97fcd230b47d507983f16b013728f01dc7898647da82046fc9ade1d5",
-    "docs/reporte-tecnico.pdf": "d0734851e5c56dce3f8518324cf30ac68969453955434f1ccc6162e7538ab265",
-    "docs/pdf-verification.json": "f64a315ac5c637cb246755f38175cdfca4c31afe32ea522feb80ddddc4fe2749",
+    "notebooks/experimentacion.ipynb": "fa1300ae8668ded4f61ad761e5aef47ee3d59e4e5b25676e787057a0b7b49385",
+    "docs/reporte-tecnico.pdf": "99e18898bac16d7b1fc305f82cf8e14b5f0dd9f5407ccf9a28f98609ce1be287",
+    "docs/pdf-verification.json": "a2d42bf425637f8ea96923e6fb80dce4fed868adf5615ebdec781d7b5f955079",
     "reports/current-experiment.json": "82656aff1bd666feee1e392d50d48b48c3cddff3afebf5d7d5821eec0199576d"
+  },
+  "editorial_revision": {
+    "revised_at": "2026-11-22T04:36:11.855Z",
+    "original_sha256": "5e23ae52811a51c6dedbe24e6cfabfe73a59831a1cc8e0c1f39a6fb31722480e",
+    "scope": "Hashes de documentos actualizados tras una revisión editorial; se conserva la fecha de comprobación y los resultados originales."
   }
 }

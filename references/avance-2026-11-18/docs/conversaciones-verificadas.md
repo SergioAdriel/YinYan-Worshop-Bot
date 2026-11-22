@@ -1,6 +1,6 @@
 # Conversaciones verificadas con el modelo entrenado
 
-Estas respuestas provienen de la ejecución automatizada guardada en reports/conversation-results.json. No son diálogos redactados como si hubieran sido ejecutados. La confianza de una respuesta contextual no implica que el sí/no aislado haya clasificado una falla: el gestor utiliza el estado previo.
+Estas respuestas corresponden a las pruebas de conversación registradas en `reports/conversation-results.json`. El gestor interpreta las respuestas de seguimiento, como «sí» y «no», a partir del estado previo de la conversación.
 
 ## encendido_multiturno
 

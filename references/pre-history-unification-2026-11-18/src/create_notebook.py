@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def build(version_id=None):
     notebook = new_notebook(cells=[
-        md("""# PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026
+        md("""# Prototipo funcional — Avance al 18 de noviembre de 2026
 
 **Proyecto Final I — Chatbot Inteligente mediante Aprendizaje Automático.**
 Opción B: soporte técnico informático limitado a computadoras, celulares y
@@ -121,8 +121,7 @@ display(train[['text', 'intent']].head(8))
 
 Los conteos corresponden a la instantánea actual, no al corpus anterior de 384
 frases. Los faltantes por intención orientan el trabajo del equipo. Los ejemplos
-deben aportar diversidad y categorías correctas. La base propuesta con apoyo
-generativo requiere revisión humana; no contiene consultas de clientes reales
+deben aportar diversidad y categorías correctas. La base sintética requiere revisión humana; no contiene consultas de clientes reales
 ni acredita sesiones históricas de estudiantes.
 """),
         code("""distribution = train.groupby('intent').size().reindex(labels).rename('ejemplos').to_frame()

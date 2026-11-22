@@ -1,4 +1,4 @@
-# PROTOTIPO FUNCIONAL — AVANCE AL 18 DE NOVIEMBRE DE 2026
+# Prototipo funcional — Avance al 18 de noviembre de 2026
 
 **YinYan Workshop · Chatbot de soporte técnico informático.** Entrega final prevista: **4 de diciembre de 2026**. Este corte documenta un prototipo funcional preparado para seguir incorporando datos; no representa la conclusión definitiva del proyecto.
 
@@ -20,6 +20,12 @@ El selector de responsable registra quién realiza una operación; **no es auten
 Haz doble clic en **iniciar.cmd** y conserva abierta la consola. La dirección habitual es **http://127.0.0.1:4173**. Usa el servidor local; no abras `web/index.html` directamente.
 
 Cada integrante clona el repositorio de GitHub y lo ejecuta en su computadora. La carpeta actual dispone de intérpretes en `runtime/`, excluidos de Git. En otra computadora instala Node.js 22 o Python 3.12 para el servidor; **el entrenamiento y los documentos requieren Python y `requirements-lock.txt`**. Consulta [instalación en Windows](docs/EJECUTAR-EN-LOCAL.md) y [configuración del repositorio](docs/publicar-en-github.md).
+
+El repositorio debe incluir `data/training/training_history.json` y las quince
+referencias importadas de `data/training/runs/`: son necesarias para cargar y
+validar ejemplos desde un clon nuevo. Si una copia está incompleta, recibe los
+cambios del equipo; también puedes reconstruir esas referencias originales con
+`node scripts/restore-training-catalog.mjs`. Consulta la [recuperación del catálogo](docs/EJECUTAR-EN-LOCAL.md#resolver-problemas-de-inicio).
 
 ## Flujo habitual
 

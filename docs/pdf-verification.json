@@ -21,11 +21,17 @@
     "executed_cells": 12,
     "error_outputs": 0,
     "png_outputs": 4,
-    "sha256": "267eca0e97fcd230b47d507983f16b013728f01dc7898647da82046fc9ade1d5"
+    "sha256": "fa1300ae8668ded4f61ad761e5aef47ee3d59e4e5b25676e787057a0b7b49385"
   },
   "team_information_pending": true,
   "version_id": "861484ac-3558-43d4-a997-959aeec83d47",
   "dataset_version": "fe8a9f036c9034573f51a2848d51b7adeb8a8d636a23c49f2842c1033b8a4105",
   "provenance_note": "Base sintética identificada; jornadas posteriores con hora real y versiones conservadas.",
-  "test_is_development_evaluation": true
+  "test_is_development_evaluation": true,
+  "editorial_revision": {
+    "revised_at": "2026-11-22T04:36:11.855Z",
+    "original_sha256": "f64a315ac5c637cb246755f38175cdfca4c31afe32ea522feb80ddddc4fe2749",
+    "original_pdf_sha256": "d0734851e5c56dce3f8518324cf30ac68969453955434f1ccc6162e7538ab265",
+    "scope": "Actualización de prosa y presentación con las métricas existentes; no se ejecutaron celdas ni se repitió la evaluación."
+  }
 }

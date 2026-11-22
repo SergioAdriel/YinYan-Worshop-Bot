@@ -91,7 +91,7 @@ test('Revisión: detección lexical, protección de prueba y revisión idempoten
   const heldOut=reference[0];
   await assert.rejects(s.createExample({text:heldOut.text,intent:heldOut.intent,author:'alumno-a'}),conflict);
   const query={id:randomUUID(),session_id:'sesion-con-version',author:'sergio',text:second.text,
-    response:'Describe las condiciones del cable.',intent:'carga',accepted:true,model:{kind:'version',version_id:'jornada-1-modelo'},resolution:null};
+    response:'Describe las condiciones del cable.',intent:'carga',accepted:true,model:{kind:'version',version_id:history.references.base_id},resolution:null};
   const saved=await s.createQuery(query);
   assert.equal(saved.value.query.model.version_id,query.model.version_id);
   const review=await s.reviewQuery(query.id,{author:'alumno-b',intent:'carga'});

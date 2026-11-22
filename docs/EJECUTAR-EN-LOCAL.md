@@ -60,7 +60,7 @@ El servidor guarda `created_at` en UTC y la página muestra Ciudad de México, c
 
 La base actual tiene 240 ejemplos y 16 intenciones, con 15 por categoría. **Faltan al menos cinco ejemplos aprobados por intención**; el panel Progreso calcula el déficit según las aportaciones existentes.
 
-Las 80 consultas de `data/test.csv` son un benchmark conocido de desarrollo. La selección del modelo utiliza validación, no sus resultados. La prueba final va en **data/final-test.csv**, inicialmente vacío salvo la cabecera `text,intent`. Requiere al menos 50 consultas independientes reservadas. El procedimiento de evaluación registra su apertura y evita utilizar reiteradamente el mismo conjunto para comparar versiones nuevas. Los datos temporales de las pruebas automáticas no completan este requisito.
+Las 80 consultas de `data/test.csv` son un benchmark conocido de desarrollo. La selección del modelo utiliza validación, no sus resultados. La prueba final va en **data/final-test.csv**, inicialmente vacío salvo la cabecera `text,intent`. Requiere al menos 50 consultas independientes reservadas. El procedimiento de evaluación registra su apertura y evita utilizar reiteradamente el mismo conjunto para comparar versiones nuevas. Los datos temporales de las pruebas del sistema no completan este requisito.
 
 ## Notebook, PDF y pruebas
 
@@ -100,7 +100,7 @@ node scripts/serve.mjs --open
 py -3.12 scripts/serve.py --open
 ```
 
-El servidor Python usa la biblioteca estándar para servir la interfaz y los registros. Las operaciones de entrenamiento, evaluación y documentación necesitan las dependencias instaladas. GitHub e Instagram requieren conexión cuando se utilizan; la inferencia no consulta una API generativa.
+El servidor Python usa la biblioteca estándar para servir la interfaz y los registros. Las operaciones de entrenamiento, evaluación y documentación necesitan las dependencias instaladas. GitHub e Instagram requieren conexión cuando se utilizan; la inferencia se ejecuta con el modelo local.
 
 ## Resolver problemas de inicio
 
@@ -110,9 +110,18 @@ El servidor Python usa la biblioteca estándar para servir la interfaz y los reg
 | La consola se cerró | Vuelve a abrir `iniciar.cmd`. |
 | Falta un intérprete | Instala Node.js 22 o Python 3.12, o conserva el entorno `runtime/` disponible. |
 | Faltan dependencias de entrenamiento | Instala `requirements-lock.txt` en el Python que utiliza el proyecto. |
+| No se cargan los ejemplos y falta `training_history.json` | Recibe la versión completa con `git pull --ff-only` y reinicia `iniciar.cmd`. El catálogo y las referencias de `data/training/` deben estar incluidos en el repositorio. |
 | Hay un error al cargar el modelo activo | Usa Reintentar; revisa que la jornada y sus archivos estén completos. No sustituyas el apuntador por una versión incompleta. |
 | La jornada falló | Consulta su mensaje en Jornadas, corrige la causa e inicia otra ejecución; los modelos anteriores se conservan. |
 | Otra aplicación ocupa el puerto | Revisa si ya existe una instancia abierta y sigue el mensaje del servidor. |
 | Git no recibe o envía | Revisa conexión, permisos y mensaje de Git. Conserva tus registros locales. |
 
 La configuración del repositorio debe realizarse antes del primer intercambio. Estas instrucciones no afirman que ya se haya publicado una URL en GitHub.
+
+Si una copia perdió el catálogo o alguna referencia inicial, desde la raíz ejecuta
+`node scripts/restore-training-catalog.mjs` (o `.\runtime\node.exe scripts/restore-training-catalog.mjs`
+si usas el intérprete incluido). El comando recupera las quince referencias desde
+los modelos y datos originales incluidos, sin entrenar otra jornada. Conserva el
+modelo activo, las aportaciones y las jornadas reales; rechaza archivos existentes
+que difieran de las referencias originales. Después reinicia el servidor y recarga
+la página. Un clon completo ya incluye estos archivos y puede abrirse directamente.

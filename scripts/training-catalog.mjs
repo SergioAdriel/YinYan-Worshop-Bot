@@ -8,7 +8,10 @@ export async function trainingCatalog(project) {
   const path=resolve(project,'data/training/training_history.json');
   let catalog;
   try {catalog=JSON.parse(await readFile(path,'utf8'));}
-  catch(error) {throw invalid(`No se pudo leer el catálogo oficial de entrenamiento: ${error.message}`);}
+  catch(error) {
+    if(error.code==='ENOENT') throw invalid('Falta data/training/training_history.json. Recibe la versión completa del repositorio o ejecuta node scripts/restore-training-catalog.mjs para restaurar las referencias incluidas.');
+    throw invalid(`No se pudo leer el catálogo oficial de entrenamiento: ${error.message}`);
+  }
   if(!catalog.labels||!UUID.test(catalog.references?.base_id||'')||!catalog.references?.stages) throw invalid('El catálogo oficial de entrenamiento está incompleto.');
   return catalog;
 }

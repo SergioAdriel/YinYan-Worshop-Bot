@@ -39,7 +39,7 @@ export function createWorkflowRegistry(project,runtime){
     return{versions:rows.sort((a,b)=>b.journey-a.journey),active_id:await activeId(),baseline};
   }
   async function evidence(){
-    const tests=await read(resolve(project,'reports/automated-tests.json'),{});
+    const tests=await read(resolve(project,'reports/test-results.json'),{});
     let current=Boolean(tests.complete&&tests.source_hashes&&Object.keys(tests.source_hashes).length);
     if(current)for(const[name,hash]of Object.entries(tests.source_hashes)){
       try{if(createHash('sha256').update(await readFile(resolve(project,name))).digest('hex')!==hash){current=false;break;}}

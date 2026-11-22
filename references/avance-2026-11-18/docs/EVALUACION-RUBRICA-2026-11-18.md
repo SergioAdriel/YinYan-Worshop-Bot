@@ -41,7 +41,7 @@ Con los umbrales actuales, Naive Bayes acepta **29/80** consultas, todas correct
 
 ## Verificación realizada
 
-- **69/69 pruebas automáticas** pasaron durante esta revisión: clasificación exportada, gestor, recuperación, servidores Node/Python, persistencia y ayudantes de Git.
+- **69/69 pruebas del sistema** pasaron durante esta revisión: clasificación exportada, gestor, recuperación, servidores Node/Python, persistencia y ayudantes de Git.
 - **7/7 comprobaciones adicionales** pasaron con el modelo base que usa la página y `concise: true`. Incluyen tres turnos, ambigüedad, tema ajeno, parpadeo, líquido y reinicio. Se registraron seis expresiones exploratorias ausentes del entrenamiento tras tokenización; no constituyen una estimación general de exactitud.
 - La curva de quince etapas se recalculó con sus ejemplos acumulados y coincide con los artefactos entregados. Las fechas reales de las consultas no se reescribieron.
 
