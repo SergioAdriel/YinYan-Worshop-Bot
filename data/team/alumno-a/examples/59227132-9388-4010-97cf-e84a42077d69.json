@@ -1,0 +1,12 @@
+{
+  "id": "59227132-9388-4010-97cf-e84a42077d69",
+  "text": "Mi computadora dejo ce cargar, cuando lo conecto ya no enciende la luz ni muestra la carga en la barra de notificaciones.",
+  "intent": "carga",
+  "author": "alumno-a",
+  "created_at": "2026-11-22T18:51:53.801Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "c9ac36934a2a1d46f03643e07a37c9ab8c8e548c076938ddaa326173f75d9607"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "e7c10d00-1116-4f7f-99fd-c3788033233e",
+  "text": "Mi computadora se calienta mucho cada que la enciendo.",
+  "intent": "temperatura",
+  "author": "alumno-a",
+  "created_at": "2026-11-22T18:52:24.535Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "2beb4dca9f245c2cc340ae29df7343453106948308651b39c2dc78b97746c22a"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "39653026-5d19-474b-932b-43486e67807c",
+  "text": "Mi computadora no enciende, presiono el botón de encendido, hace un ruido y se vuelve a apagar.",
+  "intent": "encendido",
+  "author": "alumno-a",
+  "created_at": "2026-11-22T18:50:47.558Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "efab24c3f23850f8d4b49dc1c07c3ddb0cf4f03f57214b23621e05413a966da5"
+}

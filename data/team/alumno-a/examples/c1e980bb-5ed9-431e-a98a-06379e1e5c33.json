@@ -1,0 +1,12 @@
+{
+  "id": "c1e980bb-5ed9-431e-a98a-06379e1e5c33",
+  "text": "Hola, parece que mi computadora no puede conectar un dispositivo bluetooth.",
+  "intent": "conexion",
+  "author": "alumno-a",
+  "created_at": "2026-11-22T18:54:39.999Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "820a53e02325d7f318ee8694e091e811bfad0b4dc0c71ecbb625a22f72664d38"
+}

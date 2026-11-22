@@ -1,0 +1,4729 @@
+{
+  "base_examples": [
+    {
+      "id": "d01-e01",
+      "author": "alumno-a",
+      "text": "hola",
+      "intent": "saludo",
+      "created_at": "2026-10-28T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e02",
+      "author": "alumno-b",
+      "text": "adios",
+      "intent": "despedida",
+      "created_at": "2026-10-28T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e03",
+      "author": "alumno-a",
+      "text": "ayuda",
+      "intent": "ayuda",
+      "created_at": "2026-10-28T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e04",
+      "author": "alumno-b",
+      "text": "no prende",
+      "intent": "encendido",
+      "created_at": "2026-10-28T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e05",
+      "author": "alumno-a",
+      "text": "no carga",
+      "intent": "carga",
+      "created_at": "2026-10-28T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e06",
+      "author": "alumno-b",
+      "text": "se calienta",
+      "intent": "temperatura",
+      "created_at": "2026-10-28T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e07",
+      "author": "alumno-a",
+      "text": "esta lenta",
+      "intent": "rendimiento",
+      "created_at": "2026-10-28T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e08",
+      "author": "alumno-b",
+      "text": "no hay internet",
+      "intent": "conexion",
+      "created_at": "2026-10-28T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e09",
+      "author": "alumno-a",
+      "text": "pantalla rota",
+      "intent": "pantalla",
+      "created_at": "2026-10-28T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e10",
+      "author": "alumno-b",
+      "text": "no se oye",
+      "intent": "sonido",
+      "created_at": "2026-10-28T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e11",
+      "author": "alumno-a",
+      "text": "memoria llena",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-28T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e12",
+      "author": "alumno-b",
+      "text": "error",
+      "intent": "software",
+      "created_at": "2026-10-28T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e13",
+      "author": "alumno-a",
+      "text": "control falla",
+      "intent": "controles",
+      "created_at": "2026-10-28T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e14",
+      "author": "alumno-b",
+      "text": "agua",
+      "intent": "liquidos",
+      "created_at": "2026-10-28T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e15",
+      "author": "alumno-a",
+      "text": "precio",
+      "intent": "presupuesto",
+      "created_at": "2026-10-28T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e16",
+      "author": "alumno-b",
+      "text": "contacto",
+      "intent": "contacto",
+      "created_at": "2026-10-28T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e01",
+      "author": "alumno-b",
+      "text": "buenas tardes equipo",
+      "intent": "saludo",
+      "created_at": "2026-10-29T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e02",
+      "author": "alumno-a",
+      "text": "hasta luego amigos",
+      "intent": "despedida",
+      "created_at": "2026-10-29T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e03",
+      "author": "alumno-b",
+      "text": "que sabes hacer",
+      "intent": "ayuda",
+      "created_at": "2026-10-29T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e04",
+      "author": "alumno-a",
+      "text": "mi compu no enciende",
+      "intent": "encendido",
+      "created_at": "2026-10-29T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e05",
+      "author": "alumno-b",
+      "text": "el cel no carga bateria",
+      "intent": "carga",
+      "created_at": "2026-10-29T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e06",
+      "author": "alumno-a",
+      "text": "mi compu se calienta mucho",
+      "intent": "temperatura",
+      "created_at": "2026-10-29T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e07",
+      "author": "alumno-b",
+      "text": "mi compu va bien lenta",
+      "intent": "rendimiento",
+      "created_at": "2026-10-29T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e08",
+      "author": "alumno-a",
+      "text": "mi cel no agarra wifi",
+      "intent": "conexion",
+      "created_at": "2026-10-29T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e09",
+      "author": "alumno-b",
+      "text": "mi cel tiene el cristal quebrado",
+      "intent": "pantalla",
+      "created_at": "2026-10-29T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e10",
+      "author": "alumno-a",
+      "text": "mi compu no tiene audio",
+      "intent": "sonido",
+      "created_at": "2026-10-29T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e11",
+      "author": "alumno-b",
+      "text": "mi cel ya no tiene espacio",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-29T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e12",
+      "author": "alumno-a",
+      "text": "una app se cierra sola",
+      "intent": "software",
+      "created_at": "2026-10-29T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e13",
+      "author": "alumno-b",
+      "text": "mi mando tiene drift",
+      "intent": "controles",
+      "created_at": "2026-10-29T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e14",
+      "author": "alumno-a",
+      "text": "se mojo mi laptop",
+      "intent": "liquidos",
+      "created_at": "2026-10-29T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e15",
+      "author": "alumno-b",
+      "text": "cuanto cuesta reparar una compu",
+      "intent": "presupuesto",
+      "created_at": "2026-10-29T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e16",
+      "author": "alumno-a",
+      "text": "donde esta el taller",
+      "intent": "contacto",
+      "created_at": "2026-10-29T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e01",
+      "author": "alumno-a",
+      "text": "que onda amigos",
+      "intent": "saludo",
+      "created_at": "2026-10-30T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e02",
+      "author": "alumno-b",
+      "text": "gracias eso era todo",
+      "intent": "despedida",
+      "created_at": "2026-10-30T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e03",
+      "author": "alumno-a",
+      "text": "como uso este chat",
+      "intent": "ayuda",
+      "created_at": "2026-10-30T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e04",
+      "author": "alumno-b",
+      "text": "apreto power y no pasa nada",
+      "intent": "encendido",
+      "created_at": "2026-10-30T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e05",
+      "author": "alumno-a",
+      "text": "la pila se acaba rapidisimo",
+      "intent": "carga",
+      "created_at": "2026-10-30T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e06",
+      "author": "alumno-b",
+      "text": "el cel quema cuando juego",
+      "intent": "temperatura",
+      "created_at": "2026-10-30T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e07",
+      "author": "alumno-a",
+      "text": "el cel tarda en responder",
+      "intent": "rendimiento",
+      "created_at": "2026-10-30T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e08",
+      "author": "alumno-b",
+      "text": "la compu dice sin conexion",
+      "intent": "conexion",
+      "created_at": "2026-10-30T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e09",
+      "author": "alumno-a",
+      "text": "la compu prende pero no da imagen",
+      "intent": "pantalla",
+      "created_at": "2026-10-30T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e10",
+      "author": "alumno-b",
+      "text": "no me escuchan por el microfono",
+      "intent": "sonido",
+      "created_at": "2026-10-30T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e11",
+      "author": "alumno-a",
+      "text": "la compu no detecta el disco duro",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-30T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e12",
+      "author": "alumno-b",
+      "text": "windows muestra pantalla azul",
+      "intent": "software",
+      "created_at": "2026-10-30T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e13",
+      "author": "alumno-a",
+      "text": "el teclado no escribe unas letras",
+      "intent": "controles",
+      "created_at": "2026-10-30T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e14",
+      "author": "alumno-b",
+      "text": "le tire cafe al teclado",
+      "intent": "liquidos",
+      "created_at": "2026-10-30T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e15",
+      "author": "alumno-a",
+      "text": "me dan una cotizacion para el celular",
+      "intent": "presupuesto",
+      "created_at": "2026-10-30T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e16",
+      "author": "alumno-b",
+      "text": "cual es su instagram",
+      "intent": "contacto",
+      "created_at": "2026-10-30T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e01",
+      "author": "alumno-b",
+      "text": "holaa yinyan",
+      "intent": "saludo",
+      "created_at": "2026-10-31T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e02",
+      "author": "alumno-a",
+      "text": "bueno nos bemos",
+      "intent": "despedida",
+      "created_at": "2026-10-31T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e03",
+      "author": "alumno-b",
+      "text": "nesesito ayuda para empesar",
+      "intent": "ayuda",
+      "created_at": "2026-10-31T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e04",
+      "author": "alumno-a",
+      "text": "la lap no aranca ni da luz",
+      "intent": "encendido",
+      "created_at": "2026-10-31T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e05",
+      "author": "alumno-b",
+      "text": "tengo q mover el cargador para que jale",
+      "intent": "carga",
+      "created_at": "2026-10-31T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e06",
+      "author": "alumno-a",
+      "text": "la consola avisa temperatura alta",
+      "intent": "temperatura",
+      "created_at": "2026-10-31T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e07",
+      "author": "alumno-b",
+      "text": "se traba cuando abro varias cosas",
+      "intent": "rendimiento",
+      "created_at": "2026-10-31T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e08",
+      "author": "alumno-a",
+      "text": "el bluetooth no encuentra mis audifonos",
+      "intent": "conexion",
+      "created_at": "2026-10-31T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e09",
+      "author": "alumno-b",
+      "text": "el display tiene rayas verdes",
+      "intent": "pantalla",
+      "created_at": "2026-10-31T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e10",
+      "author": "alumno-a",
+      "text": "la bocina del cel se oye bajito",
+      "intent": "sonido",
+      "created_at": "2026-10-31T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e11",
+      "author": "alumno-b",
+      "text": "no me cabe otro juego en la consola",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-31T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e12",
+      "author": "alumno-a",
+      "text": "no termina la actualizacion del sistema",
+      "intent": "software",
+      "created_at": "2026-10-31T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e13",
+      "author": "alumno-b",
+      "text": "el personaje se mueve solo sin tocar nada",
+      "intent": "controles",
+      "created_at": "2026-10-31T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e14",
+      "author": "alumno-a",
+      "text": "mi cel se cayo al lavabo",
+      "intent": "liquidos",
+      "created_at": "2026-10-31T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e15",
+      "author": "alumno-b",
+      "text": "cuanto cobran por revisar la consola",
+      "intent": "presupuesto",
+      "created_at": "2026-10-31T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e16",
+      "author": "alumno-a",
+      "text": "quiero hablar con una persona",
+      "intent": "contacto",
+      "created_at": "2026-10-31T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e01",
+      "author": "alumno-a",
+      "text": "buen dia al taller",
+      "intent": "saludo",
+      "created_at": "2026-11-01T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e02",
+      "author": "alumno-b",
+      "text": "ya quedo mi duda gracias",
+      "intent": "despedida",
+      "created_at": "2026-11-01T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e03",
+      "author": "alumno-a",
+      "text": "que puedo preguntarte aqui",
+      "intent": "ayuda",
+      "created_at": "2026-11-01T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e04",
+      "author": "alumno-b",
+      "text": "mi consola no quiere prender",
+      "intent": "encendido",
+      "created_at": "2026-11-01T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e05",
+      "author": "alumno-a",
+      "text": "solo funciona si tiene el cable puesto",
+      "intent": "carga",
+      "created_at": "2026-11-01T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e06",
+      "author": "alumno-b",
+      "text": "sale aire muy caliente del ventilador",
+      "intent": "temperatura",
+      "created_at": "2026-11-01T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e07",
+      "author": "alumno-a",
+      "text": "los juegos tienen pocos fps",
+      "intent": "rendimiento",
+      "created_at": "2026-11-01T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e08",
+      "author": "alumno-b",
+      "text": "mi consola se desconecta de la red",
+      "intent": "conexion",
+      "created_at": "2026-11-01T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e09",
+      "author": "alumno-a",
+      "text": "no funciona el touch de la mitad",
+      "intent": "pantalla",
+      "created_at": "2026-11-01T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e10",
+      "author": "alumno-b",
+      "text": "los audifonos suenan de un solo lado",
+      "intent": "sonido",
+      "created_at": "2026-11-01T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e11",
+      "author": "alumno-a",
+      "text": "la memoria usb no sale en el explorador",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-01T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e12",
+      "author": "alumno-b",
+      "text": "mi cel se queda en el logo",
+      "intent": "software",
+      "created_at": "2026-11-01T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e13",
+      "author": "alumno-a",
+      "text": "el mouse hace dos clics en lugar de uno",
+      "intent": "controles",
+      "created_at": "2026-11-01T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e14",
+      "author": "alumno-b",
+      "text": "derrame refresco en la consola",
+      "intent": "liquidos",
+      "created_at": "2026-11-01T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e15",
+      "author": "alumno-a",
+      "text": "la revision tiene algun costo",
+      "intent": "presupuesto",
+      "created_at": "2026-11-01T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e16",
+      "author": "alumno-b",
+      "text": "tienen un numero de whatsapp",
+      "intent": "contacto",
+      "created_at": "2026-11-01T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e01",
+      "author": "alumno-b",
+      "text": "hey como estan",
+      "intent": "saludo",
+      "created_at": "2026-11-02T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e02",
+      "author": "alumno-a",
+      "text": "me retiro hasta mañana",
+      "intent": "despedida",
+      "created_at": "2026-11-02T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e03",
+      "author": "alumno-b",
+      "text": "tienes opciones de ayuda",
+      "intent": "ayuda",
+      "created_at": "2026-11-02T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e04",
+      "author": "alumno-a",
+      "text": "se apaga apenas intenta arrancar",
+      "intent": "encendido",
+      "created_at": "2026-11-02T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e05",
+      "author": "alumno-b",
+      "text": "el porcentaje de bateria no sube",
+      "intent": "carga",
+      "created_at": "2026-11-02T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e06",
+      "author": "alumno-a",
+      "text": "mi lap se apaga por el calor",
+      "intent": "temperatura",
+      "created_at": "2026-11-02T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e07",
+      "author": "alumno-b",
+      "text": "la lap tarda un monton en iniciar",
+      "intent": "rendimiento",
+      "created_at": "2026-11-02T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e08",
+      "author": "alumno-a",
+      "text": "no acepta la contraseña del wifi",
+      "intent": "conexion",
+      "created_at": "2026-11-02T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e09",
+      "author": "alumno-b",
+      "text": "la consola da sonido pero no video",
+      "intent": "pantalla",
+      "created_at": "2026-11-02T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e10",
+      "author": "alumno-a",
+      "text": "la consola tiene video pero no sonido",
+      "intent": "sonido",
+      "created_at": "2026-11-02T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e11",
+      "author": "alumno-b",
+      "text": "dice almacenamiento insuficiente para fotos",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-02T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e12",
+      "author": "alumno-a",
+      "text": "creo q tengo un virus",
+      "intent": "software",
+      "created_at": "2026-11-02T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e13",
+      "author": "alumno-b",
+      "text": "se quedo hundida la tecla de espacio",
+      "intent": "controles",
+      "created_at": "2026-11-02T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e14",
+      "author": "alumno-a",
+      "text": "el telefono avisa humedad en el puerto",
+      "intent": "liquidos",
+      "created_at": "2026-11-02T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e15",
+      "author": "alumno-b",
+      "text": "quiero un presupuesto antes del arreglo",
+      "intent": "presupuesto",
+      "created_at": "2026-11-02T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e16",
+      "author": "alumno-a",
+      "text": "a que hora abren",
+      "intent": "contacto",
+      "created_at": "2026-11-02T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e01",
+      "author": "alumno-a",
+      "text": "buenas noches por aqui",
+      "intent": "saludo",
+      "created_at": "2026-11-03T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e02",
+      "author": "alumno-b",
+      "text": "bye equipo y gracias",
+      "intent": "despedida",
+      "created_at": "2026-11-03T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e03",
+      "author": "alumno-a",
+      "text": "me explicas tus funciones",
+      "intent": "ayuda",
+      "created_at": "2026-11-03T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e04",
+      "author": "alumno-b",
+      "text": "el cel esta muerto no reacciona",
+      "intent": "encendido",
+      "created_at": "2026-11-03T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e05",
+      "author": "alumno-a",
+      "text": "la laptop dice conectada sin cargar",
+      "intent": "carga",
+      "created_at": "2026-11-03T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e06",
+      "author": "alumno-b",
+      "text": "el ventilador suena bien fuerte y no enfria",
+      "intent": "temperatura",
+      "created_at": "2026-11-03T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e07",
+      "author": "alumno-a",
+      "text": "los menus de mi consola tienen lag",
+      "intent": "rendimiento",
+      "created_at": "2026-11-03T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e08",
+      "author": "alumno-b",
+      "text": "conecto ethernet pero no tengo internet",
+      "intent": "conexion",
+      "created_at": "2026-11-03T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e09",
+      "author": "alumno-a",
+      "text": "mi pantalla parpadea al mover la tapa",
+      "intent": "pantalla",
+      "created_at": "2026-11-03T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e10",
+      "author": "alumno-b",
+      "text": "el audio de la lap sale distorsionado",
+      "intent": "sonido",
+      "created_at": "2026-11-03T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e11",
+      "author": "alumno-a",
+      "text": "el ssd nuevo no lo reconoce",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-03T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e12",
+      "author": "alumno-b",
+      "text": "no puedo instalar un programa nuevo",
+      "intent": "software",
+      "created_at": "2026-11-03T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e13",
+      "author": "alumno-a",
+      "text": "el gatillo del control esta atorado",
+      "intent": "controles",
+      "created_at": "2026-11-03T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e14",
+      "author": "alumno-b",
+      "text": "le entro agua a la compu por la mochila",
+      "intent": "liquidos",
+      "created_at": "2026-11-03T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e15",
+      "author": "alumno-a",
+      "text": "que precio tiene cambiar el display",
+      "intent": "presupuesto",
+      "created_at": "2026-11-03T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e16",
+      "author": "alumno-b",
+      "text": "como hago una cita para mi compu",
+      "intent": "contacto",
+      "created_at": "2026-11-03T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e01",
+      "author": "alumno-b",
+      "text": "hola llegue de nuevo",
+      "intent": "saludo",
+      "created_at": "2026-11-04T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e02",
+      "author": "alumno-a",
+      "text": "listo por hoy terminamos",
+      "intent": "despedida",
+      "created_at": "2026-11-04T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e03",
+      "author": "alumno-b",
+      "text": "de que temas sabe el bot",
+      "intent": "ayuda",
+      "created_at": "2026-11-04T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e04",
+      "author": "alumno-a",
+      "text": "no gira ni el ventilador al prender",
+      "intent": "encendido",
+      "created_at": "2026-11-04T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e05",
+      "author": "alumno-b",
+      "text": "el puerto de carga esta flojo",
+      "intent": "carga",
+      "created_at": "2026-11-04T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e06",
+      "author": "alumno-a",
+      "text": "la computadora esta irbiendo por atras",
+      "intent": "temperatura",
+      "created_at": "2026-11-04T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e07",
+      "author": "alumno-b",
+      "text": "todo funciona pero responde despacio",
+      "intent": "rendimiento",
+      "created_at": "2026-11-04T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e08",
+      "author": "alumno-a",
+      "text": "otras compus navegan y esta no",
+      "intent": "conexion",
+      "created_at": "2026-11-04T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e09",
+      "author": "alumno-b",
+      "text": "el monitor esta negro pero la torre prende",
+      "intent": "pantalla",
+      "created_at": "2026-11-04T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e10",
+      "author": "alumno-a",
+      "text": "mi microfono graba ruido nomas",
+      "intent": "sonido",
+      "created_at": "2026-11-04T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e11",
+      "author": "alumno-b",
+      "text": "quiero liberar espacio en mi laptop",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-04T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e12",
+      "author": "alumno-a",
+      "text": "me salen anuncios sin abrir nada",
+      "intent": "software",
+      "created_at": "2026-11-04T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e13",
+      "author": "alumno-b",
+      "text": "el touchpad no mueve el cursor",
+      "intent": "controles",
+      "created_at": "2026-11-04T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e14",
+      "author": "alumno-a",
+      "text": "se volteo un vaso encima del equipo",
+      "intent": "liquidos",
+      "created_at": "2026-11-04T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e15",
+      "author": "alumno-b",
+      "text": "cuanto sale reparar el control",
+      "intent": "presupuesto",
+      "created_at": "2026-11-04T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e16",
+      "author": "alumno-a",
+      "text": "me pasan las redes sociales",
+      "intent": "contacto",
+      "created_at": "2026-11-04T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e01",
+      "author": "alumno-a",
+      "text": "un saludo a todos",
+      "intent": "saludo",
+      "created_at": "2026-11-05T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e02",
+      "author": "alumno-b",
+      "text": "luego vuelvo a preguntar",
+      "intent": "despedida",
+      "created_at": "2026-11-05T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e03",
+      "author": "alumno-a",
+      "text": "dame un ejemplo de consulta",
+      "intent": "ayuda",
+      "created_at": "2026-11-05T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e04",
+      "author": "alumno-b",
+      "text": "la torre no da señales de vida",
+      "intent": "encendido",
+      "created_at": "2026-11-05T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e05",
+      "author": "alumno-a",
+      "text": "el telefono pierde carga aunque no lo use",
+      "intent": "carga",
+      "created_at": "2026-11-05T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e06",
+      "author": "alumno-b",
+      "text": "la play necesita enfriarse para prender otra vez",
+      "intent": "temperatura",
+      "created_at": "2026-11-05T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e07",
+      "author": "alumno-a",
+      "text": "la computadora se congela unos segundos",
+      "intent": "rendimiento",
+      "created_at": "2026-11-05T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e08",
+      "author": "alumno-b",
+      "text": "mi lap no detecta redes disponibles",
+      "intent": "conexion",
+      "created_at": "2026-11-05T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e09",
+      "author": "alumno-a",
+      "text": "aparecieron manchas en la pantalla",
+      "intent": "pantalla",
+      "created_at": "2026-11-05T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e10",
+      "author": "alumno-b",
+      "text": "el volumen esta alto y no escucho nada",
+      "intent": "sonido",
+      "created_at": "2026-11-05T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e11",
+      "author": "alumno-a",
+      "text": "la tarjeta de memoria no deja guardar",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-05T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e12",
+      "author": "alumno-b",
+      "text": "un juego se cierra con codigo de error",
+      "intent": "software",
+      "created_at": "2026-11-05T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e13",
+      "author": "alumno-a",
+      "text": "la palanca del joystick queda hacia arriba",
+      "intent": "controles",
+      "created_at": "2026-11-05T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e14",
+      "author": "alumno-b",
+      "text": "mi movil se mojo con lluvia",
+      "intent": "liquidos",
+      "created_at": "2026-11-05T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e15",
+      "author": "alumno-a",
+      "text": "la cotizacion es gratis o cobran",
+      "intent": "presupuesto",
+      "created_at": "2026-11-05T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e16",
+      "author": "alumno-b",
+      "text": "cual es la direccion del local",
+      "intent": "contacto",
+      "created_at": "2026-11-05T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e01",
+      "author": "alumno-b",
+      "text": "que tal buen martes",
+      "intent": "saludo",
+      "created_at": "2026-11-06T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e02",
+      "author": "alumno-a",
+      "text": "muchas gracias por contestar",
+      "intent": "despedida",
+      "created_at": "2026-11-06T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e03",
+      "author": "alumno-b",
+      "text": "sirves para revisar consolas",
+      "intent": "ayuda",
+      "created_at": "2026-11-06T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e04",
+      "author": "alumno-a",
+      "text": "antes prendia y ahora nada",
+      "intent": "encendido",
+      "created_at": "2026-11-06T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e05",
+      "author": "alumno-b",
+      "text": "la pila dura menos de una hora",
+      "intent": "carga",
+      "created_at": "2026-11-06T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e06",
+      "author": "alumno-a",
+      "text": "se pone caliente sin abrir programas",
+      "intent": "temperatura",
+      "created_at": "2026-11-06T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e07",
+      "author": "alumno-b",
+      "text": "cambiar de aplicacion toma demasiado",
+      "intent": "rendimiento",
+      "created_at": "2026-11-06T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e08",
+      "author": "alumno-a",
+      "text": "el wifi se cae cada cinco minutos",
+      "intent": "conexion",
+      "created_at": "2026-11-06T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e09",
+      "author": "alumno-b",
+      "text": "se ve muy oscuro con el brillo al cien",
+      "intent": "pantalla",
+      "created_at": "2026-11-06T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e10",
+      "author": "alumno-a",
+      "text": "se corta el sonido de los juegos",
+      "intent": "sonido",
+      "created_at": "2026-11-06T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e11",
+      "author": "alumno-b",
+      "text": "tengo todo el disco ocupado",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-06T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e12",
+      "author": "alumno-a",
+      "text": "el sistema reinicia una y otra vez",
+      "intent": "software",
+      "created_at": "2026-11-06T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e13",
+      "author": "alumno-b",
+      "text": "mi consola no reconoce el mando por cable",
+      "intent": "controles",
+      "created_at": "2026-11-06T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e14",
+      "author": "alumno-a",
+      "text": "el control tiene liquido adentro",
+      "intent": "liquidos",
+      "created_at": "2026-11-06T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e15",
+      "author": "alumno-b",
+      "text": "me dicen sus tarifas del taller",
+      "intent": "presupuesto",
+      "created_at": "2026-11-06T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e16",
+      "author": "alumno-a",
+      "text": "quiero llevar mi consola a revision",
+      "intent": "contacto",
+      "created_at": "2026-11-06T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e01",
+      "author": "alumno-a",
+      "text": "ola alguien anda ahi",
+      "intent": "saludo",
+      "created_at": "2026-11-07T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e02",
+      "author": "alumno-b",
+      "text": "con eso ya me voy",
+      "intent": "despedida",
+      "created_at": "2026-11-07T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e03",
+      "author": "alumno-a",
+      "text": "no se como contar mi problema",
+      "intent": "ayuda",
+      "created_at": "2026-11-07T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e04",
+      "author": "alumno-b",
+      "text": "el boton de encendido no responde",
+      "intent": "encendido",
+      "created_at": "2026-11-07T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e05",
+      "author": "alumno-a",
+      "text": "mi cable carga otros celulares menos este",
+      "intent": "carga",
+      "created_at": "2026-11-07T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e06",
+      "author": "alumno-b",
+      "text": "la temperatura del procesador sube mucho",
+      "intent": "temperatura",
+      "created_at": "2026-11-07T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e07",
+      "author": "alumno-a",
+      "text": "los programas tardan años en abrir",
+      "intent": "rendimiento",
+      "created_at": "2026-11-07T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e08",
+      "author": "alumno-b",
+      "text": "no puedo enlazar un aparato inalambrico",
+      "intent": "conexion",
+      "created_at": "2026-11-07T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e09",
+      "author": "alumno-a",
+      "text": "el telefono suena pero no se ve nada",
+      "intent": "pantalla",
+      "created_at": "2026-11-07T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e10",
+      "author": "alumno-b",
+      "text": "la bocina truena cuando pongo musica",
+      "intent": "sonido",
+      "created_at": "2026-11-07T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e11",
+      "author": "alumno-a",
+      "text": "mi disco externo pide formatear",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-07T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e12",
+      "author": "alumno-b",
+      "text": "la lap quedo en reparacion automatica",
+      "intent": "software",
+      "created_at": "2026-11-07T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e13",
+      "author": "alumno-a",
+      "text": "el boton de volumen se quedo trabado",
+      "intent": "controles",
+      "created_at": "2026-11-07T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e14",
+      "author": "alumno-b",
+      "text": "la lap quedo humeda despues del accidente",
+      "intent": "liquidos",
+      "created_at": "2026-11-07T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e15",
+      "author": "alumno-a",
+      "text": "cuanto dinero ocupo para cambiar la bateria",
+      "intent": "presupuesto",
+      "created_at": "2026-11-07T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e16",
+      "author": "alumno-b",
+      "text": "hay un tecnico disponible para atenderme",
+      "intent": "contacto",
+      "created_at": "2026-11-07T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e01",
+      "author": "alumno-b",
+      "text": "buenas compas del taller",
+      "intent": "saludo",
+      "created_at": "2026-11-08T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e02",
+      "author": "alumno-a",
+      "text": "asta la proxima yinyan",
+      "intent": "despedida",
+      "created_at": "2026-11-08T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e03",
+      "author": "alumno-b",
+      "text": "muestrame el menu de alluda",
+      "intent": "ayuda",
+      "created_at": "2026-11-08T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e04",
+      "author": "alumno-a",
+      "text": "mi play no prende aun enchufada",
+      "intent": "encendido",
+      "created_at": "2026-11-08T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e05",
+      "author": "alumno-b",
+      "text": "al desconectar el cargador se apaga la lap",
+      "intent": "carga",
+      "created_at": "2026-11-08T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e06",
+      "author": "alumno-a",
+      "text": "creo q tiene polvo y se sobrecalienta",
+      "intent": "temperatura",
+      "created_at": "2026-11-08T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e07",
+      "author": "alumno-b",
+      "text": "se queda pensando cada ves que hago clic",
+      "intent": "rendimiento",
+      "created_at": "2026-11-08T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e08",
+      "author": "alumno-a",
+      "text": "tengo señal pero no abren las paginas",
+      "intent": "conexion",
+      "created_at": "2026-11-08T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e09",
+      "author": "alumno-b",
+      "text": "el hdmi no manda imagen a la tele",
+      "intent": "pantalla",
+      "created_at": "2026-11-08T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e10",
+      "author": "alumno-a",
+      "text": "los altavoces tienen un zumbido raro",
+      "intent": "sonido",
+      "created_at": "2026-11-08T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e11",
+      "author": "alumno-b",
+      "text": "el celular no encuentra la micro sd",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-08T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e12",
+      "author": "alumno-a",
+      "text": "la consola fallo al instalar el parche",
+      "intent": "software",
+      "created_at": "2026-11-08T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e13",
+      "author": "alumno-b",
+      "text": "el teclado escribe letras repetidas",
+      "intent": "controles",
+      "created_at": "2026-11-08T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e14",
+      "author": "alumno-a",
+      "text": "se cayo mi celular a una cubeta",
+      "intent": "liquidos",
+      "created_at": "2026-11-08T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e15",
+      "author": "alumno-b",
+      "text": "cobran el diagnostico por separado",
+      "intent": "presupuesto",
+      "created_at": "2026-11-08T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e16",
+      "author": "alumno-a",
+      "text": "trabajan los fines de semana",
+      "intent": "contacto",
+      "created_at": "2026-11-08T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e01",
+      "author": "alumno-a",
+      "text": "hola vengo por primera ves",
+      "intent": "saludo",
+      "created_at": "2026-11-09T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e02",
+      "author": "alumno-b",
+      "text": "te agradesco la orientacion",
+      "intent": "despedida",
+      "created_at": "2026-11-09T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e03",
+      "author": "alumno-a",
+      "text": "quiero saber para que sirve yinyan",
+      "intent": "ayuda",
+      "created_at": "2026-11-09T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e04",
+      "author": "alumno-b",
+      "text": "la computadora no inicia desde ayer",
+      "intent": "encendido",
+      "created_at": "2026-11-09T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e05",
+      "author": "alumno-a",
+      "text": "carga lento aunque le cambie de enchufe",
+      "intent": "carga",
+      "created_at": "2026-11-09T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e06",
+      "author": "alumno-b",
+      "text": "no puedo tocar el telefono de lo caliente",
+      "intent": "temperatura",
+      "created_at": "2026-11-09T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e07",
+      "author": "alumno-a",
+      "text": "mi celular ya no va tan fluido",
+      "intent": "rendimiento",
+      "created_at": "2026-11-09T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e08",
+      "author": "alumno-b",
+      "text": "se pierde el bluetooth a cada rato",
+      "intent": "conexion",
+      "created_at": "2026-11-09T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e09",
+      "author": "alumno-a",
+      "text": "la pantalla tactil toca cosas sola",
+      "intent": "pantalla",
+      "created_at": "2026-11-09T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e10",
+      "author": "alumno-b",
+      "text": "en las llamadas nadie escucha mi voz",
+      "intent": "sonido",
+      "created_at": "2026-11-09T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e11",
+      "author": "alumno-a",
+      "text": "borre archivos pero la memoria sigue llena",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-09T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e12",
+      "author": "alumno-b",
+      "text": "no puedo iniciar sesion por un error de windows",
+      "intent": "software",
+      "created_at": "2026-11-09T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e13",
+      "author": "alumno-a",
+      "text": "la rueda del raton no desplaza la pagina",
+      "intent": "controles",
+      "created_at": "2026-11-09T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e14",
+      "author": "alumno-b",
+      "text": "la consola recibio agua de una gotera",
+      "intent": "liquidos",
+      "created_at": "2026-11-09T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e15",
+      "author": "alumno-a",
+      "text": "nesesito cotizar mantenimiento de mi xbox",
+      "intent": "presupuesto",
+      "created_at": "2026-11-09T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e16",
+      "author": "alumno-b",
+      "text": "como me comunico con el dueño",
+      "intent": "contacto",
+      "created_at": "2026-11-09T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e01",
+      "author": "alumno-b",
+      "text": "saludos gente de yinyan",
+      "intent": "saludo",
+      "created_at": "2026-11-10T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e02",
+      "author": "alumno-a",
+      "text": "nos hablamos despues del taller",
+      "intent": "despedida",
+      "created_at": "2026-11-10T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e03",
+      "author": "alumno-b",
+      "text": "que informacion necesita el asistente",
+      "intent": "ayuda",
+      "created_at": "2026-11-10T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e04",
+      "author": "alumno-a",
+      "text": "el telefono se apago y no lo puedo encender",
+      "intent": "encendido",
+      "created_at": "2026-11-10T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e05",
+      "author": "alumno-b",
+      "text": "el mando no puede recargar su bateria",
+      "intent": "carga",
+      "created_at": "2026-11-10T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e06",
+      "author": "alumno-a",
+      "text": "se apaga mientras juego por exceso de temperatura",
+      "intent": "temperatura",
+      "created_at": "2026-11-10T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e07",
+      "author": "alumno-b",
+      "text": "los juegos se ven entrecortados sin usar internet",
+      "intent": "rendimiento",
+      "created_at": "2026-11-10T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e08",
+      "author": "alumno-a",
+      "text": "mi xbox no logra conectarse al router",
+      "intent": "conexion",
+      "created_at": "2026-11-10T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e09",
+      "author": "alumno-b",
+      "text": "hay pixeles dañados en el panel de mi lap",
+      "intent": "pantalla",
+      "created_at": "2026-11-10T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e10",
+      "author": "alumno-a",
+      "text": "no sale audio por los auriculares conectados",
+      "intent": "sonido",
+      "created_at": "2026-11-10T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e11",
+      "author": "alumno-b",
+      "text": "necesito ampliar el almacenamiento del equipo",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-10T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e12",
+      "author": "alumno-a",
+      "text": "la aplicacion dejo de funcionar despues de actualizar",
+      "intent": "software",
+      "created_at": "2026-11-10T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e13",
+      "author": "alumno-b",
+      "text": "la cruceta no detecta la izquierda",
+      "intent": "controles",
+      "created_at": "2026-11-10T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e14",
+      "author": "alumno-a",
+      "text": "tengo gotas dentro de la pantalla desde que se mojo",
+      "intent": "liquidos",
+      "created_at": "2026-11-10T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e15",
+      "author": "alumno-b",
+      "text": "me pueden estimar el costo del servicio",
+      "intent": "presupuesto",
+      "created_at": "2026-11-10T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e16",
+      "author": "alumno-a",
+      "text": "quiero consultar el horario de atencion",
+      "intent": "contacto",
+      "created_at": "2026-11-10T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e01",
+      "author": "alumno-a",
+      "text": "holi buenos dias a los del taller",
+      "intent": "saludo",
+      "created_at": "2026-11-11T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e02",
+      "author": "alumno-b",
+      "text": "ya no necesito mas gracias por la ayuda",
+      "intent": "despedida",
+      "created_at": "2026-11-11T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e03",
+      "author": "alumno-a",
+      "text": "puedes orientarme para describir una falla",
+      "intent": "ayuda",
+      "created_at": "2026-11-11T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e04",
+      "author": "alumno-b",
+      "text": "la laptop arranca un segundo y despues se apaga",
+      "intent": "encendido",
+      "created_at": "2026-11-11T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e05",
+      "author": "alumno-a",
+      "text": "mi consola portatil no recibe energia del cargador",
+      "intent": "carga",
+      "created_at": "2026-11-11T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e06",
+      "author": "alumno-b",
+      "text": "la consola saca mucho calor por las rejillas",
+      "intent": "temperatura",
+      "created_at": "2026-11-11T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e07",
+      "author": "alumno-a",
+      "text": "quiero mejorar la velocidad de la computadora",
+      "intent": "rendimiento",
+      "created_at": "2026-11-11T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e08",
+      "author": "alumno-b",
+      "text": "el adaptador de red sale desactivado",
+      "intent": "conexion",
+      "created_at": "2026-11-11T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e09",
+      "author": "alumno-a",
+      "text": "tengo una linea de color atravesando el display",
+      "intent": "pantalla",
+      "created_at": "2026-11-11T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e10",
+      "author": "alumno-b",
+      "text": "la salida de sonido de windows no aparece",
+      "intent": "sonido",
+      "created_at": "2026-11-11T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e11",
+      "author": "alumno-a",
+      "text": "la unidad usb muestra menos capacidad de la que tiene",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-11T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e12",
+      "author": "alumno-b",
+      "text": "el antivirus encontro una amenaza en un archivo",
+      "intent": "software",
+      "created_at": "2026-11-11T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e13",
+      "author": "alumno-a",
+      "text": "el boton a del control no responde cuando lo pulso",
+      "intent": "controles",
+      "created_at": "2026-11-11T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e14",
+      "author": "alumno-b",
+      "text": "derramaron jugo sobre los puertos de mi computadora",
+      "intent": "liquidos",
+      "created_at": "2026-11-11T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e15",
+      "author": "alumno-a",
+      "text": "quiero saber cuanto saldria arreglar mi laptop",
+      "intent": "presupuesto",
+      "created_at": "2026-11-11T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e16",
+      "author": "alumno-b",
+      "text": "pasame el canal oficial para coordinar la entrega",
+      "intent": "contacto",
+      "created_at": "2026-11-11T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    }
+  ],
+  "additional_examples": [
+    {
+      "id": "26c0e5a7-1f48-44dd-b629-1cf3d2bce059",
+      "text": "Mi computadora no responde cuando presiono el botón de encendido, aunque está conectada a la corriente.",
+      "intent": "encendido",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T17:28:13.524Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:08.863Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:08.863Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "d53ebef5cc0004da417e0f0c0fdc74559a022a14667e28b631cafd88ce113a90",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "39653026-5d19-474b-932b-43486e67807c",
+      "text": "Mi computadora no enciende, presiono el botón de encendido, hace un ruido y se vuelve a apagar.",
+      "intent": "encendido",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:50:47.558Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:08.166Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:08.166Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "46473476096882bb956624c80b2c9197b9092e69bf8e30e65df6eb36e47e5b7f",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "59227132-9388-4010-97cf-e84a42077d69",
+      "text": "Mi computadora dejo ce cargar, cuando lo conecto ya no enciende la luz ni muestra la carga en la barra de notificaciones.",
+      "intent": "carga",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:51:53.801Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:06.860Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:06.860Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "5f98a05bd10c11e0cecbe0b5fa69b88d1ef77796a6280727ea7d003dccb34a5b",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "e7c10d00-1116-4f7f-99fd-c3788033233e",
+      "text": "Mi computadora se calienta mucho cada que la enciendo.",
+      "intent": "temperatura",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:52:24.535Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:06.148Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:06.148Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "86721d0ef6e7d7d735828872c6d632885d6a1f981015a28bbe36ed056713f1f3",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "eaf93047-4951-40d2-8340-0541826fa652",
+      "text": "La computadora tarda muchísimo tiempo en al encender, aunque después funciona relativamente bien por que en ocasiones se alenta.",
+      "intent": "rendimiento",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:53:18.628Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:04.958Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:04.958Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "6ad0e334952997111c250cefdf3fc2b92bd5878ab859e35e8a329245016c6116",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "c1e980bb-5ed9-431e-a98a-06379e1e5c33",
+      "text": "Hola, parece que mi computadora no puede conectar un dispositivo bluetooth.",
+      "intent": "conexion",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:54:39.999Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:04.332Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:04.332Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "3b2aa5b0a418211a4a2ba26448fd75ee6a8a775b38f18e219c8125c6c9760348",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "3181364d-71b3-4828-86f1-e8239e255ca6",
+      "text": "Hola, mi computadora enciende, pero no parece que cargue la pantalla.",
+      "intent": "pantalla",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:55:05.219Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:02.945Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:02.945Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "d76323880e8908e4f6d5be0d1cfef38a234541cbdbc558945a297261c4ef0711",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "5a4a18cb-9d2a-4a97-9a4f-6c2fbca271ca",
+      "text": "Mi computadora no reproduce ningún sonido.",
+      "intent": "sonido",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:55:24.015Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:02.092Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:02.092Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "e62fe6f2f356476f171e1c3a310d04074b41161ea7a39724cd06520e8425546a",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "bf5891bb-9e2f-414b-bdc8-3f8508efc741",
+      "text": "El dispositivo que tengo no muestra correctamente el almacenamiento.",
+      "intent": "almacenamiento",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:57:48.840Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:01.208Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:01.208Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "00a09f16892743e1d15e736c98b5875ddc5562f5f1fe2854f2354500fc0689fb",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "770fac5c-a72c-42c7-bfec-9444350cb064",
+      "text": "Quiero cotizar dos opciones de computadoras para saber cuál es la mejor opción.",
+      "intent": "presupuesto",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:59:09.757Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:59:24.623Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:59:24.623Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "8e5f6ba61fb4928c0bf5cc4448a65e4fe634702bdc93c51ea2632a9da03a4619",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    }
+  ],
+  "training_examples": [
+    {
+      "id": "d01-e01",
+      "author": "alumno-a",
+      "text": "hola",
+      "intent": "saludo",
+      "created_at": "2026-10-28T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e02",
+      "author": "alumno-b",
+      "text": "adios",
+      "intent": "despedida",
+      "created_at": "2026-10-28T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e03",
+      "author": "alumno-a",
+      "text": "ayuda",
+      "intent": "ayuda",
+      "created_at": "2026-10-28T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e04",
+      "author": "alumno-b",
+      "text": "no prende",
+      "intent": "encendido",
+      "created_at": "2026-10-28T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e05",
+      "author": "alumno-a",
+      "text": "no carga",
+      "intent": "carga",
+      "created_at": "2026-10-28T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e06",
+      "author": "alumno-b",
+      "text": "se calienta",
+      "intent": "temperatura",
+      "created_at": "2026-10-28T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e07",
+      "author": "alumno-a",
+      "text": "esta lenta",
+      "intent": "rendimiento",
+      "created_at": "2026-10-28T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e08",
+      "author": "alumno-b",
+      "text": "no hay internet",
+      "intent": "conexion",
+      "created_at": "2026-10-28T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e09",
+      "author": "alumno-a",
+      "text": "pantalla rota",
+      "intent": "pantalla",
+      "created_at": "2026-10-28T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e10",
+      "author": "alumno-b",
+      "text": "no se oye",
+      "intent": "sonido",
+      "created_at": "2026-10-28T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e11",
+      "author": "alumno-a",
+      "text": "memoria llena",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-28T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e12",
+      "author": "alumno-b",
+      "text": "error",
+      "intent": "software",
+      "created_at": "2026-10-28T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e13",
+      "author": "alumno-a",
+      "text": "control falla",
+      "intent": "controles",
+      "created_at": "2026-10-28T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e14",
+      "author": "alumno-b",
+      "text": "agua",
+      "intent": "liquidos",
+      "created_at": "2026-10-28T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e15",
+      "author": "alumno-a",
+      "text": "precio",
+      "intent": "presupuesto",
+      "created_at": "2026-10-28T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d01-e16",
+      "author": "alumno-b",
+      "text": "contacto",
+      "intent": "contacto",
+      "created_at": "2026-10-28T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e01",
+      "author": "alumno-b",
+      "text": "buenas tardes equipo",
+      "intent": "saludo",
+      "created_at": "2026-10-29T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e02",
+      "author": "alumno-a",
+      "text": "hasta luego amigos",
+      "intent": "despedida",
+      "created_at": "2026-10-29T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e03",
+      "author": "alumno-b",
+      "text": "que sabes hacer",
+      "intent": "ayuda",
+      "created_at": "2026-10-29T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e04",
+      "author": "alumno-a",
+      "text": "mi compu no enciende",
+      "intent": "encendido",
+      "created_at": "2026-10-29T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e05",
+      "author": "alumno-b",
+      "text": "el cel no carga bateria",
+      "intent": "carga",
+      "created_at": "2026-10-29T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e06",
+      "author": "alumno-a",
+      "text": "mi compu se calienta mucho",
+      "intent": "temperatura",
+      "created_at": "2026-10-29T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e07",
+      "author": "alumno-b",
+      "text": "mi compu va bien lenta",
+      "intent": "rendimiento",
+      "created_at": "2026-10-29T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e08",
+      "author": "alumno-a",
+      "text": "mi cel no agarra wifi",
+      "intent": "conexion",
+      "created_at": "2026-10-29T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e09",
+      "author": "alumno-b",
+      "text": "mi cel tiene el cristal quebrado",
+      "intent": "pantalla",
+      "created_at": "2026-10-29T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e10",
+      "author": "alumno-a",
+      "text": "mi compu no tiene audio",
+      "intent": "sonido",
+      "created_at": "2026-10-29T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e11",
+      "author": "alumno-b",
+      "text": "mi cel ya no tiene espacio",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-29T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e12",
+      "author": "alumno-a",
+      "text": "una app se cierra sola",
+      "intent": "software",
+      "created_at": "2026-10-29T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e13",
+      "author": "alumno-b",
+      "text": "mi mando tiene drift",
+      "intent": "controles",
+      "created_at": "2026-10-29T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e14",
+      "author": "alumno-a",
+      "text": "se mojo mi laptop",
+      "intent": "liquidos",
+      "created_at": "2026-10-29T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e15",
+      "author": "alumno-b",
+      "text": "cuanto cuesta reparar una compu",
+      "intent": "presupuesto",
+      "created_at": "2026-10-29T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d02-e16",
+      "author": "alumno-a",
+      "text": "donde esta el taller",
+      "intent": "contacto",
+      "created_at": "2026-10-29T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e01",
+      "author": "alumno-a",
+      "text": "que onda amigos",
+      "intent": "saludo",
+      "created_at": "2026-10-30T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e02",
+      "author": "alumno-b",
+      "text": "gracias eso era todo",
+      "intent": "despedida",
+      "created_at": "2026-10-30T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e03",
+      "author": "alumno-a",
+      "text": "como uso este chat",
+      "intent": "ayuda",
+      "created_at": "2026-10-30T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e04",
+      "author": "alumno-b",
+      "text": "apreto power y no pasa nada",
+      "intent": "encendido",
+      "created_at": "2026-10-30T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e05",
+      "author": "alumno-a",
+      "text": "la pila se acaba rapidisimo",
+      "intent": "carga",
+      "created_at": "2026-10-30T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e06",
+      "author": "alumno-b",
+      "text": "el cel quema cuando juego",
+      "intent": "temperatura",
+      "created_at": "2026-10-30T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e07",
+      "author": "alumno-a",
+      "text": "el cel tarda en responder",
+      "intent": "rendimiento",
+      "created_at": "2026-10-30T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e08",
+      "author": "alumno-b",
+      "text": "la compu dice sin conexion",
+      "intent": "conexion",
+      "created_at": "2026-10-30T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e09",
+      "author": "alumno-a",
+      "text": "la compu prende pero no da imagen",
+      "intent": "pantalla",
+      "created_at": "2026-10-30T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e10",
+      "author": "alumno-b",
+      "text": "no me escuchan por el microfono",
+      "intent": "sonido",
+      "created_at": "2026-10-30T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e11",
+      "author": "alumno-a",
+      "text": "la compu no detecta el disco duro",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-30T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e12",
+      "author": "alumno-b",
+      "text": "windows muestra pantalla azul",
+      "intent": "software",
+      "created_at": "2026-10-30T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e13",
+      "author": "alumno-a",
+      "text": "el teclado no escribe unas letras",
+      "intent": "controles",
+      "created_at": "2026-10-30T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e14",
+      "author": "alumno-b",
+      "text": "le tire cafe al teclado",
+      "intent": "liquidos",
+      "created_at": "2026-10-30T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e15",
+      "author": "alumno-a",
+      "text": "me dan una cotizacion para el celular",
+      "intent": "presupuesto",
+      "created_at": "2026-10-30T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d03-e16",
+      "author": "alumno-b",
+      "text": "cual es su instagram",
+      "intent": "contacto",
+      "created_at": "2026-10-30T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e01",
+      "author": "alumno-b",
+      "text": "holaa yinyan",
+      "intent": "saludo",
+      "created_at": "2026-10-31T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e02",
+      "author": "alumno-a",
+      "text": "bueno nos bemos",
+      "intent": "despedida",
+      "created_at": "2026-10-31T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e03",
+      "author": "alumno-b",
+      "text": "nesesito ayuda para empesar",
+      "intent": "ayuda",
+      "created_at": "2026-10-31T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e04",
+      "author": "alumno-a",
+      "text": "la lap no aranca ni da luz",
+      "intent": "encendido",
+      "created_at": "2026-10-31T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e05",
+      "author": "alumno-b",
+      "text": "tengo q mover el cargador para que jale",
+      "intent": "carga",
+      "created_at": "2026-10-31T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e06",
+      "author": "alumno-a",
+      "text": "la consola avisa temperatura alta",
+      "intent": "temperatura",
+      "created_at": "2026-10-31T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e07",
+      "author": "alumno-b",
+      "text": "se traba cuando abro varias cosas",
+      "intent": "rendimiento",
+      "created_at": "2026-10-31T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e08",
+      "author": "alumno-a",
+      "text": "el bluetooth no encuentra mis audifonos",
+      "intent": "conexion",
+      "created_at": "2026-10-31T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e09",
+      "author": "alumno-b",
+      "text": "el display tiene rayas verdes",
+      "intent": "pantalla",
+      "created_at": "2026-10-31T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e10",
+      "author": "alumno-a",
+      "text": "la bocina del cel se oye bajito",
+      "intent": "sonido",
+      "created_at": "2026-10-31T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e11",
+      "author": "alumno-b",
+      "text": "no me cabe otro juego en la consola",
+      "intent": "almacenamiento",
+      "created_at": "2026-10-31T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e12",
+      "author": "alumno-a",
+      "text": "no termina la actualizacion del sistema",
+      "intent": "software",
+      "created_at": "2026-10-31T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e13",
+      "author": "alumno-b",
+      "text": "el personaje se mueve solo sin tocar nada",
+      "intent": "controles",
+      "created_at": "2026-10-31T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e14",
+      "author": "alumno-a",
+      "text": "mi cel se cayo al lavabo",
+      "intent": "liquidos",
+      "created_at": "2026-10-31T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e15",
+      "author": "alumno-b",
+      "text": "cuanto cobran por revisar la consola",
+      "intent": "presupuesto",
+      "created_at": "2026-10-31T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d04-e16",
+      "author": "alumno-a",
+      "text": "quiero hablar con una persona",
+      "intent": "contacto",
+      "created_at": "2026-10-31T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e01",
+      "author": "alumno-a",
+      "text": "buen dia al taller",
+      "intent": "saludo",
+      "created_at": "2026-11-01T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e02",
+      "author": "alumno-b",
+      "text": "ya quedo mi duda gracias",
+      "intent": "despedida",
+      "created_at": "2026-11-01T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e03",
+      "author": "alumno-a",
+      "text": "que puedo preguntarte aqui",
+      "intent": "ayuda",
+      "created_at": "2026-11-01T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e04",
+      "author": "alumno-b",
+      "text": "mi consola no quiere prender",
+      "intent": "encendido",
+      "created_at": "2026-11-01T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e05",
+      "author": "alumno-a",
+      "text": "solo funciona si tiene el cable puesto",
+      "intent": "carga",
+      "created_at": "2026-11-01T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e06",
+      "author": "alumno-b",
+      "text": "sale aire muy caliente del ventilador",
+      "intent": "temperatura",
+      "created_at": "2026-11-01T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e07",
+      "author": "alumno-a",
+      "text": "los juegos tienen pocos fps",
+      "intent": "rendimiento",
+      "created_at": "2026-11-01T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e08",
+      "author": "alumno-b",
+      "text": "mi consola se desconecta de la red",
+      "intent": "conexion",
+      "created_at": "2026-11-01T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e09",
+      "author": "alumno-a",
+      "text": "no funciona el touch de la mitad",
+      "intent": "pantalla",
+      "created_at": "2026-11-01T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e10",
+      "author": "alumno-b",
+      "text": "los audifonos suenan de un solo lado",
+      "intent": "sonido",
+      "created_at": "2026-11-01T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e11",
+      "author": "alumno-a",
+      "text": "la memoria usb no sale en el explorador",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-01T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e12",
+      "author": "alumno-b",
+      "text": "mi cel se queda en el logo",
+      "intent": "software",
+      "created_at": "2026-11-01T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e13",
+      "author": "alumno-a",
+      "text": "el mouse hace dos clics en lugar de uno",
+      "intent": "controles",
+      "created_at": "2026-11-01T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e14",
+      "author": "alumno-b",
+      "text": "derrame refresco en la consola",
+      "intent": "liquidos",
+      "created_at": "2026-11-01T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e15",
+      "author": "alumno-a",
+      "text": "la revision tiene algun costo",
+      "intent": "presupuesto",
+      "created_at": "2026-11-01T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d05-e16",
+      "author": "alumno-b",
+      "text": "tienen un numero de whatsapp",
+      "intent": "contacto",
+      "created_at": "2026-11-01T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e01",
+      "author": "alumno-b",
+      "text": "hey como estan",
+      "intent": "saludo",
+      "created_at": "2026-11-02T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e02",
+      "author": "alumno-a",
+      "text": "me retiro hasta mañana",
+      "intent": "despedida",
+      "created_at": "2026-11-02T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e03",
+      "author": "alumno-b",
+      "text": "tienes opciones de ayuda",
+      "intent": "ayuda",
+      "created_at": "2026-11-02T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e04",
+      "author": "alumno-a",
+      "text": "se apaga apenas intenta arrancar",
+      "intent": "encendido",
+      "created_at": "2026-11-02T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e05",
+      "author": "alumno-b",
+      "text": "el porcentaje de bateria no sube",
+      "intent": "carga",
+      "created_at": "2026-11-02T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e06",
+      "author": "alumno-a",
+      "text": "mi lap se apaga por el calor",
+      "intent": "temperatura",
+      "created_at": "2026-11-02T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e07",
+      "author": "alumno-b",
+      "text": "la lap tarda un monton en iniciar",
+      "intent": "rendimiento",
+      "created_at": "2026-11-02T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e08",
+      "author": "alumno-a",
+      "text": "no acepta la contraseña del wifi",
+      "intent": "conexion",
+      "created_at": "2026-11-02T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e09",
+      "author": "alumno-b",
+      "text": "la consola da sonido pero no video",
+      "intent": "pantalla",
+      "created_at": "2026-11-02T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e10",
+      "author": "alumno-a",
+      "text": "la consola tiene video pero no sonido",
+      "intent": "sonido",
+      "created_at": "2026-11-02T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e11",
+      "author": "alumno-b",
+      "text": "dice almacenamiento insuficiente para fotos",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-02T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e12",
+      "author": "alumno-a",
+      "text": "creo q tengo un virus",
+      "intent": "software",
+      "created_at": "2026-11-02T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e13",
+      "author": "alumno-b",
+      "text": "se quedo hundida la tecla de espacio",
+      "intent": "controles",
+      "created_at": "2026-11-02T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e14",
+      "author": "alumno-a",
+      "text": "el telefono avisa humedad en el puerto",
+      "intent": "liquidos",
+      "created_at": "2026-11-02T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e15",
+      "author": "alumno-b",
+      "text": "quiero un presupuesto antes del arreglo",
+      "intent": "presupuesto",
+      "created_at": "2026-11-02T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d06-e16",
+      "author": "alumno-a",
+      "text": "a que hora abren",
+      "intent": "contacto",
+      "created_at": "2026-11-02T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e01",
+      "author": "alumno-a",
+      "text": "buenas noches por aqui",
+      "intent": "saludo",
+      "created_at": "2026-11-03T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e02",
+      "author": "alumno-b",
+      "text": "bye equipo y gracias",
+      "intent": "despedida",
+      "created_at": "2026-11-03T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e03",
+      "author": "alumno-a",
+      "text": "me explicas tus funciones",
+      "intent": "ayuda",
+      "created_at": "2026-11-03T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e04",
+      "author": "alumno-b",
+      "text": "el cel esta muerto no reacciona",
+      "intent": "encendido",
+      "created_at": "2026-11-03T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e05",
+      "author": "alumno-a",
+      "text": "la laptop dice conectada sin cargar",
+      "intent": "carga",
+      "created_at": "2026-11-03T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e06",
+      "author": "alumno-b",
+      "text": "el ventilador suena bien fuerte y no enfria",
+      "intent": "temperatura",
+      "created_at": "2026-11-03T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e07",
+      "author": "alumno-a",
+      "text": "los menus de mi consola tienen lag",
+      "intent": "rendimiento",
+      "created_at": "2026-11-03T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e08",
+      "author": "alumno-b",
+      "text": "conecto ethernet pero no tengo internet",
+      "intent": "conexion",
+      "created_at": "2026-11-03T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e09",
+      "author": "alumno-a",
+      "text": "mi pantalla parpadea al mover la tapa",
+      "intent": "pantalla",
+      "created_at": "2026-11-03T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e10",
+      "author": "alumno-b",
+      "text": "el audio de la lap sale distorsionado",
+      "intent": "sonido",
+      "created_at": "2026-11-03T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e11",
+      "author": "alumno-a",
+      "text": "el ssd nuevo no lo reconoce",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-03T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e12",
+      "author": "alumno-b",
+      "text": "no puedo instalar un programa nuevo",
+      "intent": "software",
+      "created_at": "2026-11-03T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e13",
+      "author": "alumno-a",
+      "text": "el gatillo del control esta atorado",
+      "intent": "controles",
+      "created_at": "2026-11-03T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e14",
+      "author": "alumno-b",
+      "text": "le entro agua a la compu por la mochila",
+      "intent": "liquidos",
+      "created_at": "2026-11-03T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e15",
+      "author": "alumno-a",
+      "text": "que precio tiene cambiar el display",
+      "intent": "presupuesto",
+      "created_at": "2026-11-03T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d07-e16",
+      "author": "alumno-b",
+      "text": "como hago una cita para mi compu",
+      "intent": "contacto",
+      "created_at": "2026-11-03T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e01",
+      "author": "alumno-b",
+      "text": "hola llegue de nuevo",
+      "intent": "saludo",
+      "created_at": "2026-11-04T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e02",
+      "author": "alumno-a",
+      "text": "listo por hoy terminamos",
+      "intent": "despedida",
+      "created_at": "2026-11-04T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e03",
+      "author": "alumno-b",
+      "text": "de que temas sabe el bot",
+      "intent": "ayuda",
+      "created_at": "2026-11-04T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e04",
+      "author": "alumno-a",
+      "text": "no gira ni el ventilador al prender",
+      "intent": "encendido",
+      "created_at": "2026-11-04T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e05",
+      "author": "alumno-b",
+      "text": "el puerto de carga esta flojo",
+      "intent": "carga",
+      "created_at": "2026-11-04T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e06",
+      "author": "alumno-a",
+      "text": "la computadora esta irbiendo por atras",
+      "intent": "temperatura",
+      "created_at": "2026-11-04T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e07",
+      "author": "alumno-b",
+      "text": "todo funciona pero responde despacio",
+      "intent": "rendimiento",
+      "created_at": "2026-11-04T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e08",
+      "author": "alumno-a",
+      "text": "otras compus navegan y esta no",
+      "intent": "conexion",
+      "created_at": "2026-11-04T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e09",
+      "author": "alumno-b",
+      "text": "el monitor esta negro pero la torre prende",
+      "intent": "pantalla",
+      "created_at": "2026-11-04T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e10",
+      "author": "alumno-a",
+      "text": "mi microfono graba ruido nomas",
+      "intent": "sonido",
+      "created_at": "2026-11-04T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e11",
+      "author": "alumno-b",
+      "text": "quiero liberar espacio en mi laptop",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-04T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e12",
+      "author": "alumno-a",
+      "text": "me salen anuncios sin abrir nada",
+      "intent": "software",
+      "created_at": "2026-11-04T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e13",
+      "author": "alumno-b",
+      "text": "el touchpad no mueve el cursor",
+      "intent": "controles",
+      "created_at": "2026-11-04T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e14",
+      "author": "alumno-a",
+      "text": "se volteo un vaso encima del equipo",
+      "intent": "liquidos",
+      "created_at": "2026-11-04T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e15",
+      "author": "alumno-b",
+      "text": "cuanto sale reparar el control",
+      "intent": "presupuesto",
+      "created_at": "2026-11-04T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d08-e16",
+      "author": "alumno-a",
+      "text": "me pasan las redes sociales",
+      "intent": "contacto",
+      "created_at": "2026-11-04T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e01",
+      "author": "alumno-a",
+      "text": "un saludo a todos",
+      "intent": "saludo",
+      "created_at": "2026-11-05T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e02",
+      "author": "alumno-b",
+      "text": "luego vuelvo a preguntar",
+      "intent": "despedida",
+      "created_at": "2026-11-05T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e03",
+      "author": "alumno-a",
+      "text": "dame un ejemplo de consulta",
+      "intent": "ayuda",
+      "created_at": "2026-11-05T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e04",
+      "author": "alumno-b",
+      "text": "la torre no da señales de vida",
+      "intent": "encendido",
+      "created_at": "2026-11-05T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e05",
+      "author": "alumno-a",
+      "text": "el telefono pierde carga aunque no lo use",
+      "intent": "carga",
+      "created_at": "2026-11-05T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e06",
+      "author": "alumno-b",
+      "text": "la play necesita enfriarse para prender otra vez",
+      "intent": "temperatura",
+      "created_at": "2026-11-05T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e07",
+      "author": "alumno-a",
+      "text": "la computadora se congela unos segundos",
+      "intent": "rendimiento",
+      "created_at": "2026-11-05T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e08",
+      "author": "alumno-b",
+      "text": "mi lap no detecta redes disponibles",
+      "intent": "conexion",
+      "created_at": "2026-11-05T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e09",
+      "author": "alumno-a",
+      "text": "aparecieron manchas en la pantalla",
+      "intent": "pantalla",
+      "created_at": "2026-11-05T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e10",
+      "author": "alumno-b",
+      "text": "el volumen esta alto y no escucho nada",
+      "intent": "sonido",
+      "created_at": "2026-11-05T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e11",
+      "author": "alumno-a",
+      "text": "la tarjeta de memoria no deja guardar",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-05T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e12",
+      "author": "alumno-b",
+      "text": "un juego se cierra con codigo de error",
+      "intent": "software",
+      "created_at": "2026-11-05T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e13",
+      "author": "alumno-a",
+      "text": "la palanca del joystick queda hacia arriba",
+      "intent": "controles",
+      "created_at": "2026-11-05T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e14",
+      "author": "alumno-b",
+      "text": "mi movil se mojo con lluvia",
+      "intent": "liquidos",
+      "created_at": "2026-11-05T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e15",
+      "author": "alumno-a",
+      "text": "la cotizacion es gratis o cobran",
+      "intent": "presupuesto",
+      "created_at": "2026-11-05T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d09-e16",
+      "author": "alumno-b",
+      "text": "cual es la direccion del local",
+      "intent": "contacto",
+      "created_at": "2026-11-05T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e01",
+      "author": "alumno-b",
+      "text": "que tal buen martes",
+      "intent": "saludo",
+      "created_at": "2026-11-06T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e02",
+      "author": "alumno-a",
+      "text": "muchas gracias por contestar",
+      "intent": "despedida",
+      "created_at": "2026-11-06T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e03",
+      "author": "alumno-b",
+      "text": "sirves para revisar consolas",
+      "intent": "ayuda",
+      "created_at": "2026-11-06T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e04",
+      "author": "alumno-a",
+      "text": "antes prendia y ahora nada",
+      "intent": "encendido",
+      "created_at": "2026-11-06T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e05",
+      "author": "alumno-b",
+      "text": "la pila dura menos de una hora",
+      "intent": "carga",
+      "created_at": "2026-11-06T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e06",
+      "author": "alumno-a",
+      "text": "se pone caliente sin abrir programas",
+      "intent": "temperatura",
+      "created_at": "2026-11-06T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e07",
+      "author": "alumno-b",
+      "text": "cambiar de aplicacion toma demasiado",
+      "intent": "rendimiento",
+      "created_at": "2026-11-06T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e08",
+      "author": "alumno-a",
+      "text": "el wifi se cae cada cinco minutos",
+      "intent": "conexion",
+      "created_at": "2026-11-06T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e09",
+      "author": "alumno-b",
+      "text": "se ve muy oscuro con el brillo al cien",
+      "intent": "pantalla",
+      "created_at": "2026-11-06T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e10",
+      "author": "alumno-a",
+      "text": "se corta el sonido de los juegos",
+      "intent": "sonido",
+      "created_at": "2026-11-06T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e11",
+      "author": "alumno-b",
+      "text": "tengo todo el disco ocupado",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-06T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e12",
+      "author": "alumno-a",
+      "text": "el sistema reinicia una y otra vez",
+      "intent": "software",
+      "created_at": "2026-11-06T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e13",
+      "author": "alumno-b",
+      "text": "mi consola no reconoce el mando por cable",
+      "intent": "controles",
+      "created_at": "2026-11-06T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e14",
+      "author": "alumno-a",
+      "text": "el control tiene liquido adentro",
+      "intent": "liquidos",
+      "created_at": "2026-11-06T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e15",
+      "author": "alumno-b",
+      "text": "me dicen sus tarifas del taller",
+      "intent": "presupuesto",
+      "created_at": "2026-11-06T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d10-e16",
+      "author": "alumno-a",
+      "text": "quiero llevar mi consola a revision",
+      "intent": "contacto",
+      "created_at": "2026-11-06T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e01",
+      "author": "alumno-a",
+      "text": "ola alguien anda ahi",
+      "intent": "saludo",
+      "created_at": "2026-11-07T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e02",
+      "author": "alumno-b",
+      "text": "con eso ya me voy",
+      "intent": "despedida",
+      "created_at": "2026-11-07T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e03",
+      "author": "alumno-a",
+      "text": "no se como contar mi problema",
+      "intent": "ayuda",
+      "created_at": "2026-11-07T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e04",
+      "author": "alumno-b",
+      "text": "el boton de encendido no responde",
+      "intent": "encendido",
+      "created_at": "2026-11-07T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e05",
+      "author": "alumno-a",
+      "text": "mi cable carga otros celulares menos este",
+      "intent": "carga",
+      "created_at": "2026-11-07T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e06",
+      "author": "alumno-b",
+      "text": "la temperatura del procesador sube mucho",
+      "intent": "temperatura",
+      "created_at": "2026-11-07T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e07",
+      "author": "alumno-a",
+      "text": "los programas tardan años en abrir",
+      "intent": "rendimiento",
+      "created_at": "2026-11-07T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e08",
+      "author": "alumno-b",
+      "text": "no puedo enlazar un aparato inalambrico",
+      "intent": "conexion",
+      "created_at": "2026-11-07T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e09",
+      "author": "alumno-a",
+      "text": "el telefono suena pero no se ve nada",
+      "intent": "pantalla",
+      "created_at": "2026-11-07T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e10",
+      "author": "alumno-b",
+      "text": "la bocina truena cuando pongo musica",
+      "intent": "sonido",
+      "created_at": "2026-11-07T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e11",
+      "author": "alumno-a",
+      "text": "mi disco externo pide formatear",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-07T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e12",
+      "author": "alumno-b",
+      "text": "la lap quedo en reparacion automatica",
+      "intent": "software",
+      "created_at": "2026-11-07T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e13",
+      "author": "alumno-a",
+      "text": "el boton de volumen se quedo trabado",
+      "intent": "controles",
+      "created_at": "2026-11-07T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e14",
+      "author": "alumno-b",
+      "text": "la lap quedo humeda despues del accidente",
+      "intent": "liquidos",
+      "created_at": "2026-11-07T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e15",
+      "author": "alumno-a",
+      "text": "cuanto dinero ocupo para cambiar la bateria",
+      "intent": "presupuesto",
+      "created_at": "2026-11-07T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d11-e16",
+      "author": "alumno-b",
+      "text": "hay un tecnico disponible para atenderme",
+      "intent": "contacto",
+      "created_at": "2026-11-07T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e01",
+      "author": "alumno-b",
+      "text": "buenas compas del taller",
+      "intent": "saludo",
+      "created_at": "2026-11-08T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e02",
+      "author": "alumno-a",
+      "text": "asta la proxima yinyan",
+      "intent": "despedida",
+      "created_at": "2026-11-08T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e03",
+      "author": "alumno-b",
+      "text": "muestrame el menu de alluda",
+      "intent": "ayuda",
+      "created_at": "2026-11-08T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e04",
+      "author": "alumno-a",
+      "text": "mi play no prende aun enchufada",
+      "intent": "encendido",
+      "created_at": "2026-11-08T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e05",
+      "author": "alumno-b",
+      "text": "al desconectar el cargador se apaga la lap",
+      "intent": "carga",
+      "created_at": "2026-11-08T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e06",
+      "author": "alumno-a",
+      "text": "creo q tiene polvo y se sobrecalienta",
+      "intent": "temperatura",
+      "created_at": "2026-11-08T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e07",
+      "author": "alumno-b",
+      "text": "se queda pensando cada ves que hago clic",
+      "intent": "rendimiento",
+      "created_at": "2026-11-08T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e08",
+      "author": "alumno-a",
+      "text": "tengo señal pero no abren las paginas",
+      "intent": "conexion",
+      "created_at": "2026-11-08T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e09",
+      "author": "alumno-b",
+      "text": "el hdmi no manda imagen a la tele",
+      "intent": "pantalla",
+      "created_at": "2026-11-08T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e10",
+      "author": "alumno-a",
+      "text": "los altavoces tienen un zumbido raro",
+      "intent": "sonido",
+      "created_at": "2026-11-08T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e11",
+      "author": "alumno-b",
+      "text": "el celular no encuentra la micro sd",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-08T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e12",
+      "author": "alumno-a",
+      "text": "la consola fallo al instalar el parche",
+      "intent": "software",
+      "created_at": "2026-11-08T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e13",
+      "author": "alumno-b",
+      "text": "el teclado escribe letras repetidas",
+      "intent": "controles",
+      "created_at": "2026-11-08T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e14",
+      "author": "alumno-a",
+      "text": "se cayo mi celular a una cubeta",
+      "intent": "liquidos",
+      "created_at": "2026-11-08T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e15",
+      "author": "alumno-b",
+      "text": "cobran el diagnostico por separado",
+      "intent": "presupuesto",
+      "created_at": "2026-11-08T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d12-e16",
+      "author": "alumno-a",
+      "text": "trabajan los fines de semana",
+      "intent": "contacto",
+      "created_at": "2026-11-08T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e01",
+      "author": "alumno-a",
+      "text": "hola vengo por primera ves",
+      "intent": "saludo",
+      "created_at": "2026-11-09T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e02",
+      "author": "alumno-b",
+      "text": "te agradesco la orientacion",
+      "intent": "despedida",
+      "created_at": "2026-11-09T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e03",
+      "author": "alumno-a",
+      "text": "quiero saber para que sirve yinyan",
+      "intent": "ayuda",
+      "created_at": "2026-11-09T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e04",
+      "author": "alumno-b",
+      "text": "la computadora no inicia desde ayer",
+      "intent": "encendido",
+      "created_at": "2026-11-09T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e05",
+      "author": "alumno-a",
+      "text": "carga lento aunque le cambie de enchufe",
+      "intent": "carga",
+      "created_at": "2026-11-09T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e06",
+      "author": "alumno-b",
+      "text": "no puedo tocar el telefono de lo caliente",
+      "intent": "temperatura",
+      "created_at": "2026-11-09T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e07",
+      "author": "alumno-a",
+      "text": "mi celular ya no va tan fluido",
+      "intent": "rendimiento",
+      "created_at": "2026-11-09T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e08",
+      "author": "alumno-b",
+      "text": "se pierde el bluetooth a cada rato",
+      "intent": "conexion",
+      "created_at": "2026-11-09T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e09",
+      "author": "alumno-a",
+      "text": "la pantalla tactil toca cosas sola",
+      "intent": "pantalla",
+      "created_at": "2026-11-09T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e10",
+      "author": "alumno-b",
+      "text": "en las llamadas nadie escucha mi voz",
+      "intent": "sonido",
+      "created_at": "2026-11-09T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e11",
+      "author": "alumno-a",
+      "text": "borre archivos pero la memoria sigue llena",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-09T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e12",
+      "author": "alumno-b",
+      "text": "no puedo iniciar sesion por un error de windows",
+      "intent": "software",
+      "created_at": "2026-11-09T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e13",
+      "author": "alumno-a",
+      "text": "la rueda del raton no desplaza la pagina",
+      "intent": "controles",
+      "created_at": "2026-11-09T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e14",
+      "author": "alumno-b",
+      "text": "la consola recibio agua de una gotera",
+      "intent": "liquidos",
+      "created_at": "2026-11-09T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e15",
+      "author": "alumno-a",
+      "text": "nesesito cotizar mantenimiento de mi xbox",
+      "intent": "presupuesto",
+      "created_at": "2026-11-09T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d13-e16",
+      "author": "alumno-b",
+      "text": "como me comunico con el dueño",
+      "intent": "contacto",
+      "created_at": "2026-11-09T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e01",
+      "author": "alumno-b",
+      "text": "saludos gente de yinyan",
+      "intent": "saludo",
+      "created_at": "2026-11-10T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e02",
+      "author": "alumno-a",
+      "text": "nos hablamos despues del taller",
+      "intent": "despedida",
+      "created_at": "2026-11-10T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e03",
+      "author": "alumno-b",
+      "text": "que informacion necesita el asistente",
+      "intent": "ayuda",
+      "created_at": "2026-11-10T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e04",
+      "author": "alumno-a",
+      "text": "el telefono se apago y no lo puedo encender",
+      "intent": "encendido",
+      "created_at": "2026-11-10T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e05",
+      "author": "alumno-b",
+      "text": "el mando no puede recargar su bateria",
+      "intent": "carga",
+      "created_at": "2026-11-10T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e06",
+      "author": "alumno-a",
+      "text": "se apaga mientras juego por exceso de temperatura",
+      "intent": "temperatura",
+      "created_at": "2026-11-10T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e07",
+      "author": "alumno-b",
+      "text": "los juegos se ven entrecortados sin usar internet",
+      "intent": "rendimiento",
+      "created_at": "2026-11-10T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e08",
+      "author": "alumno-a",
+      "text": "mi xbox no logra conectarse al router",
+      "intent": "conexion",
+      "created_at": "2026-11-10T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e09",
+      "author": "alumno-b",
+      "text": "hay pixeles dañados en el panel de mi lap",
+      "intent": "pantalla",
+      "created_at": "2026-11-10T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e10",
+      "author": "alumno-a",
+      "text": "no sale audio por los auriculares conectados",
+      "intent": "sonido",
+      "created_at": "2026-11-10T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e11",
+      "author": "alumno-b",
+      "text": "necesito ampliar el almacenamiento del equipo",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-10T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e12",
+      "author": "alumno-a",
+      "text": "la aplicacion dejo de funcionar despues de actualizar",
+      "intent": "software",
+      "created_at": "2026-11-10T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e13",
+      "author": "alumno-b",
+      "text": "la cruceta no detecta la izquierda",
+      "intent": "controles",
+      "created_at": "2026-11-10T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e14",
+      "author": "alumno-a",
+      "text": "tengo gotas dentro de la pantalla desde que se mojo",
+      "intent": "liquidos",
+      "created_at": "2026-11-10T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e15",
+      "author": "alumno-b",
+      "text": "me pueden estimar el costo del servicio",
+      "intent": "presupuesto",
+      "created_at": "2026-11-10T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d14-e16",
+      "author": "alumno-a",
+      "text": "quiero consultar el horario de atencion",
+      "intent": "contacto",
+      "created_at": "2026-11-10T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e01",
+      "author": "alumno-a",
+      "text": "holi buenos dias a los del taller",
+      "intent": "saludo",
+      "created_at": "2026-11-11T16:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e02",
+      "author": "alumno-b",
+      "text": "ya no necesito mas gracias por la ayuda",
+      "intent": "despedida",
+      "created_at": "2026-11-11T16:06:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e03",
+      "author": "alumno-a",
+      "text": "puedes orientarme para describir una falla",
+      "intent": "ayuda",
+      "created_at": "2026-11-11T16:10:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e04",
+      "author": "alumno-b",
+      "text": "la laptop arranca un segundo y despues se apaga",
+      "intent": "encendido",
+      "created_at": "2026-11-11T16:14:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e05",
+      "author": "alumno-a",
+      "text": "mi consola portatil no recibe energia del cargador",
+      "intent": "carga",
+      "created_at": "2026-11-11T16:18:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e06",
+      "author": "alumno-b",
+      "text": "la consola saca mucho calor por las rejillas",
+      "intent": "temperatura",
+      "created_at": "2026-11-11T16:22:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e07",
+      "author": "alumno-a",
+      "text": "quiero mejorar la velocidad de la computadora",
+      "intent": "rendimiento",
+      "created_at": "2026-11-11T16:26:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e08",
+      "author": "alumno-b",
+      "text": "el adaptador de red sale desactivado",
+      "intent": "conexion",
+      "created_at": "2026-11-11T16:30:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e09",
+      "author": "alumno-a",
+      "text": "tengo una linea de color atravesando el display",
+      "intent": "pantalla",
+      "created_at": "2026-11-11T16:34:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e10",
+      "author": "alumno-b",
+      "text": "la salida de sonido de windows no aparece",
+      "intent": "sonido",
+      "created_at": "2026-11-11T16:38:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e11",
+      "author": "alumno-a",
+      "text": "la unidad usb muestra menos capacidad de la que tiene",
+      "intent": "almacenamiento",
+      "created_at": "2026-11-11T16:42:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e12",
+      "author": "alumno-b",
+      "text": "el antivirus encontro una amenaza en un archivo",
+      "intent": "software",
+      "created_at": "2026-11-11T16:46:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e13",
+      "author": "alumno-a",
+      "text": "el boton a del control no responde cuando lo pulso",
+      "intent": "controles",
+      "created_at": "2026-11-11T16:50:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e14",
+      "author": "alumno-b",
+      "text": "derramaron jugo sobre los puertos de mi computadora",
+      "intent": "liquidos",
+      "created_at": "2026-11-11T16:54:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e15",
+      "author": "alumno-a",
+      "text": "quiero saber cuanto saldria arreglar mi laptop",
+      "intent": "presupuesto",
+      "created_at": "2026-11-11T16:58:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "d15-e16",
+      "author": "alumno-b",
+      "text": "pasame el canal oficial para coordinar la entrega",
+      "intent": "contacto",
+      "created_at": "2026-11-11T17:02:00-06:00",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "simulated"
+    },
+    {
+      "id": "26c0e5a7-1f48-44dd-b629-1cf3d2bce059",
+      "text": "Mi computadora no responde cuando presiono el botón de encendido, aunque está conectada a la corriente.",
+      "intent": "encendido",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T17:28:13.524Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:08.863Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:08.863Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "d53ebef5cc0004da417e0f0c0fdc74559a022a14667e28b631cafd88ce113a90",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "39653026-5d19-474b-932b-43486e67807c",
+      "text": "Mi computadora no enciende, presiono el botón de encendido, hace un ruido y se vuelve a apagar.",
+      "intent": "encendido",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:50:47.558Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:08.166Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:08.166Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "46473476096882bb956624c80b2c9197b9092e69bf8e30e65df6eb36e47e5b7f",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "59227132-9388-4010-97cf-e84a42077d69",
+      "text": "Mi computadora dejo ce cargar, cuando lo conecto ya no enciende la luz ni muestra la carga en la barra de notificaciones.",
+      "intent": "carga",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:51:53.801Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:06.860Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:06.860Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "5f98a05bd10c11e0cecbe0b5fa69b88d1ef77796a6280727ea7d003dccb34a5b",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "e7c10d00-1116-4f7f-99fd-c3788033233e",
+      "text": "Mi computadora se calienta mucho cada que la enciendo.",
+      "intent": "temperatura",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:52:24.535Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:06.148Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:06.148Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "86721d0ef6e7d7d735828872c6d632885d6a1f981015a28bbe36ed056713f1f3",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "eaf93047-4951-40d2-8340-0541826fa652",
+      "text": "La computadora tarda muchísimo tiempo en al encender, aunque después funciona relativamente bien por que en ocasiones se alenta.",
+      "intent": "rendimiento",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:53:18.628Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:04.958Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:04.958Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "6ad0e334952997111c250cefdf3fc2b92bd5878ab859e35e8a329245016c6116",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "c1e980bb-5ed9-431e-a98a-06379e1e5c33",
+      "text": "Hola, parece que mi computadora no puede conectar un dispositivo bluetooth.",
+      "intent": "conexion",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:54:39.999Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:04.332Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:04.332Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "3b2aa5b0a418211a4a2ba26448fd75ee6a8a775b38f18e219c8125c6c9760348",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "3181364d-71b3-4828-86f1-e8239e255ca6",
+      "text": "Hola, mi computadora enciende, pero no parece que cargue la pantalla.",
+      "intent": "pantalla",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:55:05.219Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:02.945Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:02.945Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "d76323880e8908e4f6d5be0d1cfef38a234541cbdbc558945a297261c4ef0711",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "5a4a18cb-9d2a-4a97-9a4f-6c2fbca271ca",
+      "text": "Mi computadora no reproduce ningún sonido.",
+      "intent": "sonido",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:55:24.015Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:02.092Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:02.092Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "e62fe6f2f356476f171e1c3a310d04074b41161ea7a39724cd06520e8425546a",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "bf5891bb-9e2f-414b-bdc8-3f8508efc741",
+      "text": "El dispositivo que tengo no muestra correctamente el almacenamiento.",
+      "intent": "almacenamiento",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:57:48.840Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:58:01.208Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:58:01.208Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "00a09f16892743e1d15e736c98b5875ddc5562f5f1fe2854f2354500fc0689fb",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    },
+    {
+      "id": "770fac5c-a72c-42c7-bfec-9444350cb064",
+      "text": "Quiero cotizar dos opciones de computadoras para saber cuál es la mejor opción.",
+      "intent": "presupuesto",
+      "author": "alumno-a",
+      "created_at": "2026-11-22T18:59:09.757Z",
+      "timezone": "America/Mexico_City",
+      "timestamp_kind": "recorded",
+      "source": "manual",
+      "review_status": "approved",
+      "reviewed_at": "2026-11-22T18:59:24.623Z",
+      "reviewed_by": "alumno-a",
+      "updated_at": "2026-11-22T18:59:24.623Z",
+      "updated_by": "alumno-a",
+      "review_conflict": false,
+      "event_sequence": 1,
+      "record_version": "8e5f6ba61fb4928c0bf5cc4448a65e4fe634702bdc93c51ea2632a9da03a4619",
+      "review_note": "",
+      "dataset_version": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+    }
+  ],
+  "approved_revision": "cb3d5475258d02e0a68c149ec919f8f7807c0f83c1c93ebae2ab931f1c46430e"
+}

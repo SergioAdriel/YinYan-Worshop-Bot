@@ -1,0 +1,12 @@
+{
+  "id": "770fac5c-a72c-42c7-bfec-9444350cb064",
+  "text": "Quiero cotizar dos opciones de computadoras para saber cuál es la mejor opción.",
+  "intent": "presupuesto",
+  "author": "alumno-a",
+  "created_at": "2026-11-22T18:59:09.757Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "c13eaff0d6f07267abda5826aba132271d80f99e584f2404aa544e99630b96d8"
+}
