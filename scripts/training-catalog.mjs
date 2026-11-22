@@ -26,7 +26,7 @@ export async function referenceSource(project) {
 }
 export async function storedQueryModel(project,model) {
   if(model&&model.kind==='version'&&UUID.test(model.version_id||'')) return {kind:'version',version_id:model.version_id.toLowerCase()};
-  if(Number.isInteger(model?.day)) {
+  if(model?.kind==='simulation'&&Number.isInteger(model.day)&&model.day>=1&&model.day<=15) {
     const catalog=await trainingCatalog(project);
     const id=catalog.references.stages[String(model.day)];
     if(UUID.test(id||'')) return {kind:'version',version_id:id};

@@ -108,6 +108,7 @@ El servidor Python usa la biblioteca estándar para servir la interfaz y los reg
 | --- | --- |
 | El navegador no carga | Espera a que el servidor esté listo y usa la dirección impresa en la consola. |
 | La consola se cerró | Vuelve a abrir `iniciar.cmd`. |
+| Una consulta queda pendiente con el mensaje «Indica la versión de entrenamiento utilizada» | Recibe los cambios del repositorio, cierra la consola del servidor anterior y vuelve a abrir `iniciar.cmd`. Recarga la página y pulsa **Reintentar guardado**. |
 | Falta un intérprete | Instala Node.js 22 o Python 3.12, o conserva el entorno `runtime/` disponible. |
 | Faltan dependencias de entrenamiento | Instala `requirements-lock.txt` en el Python que utiliza el proyecto. |
 | No se cargan los ejemplos y falta `training_history.json` | Recibe la versión completa con `git pull --ff-only` y reinicia `iniciar.cmd`. El catálogo y las referencias de `data/training/` deben estar incluidos en el repositorio. |
@@ -117,6 +118,13 @@ El servidor Python usa la biblioteca estándar para servir la interfaz y los reg
 | Git no recibe o envía | Revisa conexión, permisos y mensaje de Git. Conserva tus registros locales. |
 
 La configuración del repositorio debe realizarse antes del primer intercambio. Estas instrucciones no afirman que ya se haya publicado una URL en GitHub.
+
+Las consultas pendientes se conservan en el navegador, incluso si abres otro clon
+en la misma dirección local. Después de actualizar, las consultas de las etapas
+de referencia se recuperan con su versión original, sin duplicarlas. Conserva los
+datos del sitio mientras haya pendientes. Si una consulta pertenece a un modelo
+anterior que no se puede identificar, permanecerá guardada en el navegador para
+su revisión; las demás consultas recuperables pueden enviarse.
 
 Si una copia perdió el catálogo o alguna referencia inicial, desde la raíz ejecuta
 `node scripts/restore-training-catalog.mjs` (o `.\runtime\node.exe scripts/restore-training-catalog.mjs`

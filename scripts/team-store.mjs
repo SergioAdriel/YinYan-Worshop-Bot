@@ -257,15 +257,18 @@ export function createTeamStore({project,runtime}) {
     await append(pathFor(author,'events',event.id),event);
     return snapshot();
   }
-  function cleanQuery(data) {
+  async function cleanQuery(data) {
     if(!data || typeof data !== 'object' || Array.isArray(data)) throw apiError('La consulta debe ser un objeto.');
     const session_id = textValue(data.session_id,1,80);
     const author = authorValue(data.author);
     const intent = data.intent ?? null;
     if(intent !== null && !['aclaracion','desconocida','seguridad'].includes(intent)) intentValue(intent);
     if(typeof data.accepted !== 'boolean') throw apiError('La consulta debe indicar si la predicción fue aceptada.');
-    if(!data.model || data.model.kind!=='version') throw apiError('Indica la versión de entrenamiento utilizada en la consulta.');
-    const model={kind:'version',version_id:uuidId(data.model.version_id)};
+    let model;
+    if(data.model?.kind==='version') model={kind:'version',version_id:uuidId(data.model.version_id)};
+    else if(data.model?.kind==='simulation'&&Number.isInteger(data.model.day)&&data.model.day>=1&&data.model.day<=15) model=await storedQueryModel(project,data.model);
+    else if(data.model?.kind==='custom') throw apiError('La consulta pendiente pertenece a un modelo anterior que no se puede identificar. La copia se conserva en este navegador.');
+    else throw apiError('Indica la versión de entrenamiento utilizada en la consulta.');
     return {session_id,author,text:textValue(data.text,1,1200),response:textValue(data.response,1,6000),intent,accepted:data.accepted,model,resolution:data.resolution == null ? null : textValue(data.resolution,1,80)};
   }
   async function queries() {
@@ -275,11 +278,11 @@ export function createTeamStore({project,runtime}) {
     return {queries:rows,timezone:TIMEZONE};
   }
   async function createQuery(data) {
-    const clean = cleanQuery(data);
+    const clean = await cleanQuery(data);
     const id = data.id === undefined ? randomUUID() : uuidId(data.id);
     const old = (await records('queries')).find(row=>row.id === id);
     if(old) {
-      if(JSON.stringify(cleanQuery({...old,model:await storedQueryModel(project,old.model)})) !== JSON.stringify(clean)) throw apiError('Ese identificador ya pertenece a otra consulta.',409);
+      if(JSON.stringify(await cleanQuery({...old,model:await storedQueryModel(project,old.model)})) !== JSON.stringify(clean)) throw apiError('Ese identificador ya pertenece a otra consulta.',409);
       return {status:200,value:{query:(await queries()).queries.find(row=>row.id === id)}};
     }
     const row = {id,...clean,created_at:new Date().toISOString(),timezone:TIMEZONE,timestamp_kind:'recorded'};

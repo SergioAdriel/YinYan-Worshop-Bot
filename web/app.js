@@ -3,7 +3,7 @@ import {createConversation} from './dialogue.js';
 
 const $ = id => document.getElementById(id);
 const state = {
-  manifest: null, day: 15, conversation: null, modelLoading: true, sending: false,
+  manifest: null, catalog: null, day: 15, conversation: null, modelLoading: true, sending: false,
   custom: false, customResult: null, retryModel: null, examples: [], revision: '', storageReady: false,
   storageBusy: false, training: {status: 'idle'}, trainingReady: false, poll: null,
   author: 'alumno-a', sessionId: crypto.randomUUID(), queries: [], queriesBusy: false,
@@ -16,6 +16,7 @@ let toastTimer;
 const TIMEZONE = 'America/Mexico_City';
 const AUTHOR_KEY = 'yinyan-active-author';
 const PENDING_KEY = 'yinyan-pending-queries-v1';
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const dateFormatter = new Intl.DateTimeFormat('es-MX', {timeZone: TIMEZONE, dateStyle: 'medium', timeStyle: 'medium', hourCycle: 'h23'});
 const dayFormatter = new Intl.DateTimeFormat('es-MX', {timeZone: TIMEZONE, dateStyle: 'long'});
 const percentage = value => Number.isFinite(value) ? `${(value * 100).toLocaleString('es-MX', {maximumFractionDigits: 2})} %` : '—';
@@ -134,6 +135,9 @@ async function send(raw) {
   const text = raw.trim();
   if (!text || state.modelLoading || state.sending || !state.conversation) return;
   if (text.length > 1200) { toast('Escribe hasta 1,200 caracteres.'); return; }
+  const versionId = state.loadedVersionId;
+  if (!UUID.test(versionId || '')) { toast('Vuelve a cargar el modelo para verificar la versión de esta consulta.'); return; }
+  const conversation = state.conversation, sessionId = state.sessionId;
   showView('chat'); state.sending = true; refreshControls();
   $('quick-start').hidden = true;
   appendMessage(text, 'user'); $('message-input').value = '';
@@ -141,16 +145,16 @@ async function send(raw) {
   try {
     await new Promise(resolve => requestAnimationFrame(resolve));
     let response;
-    try { response = state.conversation.reply(text); }
+    try { response = conversation.reply(text); }
     catch (error) {
       console.error('Consulta local:', error);
       response = {text: 'No pude procesar esa consulta. Intenta describir una sola falla o inicia una consulta nueva.', intent: 'desconocida', accepted: false};
     }
     appendMessage(response.text, 'assistant', response); updateContext(response);
     const query = {
-      id: crypto.randomUUID(), session_id: state.sessionId, author, text, response: response.text,
+      id: crypto.randomUUID(), session_id: sessionId, author, text, response: response.text,
       intent: response.intent || 'desconocida', accepted: Boolean(response.accepted),
-      model: state.loadedVersionId ? {kind:'version', version_id:state.loadedVersionId} : state.custom ? {kind: 'custom', revision: state.customResult?.revision || trainingRevision() || ''} : {kind: 'simulation', day: state.day},
+      model: {kind:'version', version_id:versionId},
     };
     if (response.resolution) query.resolution = response.resolution;
     $('query-save-status').textContent = 'Guardando consulta y respuesta…';
@@ -174,7 +178,7 @@ async function send(raw) {
 function renderSnapshot() {
   const day = currentDay();
   const descriptor = state.modelDescriptor;
-  const version = descriptor?.version;
+  const version = descriptor?.version?.run_type === 'imported_reference' ? null : descriptor?.version;
   const model = version ? {...(version.models?.[version.selected_model] || {}), total_examples:version.counts?.total} : state.custom ? state.customResult : day;
   if (!model) return;
   const preview = descriptor?.preview;
@@ -277,27 +281,50 @@ async function selectDay(dayNumber) {
   if (!day) return;
   const previous = state.day;
   state.day = day.day;
-  const ready = await changeModel(day.model_url, false);
+  const id = state.catalog?.references?.stages?.[String(day.day)];
+  if (!UUID.test(id || '')) { state.day = previous; toast('No se encontró la versión de esa etapa en el catálogo.'); renderDay(); return; }
+  const ready = await changeModel(`./api/versions/${id}/model.json`, false, {preview:true, source:'history', reference_stage:day.day});
   if (!ready) { state.day = previous; renderDay(); }
+}
+function loadedModelIdentity(url, descriptor) {
+  const modelUrl = new URL(url, window.location.href);
+  const path = modelUrl.pathname;
+  const version = path.match(/^\/api\/versions\/([^/]+)\/model\.json$/);
+  const stage = path.match(/^\/simulation\/day-(\d{2})\.json$/);
+  const referenceId = stage ? state.catalog?.references?.stages?.[String(Number(stage[1]))] : null;
+  const ids = [version?.[1], referenceId, descriptor?.version?.id, descriptor?.active_id].filter(value => value != null);
+  if (modelUrl.origin !== window.location.origin || (!version && !stage) || (stage && !UUID.test(referenceId || '')) || !ids.length || ids.some(id => !UUID.test(id)) || new Set(ids.map(id => id.toLowerCase())).size !== 1) {
+    throw new Error('No se pudo verificar la versión del archivo de modelo cargado.');
+  }
+  const id = ids[0].toLowerCase();
+  const referenceStage = Object.entries(state.catalog?.references?.stages || {}).find(([, value]) => value.toLowerCase() === id)?.[0];
+  if (descriptor?.reference_stage != null && Number(referenceStage) !== descriptor.reference_stage) {
+    throw new Error('La versión del modelo no corresponde a la etapa seleccionada.');
+  }
+  return {id, referenceStage:referenceStage ? Number(referenceStage) : null};
 }
 async function changeModel(url, custom, descriptor = null) {
   const customSnapshot = custom ? {...state.training.result, revision: trainingRevision()} : null;
   state.modelLoading = true; refreshControls();
   $('model-status').className = 'model-status'; $('model-status').textContent = 'Cargando modelo…';
-  $('model-error').hidden = true; state.retryModel = {url, custom, day: state.day};
+  $('model-error').hidden = true; state.retryModel = {url, custom, day: state.day, descriptor};
   try {
+    const identity = loadedModelIdentity(url, descriptor);
     const classifier = await loadClassifier(url);
     state.conversation = createConversation(classifier, {concise: true});
     state.custom = custom;
     state.customResult = customSnapshot;
     state.modelDescriptor = descriptor || {preview:true, source:'history'};
-    state.loadedVersionId = descriptor?.version?.id || descriptor?.active_id || null;
-    $('model-status').textContent = descriptor?.version ? `${descriptor.preview ? 'Vista previa' : 'Activo'} · Jornada ${descriptor.version.journey}` : `${state.modelDescriptor.preview ? 'Referencia' : 'Activo'} · Etapa ${state.day}`;
+    state.loadedVersionId = identity.id;
+    if (identity.referenceStage) state.day = identity.referenceStage;
+    const version = descriptor?.version?.run_type === 'imported_reference' ? null : descriptor?.version;
+    $('model-status').textContent = version ? `${descriptor.preview ? 'Vista previa' : 'Activo'} · Jornada ${version.journey}` : `${state.modelDescriptor.preview ? 'Referencia' : 'Activo'} · Etapa ${state.day}`;
     $('model-status').className = 'model-status ready';
     resetConversation(false); renderDay();
     return true;
   } catch (error) {
     state.conversation = null;
+    state.loadedVersionId = null;
     $('model-status').className = 'model-status error'; $('model-status').textContent = 'No se pudo cargar';
     $('model-error-text').textContent = `No se pudo abrir el modelo. ${error.message} Mantén abierta la ventana de iniciar.cmd y vuelve a intentarlo.`;
     $('model-error').hidden = false;
@@ -307,17 +334,28 @@ async function changeModel(url, custom, descriptor = null) {
 async function loadManifest() {
   state.modelLoading = true; refreshControls(); $('retry-model').disabled = true;
   try {
-    const response = await fetch('./simulation/manifest.json', {cache: 'no-cache'});
+    const [response, catalog] = await Promise.all([
+      fetch('./simulation/manifest.json', {cache: 'no-cache'}), api('/api/training/catalog'),
+    ]);
     if (!response.ok) throw new Error(`Archivo de simulación no disponible (${response.status}).`);
     const manifest = await response.json();
     if (manifest.format_version !== 1 || manifest.simulated !== true || !Array.isArray(manifest.days) || manifest.days.length !== 15 || !Array.isArray(manifest.participants) || !manifest.labels) throw new Error('El formato de la simulación no es compatible.');
-    state.manifest = manifest; renderManifest();
+    if (!catalog.references?.stages || manifest.days.some(day => !UUID.test(catalog.references.stages[String(day.day)] || ''))) throw new Error('El catálogo no identifica las versiones de las etapas de referencia.');
+    state.catalog = catalog; state.manifest = manifest; renderManifest();
     await loadActiveModel(); refreshControls();
   } catch (error) {
     $('model-status').className = 'model-status error'; $('model-status').textContent = 'Simulación no disponible';
     $('model-error-text').textContent = `No se pudo cargar la simulación. ${error.message} Ejecuta iniciar.cmd desde la carpeta completa del proyecto.`;
     $('model-error').hidden = false; state.modelLoading = false; refreshControls();
   } finally { $('retry-model').disabled = false; }
+}
+async function retryModel() {
+  if (!state.manifest || !state.catalog) return loadManifest();
+  const retry = state.retryModel;
+  if (!retry?.url || retry.active) return loadActiveModel();
+  const previous = state.day;
+  state.day = retry.day;
+  if (!await changeModel(retry.url, retry.custom, retry.descriptor)) { state.day = previous; renderDay(); }
 }
 async function api(path, method = 'GET', body) {
   const controller = new AbortController();
@@ -327,7 +365,7 @@ async function api(path, method = 'GET', body) {
     let data;
     try { data = await response.json(); }
     catch { throw new Error('El servidor local no devolvió datos válidos. Inicia el proyecto con iniciar.cmd.'); }
-    if (!response.ok) throw new Error(data.error || `Error del servidor local (${response.status}).`);
+    if (!response.ok) throw Object.assign(new Error(data.error || `Error del servidor local (${response.status}).`), {status:response.status});
     return data;
   } catch (error) {
     if (error.name === 'AbortError') throw new Error('El servidor tardó demasiado en responder. Reintenta en unos segundos.');
@@ -353,12 +391,20 @@ async function retryPendingQueries() {
   state.retryingQueries = true; refreshControls();
   let failure = '';
   try {
-    while (state.pendingQueries.length) {
-      await api('/api/queries', 'POST', state.pendingQueries[0]);
-      state.pendingQueries.shift(); persistPendingQueries();
+    for (const query of [...state.pendingQueries]) {
+      try {
+        await api('/api/queries', 'POST', query);
+        state.pendingQueries = state.pendingQueries.filter(pending => pending !== query);
+        persistPendingQueries();
+      } catch (error) {
+        failure ||= error.message;
+        if (!error.status || error.status >= 500) break;
+      }
     }
-    $('query-save-status').textContent = 'Las consultas pendientes ya se guardaron en el proyecto.';
-    toast('Consultas guardadas.');
+    if (!state.pendingQueries.length) {
+      $('query-save-status').textContent = 'Las consultas pendientes ya se guardaron en el proyecto.';
+      toast('Consultas guardadas.');
+    }
     await loadQueries();
   } catch (error) { failure = error.message; }
   finally { state.retryingQueries = false; renderPendingQueries(failure); }
@@ -599,6 +645,7 @@ async function train() {
   catch(error) {state.training={status:'failed',message:error.message}; renderTraining();}
 }
 async function loadActiveModel() {
+  state.modelLoading=true; refreshControls();
   try {
     const active=await api('/api/models/active');
     if (!active.model_url) throw new Error('El servidor no indicó la ruta del modelo activo.');
@@ -620,7 +667,8 @@ async function loadVersions() {
     const data=await api('/api/versions');
     if (!Array.isArray(data.versions)) throw new Error('El historial de versiones no es válido.');
     state.versions=data.versions; state.activeVersionId=data.active_id || null;
-    if (state.loadedVersionId && state.loadedVersionId !== state.activeVersionId && state.modelDescriptor) state.modelDescriptor.preview=true;
+    const activeModelId = data.active_id || data.baseline?.version?.id || state.catalog?.references?.base_id;
+    if (state.loadedVersionId && state.loadedVersionId !== activeModelId && state.modelDescriptor) state.modelDescriptor.preview=true;
     renderVersions(); renderSnapshot(); renderTraining();
     $('versions-status').textContent=`${state.versions.length} jornada(s) registradas. ${state.activeVersionId ? 'El chatbot utiliza la versión aprobada indicada.' : 'La referencia inicial sigue activa; todavía no se ha activado una jornada.'}`;
     if (state.selectedVersionId) {
@@ -814,7 +862,7 @@ $('review-dialog').addEventListener('cancel',event=>{if (state.reviewBusy) event
 $('day-select').addEventListener('change',event=>selectDay(Number(event.target.value)));
 $('previous-day').addEventListener('click',()=>selectDay(state.day-1));
 $('next-day').addEventListener('click',()=>selectDay(state.day+1));
-$('retry-model').addEventListener('click',()=>state.manifest ? loadActiveModel() : loadManifest());
+$('retry-model').addEventListener('click',retryModel);
 $('retry-storage').addEventListener('click',loadStorage);
 $('example-filter').addEventListener('change',renderSavedExamples);
 $('cancel-edit').addEventListener('click',cancelEdit);

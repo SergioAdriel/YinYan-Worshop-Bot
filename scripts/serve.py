@@ -49,7 +49,7 @@ class Handler(SimpleHTTPRequestHandler):
         path = unquote(urlsplit(self.path).path)
         if path in ('/health', '/local-info.json'):
             import io
-            content = json.dumps({'app': 'yinyan-workshop', 'mode': 'local', 'api_version': 3, 'offline': True}).encode()
+            content = json.dumps({'app': 'yinyan-workshop', 'mode': 'local', 'api_version': 4, 'offline': True}).encode()
             self.send_response(200)
             self.send_header('Content-Type', 'application/json; charset=utf-8')
             self.send_header('Content-Length', str(len(content)))
@@ -101,7 +101,7 @@ def main():
         except Exception:
             is_this_app = False
         if is_this_app:
-            if info.get('api_version', 0) < 3:
+            if info.get('api_version', 0) < 4:
                 print('Hay una versión anterior de YinYan abierta. Cierra su consola y vuelve a abrir iniciar.cmd.', file=sys.stderr)
                 raise SystemExit(1)
             print(f'YinYan Workshop ya está abierto en {origin}')

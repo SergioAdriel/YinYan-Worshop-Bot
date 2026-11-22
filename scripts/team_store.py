@@ -363,7 +363,7 @@ class TeamStore:
         if isinstance(model, dict) and model.get('kind') == 'version':
             return {'kind': 'version', 'version_id': uuid_id(model.get('version_id'))}
         day = model.get('day') if isinstance(model, dict) else None
-        if isinstance(day, int) and not isinstance(day, bool):
+        if isinstance(model, dict) and model.get('kind') == 'simulation' and isinstance(day, int) and not isinstance(day, bool) and 1 <= day <= 15:
             catalog = json.loads((self.project / 'data/training/training_history.json').read_text(encoding='utf-8'))
             mapped = catalog['references']['stages'].get(str(day))
             if mapped:
@@ -381,9 +381,14 @@ class TeamStore:
         if not isinstance(data.get('accepted'), bool):
             raise ApiError('La consulta debe indicar si la predicción fue aceptada.')
         model = data.get('model')
-        if not isinstance(model, dict) or model.get('kind') != 'version':
+        if isinstance(model, dict) and model.get('kind') == 'version':
+            selected = {'kind': 'version', 'version_id': uuid_id(model.get('version_id'))}
+        elif isinstance(model, dict) and model.get('kind') == 'simulation' and isinstance(model.get('day'), int) and not isinstance(model['day'], bool) and 1 <= model['day'] <= 15:
+            selected = self.stored_query_model(model)
+        elif isinstance(model, dict) and model.get('kind') == 'custom':
+            raise ApiError('La consulta pendiente pertenece a un modelo anterior que no se puede identificar. La copia se conserva en este navegador.')
+        else:
             raise ApiError('Indica la versión de entrenamiento utilizada en la consulta.')
-        selected = {'kind': 'version', 'version_id': uuid_id(model.get('version_id'))}
         row = {'session_id': session_id, 'author': author, 'text': clean_text(data.get('text'), 1, 1200),
                'response': clean_text(data.get('response'), 1, 6000), 'intent': intent,
                'accepted': data['accepted'], 'model': selected, 'resolution': None}

@@ -11,6 +11,7 @@ La seleccion de responsable registra operaciones; no es un inicio de sesion.
 
 PARA EMPEZAR CADA TURNO
 1. Abre recibir-aportes.cmd para traer los cambios del equipo.
+   Si el servidor ya estaba abierto, cierra su consola para cargar los cambios.
 2. Haz doble clic en iniciar.cmd y deja abierta la consola.
 3. Abre http://127.0.0.1:4173 si el navegador no aparece.
 4. Selecciona tu nombre antes de trabajar.

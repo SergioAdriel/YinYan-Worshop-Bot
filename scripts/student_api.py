@@ -173,6 +173,9 @@ class StudentApi:
                         raise ApiError('Método no permitido.', 405)
                     status, result = self.store.review_query(path[len('/api/queries/'):-len('/example')], self.body(handler))
                     self.send(handler, status, result)
+                elif path == '/api/training/catalog' and get:
+                    catalog = read_json(self.project / 'data/training/training_history.json')
+                    self.send(handler, 200, {key: catalog[key] for key in ('labels', 'references', 'reference_curve')})
                 elif path == '/api/training' and get:
                     self.send(handler, 200, self.training_state())
                 elif path == '/api/train':

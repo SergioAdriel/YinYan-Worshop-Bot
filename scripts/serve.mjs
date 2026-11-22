@@ -31,7 +31,7 @@ const server=http.createServer(async(req,res)=>{
     if(await studentApi.handle(req,res,pathname))return;
     if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405,{'Allow':'GET, HEAD'});res.end();return;}
     if(pathname==='/health'||pathname==='/local-info.json'){
-      const info={app:'yinyan-workshop',mode:'local',api_version:3,offline:true};
+      const info={app:'yinyan-workshop',mode:'local',api_version:4,offline:true};
       res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(req.method==='HEAD'?undefined:JSON.stringify(info));return;
     }
     let file=aliases.get(pathname);
@@ -52,7 +52,7 @@ server.on('close',()=>studentApi.close());
 process.on('exit',()=>studentApi.close());
 server.on('error',async error=>{
   if(error.code==='EADDRINUSE'){
-    try{const response=await fetch(`${origin}/health`,{signal:AbortSignal.timeout(1500)});const info=await response.json();if(info.app==='yinyan-workshop'&&info.api_version>=3){console.log(`YinYan Workshop ya está abierto en ${origin}`);openBrowser();return;}if(info.app==='yinyan-workshop'){console.error('Hay una versión anterior de YinYan abierta. Cierra su consola y vuelve a abrir iniciar.cmd para cargar las jornadas.');process.exitCode=1;return;}}catch{/* Otro programa usa el puerto. */}
+    try{const response=await fetch(`${origin}/health`,{signal:AbortSignal.timeout(1500)});const info=await response.json();if(info.app==='yinyan-workshop'&&info.api_version>=4){console.log(`YinYan Workshop ya está abierto en ${origin}`);openBrowser();return;}if(info.app==='yinyan-workshop'){console.error('Hay una versión anterior de YinYan abierta. Cierra su consola y vuelve a abrir iniciar.cmd para cargar la actualización del guardado.');process.exitCode=1;return;}}catch{/* Otro programa usa el puerto. */}
     console.error(`El puerto ${port} está ocupado por otro programa. Cierra ese programa o usa PORT con otro número.`);
   }else console.error(`No se pudo iniciar: ${error.message}`);
   process.exitCode=1;
