@@ -1,0 +1,12 @@
+{
+  "id": "b741f955-0173-43bb-b617-ba3bcde560a2",
+  "text": "Mi computadora se queda congelada cuando intento cambiar entre aplicaciones",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:37:55.087Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "6b2189a7772c847797a0127e2bd3dc9a19cd667b6126b488629846aa166ac7d5"
+}

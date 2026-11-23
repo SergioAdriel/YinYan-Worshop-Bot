@@ -1,0 +1,12 @@
+{
+  "id": "47f6d7b9-8bdf-4554-a877-c6a83b2a0349",
+  "text": "La batería de mi celular se baja de golpe.",
+  "intent": "carga",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:35:42.821Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d3a337058d7f58e4aa9f00fe63503a067b933c9b844c7a23d06db9c803011bf3"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "90005fac-6e12-40c2-8102-0a8dfc84f261",
+  "text": "Mi teléfono solo carga cuando acomodo el cable en cierta posición.",
+  "intent": "carga",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:35:26.289Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "cd0b674a29c6fe382172262fd1764dbed58dcf2814f4a105e472a04ae7dd35ae"
+}

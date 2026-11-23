@@ -1,0 +1,12 @@
+{
+  "id": "0b9b0f08-c3cc-4977-a13e-51a9284bae35",
+  "text": "Un programa se cierra cada vez que intento usarlo.",
+  "intent": "software",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:26:14.465Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "c743eaf89acbe973e99799d18102fcf370c0d7bbbeca3d917f479e7c8c014c55"
+}

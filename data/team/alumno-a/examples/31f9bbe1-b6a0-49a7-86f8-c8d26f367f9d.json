@@ -1,0 +1,12 @@
+{
+  "id": "31f9bbe1-b6a0-49a7-86f8-c8d26f367f9d",
+  "text": "Mis audífonos funcionan, pero el sonido solamente se escucha de un lado.",
+  "intent": "pantalla",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:24:58.387Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d01d9b354f043ebea242aed7c424cc48362f8f3d2e0148d754d234bf99ec9e1d"
+}

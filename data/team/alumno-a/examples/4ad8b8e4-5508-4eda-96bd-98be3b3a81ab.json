@@ -1,0 +1,12 @@
+{
+  "id": "4ad8b8e4-5508-4eda-96bd-98be3b3a81ab",
+  "text": "Una aplicación se queda en la pantalla de carga y nunca termina de abrir.",
+  "intent": "software",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:42:42.225Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "1fd76ef895392f51003ccf7c3d13f2a39763aeac17a157656a09c1708c47d976"
+}

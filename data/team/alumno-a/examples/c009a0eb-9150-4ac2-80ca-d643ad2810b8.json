@@ -1,0 +1,12 @@
+{
+  "id": "c009a0eb-9150-4ac2-80ca-d643ad2810b8",
+  "text": "Mi disco duro externo aparece conectado, pero no me deja abrir sus archivos.",
+  "intent": "almacenamiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:42:01.386Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "3d2a4351c09b248dcd26f01ec4761da77387856e1f846e0307ba95b4e7a7987a"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "99eac142-c939-4a06-9736-2e30b43d472a",
+  "text": "Mi computadora pierde la conexión a internet a cada rato.",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:23:47.494Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "3e2547fa052e9532f01d0b8095e7b121b8c3a6015bc06b9cdba6ab83e11f9e67"
+}

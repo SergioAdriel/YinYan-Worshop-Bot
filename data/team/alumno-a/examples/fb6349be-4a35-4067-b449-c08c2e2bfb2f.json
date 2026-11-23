@@ -1,0 +1,12 @@
+{
+  "id": "fb6349be-4a35-4067-b449-c08c2e2bfb2f",
+  "text": "Mi celular detecta la red Wi-Fi, pero no consigue conectarse",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:23:26.610Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d9d2f8ef2497df5075718d9e0dbe1c4786b6cfa081883f14415df58918f06c5a"
+}

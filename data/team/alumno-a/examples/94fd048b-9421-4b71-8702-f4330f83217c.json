@@ -1,0 +1,12 @@
+{
+  "id": "94fd048b-9421-4b71-8702-f4330f83217c",
+  "text": "Muchas gracias por la ayuda.",
+  "intent": "despedida",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:19:13.030Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "e3cf3f1f18eb270c8bce2e79c180710f94e32a5356a0d36f53f5c9e50a318e34"
+}

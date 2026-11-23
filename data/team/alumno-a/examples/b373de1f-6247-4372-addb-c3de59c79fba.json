@@ -1,0 +1,12 @@
+{
+  "id": "b373de1f-6247-4372-addb-c3de59c79fba",
+  "text": "Mi monitor muestra la imagen con colores extraños, como si tuviera un filtro activado.",
+  "intent": "pantalla",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:40:56.059Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "f96dc710f92a0e2b31f6cb5500e18598a0ca11d4576055eb6c607d0babf1366a"
+}

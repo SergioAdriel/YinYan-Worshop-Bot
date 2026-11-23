@@ -1,0 +1,12 @@
+{
+  "id": "b64eccbf-bd4a-4153-89b6-15b784ef3a00",
+  "text": "Mi consola se apaga después de jugar un rato y muestra una advertencia de temperatura.",
+  "intent": "carga",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:36:33.024Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "bd14530604e7abfaba3c0882c0bd11947d7ced878b868bbb46b2143b206d0e95"
+}

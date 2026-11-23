@@ -1,0 +1,12 @@
+{
+  "id": "76101a88-f169-4a3b-9986-2221b5911453",
+  "text": "¿Cuánto podría costar reemplazar la pantalla de una laptop?",
+  "intent": "presupuesto",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:27:31.659Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "a17ae8788e0836b31d07b21f4fc7d20824009a494cd554e29f256c795011ed96"
+}

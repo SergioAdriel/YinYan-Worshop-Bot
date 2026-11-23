@@ -1,0 +1,12 @@
+{
+  "id": "9e59e04f-0603-4cbf-be31-bcf6c349597e",
+  "text": "Cuando conecto mis bocinas, se escucha un zumbido constante.",
+  "intent": "sonido",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:41:24.029Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "0a090bd5ee7873766fb35f1c9a000e7e6bbe21d2ca539b044d47c64e5b3c6440"
+}

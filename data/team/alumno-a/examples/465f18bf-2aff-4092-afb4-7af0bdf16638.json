@@ -1,0 +1,12 @@
+{
+  "id": "465f18bf-2aff-4092-afb4-7af0bdf16638",
+  "text": "Derramé café sobre mi teclado y algunas teclas dejaron de responder.",
+  "intent": "liquidos",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:26:57.892Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "9dc72144f354bea1eba3605dc63008e7ed5e7d3b1309a3fbfe0452a223bb8f0e"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "2fdb1450-e6a0-4002-83e6-834d97d40ec0",
+  "text": "Mi computadora intenta encender, pero se apaga inmediatamente después",
+  "intent": "encendido",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:20:30.641Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d2836ebb041a0dcb5f9ef2de8d77a3615ba3c00a6a8dcb294e8cbe4b799a5e9b"
+}

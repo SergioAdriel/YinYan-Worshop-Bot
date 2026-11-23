@@ -1,0 +1,2307 @@
+{
+  "format_version": 2,
+  "id": "8fd0614c-6e34-4e97-aa52-b38fb4f800a9",
+  "journey": 9,
+  "created_at": "2026-11-23T01:43:44.667Z",
+  "started_at": "2026-11-23T01:43:44.667Z",
+  "finished_at": "2026-11-23T01:43:55.674Z",
+  "author": "alumno-a",
+  "initiated_by": "selected_responsible",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "status": "succeeded",
+  "approval_status": "provisional",
+  "dataset_version": "9db330e000e37abb00cee97266586223fe5e17bf67e19e4a6ef8100eae99e78c",
+  "approved_revision": "7ced10f2d4923f14f9dfa005c4c6564b833fff81ab08c5dd46ae7ef000b64e96",
+  "message": "Dos clasificadores evaluados. Versión provisional lista para revisar y activar.",
+  "counts": {
+    "base": 240,
+    "additional": 77,
+    "total": 317,
+    "test": 80,
+    "intents": 16,
+    "per_intent": {
+      "almacenamiento": 22,
+      "ayuda": 21,
+      "carga": 27,
+      "conexion": 20,
+      "contacto": 15,
+      "controles": 17,
+      "despedida": 19,
+      "encendido": 22,
+      "liquidos": 18,
+      "pantalla": 21,
+      "presupuesto": 17,
+      "rendimiento": 24,
+      "saludo": 16,
+      "software": 17,
+      "sonido": 23,
+      "temperatura": 18
+    }
+  },
+  "labels": [
+    "almacenamiento",
+    "ayuda",
+    "carga",
+    "conexion",
+    "contacto",
+    "controles",
+    "despedida",
+    "encendido",
+    "liquidos",
+    "pantalla",
+    "presupuesto",
+    "rendimiento",
+    "saludo",
+    "software",
+    "sonido",
+    "temperatura"
+  ],
+  "process_id": null,
+  "storage_path": "runs/8fd0614c-6e34-4e97-aa52-b38fb4f800a9",
+  "selected_model": "logistic_regression",
+  "cv_winner": "logistic_regression",
+  "active_model": "logistic_regression",
+  "cv": {
+    "naive_bayes": {
+      "f1_macro_mean": 0.47431216251069186,
+      "f1_macro_std": 0.09828076241864675,
+      "accuracy_mean": 0.5175099206349205,
+      "fold_f1_macro": [
+        0.45612026862026867,
+        0.45789592352092356,
+        0.6279130591630592,
+        0.32256007881007875,
+        0.5070714824391295
+      ]
+    },
+    "logistic_regression": {
+      "f1_macro_mean": 0.5326062132312132,
+      "f1_macro_std": 0.09597959858301694,
+      "accuracy_mean": 0.5678571428571428,
+      "fold_f1_macro": [
+        0.5787108724608725,
+        0.48086358086358083,
+        0.6721478174603175,
+        0.38559027777777777,
+        0.5457185175935175
+      ]
+    }
+  },
+  "models": {
+    "naive_bayes": {
+      "accuracy": 0.85,
+      "precision_macro": 0.8961174242424242,
+      "recall_macro": 0.85,
+      "f1_macro": 0.8515760281385281,
+      "confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "ayuda": {
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1-score": 0.6666666666666666,
+          "support": 5.0
+        },
+        "carga": {
+          "precision": 0.45454545454545453,
+          "recall": 1.0,
+          "f1-score": 0.625,
+          "support": 5.0
+        },
+        "conexion": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "contacto": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "controles": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "despedida": {
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "f1-score": 0.7272727272727273,
+          "support": 5.0
+        },
+        "encendido": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "liquidos": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "pantalla": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "presupuesto": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1-score": 0.75,
+          "support": 5.0
+        },
+        "rendimiento": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "saludo": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "software": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "sonido": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "temperatura": {
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1-score": 0.5714285714285714,
+          "support": 5.0
+        },
+        "accuracy": 0.85,
+        "macro avg": {
+          "precision": 0.8961174242424242,
+          "recall": 0.85,
+          "f1-score": 0.8515760281385281,
+          "support": 80.0
+        },
+        "weighted avg": {
+          "precision": 0.8961174242424242,
+          "recall": 0.85,
+          "f1-score": 0.851576028138528,
+          "support": 80.0
+        }
+      },
+      "correct": 68,
+      "total": 80
+    },
+    "logistic_regression": {
+      "accuracy": 0.8375,
+      "precision_macro": 0.8541666666666666,
+      "recall_macro": 0.8375,
+      "f1_macro": 0.835652195027195,
+      "confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "per_class": {
+        "almacenamiento": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "ayuda": {
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1-score": 0.6,
+          "support": 5.0
+        },
+        "carga": {
+          "precision": 0.5,
+          "recall": 0.8,
+          "f1-score": 0.6153846153846154,
+          "support": 5.0
+        },
+        "conexion": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "contacto": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "controles": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "despedida": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "encendido": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1-score": 0.8888888888888888,
+          "support": 5.0
+        },
+        "liquidos": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "pantalla": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "presupuesto": {
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1-score": 0.75,
+          "support": 5.0
+        },
+        "rendimiento": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 5.0
+        },
+        "saludo": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "software": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 5.0
+        },
+        "sonido": {
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "f1-score": 0.9090909090909091,
+          "support": 5.0
+        },
+        "temperatura": {
+          "precision": 0.6666666666666666,
+          "recall": 0.4,
+          "f1-score": 0.5,
+          "support": 5.0
+        },
+        "accuracy": 0.8375,
+        "macro avg": {
+          "precision": 0.8541666666666666,
+          "recall": 0.8375,
+          "f1-score": 0.835652195027195,
+          "support": 80.0
+        },
+        "weighted avg": {
+          "precision": 0.8541666666666667,
+          "recall": 0.8375,
+          "f1-score": 0.8356521950271951,
+          "support": 80.0
+        }
+      },
+      "correct": 67,
+      "total": 80
+    }
+  },
+  "errors": [
+    {
+      "model": "naive_bayes",
+      "text": "Hasta otra ocasión, taller",
+      "expected": "despedida",
+      "predicted": "saludo",
+      "correct": false,
+      "interpretation": "Un cierre indirecto sin fórmulas habituales puede carecer de las señales léxicas aprendidas. Resultado observado: saludo; etiqueta esperada: despedida."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "¿Qué consultas de soporte admites?",
+      "expected": "ayuda",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: carga; etiqueta esperada: ayuda."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "¿Cuál es el alcance de tu orientación?",
+      "expected": "ayuda",
+      "predicted": "despedida",
+      "correct": false,
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: despedida; etiqueta esperada: ayuda."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Al presionar power mi portátil sigue completamente apagada",
+      "expected": "encendido",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "Una paráfrasis de falta de arranque puede confundirse con síntomas de carga o pantalla. Resultado observado: carga; etiqueta esperada: encendido."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Sale una advertencia térmica en medio de mis partidas",
+      "expected": "temperatura",
+      "predicted": "sonido",
+      "correct": false,
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: sonido; etiqueta esperada: temperatura."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Mi portátil está ardiendo cerca de las rejillas",
+      "expected": "temperatura",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: carga; etiqueta esperada: temperatura."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "El teléfono se pone hirviendo tras usarlo un rato",
+      "expected": "temperatura",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: carga; etiqueta esperada: temperatura."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Algunas letras del teclado dejaron de responder",
+      "expected": "controles",
+      "predicted": "liquidos",
+      "correct": false,
+      "interpretation": "Los periféricos de entrada abarcan palabras variadas; una referencia indirecta al cursor puede confundirse. Resultado observado: liquidos; etiqueta esperada: controles."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Volqué mi taza de té sobre el portátil",
+      "expected": "liquidos",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "Una bebida o situación nueva puede no compartir los términos agua, humedad o derrame del corpus. Resultado observado: carga; etiqueta esperada: liquidos."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "¿Hay que pagar por que revisen el equipo?",
+      "expected": "presupuesto",
+      "predicted": "despedida",
+      "correct": false,
+      "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: despedida; etiqueta esperada: presupuesto."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Quisiera que me cotizaran un cambio de pieza",
+      "expected": "presupuesto",
+      "predicted": "ayuda",
+      "correct": false,
+      "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: ayuda; etiqueta esperada: presupuesto."
+    },
+    {
+      "model": "naive_bayes",
+      "text": "Quiero saber si hoy está abierto el taller",
+      "expected": "contacto",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "Los canales, citas y horarios tienen vocabulario heterogéneo y pueden compartir una petición de presupuesto. Resultado observado: carga; etiqueta esperada: contacto."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Hasta otra ocasión, taller",
+      "expected": "despedida",
+      "predicted": "contacto",
+      "correct": false,
+      "interpretation": "Un cierre indirecto sin fórmulas habituales puede carecer de las señales léxicas aprendidas. Resultado observado: contacto; etiqueta esperada: despedida."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "¿Qué consultas de soporte admites?",
+      "expected": "ayuda",
+      "predicted": "rendimiento",
+      "correct": false,
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: rendimiento; etiqueta esperada: ayuda."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "¿Cuál es el alcance de tu orientación?",
+      "expected": "ayuda",
+      "predicted": "despedida",
+      "correct": false,
+      "interpretation": "Las peticiones generales y la cortesía comparten palabras; la intención pragmática depende de la frase completa. Resultado observado: despedida; etiqueta esperada: ayuda."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Al presionar power mi portátil sigue completamente apagada",
+      "expected": "encendido",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "Una paráfrasis de falta de arranque puede confundirse con síntomas de carga o pantalla. Resultado observado: carga; etiqueta esperada: encendido."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+      "expected": "carga",
+      "predicted": "conexion",
+      "correct": false,
+      "interpretation": "La dependencia del cable puede expresarse sin mencionar batería o cargador. Resultado observado: conexion; etiqueta esperada: carga."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Sale una advertencia térmica en medio de mis partidas",
+      "expected": "temperatura",
+      "predicted": "sonido",
+      "correct": false,
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: sonido; etiqueta esperada: temperatura."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Mi portátil está ardiendo cerca de las rejillas",
+      "expected": "temperatura",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: carga; etiqueta esperada: temperatura."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "El teléfono se pone hirviendo tras usarlo un rato",
+      "expected": "temperatura",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "La causa térmica puede describirse mediante metáforas y mezclarse con efectos de lentitud. Resultado observado: carga; etiqueta esperada: temperatura."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+      "expected": "rendimiento",
+      "predicted": "temperatura",
+      "correct": false,
+      "interpretation": "La lentitud se expresa con metáforas y efectos que también aparecen en software o almacenamiento. Resultado observado: temperatura; etiqueta esperada: rendimiento."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Algunas letras del teclado dejaron de responder",
+      "expected": "controles",
+      "predicted": "liquidos",
+      "correct": false,
+      "interpretation": "Los periféricos de entrada abarcan palabras variadas; una referencia indirecta al cursor puede confundirse. Resultado observado: liquidos; etiqueta esperada: controles."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Volqué mi taza de té sobre el portátil",
+      "expected": "liquidos",
+      "predicted": "carga",
+      "correct": false,
+      "interpretation": "Una bebida o situación nueva puede no compartir los términos agua, humedad o derrame del corpus. Resultado observado: carga; etiqueta esperada: liquidos."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "¿Hay que pagar por que revisen el equipo?",
+      "expected": "presupuesto",
+      "predicted": "ayuda",
+      "correct": false,
+      "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: ayuda; etiqueta esperada: presupuesto."
+    },
+    {
+      "model": "logistic_regression",
+      "text": "Quisiera que me cotizaran un cambio de pieza",
+      "expected": "presupuesto",
+      "predicted": "ayuda",
+      "correct": false,
+      "interpretation": "Una solicitud de precio puede incluir el síntoma técnico; la acción comercial debe dominar la etiqueta. Resultado observado: ayuda; etiqueta esperada: presupuesto."
+    }
+  ],
+  "predictions": {
+    "naive_bayes": [
+      {
+        "text": "Buenísima tarde, gente del taller",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Hola YinYan, les saludo",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Qué hay, buenas",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Saludos y buen comienzo de día",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Hola, ando pasando a saludar",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Se resolvió mi duda, te agradezco",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Me voy por ahora, nos leemos",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Con esa información es suficiente, gracias",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Hasta otra ocasión, taller",
+        "expected": "despedida",
+        "predicted": "saludo",
+        "correct": false
+      },
+      {
+        "text": "Finalizo aquí, muchas gracias",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Antes de comenzar, dime para qué sirves",
+        "expected": "ayuda",
+        "predicted": "ayuda",
+        "correct": true
+      },
+      {
+        "text": "¿Qué consultas de soporte admites?",
+        "expected": "ayuda",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Me interesa saber cómo conversar contigo",
+        "expected": "ayuda",
+        "predicted": "ayuda",
+        "correct": true
+      },
+      {
+        "text": "¿Cuál es el alcance de tu orientación?",
+        "expected": "ayuda",
+        "predicted": "despedida",
+        "correct": false
+      },
+      {
+        "text": "Enséñame a reportar el problema de mi equipo",
+        "expected": "ayuda",
+        "predicted": "ayuda",
+        "correct": true
+      },
+      {
+        "text": "Al presionar power mi portátil sigue completamente apagada",
+        "expected": "encendido",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Mi consola no tiene ninguna señal de vida",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "Desde que la apagué no consigo arrancar la computadora",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "El móvil no reacciona al botón de encendido",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "El ventilador ni siquiera se mueve cuando intento prender la torre",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "El porcentaje sigue bajando aunque tengo puesto el cargador",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Tengo que dejar el cable en cierta posición para cargar",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Apenas dura la pila de mi móvil",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "La consola portátil no detecta que la estoy cargando",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Sale una advertencia térmica en medio de mis partidas",
+        "expected": "temperatura",
+        "predicted": "sonido",
+        "correct": false
+      },
+      {
+        "text": "Mi portátil está ardiendo cerca de las rejillas",
+        "expected": "temperatura",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "El teléfono se pone hirviendo tras usarlo un rato",
+        "expected": "temperatura",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Mi torre necesita enfriarse para seguir funcionando",
+        "expected": "temperatura",
+        "predicted": "temperatura",
+        "correct": true
+      },
+      {
+        "text": "El sistema de refrigeración parece insuficiente porque se calienta",
+        "expected": "temperatura",
+        "predicted": "temperatura",
+        "correct": true
+      },
+      {
+        "text": "Cada clic tarda varios segundos en hacer algo",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Aunque funciona, la laptop va a paso de tortuga",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Los menús de la consola se mueven a tirones",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Mi celular se congela al alternar entre aplicaciones",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Puedo ver mi red pero el equipo no consigue conectarse",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "El adaptador Ethernet no da acceso a la red",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "Mis audífonos no se emparejan con el Bluetooth de la laptop",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "La consola tiene wifi y aun así no entra a internet",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "La PC tiene luces y ventiladores pero el monitor está negro",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "El panel táctil del teléfono falla en la mitad inferior",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "La televisión no recibe imagen por el HDMI de mi consola",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "Aparecen franjas verticales en el display",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "La pantalla titila cuando cambio el ángulo de la tapa",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "Veo el video normal pero no escucho absolutamente nada",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Mi voz no queda grabada en el micrófono del equipo",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "El altavoz suena rasposo al subir el volumen",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Únicamente se oye el auricular izquierdo",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Los demás no reciben mi voz durante una llamada",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Ya no caben más fotos en el almacenamiento del móvil",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "Conecto el disco externo y no figura ninguna unidad",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "Necesito hacer sitio en la consola para otro juego",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "El sistema no detecta mi tarjeta de memoria",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "El explorador no muestra el SSD que acabo de conectar",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "El sistema se queda repitiendo el logotipo una y otra vez",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "La app se cierra inmediatamente después de iniciarla",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "No termina de aplicar el parche del sistema de la consola",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "Me salen anuncios extraños en el escritorio sin abrir nada",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "Windows lanza un código de error con fondo azul",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "El personaje se desplaza aunque nadie toque la palanca",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "Algunas letras del teclado dejaron de responder",
+        "expected": "controles",
+        "predicted": "liquidos",
+        "correct": false
+      },
+      {
+        "text": "El gatillo derecho de mi mando se queda presionado",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "Mi ratón registra dos clics cuando hago uno",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "La cruceta del control no responde hacia la izquierda",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "Volqué mi taza de té sobre el portátil",
+        "expected": "liquidos",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Mi móvil terminó dentro de una alberca",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "Entró refresco por las rejillas de la consola",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "Me advierte que hay humedad en el puerto del teléfono",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "Le cayó lluvia a la computadora en la mochila",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "¿En cuánto me saldría llevarla a reparar?",
+        "expected": "presupuesto",
+        "predicted": "presupuesto",
+        "correct": true
+      },
+      {
+        "text": "Antes de autorizar el trabajo necesito conocer el presupuesto",
+        "expected": "presupuesto",
+        "predicted": "presupuesto",
+        "correct": true
+      },
+      {
+        "text": "¿Hay que pagar por que revisen el equipo?",
+        "expected": "presupuesto",
+        "predicted": "despedida",
+        "correct": false
+      },
+      {
+        "text": "Quisiera que me cotizaran un cambio de pieza",
+        "expected": "presupuesto",
+        "predicted": "ayuda",
+        "correct": false
+      },
+      {
+        "text": "¿Qué tarifa manejan para la revisión técnica?",
+        "expected": "presupuesto",
+        "predicted": "presupuesto",
+        "correct": true
+      },
+      {
+        "text": "Pásame un medio para hablar directamente con ustedes",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "¿A dónde debo llevar el teléfono para revisión?",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "Quiero saber si hoy está abierto el taller",
+        "expected": "contacto",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Necesito concertar una cita con el técnico",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "¿Cuál es la cuenta oficial para mandarles un DM?",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      }
+    ],
+    "logistic_regression": [
+      {
+        "text": "Buenísima tarde, gente del taller",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Hola YinYan, les saludo",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Qué hay, buenas",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Saludos y buen comienzo de día",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Hola, ando pasando a saludar",
+        "expected": "saludo",
+        "predicted": "saludo",
+        "correct": true
+      },
+      {
+        "text": "Se resolvió mi duda, te agradezco",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Me voy por ahora, nos leemos",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Con esa información es suficiente, gracias",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Hasta otra ocasión, taller",
+        "expected": "despedida",
+        "predicted": "contacto",
+        "correct": false
+      },
+      {
+        "text": "Finalizo aquí, muchas gracias",
+        "expected": "despedida",
+        "predicted": "despedida",
+        "correct": true
+      },
+      {
+        "text": "Antes de comenzar, dime para qué sirves",
+        "expected": "ayuda",
+        "predicted": "ayuda",
+        "correct": true
+      },
+      {
+        "text": "¿Qué consultas de soporte admites?",
+        "expected": "ayuda",
+        "predicted": "rendimiento",
+        "correct": false
+      },
+      {
+        "text": "Me interesa saber cómo conversar contigo",
+        "expected": "ayuda",
+        "predicted": "ayuda",
+        "correct": true
+      },
+      {
+        "text": "¿Cuál es el alcance de tu orientación?",
+        "expected": "ayuda",
+        "predicted": "despedida",
+        "correct": false
+      },
+      {
+        "text": "Enséñame a reportar el problema de mi equipo",
+        "expected": "ayuda",
+        "predicted": "ayuda",
+        "correct": true
+      },
+      {
+        "text": "Al presionar power mi portátil sigue completamente apagada",
+        "expected": "encendido",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Mi consola no tiene ninguna señal de vida",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "Desde que la apagué no consigo arrancar la computadora",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "El móvil no reacciona al botón de encendido",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "El ventilador ni siquiera se mueve cuando intento prender la torre",
+        "expected": "encendido",
+        "predicted": "encendido",
+        "correct": true
+      },
+      {
+        "text": "El porcentaje sigue bajando aunque tengo puesto el cargador",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Tengo que dejar el cable en cierta posición para cargar",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Mi portátil pierde toda la autonomía al quitar el adaptador",
+        "expected": "carga",
+        "predicted": "conexion",
+        "correct": false
+      },
+      {
+        "text": "Apenas dura la pila de mi móvil",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "La consola portátil no detecta que la estoy cargando",
+        "expected": "carga",
+        "predicted": "carga",
+        "correct": true
+      },
+      {
+        "text": "Sale una advertencia térmica en medio de mis partidas",
+        "expected": "temperatura",
+        "predicted": "sonido",
+        "correct": false
+      },
+      {
+        "text": "Mi portátil está ardiendo cerca de las rejillas",
+        "expected": "temperatura",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "El teléfono se pone hirviendo tras usarlo un rato",
+        "expected": "temperatura",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Mi torre necesita enfriarse para seguir funcionando",
+        "expected": "temperatura",
+        "predicted": "temperatura",
+        "correct": true
+      },
+      {
+        "text": "El sistema de refrigeración parece insuficiente porque se calienta",
+        "expected": "temperatura",
+        "predicted": "temperatura",
+        "correct": true
+      },
+      {
+        "text": "Cada clic tarda varios segundos en hacer algo",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Aunque funciona, la laptop va a paso de tortuga",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Los menús de la consola se mueven a tirones",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Mi celular se congela al alternar entre aplicaciones",
+        "expected": "rendimiento",
+        "predicted": "rendimiento",
+        "correct": true
+      },
+      {
+        "text": "Los cuadros por segundo bajan mucho cuando juego en la PC",
+        "expected": "rendimiento",
+        "predicted": "temperatura",
+        "correct": false
+      },
+      {
+        "text": "Puedo ver mi red pero el equipo no consigue conectarse",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "El móvil pierde el enlace inalámbrico cada pocos minutos",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "El adaptador Ethernet no da acceso a la red",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "Mis audífonos no se emparejan con el Bluetooth de la laptop",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "La consola tiene wifi y aun así no entra a internet",
+        "expected": "conexion",
+        "predicted": "conexion",
+        "correct": true
+      },
+      {
+        "text": "La PC tiene luces y ventiladores pero el monitor está negro",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "El panel táctil del teléfono falla en la mitad inferior",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "La televisión no recibe imagen por el HDMI de mi consola",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "Aparecen franjas verticales en el display",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "La pantalla titila cuando cambio el ángulo de la tapa",
+        "expected": "pantalla",
+        "predicted": "pantalla",
+        "correct": true
+      },
+      {
+        "text": "Veo el video normal pero no escucho absolutamente nada",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Mi voz no queda grabada en el micrófono del equipo",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "El altavoz suena rasposo al subir el volumen",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Únicamente se oye el auricular izquierdo",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Los demás no reciben mi voz durante una llamada",
+        "expected": "sonido",
+        "predicted": "sonido",
+        "correct": true
+      },
+      {
+        "text": "Ya no caben más fotos en el almacenamiento del móvil",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "Conecto el disco externo y no figura ninguna unidad",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "Necesito hacer sitio en la consola para otro juego",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "El sistema no detecta mi tarjeta de memoria",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "El explorador no muestra el SSD que acabo de conectar",
+        "expected": "almacenamiento",
+        "predicted": "almacenamiento",
+        "correct": true
+      },
+      {
+        "text": "El sistema se queda repitiendo el logotipo una y otra vez",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "La app se cierra inmediatamente después de iniciarla",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "No termina de aplicar el parche del sistema de la consola",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "Me salen anuncios extraños en el escritorio sin abrir nada",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "Windows lanza un código de error con fondo azul",
+        "expected": "software",
+        "predicted": "software",
+        "correct": true
+      },
+      {
+        "text": "El personaje se desplaza aunque nadie toque la palanca",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "Algunas letras del teclado dejaron de responder",
+        "expected": "controles",
+        "predicted": "liquidos",
+        "correct": false
+      },
+      {
+        "text": "El gatillo derecho de mi mando se queda presionado",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "Mi ratón registra dos clics cuando hago uno",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "La cruceta del control no responde hacia la izquierda",
+        "expected": "controles",
+        "predicted": "controles",
+        "correct": true
+      },
+      {
+        "text": "Volqué mi taza de té sobre el portátil",
+        "expected": "liquidos",
+        "predicted": "carga",
+        "correct": false
+      },
+      {
+        "text": "Mi móvil terminó dentro de una alberca",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "Entró refresco por las rejillas de la consola",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "Me advierte que hay humedad en el puerto del teléfono",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "Le cayó lluvia a la computadora en la mochila",
+        "expected": "liquidos",
+        "predicted": "liquidos",
+        "correct": true
+      },
+      {
+        "text": "¿En cuánto me saldría llevarla a reparar?",
+        "expected": "presupuesto",
+        "predicted": "presupuesto",
+        "correct": true
+      },
+      {
+        "text": "Antes de autorizar el trabajo necesito conocer el presupuesto",
+        "expected": "presupuesto",
+        "predicted": "presupuesto",
+        "correct": true
+      },
+      {
+        "text": "¿Hay que pagar por que revisen el equipo?",
+        "expected": "presupuesto",
+        "predicted": "ayuda",
+        "correct": false
+      },
+      {
+        "text": "Quisiera que me cotizaran un cambio de pieza",
+        "expected": "presupuesto",
+        "predicted": "ayuda",
+        "correct": false
+      },
+      {
+        "text": "¿Qué tarifa manejan para la revisión técnica?",
+        "expected": "presupuesto",
+        "predicted": "presupuesto",
+        "correct": true
+      },
+      {
+        "text": "Pásame un medio para hablar directamente con ustedes",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "¿A dónde debo llevar el teléfono para revisión?",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "Quiero saber si hoy está abierto el taller",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "Necesito concertar una cita con el técnico",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      },
+      {
+        "text": "¿Cuál es la cuenta oficial para mandarles un DM?",
+        "expected": "contacto",
+        "predicted": "contacto",
+        "correct": true
+      }
+    ]
+  },
+  "acceptance": {
+    "accepted": 54,
+    "total": 80,
+    "correct_accepted": 52,
+    "coverage": 0.675,
+    "accuracy_among_accepted": 0.9629629629629629
+  },
+  "comparison": {
+    "previous_id": "96c3c8a9-9c2c-4a09-8bca-d376e4415ceb",
+    "accuracy_delta": -0.012499999999999956,
+    "f1_macro_delta": -0.013905885780885696,
+    "same_dataset": false,
+    "note": "Comparación sobre el mismo benchmark de desarrollo; cambios de datos no demuestran generalización."
+  },
+  "checks": {
+    "dataset_valid": true,
+    "two_models": true,
+    "metrics_valid": true,
+    "export_parity": true,
+    "python_javascript_parity": true,
+    "artifacts_complete": true
+  },
+  "parity": {
+    "passed": true,
+    "export_max_difference": 0.0,
+    "javascript_verified": true,
+    "javascript_max_difference": 3.3306690738754696e-16,
+    "texts_checked": 13
+  },
+  "requirements": {
+    "minimum_training": 200,
+    "minimum_intents": 10,
+    "minimum_per_intent": 20,
+    "minimum_test": 50,
+    "training_total_met": true,
+    "intents_met": true,
+    "per_intent_met": false,
+    "test_total_met": false,
+    "per_intent_missing": {
+      "almacenamiento": 0,
+      "ayuda": 0,
+      "carga": 0,
+      "conexion": 0,
+      "contacto": 5,
+      "controles": 3,
+      "despedida": 1,
+      "encendido": 0,
+      "liquidos": 2,
+      "pantalla": 0,
+      "presupuesto": 3,
+      "rendimiento": 0,
+      "saludo": 4,
+      "software": 3,
+      "sonido": 0,
+      "temperatura": 2
+    },
+    "missing_examples_total": 23
+  },
+  "protocol": {
+    "seed": 42,
+    "cv": "StratifiedKFold(5, shuffle=True, random_state=42)",
+    "selection": "Mayor F1 macro medio de validación cruzada; empate: regresión logística.",
+    "parameters": {
+      "naive_bayes": {
+        "alpha": 0.25
+      },
+      "logistic_regression": {
+        "C": 8.0,
+        "max_iter": 2000
+      }
+    },
+    "evaluation_policy": "80 consultas conocidas de desarrollo; el conjunto final reservado no participa en entrenamiento ni selección."
+  },
+  "artifact_hashes": {
+    "snapshot.json": "c9ec1be7fe78855ed4277794e4dcbd0650f94a680bdcf6c34647a9edb7128bf1",
+    "benchmark.json": "be49dd1e70aa600831f9101fe60c4bd6cf6e0e1e1495e771fe8296922a1785e5",
+    "model.json": "ac2e7907bde0dbf3fdcec5a738284581f9377e629fb754bec8b900efd759536d",
+    "naive_bayes.json": "b9d44414037f48718fc5946563f96e31f06e10dbc20ace14aa7153248518477b",
+    "naive_bayes.joblib": "00d94cd1cb0d407c670a836c99d766aa93416eb4a32f73496cbb5c831ac830e8",
+    "logistic_regression.json": "ac2e7907bde0dbf3fdcec5a738284581f9377e629fb754bec8b900efd759536d",
+    "logistic_regression.joblib": "a5c3a4fa7a6b908c76214e824dc47ce18727aaa7bfeb08f839b19faa0ffcd3dc",
+    "confusion-naive_bayes.png": "208db77a4a6c843d181327033848e8712120b5dd79a90dbc343c3cd3f8a66d97",
+    "confusion-logistic_regression.png": "4425632dcef07949ff8c1713f3619beb56fce8a5c1d1085c82220d6bed994e04"
+  },
+  "hashes": {
+    "base_file_sha256": "7af90b4134f51e9fa01c144f11f981078029a177df1001493b85818404c64e08",
+    "evaluation_file_sha256": "946a397dd8acc1ec3f1b8c0aeda90008567235ae41389030033ed831e0673271",
+    "training_snapshot_sha256": "c9ec1be7fe78855ed4277794e4dcbd0650f94a680bdcf6c34647a9edb7128bf1",
+    "preprocessing_sha256": "630ff5a8afca484d7eb5566740f94c3bbca8c0cd6883ac494d47313ce931cf6a"
+  },
+  "curve": [
+    {
+      "day": 1,
+      "total_examples": 16,
+      "accuracy": 0.1625,
+      "precision_macro": 0.4788773148148148,
+      "correct": 13,
+      "total": 80,
+      "accepted": 3
+    },
+    {
+      "day": 2,
+      "total_examples": 32,
+      "accuracy": 0.25,
+      "precision_macro": 0.5178934378629501,
+      "correct": 20,
+      "total": 80,
+      "accepted": 9
+    },
+    {
+      "day": 3,
+      "total_examples": 48,
+      "accuracy": 0.325,
+      "precision_macro": 0.5000496031746031,
+      "correct": 26,
+      "total": 80,
+      "accepted": 10
+    },
+    {
+      "day": 4,
+      "total_examples": 64,
+      "accuracy": 0.4375,
+      "precision_macro": 0.5665349616858237,
+      "correct": 35,
+      "total": 80,
+      "accepted": 10
+    },
+    {
+      "day": 5,
+      "total_examples": 80,
+      "accuracy": 0.55,
+      "precision_macro": 0.60625,
+      "correct": 44,
+      "total": 80,
+      "accepted": 9
+    },
+    {
+      "day": 6,
+      "total_examples": 96,
+      "accuracy": 0.625,
+      "precision_macro": 0.6630252100840337,
+      "correct": 50,
+      "total": 80,
+      "accepted": 11
+    },
+    {
+      "day": 7,
+      "total_examples": 112,
+      "accuracy": 0.625,
+      "precision_macro": 0.6351190476190477,
+      "correct": 50,
+      "total": 80,
+      "accepted": 16
+    },
+    {
+      "day": 8,
+      "total_examples": 128,
+      "accuracy": 0.6625,
+      "precision_macro": 0.6860863095238094,
+      "correct": 53,
+      "total": 80,
+      "accepted": 17
+    },
+    {
+      "day": 9,
+      "total_examples": 144,
+      "accuracy": 0.675,
+      "precision_macro": 0.6975040584415584,
+      "correct": 54,
+      "total": 80,
+      "accepted": 20
+    },
+    {
+      "day": 10,
+      "total_examples": 160,
+      "accuracy": 0.7625,
+      "precision_macro": 0.8229166666666667,
+      "correct": 61,
+      "total": 80,
+      "accepted": 21
+    },
+    {
+      "day": 11,
+      "total_examples": 176,
+      "accuracy": 0.775,
+      "precision_macro": 0.8363095238095238,
+      "correct": 62,
+      "total": 80,
+      "accepted": 22
+    },
+    {
+      "day": 12,
+      "total_examples": 192,
+      "accuracy": 0.7875,
+      "precision_macro": 0.8488095238095238,
+      "correct": 63,
+      "total": 80,
+      "accepted": 25
+    },
+    {
+      "day": 13,
+      "total_examples": 208,
+      "accuracy": 0.7875,
+      "precision_macro": 0.8227678571428572,
+      "correct": 63,
+      "total": 80,
+      "accepted": 25
+    },
+    {
+      "day": 14,
+      "total_examples": 224,
+      "accuracy": 0.825,
+      "precision_macro": 0.8602678571428571,
+      "correct": 66,
+      "total": 80,
+      "accepted": 26
+    },
+    {
+      "day": 15,
+      "total_examples": 240,
+      "accuracy": 0.8625,
+      "precision_macro": 0.8811011904761905,
+      "correct": 69,
+      "total": 80,
+      "accepted": 29
+    }
+  ],
+  "curve_verified": true
+}

@@ -1,0 +1,12 @@
+{
+  "id": "66226505-d1b1-49ae-9397-79b18dea0d21",
+  "text": "Mi computadora comenzó a prender y apagar la pantalla sin hacer nada.",
+  "intent": "pantalla",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:11:16.968Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "cdacee145f58e4f26e73a1546c81b16c8d6408f297ee2eb8d8a700fc19d6cc54"
+}

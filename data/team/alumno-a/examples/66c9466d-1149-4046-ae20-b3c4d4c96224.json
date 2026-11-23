@@ -1,0 +1,12 @@
+{
+  "id": "66c9466d-1149-4046-ae20-b3c4d4c96224",
+  "text": "Mi almacenamiento muestra que no hay espacio, aunque ya eliminé muchos archivos, puedes ayudarme?",
+  "intent": "almacenamiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:05:18.999Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "ba8acdd1f152a6858d208673a0d60e38bb45c96e8e281b2616b933fe4e7e5cdf"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "1d9b7812-31f3-426c-b62f-ee94bcbc335a",
+  "text": "La computadora comienza a calentarse como loca después de cambiarle la pasta, necesito ayuda.",
+  "intent": "temperatura",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:02:28.818Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "03b832933982375560e3c96a98725e54f8f8f3f1bbd0b6ac2f1d97f60023cc84"
+}

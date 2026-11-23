@@ -1,0 +1,14 @@
+{
+  "id": "35d34feb-8944-4595-9971-c3283aaec95d",
+  "example_id": "5fdc8594-d4ca-409f-8379-64794ebb2671",
+  "author": "alumno-a",
+  "action": "edit",
+  "text": "Le tire un líquido al teclado y ahora dejo de funcionar bien.",
+  "intent": "liquidos",
+  "parent_version": "92b378fef4d51e1e42d6123e8b0e30a52d098ea5b1322dcc6f148ba9793db109",
+  "sequence": 3,
+  "created_at": "2026-11-23T01:29:06.028Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "dataset_version_before": "ff05d83867ecf3f455c3349d14b0134cd61fa7dbf6375ecb838265e7c37dcd1a"
+}

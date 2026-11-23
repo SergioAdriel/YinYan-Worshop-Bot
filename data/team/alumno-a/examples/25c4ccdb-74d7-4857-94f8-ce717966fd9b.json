@@ -1,0 +1,12 @@
+{
+  "id": "25c4ccdb-74d7-4857-94f8-ce717966fd9b",
+  "text": "Cuando tengo varias ventanas abiertas, mi laptop comienza a trabarse.",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:23:15.213Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d2dd31fc108361596dbec400002c87d4fed76dc3a1970195677048a927deab3e"
+}

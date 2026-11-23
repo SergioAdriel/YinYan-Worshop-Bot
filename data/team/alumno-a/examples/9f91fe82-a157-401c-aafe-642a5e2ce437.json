@@ -1,0 +1,12 @@
+{
+  "id": "9f91fe82-a157-401c-aafe-642a5e2ce437",
+  "text": "No puedo ver ciertas unidades de memoria en el explorador de archivos.",
+  "intent": "almacenamiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:14:25.568Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "3cb226db209a0f3feab92d832bea6582ed5bb18367611acfaab846af19f2a3e1"
+}

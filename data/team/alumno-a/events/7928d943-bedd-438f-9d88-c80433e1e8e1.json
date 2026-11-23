@@ -1,0 +1,14 @@
+{
+  "id": "7928d943-bedd-438f-9d88-c80433e1e8e1",
+  "example_id": "0fa815a3-1d74-42d7-8efc-6e9acd147249",
+  "author": "alumno-a",
+  "action": "edit",
+  "text": "Quiero cambiar el puerto de carga ya que le conecte una entrada distinta y ahora no carga bien.",
+  "intent": "carga",
+  "parent_version": "6a3233004c3f2d74e7fb53060515a9221a5e76a755d37949dd431fe36107844c",
+  "sequence": 1,
+  "created_at": "2026-11-23T01:10:06.510Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "dataset_version_before": "7001136b03351eec52bb02ffbdfc40160e72819ed922d6d1e4e3c20a22078c1e"
+}

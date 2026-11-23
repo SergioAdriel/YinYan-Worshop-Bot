@@ -1,0 +1,12 @@
+{
+  "id": "4be5d83b-6359-471c-bfc9-069beddccd2b",
+  "text": "Yin hay aplicaciones con las que la computadora se tarda mucho, necesito que funcione mejor.",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:02:55.965Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "55aeba17cc9b6f6b38102229caf5f3bbfd90db4b632b5cfd0fcdafdde1d9be22"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "93fe5784-f989-43f4-acd8-4fcfe13aab5e",
+  "text": "Yin, mi computadora abre un programa y comienza a calentarse mucho, no sé qué tenga.",
+  "intent": "temperatura",
+  "author": "alumno-a",
+  "created_at": "2026-11-23T01:01:54.977Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "c1c838ea2e404e6213e3d01175c9816679cbcaa91501e21a61717b36b1234e13"
+}
