@@ -1,0 +1,14 @@
+{
+  "id": "b0b23e90-7737-4de5-ad2d-f1440b245051",
+  "example_id": "44a69d3d-870a-4e70-a012-da241e143e70",
+  "author": "sergio",
+  "action": "review",
+  "review_status": "approved",
+  "note": "",
+  "parent_version": "dad4323ce268177d3374c40906fd4c71721c3908a399f46546d931465b5cf3c3",
+  "sequence": 1,
+  "created_at": "2026-11-23T21:04:25.966Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "dataset_version_before": "e17f63af1c595db3b75d0d831c525514c4eb9199a0dbfe36e7edb905825a8b71"
+}

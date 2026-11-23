@@ -1,0 +1,17 @@
+{
+  "id": "00f597d2-7eee-455b-bc00-6b6d2501b3d1",
+  "session_id": "1f937a92-2e87-427f-8812-bc260b454fe6",
+  "author": "sergio",
+  "text": "Mi computadora no enciende",
+  "response": "Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?",
+  "intent": "encendido",
+  "accepted": true,
+  "model": {
+    "kind": "version",
+    "version_id": "08923d34-aa2e-560d-b368-1c13a094ee25"
+  },
+  "resolution": null,
+  "created_at": "2026-11-23T21:02:47.565Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded"
+}

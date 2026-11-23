@@ -1,0 +1,12 @@
+{
+  "id": "44a69d3d-870a-4e70-a012-da241e143e70",
+  "text": "Hola, mi compu hace pipipi",
+  "intent": "software",
+  "author": "sergio",
+  "created_at": "2026-11-23T21:04:22.562Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "e17f63af1c595db3b75d0d831c525514c4eb9199a0dbfe36e7edb905825a8b71"
+}
