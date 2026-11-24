@@ -1,0 +1,12 @@
+{
+  "id": "8d82799b-abfc-41ea-b33f-7e008d37f31c",
+  "text": "Los FPS de mis videojuegos bajaron considerablemente.",
+  "intent": "rendimiento",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:27:32.565Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "5c716a279d6de5e57df248d0ed4c0cf72b7ec3533ba9ab1de6673211f1462a93"
+}

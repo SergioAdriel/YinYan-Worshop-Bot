@@ -1,0 +1,12 @@
+{
+  "id": "cde04aab-50f1-423f-bdf9-5b0e567a62c9",
+  "text": "La carcasa de mi PlayStation está demasiado caliente.",
+  "intent": "temperatura",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:26:54.179Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "146283dde7b288ad679feb828ced8a699fd6d042c0c82d4daad523d3e1ba2eb3"
+}

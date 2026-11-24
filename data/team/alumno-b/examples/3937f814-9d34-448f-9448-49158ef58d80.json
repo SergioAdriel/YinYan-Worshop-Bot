@@ -1,0 +1,12 @@
+{
+  "id": "3937f814-9d34-448f-9448-49158ef58d80",
+  "text": "A mi pantalla le salió una raya verde vertical.",
+  "intent": "pantalla",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:29:41.534Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "a3ceeebf5dc58e311ab8985d6fc3aeb7afd0171c79415b51c4c22ef8b60b9cd9"
+}

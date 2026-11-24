@@ -1,0 +1,12 @@
+{
+  "id": "1700d742-3218-41cc-aae8-56d87aeb6b8c",
+  "text": "Creo que mi computadora tiene un virus porque aparecen anuncios extraños.",
+  "intent": "software",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:31:19.191Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "fc4c2d4a4c87138a580c3e1adda957384d7d5102f600a069c44bba011faaf70f"
+}

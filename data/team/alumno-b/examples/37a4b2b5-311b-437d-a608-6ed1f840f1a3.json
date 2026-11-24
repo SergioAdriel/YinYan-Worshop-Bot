@@ -1,0 +1,12 @@
+{
+  "id": "37a4b2b5-311b-437d-a608-6ed1f840f1a3",
+  "text": "Mi compu se alenta cuando abro varias pestañas.",
+  "intent": "rendimiento",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:27:29.001Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "383c0ebdf532aa1c6aa95b63ef851ad6a243779605d1abdddca2e29fa1dd21cb"
+}

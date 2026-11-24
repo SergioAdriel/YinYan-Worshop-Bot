@@ -1,0 +1,12 @@
+{
+  "id": "d518127a-ecab-4f4a-b418-7f5b4b010526",
+  "text": "Mi tableta se queda trabada al cambiar de aplicación.",
+  "intent": "rendimiento",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:27:41.277Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "f31bbf30291ba84656d8aa8ed29befedf8c5406ae1d226555565c8f7a58e640c"
+}

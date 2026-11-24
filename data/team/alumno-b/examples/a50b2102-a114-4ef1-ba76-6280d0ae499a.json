@@ -1,0 +1,12 @@
+{
+  "id": "a50b2102-a114-4ef1-ba76-6280d0ae499a",
+  "text": "Mi consola no se conecta a internet aunque el módem funciona.",
+  "intent": "conexion",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:29:04.796Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "6303f8eac4d921a6b032bb27ae9830ba2335353b4793ce210f8b1ec723a6f753"
+}

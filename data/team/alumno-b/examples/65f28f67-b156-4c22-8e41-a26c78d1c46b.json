@@ -1,0 +1,12 @@
+{
+  "id": "65f28f67-b156-4c22-8e41-a26c78d1c46b",
+  "text": "Mi Nintendo Switch no da señales de vida.",
+  "intent": "encendido",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:21:46.601Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "ba1179b9598c57ed399a552ee51eb252d7b5f43cb8af3bc2d060fbc26fd3b394"
+}

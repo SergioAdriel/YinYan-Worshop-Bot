@@ -1,0 +1,12 @@
+{
+  "id": "c09717e6-4513-4f44-a4c1-ab10e28f925c",
+  "text": "Escucho que Windows inicia pero no aparece ninguna imagen.",
+  "intent": "pantalla",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:29:30.452Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "a9596fdf7dda56cb3f2d7ed2cdd62a53d0a87ea874c4cbfa7366e78724222eaf"
+}

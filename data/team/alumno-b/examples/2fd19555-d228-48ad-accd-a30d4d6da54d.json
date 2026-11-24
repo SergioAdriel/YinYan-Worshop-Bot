@@ -1,0 +1,12 @@
+{
+  "id": "2fd19555-d228-48ad-accd-a30d4d6da54d",
+  "text": "Escribo un mensaje y las letras aparecen varios segundos después.",
+  "intent": "rendimiento",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:27:36.744Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "83e72a192280656f4a546cb7c80e648c549fa45ea935d8976f898bbabbb969b6"
+}

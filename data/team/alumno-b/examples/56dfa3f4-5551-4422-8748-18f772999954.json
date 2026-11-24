@@ -1,0 +1,12 @@
+{
+  "id": "56dfa3f4-5551-4422-8748-18f772999954",
+  "text": "Mi equipo intenta arrancar pero se apaga inmediatamente.",
+  "intent": "encendido",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:21:57.378Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "9b3f404877cd391b3e454fcf60d1fad0a0ab1714e7bcbfa6421e73425cfad323"
+}

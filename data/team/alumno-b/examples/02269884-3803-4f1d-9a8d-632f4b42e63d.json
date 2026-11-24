@@ -1,0 +1,12 @@
+{
+  "id": "02269884-3803-4f1d-9a8d-632f4b42e63d",
+  "text": "Sale, nos vemos, gracias por la ayuda.",
+  "intent": "despedida",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:20:41.162Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "0acd7cac71a2b0674f66adbe8b830885a391a7f9ef858ef73b93e28c6296a562"
+}

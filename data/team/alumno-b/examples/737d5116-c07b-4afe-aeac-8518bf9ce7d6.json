@@ -1,0 +1,12 @@
+{
+  "id": "737d5116-c07b-4afe-aeac-8518bf9ce7d6",
+  "text": "Mi Xbox se apaga por exceso de temperatura.",
+  "intent": "temperatura",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:27:07.829Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "ea9820b9efaca35f16f673fed65c77a1d97846e62e88818238437b345f1d467e"
+}

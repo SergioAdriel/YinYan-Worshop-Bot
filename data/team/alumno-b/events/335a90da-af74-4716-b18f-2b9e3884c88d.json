@@ -1,0 +1,14 @@
+{
+  "id": "335a90da-af74-4716-b18f-2b9e3884c88d",
+  "example_id": "8b1b9066-a214-4e2c-99c0-ff954c9f754a",
+  "author": "alumno-b",
+  "action": "review",
+  "review_status": "approved",
+  "note": "",
+  "parent_version": "cc8782b6463028ac3d3a146c2d79b906df11d080afb7487df51c947185391222",
+  "sequence": 1,
+  "created_at": "2026-11-24T02:37:58.369Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "dataset_version_before": "2742344bfe7eaca4b97b015bec832ca6e79c13b80af3581c4fa48b788c75d777"
+}

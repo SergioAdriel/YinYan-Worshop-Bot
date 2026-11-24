@@ -1,0 +1,12 @@
+{
+  "id": "640deece-bc4f-4070-b24a-5a5ec6f6229c",
+  "text": "¿Cuánto cobran por cambiar la pantalla de un celular?",
+  "intent": "presupuesto",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:35:41.101Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "1bf0963505eaf4156788fb939664c5a62261be4913631b01412e5c4f9221b6db"
+}

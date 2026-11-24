@@ -1,0 +1,12 @@
+{
+  "id": "f0c343ca-3acb-4ffa-9f8c-21076e19d537",
+  "text": "Mi celular registra pulsaciones donde no estoy tocando.",
+  "intent": "pantalla",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:29:37.545Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "8cca375ee6ac1573a65a867ccfda411d0a70ef9bd5540b720c41e7c407d30bec"
+}

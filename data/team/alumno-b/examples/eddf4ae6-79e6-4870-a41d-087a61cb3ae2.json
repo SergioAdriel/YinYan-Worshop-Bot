@@ -1,0 +1,12 @@
+{
+  "id": "eddf4ae6-79e6-4870-a41d-087a61cb3ae2",
+  "text": "Mi celular se cayó dentro de una cubeta con agua.",
+  "intent": "liquidos",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:35:20.524Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "b8617a68a41510e047d889927edb874e2503a06cd56f35edac32fbe5ba8468aa"
+}
