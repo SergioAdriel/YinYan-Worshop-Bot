@@ -1,0 +1,12 @@
+{
+  "id": "57069ff2-e2cc-4cf8-9c37-5754d61e7d2f",
+  "text": "Al encender mi laptop, las luces se iluminan unos segundos y luego se apagan.",
+  "intent": "encendido",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:58:18.894Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "ec60570debecb712af8313aa73fee516f6f5100243d7fda1c78e326887deeb07"
+}

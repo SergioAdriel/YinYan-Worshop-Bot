@@ -1,0 +1,12 @@
+{
+  "id": "1c84d984-8add-4890-b0c9-295a2404ce6d",
+  "text": "Gracias por responder mis preguntas, me retiro por ahora.",
+  "intent": "despedida",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:57:10.492Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d88d3f7144fc22e5431206726157bdc8c466abf71b00a0d324c6b107e19ab709"
+}

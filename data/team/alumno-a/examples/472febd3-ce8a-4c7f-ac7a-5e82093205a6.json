@@ -1,0 +1,12 @@
+{
+  "id": "472febd3-ce8a-4c7f-ac7a-5e82093205a6",
+  "text": "Mi computadora de escritorio no reacciona cuando intento prenderla.",
+  "intent": "encendido",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:58:06.014Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "cfee9b1265b01af9d151aa73ab07c6c931196c6d61f96b1ddcd997cf7c59157e"
+}

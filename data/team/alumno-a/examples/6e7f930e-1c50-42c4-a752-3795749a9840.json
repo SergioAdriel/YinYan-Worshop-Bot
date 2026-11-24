@@ -1,0 +1,12 @@
+{
+  "id": "6e7f930e-1c50-42c4-a752-3795749a9840",
+  "text": "Mi computadora no logra conectarse a los dispositivos Bluetooth que antes utilizaba.",
+  "intent": "conexion",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:02:52.876Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d8073d5778c926c768b6e8b07074263001f6b29a7bec519e6b6485fb2195d0a2"
+}

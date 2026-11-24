@@ -1,0 +1,12 @@
+{
+  "id": "59748aba-d135-41b3-94a7-fe9da07a9f07",
+  "text": "Hola, ¿qué tal? Quisiera hacer una consulta.",
+  "intent": "saludo",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:55:32.555Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "87b6b772a1e5ae80ea9efbba674c081ef3e368e1680126a3ed7aeeab776bcd5a"
+}

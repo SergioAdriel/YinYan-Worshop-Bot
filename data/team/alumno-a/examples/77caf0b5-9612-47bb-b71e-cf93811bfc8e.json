@@ -1,0 +1,12 @@
+{
+  "id": "77caf0b5-9612-47bb-b71e-cf93811bfc8e",
+  "text": "La conexión de mi laptop desaparece de repente.",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:02:13.110Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "2e91e9cbefd0018c1588f4cb872ab04365ae7715732da5eedff6ced2bfd44a2e"
+}

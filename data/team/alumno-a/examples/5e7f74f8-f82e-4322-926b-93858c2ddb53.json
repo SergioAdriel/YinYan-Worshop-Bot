@@ -1,0 +1,12 @@
+{
+  "id": "5e7f74f8-f82e-4322-926b-93858c2ddb53",
+  "text": "Mi equipo presenta varias fallas y necesito orientación para saber qué hacer.",
+  "intent": "ayuda",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:57:45.117Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "101b73d29b9ba79acd6b200be070241c78cb9cf78443870c5bf7811f5e778479"
+}

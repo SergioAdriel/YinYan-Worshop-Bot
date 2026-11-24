@@ -1,0 +1,12 @@
+{
+  "id": "653338a3-47a3-4447-99ea-9b963dedc6e1",
+  "text": "Tengo que presionar varias veces el botón de encendido para que mi PC arranque.",
+  "intent": "encendido",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:58:37.833Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "180c14e6ff0d760d163528b6a4c875ee63d73faa7b398edf9a76c7bfb154ed7b"
+}

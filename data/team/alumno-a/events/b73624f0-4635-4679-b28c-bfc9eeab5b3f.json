@@ -1,0 +1,14 @@
+{
+  "id": "b73624f0-4635-4679-b28c-bfc9eeab5b3f",
+  "example_id": "7e605b09-60f7-4cf9-8060-dcf36e0b975d",
+  "author": "alumno-a",
+  "action": "edit",
+  "text": "Mi computadora reconoce el cable de red, pero no consigue acceder a internet.",
+  "intent": "conexion",
+  "parent_version": "daff1af33f2a8b34d6860beeb34d7d567cfbda7c510ab650fc5d24295f37e9dc",
+  "sequence": 1,
+  "created_at": "2026-11-24T16:02:38.576Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "dataset_version_before": "b1a9decf1f09eafe5a2245018955f5bf92d41918eed70e88610e34545a9b9176"
+}

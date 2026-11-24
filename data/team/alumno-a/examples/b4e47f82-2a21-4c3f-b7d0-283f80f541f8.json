@@ -1,0 +1,12 @@
+{
+  "id": "b4e47f82-2a21-4c3f-b7d0-283f80f541f8",
+  "text": "La pantalla de mi laptop parpadea cuando muevo la tapa.",
+  "intent": "pantalla",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:03:16.930Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "cafd4530e003ad44a5e3968008d61ab2aa8fe8a566b24f387c593a5e6a993658"
+}

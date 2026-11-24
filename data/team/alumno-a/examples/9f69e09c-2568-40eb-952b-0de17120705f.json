@@ -1,0 +1,12 @@
+{
+  "id": "9f69e09c-2568-40eb-952b-0de17120705f",
+  "text": "Mi computadora se pone muy caliente cuando estoy en una videollamada.",
+  "intent": "temperatura",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:00:19.096Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "fabc590458f497cb211df44b555212f09aa2e07c8be38c942018f23f5e9592c0"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "1641943e-9e79-44a4-ad23-2ab4e4a7ae56",
+  "text": "Bueno, ya no tengo más dudas, que tengan buen día.",
+  "intent": "despedida",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:56:58.850Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "7f01c3a23ac250af369621ee3c74f896fa390c08367201cbd80127168e944a1e"
+}

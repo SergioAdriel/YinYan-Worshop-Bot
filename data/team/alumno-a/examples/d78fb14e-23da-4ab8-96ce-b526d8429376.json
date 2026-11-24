@@ -1,0 +1,12 @@
+{
+  "id": "d78fb14e-23da-4ab8-96ce-b526d8429376",
+  "text": "No entiendo mucho de computadoras, ¿me podrían explicar qué debo revisar?",
+  "intent": "ayuda",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:57:33.887Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d1c1bd4b0e97a2d9c372263060b7975faef16089f5992a07e5d2acfeb118582f"
+}

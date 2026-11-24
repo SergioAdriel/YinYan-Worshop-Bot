@@ -1,0 +1,14 @@
+{
+  "id": "0b28d099-1434-4a49-82b6-ea222152c9ad",
+  "example_id": "77caf0b5-9612-47bb-b71e-cf93811bfc8e",
+  "author": "alumno-a",
+  "action": "edit",
+  "text": "La conexión de mi laptop desaparece de repente.",
+  "intent": "conexion",
+  "parent_version": "434652790e9835824ccac31371f4f285030d254d19ba9c674bf8dd1ac2b4b09c",
+  "sequence": 1,
+  "created_at": "2026-11-24T16:02:23.459Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "dataset_version_before": "2e91e9cbefd0018c1588f4cb872ab04365ae7715732da5eedff6ced2bfd44a2e"
+}

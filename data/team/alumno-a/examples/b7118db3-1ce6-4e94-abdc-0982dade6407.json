@@ -1,0 +1,12 @@
+{
+  "id": "b7118db3-1ce6-4e94-abdc-0982dade6407",
+  "text": "Mi computadora se quedó apagada después de un corte de luz y ya no inicia.",
+  "intent": "encendido",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T15:58:29.017Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "07e943b14ef459fbac0774eadeda1afcbcfb7a9b6c12b64e5cc02371541fe863"
+}

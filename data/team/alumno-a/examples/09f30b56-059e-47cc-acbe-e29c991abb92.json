@@ -1,0 +1,12 @@
+{
+  "id": "09f30b56-059e-47cc-acbe-e29c991abb92",
+  "text": "Mi PC presenta pequeños congelamientos, aunque no esté ejecutando juegos.",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:01:36.018Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "db5eaf892932195ebd97343b8dfa3ea937ebf9f2fdfeb55b3f1a0a82e59e0969"
+}

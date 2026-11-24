@@ -1,0 +1,12 @@
+{
+  "id": "72870b27-5cd5-47a3-9a28-306766883412",
+  "text": "Los ventiladores de mi PC trabajan a máxima velocidad incluso sin programas abiertos.",
+  "intent": "temperatura",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:00:32.404Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "ce17cd70891d306bbbeefb8c727f266eeaf84460472f6e8bdb2bbc282a522b21"
+}

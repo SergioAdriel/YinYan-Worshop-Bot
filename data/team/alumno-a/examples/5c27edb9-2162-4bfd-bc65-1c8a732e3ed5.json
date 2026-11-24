@@ -1,0 +1,12 @@
+{
+  "id": "5c27edb9-2162-4bfd-bc65-1c8a732e3ed5",
+  "text": "Los programas tardan bastante en responder cuando intento utilizarlos.",
+  "intent": "rendimiento",
+  "author": "alumno-a",
+  "created_at": "2026-11-24T16:01:08.338Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "5d3ae6030dd46ad7ff5c6c533c5d49653a68564919f916bdf894c058f734cd23"
+}
