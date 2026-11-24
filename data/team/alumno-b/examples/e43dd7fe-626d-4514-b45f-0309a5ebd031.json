@@ -1,0 +1,12 @@
+{
+  "id": "e43dd7fe-626d-4514-b45f-0309a5ebd031",
+  "text": "Mi control inalámbrico no logra vincularse por Bluetooth.",
+  "intent": "conexion",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:28:56.608Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "d623a6774008cb8104a8830b56922eaf19775b13c82f98e0b7bb3ccefce48d36"
+}

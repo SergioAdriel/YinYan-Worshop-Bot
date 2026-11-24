@@ -1,0 +1,12 @@
+{
+  "id": "d8ed7a30-4bfe-4923-9bbb-81d2b3e66bc9",
+  "text": "La consola se quedó completamente muerta después de apagarla.",
+  "intent": "encendido",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:22:07.672Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "bb718cdff3630a98b40132ffe34eec7411060ae4f9ca0179ae498e57bfeb5691"
+}

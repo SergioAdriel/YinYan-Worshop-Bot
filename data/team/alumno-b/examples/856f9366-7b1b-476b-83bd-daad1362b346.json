@@ -1,0 +1,12 @@
+{
+  "id": "856f9366-7b1b-476b-83bd-daad1362b346",
+  "text": "Los ventiladores de mi PC giran al máximo y sigue caliente.",
+  "intent": "temperatura",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:27:04.751Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "b9c9157551bf655ccec225cf9eb272b55926955541a0c310eea806fd8230e199"
+}

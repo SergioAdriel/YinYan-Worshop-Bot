@@ -1,0 +1,12 @@
+{
+  "id": "0b40e7f5-6335-4281-b4d0-ae8ddfc3ef41",
+  "text": "Windows me muestra una pantalla azul constantemente.",
+  "intent": "software",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:31:02.790Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "8db12c06ecf6173a8a64718a6623d867a69e03fa30fe6c9410065f64e13c5a63"
+}

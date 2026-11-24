@@ -1,0 +1,12 @@
+{
+  "id": "35f22637-cda6-4d56-a576-fd221008d202",
+  "text": "Mi lap no prende ni hace ningún ruido.",
+  "intent": "encendido",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:22:02.102Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "e0832959f62c4ea6518fdb9f96848175159ccf5650d305aae9a0d28f5d828eac"
+}

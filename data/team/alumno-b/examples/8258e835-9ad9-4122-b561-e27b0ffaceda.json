@@ -1,0 +1,12 @@
+{
+  "id": "8258e835-9ad9-4122-b561-e27b0ffaceda",
+  "text": "Mi control de Xbox mueve al personaje sin que toque la palanca.",
+  "intent": "controles",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:34:48.396Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "57c5d55caf29a5e0893db7bf5dc4515175f97c5cb9717328567268a683fd33fb"
+}

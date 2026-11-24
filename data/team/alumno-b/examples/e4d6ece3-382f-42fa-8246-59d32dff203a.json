@@ -1,0 +1,12 @@
+{
+  "id": "e4d6ece3-382f-42fa-8246-59d32dff203a",
+  "text": "¿Qué precio tiene una limpieza interna de laptop?",
+  "intent": "presupuesto",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:35:44.827Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "65eef338bd08f1473969f3f3dd0c6e5aa1abbd46e573f4827dc8b504ab87ddd4"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "ffd2469e-0edc-4717-9960-30d42c975d44",
+  "text": "Mi laptop se quedó sin audio después de reiniciarla.",
+  "intent": "sonido",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:30:16.856Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "cbfa159f1558a8dd9090542b127c6b4c217329a5db962e084d206bacac9f072e"
+}

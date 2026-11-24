@@ -1,0 +1,12 @@
+{
+  "id": "9df3e152-bf77-4e95-a0cc-9cecee3e528c",
+  "text": "Qué onda, buenas.",
+  "intent": "saludo",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:20:05.891Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "3080e35ff3455c4c504f05293b06c6010f0dac256326687324aea38c458852cf"
+}

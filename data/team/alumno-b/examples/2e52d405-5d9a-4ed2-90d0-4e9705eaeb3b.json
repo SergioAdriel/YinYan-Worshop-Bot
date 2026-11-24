@@ -1,0 +1,12 @@
+{
+  "id": "2e52d405-5d9a-4ed2-90d0-4e9705eaeb3b",
+  "text": "¿Cómo funciona este asistente virtual?",
+  "intent": "ayuda",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:21:06.697Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "28bf324fbd8b3eadc2546df5ca4c3873cbee205eae2eb6211dc93f0532c80648"
+}

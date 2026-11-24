@@ -1,0 +1,12 @@
+{
+  "id": "8da86909-2693-4e9c-8b88-b3e417542b62",
+  "text": "Mi teléfono pierde el wifi cada vez que bloqueo la pantalla.",
+  "intent": "conexion",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:28:53.234Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "7c99aac076c55f6586b98483b20bbec385017930e2c412701a3363993287b6bc"
+}

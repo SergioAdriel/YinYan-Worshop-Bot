@@ -1,0 +1,12 @@
+{
+  "id": "44a51180-889e-4ed2-b387-8817b6f3e44f",
+  "text": "Mi lap no detecta ninguna red inalambrica.",
+  "intent": "conexion",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:29:08.296Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "2fddf4bdf6ba38c44cf024c1a3e2aa3775fb33e06787784cfa4352bb47e8c5da"
+}

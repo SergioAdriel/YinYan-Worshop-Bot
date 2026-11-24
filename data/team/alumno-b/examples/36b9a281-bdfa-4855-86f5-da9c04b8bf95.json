@@ -1,0 +1,12 @@
+{
+  "id": "36b9a281-bdfa-4855-86f5-da9c04b8bf95",
+  "text": "Me aparece un mensaje indicando que el disco está lleno.",
+  "intent": "almacenamiento",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:30:35.634Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "e9c99c6fe346ff568ece8931827d94af8957a20851cfeadc9f2bcd8317ae361d"
+}

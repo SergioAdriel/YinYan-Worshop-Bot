@@ -1,0 +1,12 @@
+{
+  "id": "6695bc45-9b25-4396-909f-3f068c8bf858",
+  "text": "Mi computadora no reconoce el disco duro externo.",
+  "intent": "almacenamiento",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:30:32.329Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "abdd2a36c41637bf424dc0b7d318f90bb2f499ac31aa43aa55f14afb23d83d2e"
+}

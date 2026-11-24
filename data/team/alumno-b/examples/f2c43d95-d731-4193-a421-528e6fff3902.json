@@ -1,0 +1,12 @@
+{
+  "id": "f2c43d95-d731-4193-a421-528e6fff3902",
+  "text": "Mi teléfono se quedó atorado en el logotipo después de actualizarlo.",
+  "intent": "software",
+  "author": "alumno-b",
+  "created_at": "2026-11-24T02:31:25.305Z",
+  "timezone": "America/Mexico_City",
+  "timestamp_kind": "recorded",
+  "source": "manual",
+  "review_status": "pending",
+  "dataset_version": "c778daa4d83ba00d99d6e18e84d3d5e2c8e1b42bb7db9e3b52c267c3e7b4fadb"
+}
