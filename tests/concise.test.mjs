@@ -4,6 +4,26 @@ import {createConversation} from '../web/dialogue.js';
 
 const classifier = {predict: () => ({intent:'carga',accepted:true,confidence:0.7})};
 
+test('El seguimiento usa el caso completo y una duda sobre la luz no reinicia el diagnóstico', () => {
+  const inputs = [];
+  const chat = createConversation({predict(text) {
+    inputs.push(text);
+    const intent = text.includes('no carga') ? 'carga' : inputs.length === 1 ? 'encendido' : 'pantalla';
+    return {intent, accepted: true};
+  }}, {concise: true});
+  chat.reply('Mi laptop no enciende');
+  assert.equal(chat.reply('Solo vibra').context.stage, 'pregunta_2');
+  const doubt = chat.reply('¿Enciende una luz?');
+  assert.equal(doubt.intent, 'encendido');
+  assert.equal(doubt.context.stage, 'pregunta_2');
+  assert.match(doubt.text, /pantalla muestra imagen/);
+  assert.equal(inputs.at(-1), 'Mi laptop no enciende\nSolo vibra\n¿Enciende una luz?');
+  assert.equal(chat.reply('La pantalla sigue negra').context.stage, 'orientacion');
+  assert.equal(chat.reply('Otro problema: mi celular no carga').context.stage, 'pregunta_1');
+  assert.equal(chat.reply('Sí').context.stage, 'pregunta_2');
+  assert.equal(inputs.at(-1), 'Otro problema: mi celular no carga\nSí');
+});
+
 test('El modo sencillo mantiene el seguimiento y ofrece una orientación breve', () => {
   const chat = createConversation(classifier,{concise:true});
   assert.match(chat.reply('Mi celular no carga').text,/indicador de carga/);

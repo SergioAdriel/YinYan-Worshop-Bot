@@ -28,8 +28,8 @@ Los ejemplos y los eventos de revisión están en `data/team/`. Los originales n
 
 1. Sergio o Raynier revisan el dataset aprobado y pulsan **Entrenar modelo** con su responsable seleccionado.
 2. El servidor reserva un UUID y un número de jornada, registra la hora real y congela una instantánea. Varias ejecuciones en el mismo día son jornadas diferentes.
-3. Se entrenan Naive Bayes y regresión logística con el mismo TF-IDF y cinco pliegues estratificados. Se selecciona el mayor F1 macro medio de validación; el benchmark no elige el modelo.
-4. Se guardan ambos pipelines, sus vectorizadores, exportaciones al navegador, configuración, distribución, métricas, matrices, predicciones y errores observados. Una jornada fallida conserva su estado de fallo y no reemplaza el modelo activo.
+3. Se entrenan Naive Bayes, regresión logística y Random Forest con el mismo TF-IDF y cinco pliegues estratificados. Las jornadas nuevas preparan Random Forest para el chat e informan por separado el ganador por F1 macro en validación.
+4. Se guardan los pipelines, sus vectorizadores, exportaciones al navegador, configuración, distribución, métricas, matrices, predicciones y errores observados. Una jornada fallida conserva su estado de fallo y no reemplaza el modelo activo.
 5. La versión terminada es **Provisional**. En **Jornadas** revisa resultados, comparación con la anterior y comprobaciones. La vista previa se identifica por separado del modelo activo.
 6. Pulsa **Activar versión** cuando corresponda. Se verifican artefactos y paridad antes de cambiar el apuntador activo. El historial conserva las versiones anteriores y permite recuperarlas con otra activación explícita.
 
@@ -52,7 +52,7 @@ El archivo vacío no acredita el requisito: **faltan los datos finales**, aunque
 
 Cada computadora ejecuta su servidor local. Antes del turno recibe cambios; al terminar usa `subir-aportes.cmd`. El repositorio comparte aportaciones y el historial versionado previsto para la entrega. No envía registros automáticamente mientras escribes ni se necesita GitHub Pages.
 
-`data/local/` contiene cachés y estado propio del servidor; no se publica. La referencia anterior a esta ampliación está en `references/avance-2026-11-18/`, con fechas y hashes originales. El historial nuevo conserva sus horas reales y no rellena jornadas pasadas.
+`data/local/` contiene cachés y estado propio del servidor; no se publica. La referencia anterior a esta ampliación está en `references/captura/`, con fechas y hashes originales. El historial nuevo conserva sus horas reales y no rellena jornadas pasadas.
 
 ## Documentos y comprobaciones
 

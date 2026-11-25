@@ -1,6 +1,6 @@
-# Prototipo funcional — Avance al 18 de noviembre de 2026
+# YinYan Workshop
 
-**YinYan Workshop · Chatbot de soporte técnico informático.** Entrega final prevista: **4 de diciembre de 2026**. Este corte documenta un prototipo funcional preparado para seguir incorporando datos; no representa la conclusión definitiva del proyecto.
+Chatbot local de soporte técnico informático y práctica de aprendizaje supervisado. Entrega final prevista para el **4 de diciembre de 2026**.
 
 La plataforma permite consultar al bot, guardar expresiones, revisar sus categorías y producir nuevas jornadas de entrenamiento. **Sergio Adriel Muñoz Camarena es el desarrollador principal.**
 
@@ -13,13 +13,26 @@ La plataforma permite consultar al bot, guardar expresiones, revisar sus categor
 | Sergio Adriel Muñoz Camarena | Desarrollo principal: programación del chatbot, sistema conversacional, integración e interfaz. |
 | Raynier Jetsahe Torres Flores | Desarrollo: integración, entrenamiento, evaluación y comparación de clasificadores, verificación. |
 
-El selector de responsable registra quién realiza una operación; **no es autenticación ni control seguro de acceso por roles**. Las fechas y cantidades individuales proceden de los registros guardados. La asignación de funciones no inventa sesiones pasadas.
+El selector de responsable atribuye cada operación a la persona seleccionada. El proyecto funciona como herramienta local del equipo y el selector no autentica a sus integrantes.
 
 ## Abrir el proyecto
 
 Haz doble clic en **iniciar.cmd** y conserva abierta la consola. La dirección habitual es **http://127.0.0.1:4173**. Usa el servidor local; no abras `web/index.html` directamente.
 
-Cada integrante clona el repositorio de GitHub y lo ejecuta en su computadora. La carpeta actual dispone de intérpretes en `runtime/`, excluidos de Git. En otra computadora instala Node.js 22 o Python 3.12 para el servidor; **el entrenamiento y los documentos requieren Python y `requirements-lock.txt`**. Consulta [instalación en Windows](docs/EJECUTAR-EN-LOCAL.md) y [configuración del repositorio](docs/publicar-en-github.md).
+Cada integrante ejecuta su copia del repositorio. `iniciar.cmd` busca primero los intérpretes locales y después los instalados en Windows. Para el servidor usa Node.js 22 o Python 3.12. **El entrenamiento y los documentos requieren Python y las dependencias de `requirements-lock.txt`**. [Instalación en Windows](docs/EJECUTAR-EN-LOCAL.md) · [Configuración de GitHub](docs/publicar-en-github.md)
+
+## Cómo leer el código
+
+| Archivo | Responsabilidad |
+| --- | --- |
+| [web/app.js](web/app.js) | Envía el mensaje al diálogo, muestra la respuesta, guarda la consulta y abre el mapa bajo **Esta consulta**. |
+| [web/dialogue.js](web/dialogue.js) | Mantiene el equipo, el problema y la pregunta pendiente. Detecta alertas y elige el siguiente paso. |
+| [web/ml.js](web/ml.js) | Calcula TF-IDF y ejecuta el modelo exportado en el navegador. En Random Forest recorre los árboles y promedia las probabilidades de sus hojas. |
+| [scripts/serve.mjs](scripts/serve.mjs) y [scripts/serve.py](scripts/serve.py) | Sirven la interfaz y la API local. |
+| [scripts/team-store.mjs](scripts/team-store.mjs) y [scripts/team_store.py](scripts/team_store.py) | Guardan consultas y aportes. Reconstruyen el estado de cada ejemplo a partir de su registro original y sus eventos de revisión. |
+| [src/training_runs.py](src/training_runs.py) | Congela los ejemplos aprobados, entrena, verifica la paridad Python–JavaScript y registra las activaciones. |
+
+Para seguir un caso completo, escribe «Mi laptop no enciende» y responde «Solo vibra». El diálogo conserva el problema de encendido y pasa a comprobar si hay imagen. Una pregunta posterior como «¿Tiene una luz?» mantiene esa etapa. Para un seguimiento reconocido, el clasificador recibe los mensajes del usuario del caso en curso. Abre **Ver mapa de decisiones** después de cada turno para inspeccionar la entrada, los umbrales, las rutas de los árboles y el paso del diálogo.
 
 El repositorio debe incluir `data/training/training_history.json` y las quince
 referencias importadas de `data/training/runs/`: son necesarias para cargar y
@@ -33,18 +46,18 @@ cambios del equipo; también puedes reconstruir esas referencias originales con
 2. Selecciona tu nombre. En **Chat** haz consultas; el texto y la respuesta se guardan con responsable, modelo, sesión y hora real de Ciudad de México.
 3. En **Ejemplos y entrenar** agrega una expresión y su intención. También puedes preparar un ejemplo desde **Consultas**. El registro empieza **Pendiente**.
 4. Revisa pertinencia, etiqueta, diversidad y duplicados. Aprueba o rechaza. Solo los **Aprobados** entran en la próxima jornada. Los pendientes pueden editarse o retirarse; para modificar un aprobado o rechazado, primero reábrelo.
-5. Pulsa **Entrenar modelo**. Se crea una jornada con UUID, número consecutivo, fecha real e instantánea del dataset. Se comparan Naive Bayes y regresión logística con el mismo TF-IDF y cinco pliegues estratificados; gana el F1 macro medio de validación.
+5. Pulsa **Entrenar modelo**. Se crea una jornada con UUID, número consecutivo, fecha real e instantánea del dataset. Se comparan Naive Bayes, regresión logística y Random Forest con el mismo TF-IDF y cinco pliegues estratificados. Las jornadas nuevas seleccionan Random Forest y registran por separado el ganador por F1 macro medio. En el chat, el mapa de decisiones muestra los umbrales, las rutas de los árboles y el resultado del diálogo.
 6. En **Jornadas**, revisa las métricas, matrices, errores y comparación con la anterior. La versión nueva queda **Provisional**. La vista previa no cambia el modelo activo.
 7. Activa la versión cuando corresponda. El servidor comprueba los artefactos antes del cambio y conserva las anteriores para recuperarlas. Una jornada fallida no aparece como completada ni reemplaza la activa.
 8. Consulta **Progreso** y, al terminar el turno, abre **subir-aportes.cmd** para compartir las aportaciones y las jornadas por Git.
 
 Consultar no entrena automáticamente y las respuestas del bot no se convierten por sí solas en etiquetas verdaderas. La detección de duplicados léxicos no sustituye la revisión humana de diversidad.
 
-## Estado del corte y datos pendientes
+## Modelo y evaluación
 
-La base actual contiene **240 ejemplos, 16 intenciones y 15 ejemplos por intención**. Al corte documentado no hay ejemplos adicionales aprobados: **faltan 80 ejemplos pertinentes, cinco por cada categoría**, para alcanzar el mínimo de veinte. El panel recalcula el déficit con los aportes posteriores.
+La base de arranque contiene **240 ejemplos y 16 intenciones**. La jornada 11 usó **448 ejemplos**, incluidos 208 aportes aprobados. **Progreso** calcula lo que falta por intención con los aportes de la copia que se está usando.
 
-La jornada de referencia realmente ejecutada es la **jornada 1**, identificador `861484ac-3558-43d4-a997-959aeec83d47`. Selecciona **regresión logística** por validación y está activa en este corte. Obtiene **70/80 aciertos (87.50 %)** y **F1 macro de 87.34 %** en el benchmark de desarrollo. Los umbrales aceptan 54 de sus 80 consultas; cobertura y accuracy son medidas diferentes. El modelo activo posterior siempre se consulta en **Jornadas**, no se deduce de esta descripción histórica.
+La jornada 11 seleccionó **Random Forest** para el chat y registró **51 de 80 aciertos** en desarrollo. En esa misma jornada, regresión logística acertó **69 de 80** y obtuvo el mejor F1 macro en validación cruzada. **Jornadas** muestra la versión activa de la copia local y sus métricas.
 
 `data/test.csv` conserva 80 consultas sintéticas ya conocidas como **benchmark de desarrollo**. No se usan para ajustar el clasificador ni para elegirlo por sus resultados. **La prueba final independiente sigue pendiente de datos:** `data/final-test.csv` contiene solo la cabecera `text,intent`; requiere al menos 50 consultas adicionales reservadas. Su evaluación es explícita y registra la apertura para evitar reutilizar esa misma prueba al comparar nuevas versiones.
 
@@ -55,10 +68,10 @@ El porcentaje no está fijado en 85 % ni garantiza mejoras cada vez que se entre
 | Ruta | Contenido |
 | --- | --- |
 | `data/team/` | Consultas, ejemplos y eventos de edición, revisión y retirada por responsable. Incluyen UUID, autor, hora real y versión del dataset. |
-| `data/training/runs/UUID/` | Instantánea, manifiesto de jornada, ambos pipelines con sus vectorizadores, modelos para navegador, métricas, matrices, predicciones y errores. |
+| `data/training/runs/UUID/` | Instantánea, manifiesto de jornada, pipelines con sus vectorizadores, modelos para navegador, métricas, matrices, predicciones y errores. |
 | `data/training/active.json` | Apuntador a la versión aprobada activa; las activaciones conservan su trazabilidad. |
-| `data/local/` | Cachés y estado propio del servidor, excluidos de Git. |
-| `references/avance-2026-11-18/` | Copia recuperable anterior a esta ampliación, con hashes y fechas originales. |
+| `data/local/` | Cachés y estado de ejecución del servidor. |
+| `references/captura/` | Copia recuperable anterior a esta ampliación, con hashes y fechas originales. |
 
 `subir-aportes.cmd` confirma **data/team/** y **data/training/** y hace push; los cambios de código se confirman por separado. `recibir-aportes.cmd` hace pull. No hay sincronización automática al escribir. Si recibes una nueva versión activa, recarga la página para cargarla; si recibes ejemplos aprobados, se usarán en la siguiente jornada.
 

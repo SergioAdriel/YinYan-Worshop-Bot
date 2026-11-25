@@ -9,12 +9,30 @@ export function createStudentApi({project,origin}){
   const dataDir=resolve(process.env.YINYAN_DATA_DIR||resolve(project,'data/local'));
   const store=createTeamStore({project,runtime:dataDir}),registry=createWorkflowRegistry(project,dataDir),statusFile=resolve(dataDir,'training-status.json');
   let task=null,taskRun=null,queue=Promise.resolve(),initialized;
-  async function atomic(path,value){await mkdir(dataDir,{recursive:true});const temporary=`${path}.${randomUUID()}.tmp`;await writeFile(temporary,JSON.stringify(value,null,2)+'\n');await rename(temporary,path);}
+  // El archivo definitivo queda visible cuando la escritura completa termina.
+  async function atomic(path, value) {
+    await mkdir(dataDir, {recursive: true});
+    const temporary = `${path}.${randomUUID()}.tmp`;
+    await writeFile(temporary, JSON.stringify(value, null, 2) + '\n');
+    await rename(temporary, path);
+  }
   async function initialize(){if(!initialized)initialized=(async()=>{const history=await registry.versions();if(history.versions.some(row=>row.status==='running')){try{await registry.call('list');}catch{/* Chat and examples remain available without Python. */}}})();await initialized;}
   async function body(req){if(!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type']||''))throw fail('Envía los datos como application/json.',415);if(Number(req.headers['content-length']||0)>MAX_BYTES)throw fail('El archivo es demasiado grande (máximo 1 MB).',413);let size=0;const chunks=[];for await(const chunk of req){size+=chunk.length;if(size>MAX_BYTES)throw fail('El archivo es demasiado grande (máximo 1 MB).',413);chunks.push(chunk);}let value;try{value=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw fail('El contenido no es un JSON válido.');}if(!value||typeof value!=='object'||Array.isArray(value))throw fail('El contenido debe ser un objeto JSON.');return value;}
-  function sameOrigin(req){try{const host=new URL(`http://${req.headers.host}`);return['127.0.0.1','localhost'].includes(host.hostname)&&host.port===new URL(origin).port&&(!req.headers.origin||req.headers.origin===host.origin)&&req.headers['sec-fetch-site']!=='cross-site';}catch{return false;}}
+  // La API acepta solicitudes del mismo servidor local que abrió el navegador.
+  function sameOrigin(req) {
+    try {
+      const host = new URL(`http://${req.headers.host}`);
+      return ['127.0.0.1', 'localhost'].includes(host.hostname)
+        && host.port === new URL(origin).port
+        && (!req.headers.origin || req.headers.origin === host.origin)
+        && req.headers['sec-fetch-site'] !== 'cross-site';
+    } catch {
+      return false;
+    }
+  }
   function json(req,res,status,value,extra={}){const content=Buffer.from(JSON.stringify(value));res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Content-Length':content.length,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...extra});res.end(req.method==='HEAD'?undefined:content);}
   async function trainingState(){await initialize();const snapshot=await store.snapshot(),history=await registry.versions(),latest=history.versions[0];let legacy={};if(!latest)legacy=await registry.read(statusFile,{});const state={status:latest?.status||legacy.status||'idle',message:latest?.message||legacy.message||'Todavía no hay una jornada de entrenamiento.',revision:snapshot.approved_revision||snapshot.revision,active_id:history.active_id,runs:history.versions,run_id:latest?.id||null};if(latest){state.trained_revision=latest.approved_revision;state.trained_at=latest.finished_at;state.journey=latest.journey;state.stale=latest.approved_revision!==state.revision;if(latest.status==='succeeded'){const metrics=latest.models[latest.selected_model];state.result={...metrics,trained_at:latest.finished_at,total_examples:latest.counts.total,additional_examples:latest.counts.additional,selected_model:latest.selected_model,model_url:latest.model_url,run_id:latest.id,journey:latest.journey,dataset_version:latest.dataset_version,approval_status:latest.approval_status};}}else state.stale=false;return state;}
+  // Guarda la instantánea aprobada antes de abrir el proceso de entrenamiento.
   async function train(data){await initialize();if(task)throw fail('Ya hay un entrenamiento en curso.',409);const snapshot=await store.snapshot(),input=resolve(dataDir,`training-input-${randomUUID()}.json`);await atomic(input,snapshot);const reserved=await registry.call('reserve',['--input',input,'--author',data.author||'system']);const child=registry.child('train',['--id',reserved.id]);task=child;taskRun=reserved.id;let output='';const collect=chunk=>{output=(output+chunk.toString('utf8')).slice(-10000);};child.stdout.on('data',collect);child.stderr.on('data',collect);let finished=false;const timer=setTimeout(()=>{output+='\nEl entrenamiento superó el tiempo de espera.';child.kill();},300000);timer.unref();async function finish(error,code){if(finished)return;finished=true;clearTimeout(timer);try{if(error||code!==0)await registry.call('fail',['--id',reserved.id,'--message',error?.message||output.trim().slice(-1200)||'Python no completó el entrenamiento.']);await atomic(statusFile,await trainingState());}catch{/* Durable run manifest remains the source. */}task=null;taskRun=null;}child.once('error',error=>void finish(error));child.once('close',code=>void finish(null,code));return trainingState();}
   async function route(req,res,path){if(path!=='/simulation/custom-model.json'&&!path.startsWith('/api/'))return false;try{if(!sameOrigin(req))throw fail('Esta operación solo está disponible desde la página local.',403);const get=['GET','HEAD'].includes(req.method);
     if(path==='/api/team'&&get){json(req,res,200,await registry.read(resolve(project,'docs/equipo.json')));return true;}
@@ -28,9 +46,11 @@ export function createStudentApi({project,origin}){
     if(path==='/api/versions'&&get){await initialize();json(req,res,200,await registry.versions());return true;}
     if(path==='/api/models/active'&&get){json(req,res,200,await registry.active());return true;}
     if(path==='/api/progress'&&get){json(req,res,200,await registry.progress(await store.snapshot()));return true;}
+    // Los artefactos y las acciones se resuelven por versión, incluso en vista previa.
     const match=path.match(/^\/api\/versions\/([^/]+)(?:\/(model\.json|activate|evaluate-final))?$/);if(match){const[,id,operation]=match;if(!operation&&get)json(req,res,200,await registry.version(id));else if(operation==='model.json'&&get){const version=await registry.version(id);if(version.status!=='succeeded')throw fail('La versión todavía no tiene un modelo válido.',409);json(req,res,200,await registry.read(resolve(registry.runFolder(id),'model.json')));}else if(['activate','evaluate-final'].includes(operation)&&req.method==='POST'){const value=await body(req);json(req,res,200,await registry.call(operation==='activate'?'activate':'final',['--id',id,'--author',value.author||'system']));}else throw fail('Método no permitido.',405);return true;}
     if(path==='/simulation/custom-model.json'&&get){const latest=(await registry.versions()).versions.find(row=>row.status==='succeeded');if(latest)json(req,res,200,await registry.read(resolve(registry.runFolder(latest.id),'model.json')));else{try{json(req,res,200,await registry.read(resolve(dataDir,'custom-model.json')));}catch{throw fail('Todavía no hay una versión entrenada.',404);}}return true;}
     throw fail('Ruta local no encontrada.',404);
   }catch(error){json(req,res,error.status||500,{error:error.status?error.message:`No se pudo completar la operación local: ${error.message}`});}return true;}
+  // La cola serializa peticiones para que una escritura no se cruce con otra.
   return{handle(req,res,path){if(path!=='/simulation/custom-model.json'&&!path.startsWith('/api/'))return Promise.resolve(false);const next=queue.then(()=>route(req,res,path));queue=next.catch(()=>{});return next;},close(){if(task){task.kill();void registry.call('fail',['--id',taskRun,'--message','El servidor se cerró durante el entrenamiento. Se conservó el modelo activo.']).catch(()=>{});}}};
 }

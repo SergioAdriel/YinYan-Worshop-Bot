@@ -70,6 +70,7 @@ from IPython.display import display
 from IPython import get_ipython
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import StratifiedKFold, cross_validate
@@ -94,7 +95,7 @@ display(pd.DataFrame(team['roles'])[['nombre', 'funcion', 'alcance']])
 
 La función siguiente **entrena y calcula** el experimento; no se limita a leer
 métricas guardadas. Congela una instantánea de la base y las aportaciones
-revisadas, compara dos clasificadores con cinco pliegues y evalúa ambos en las
+revisadas, compara clasificadores con cinco pliegues y los evalúa en las
 80 consultas de referencia. Las celdas posteriores muestran las operaciones y
 verifican su reproducción.
 
@@ -175,21 +176,22 @@ X = exploratory.fit_transform(train.text)
 print('Forma:', X.shape, '| densidad:', X.nnz / (X.shape[0] * X.shape[1]))
 print('Primeros términos:', exploratory.get_feature_names_out()[:25])
 """),
-        md("""## 5. Dos clasificadores y validación comparable
+        md("""## 5. Clasificadores y validación comparable
 
 Naive Bayes multinomial (`alpha=0.25`) y regresión logística (`C=8`,
 `max_iter=2000`) usan cinco pliegues estratificados, semilla 42 y la misma
 representación. No se realizó una búsqueda exhaustiva de parámetros.
 La celda vuelve a ejecutar CV explícitamente y verifica el resultado.
 
-El mayor F1 macro medio identifica al ganador. La aplicación mantiene Naive Bayes
-para la práctica acumulativa. Si otro modelo gana CV, debe explicarse esa
-diferencia de selección e integración; no se afirma que el activo sea óptimo.
+El mayor F1 macro medio identifica al ganador. Las jornadas con Random Forest
+lo seleccionan para el chat y muestran por separado el resultado de validación.
 """),
         code("""pipelines = {
     'naive_bayes': make_pipeline(MultinomialNB(alpha=0.25)),
     'logistic_regression': make_pipeline(LogisticRegression(C=8.0, max_iter=2000, random_state=42)),
 }
+if 'random_forest' in experiment['models']:
+    pipelines['random_forest'] = make_pipeline(RandomForestClassifier(**experiment['protocol']['parameters']['random_forest']))
 folds = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 cv_results = {}
 for name, pipeline in pipelines.items():
@@ -201,13 +203,13 @@ for name, pipeline in pipelines.items():
     for metric, value in cv_results[name].items():
         assert abs(value - experiment['cv'][name][metric]) < 1e-10
 display(pd.DataFrame(cv_results).T)
-winner = max(cv_results, key=lambda name: cv_results[name]['f1_macro_mean'])
+winner = max(cv_results, key=lambda name: (cv_results[name]['f1_macro_mean'], name == 'logistic_regression'))
 assert winner == experiment['cv_winner']
 print('Ganador por CV:', winner, '| activo en la plataforma:', experiment['active_model'])
 """),
         md("""## 6. Referencia de 80 consultas y matrices de confusión
 
-Se ajustan ambos clasificadores con todo el entrenamiento. Accuracy es la
+Se ajustan los clasificadores con todo el entrenamiento. Accuracy es la
 fracción de etiquetas correctas; precision, recall y F1 macro promedian por
 categoría. La tabla usa la clase de mayor probabilidad, sin rechazo. Esta
 referencia ya se utilizó durante el desarrollo; no es otra prueba final ciega.
@@ -227,9 +229,9 @@ for name, pipeline in pipelines.items():
 comparison = pd.DataFrame(observed).T
 display(comparison)
 comparison.plot.bar(figsize=(9, 4), ylim=(0, 1.05), rot=0, color=['#315340', '#78956a', '#a75a2a', '#caa579'])
-plt.ylabel('Puntuación'); plt.title('Referencia expuesta: dos modelos, mismos datos'); plt.tight_layout(); plt.show()
+plt.ylabel('Puntuación'); plt.title('Referencia expuesta: mismos datos para cada modelo'); plt.tight_layout(); plt.show()
 """),
-        code("""fig, axes = plt.subplots(1, 2, figsize=(21, 9))
+        code("""fig, axes = plt.subplots(1, len(predictions), figsize=(10 * len(predictions), 9))
 for ax, (name, prediction) in zip(axes, predictions.items()):
     ConfusionMatrixDisplay.from_predictions(test.intent, prediction, labels=labels,
         display_labels=labels, xticks_rotation=80, cmap='Greens', colorbar=False, ax=ax)
@@ -289,7 +291,7 @@ print('La distancia entre CV y referencia exige cautela: no demuestra robustez a
         md("""## 9. Integración, diálogo y colaboración
 
 La aplicación carga la última versión aprobada. Cada entrenamiento crea una
-jornada con instantánea de datos y ambos modelos, conservando versiones previas.
+jornada con instantánea de datos y sus modelos, conservando versiones previas.
 El resultado nuevo es provisional hasta revisar sus comprobaciones y activarlo.
 Sin una versión aprobada se conserva el modelo base de referencia.
 `web/ml.js` aplica los parámetros exportados. `web/dialogue.js` conserva equipo,
@@ -354,11 +356,15 @@ fitted = pipelines[active_model]
 vectorizer, classifier = fitted.named_steps['tfidf'], fitted.named_steps['classifier']
 assert vectorizer.get_feature_names_out().tolist() == exported['features']
 assert np.allclose(vectorizer.idf_, exported['idf'], rtol=0, atol=1e-12)
-weights = classifier.feature_log_prob_ if active_model == 'naive_bayes' else classifier.coef_
-assert np.allclose(weights, exported['weights'], rtol=0, atol=1e-12)
+if active_model == 'random_forest':
+    from src.training_runs import export_pipeline
+    assert export_pipeline(fitted, len(train), active_model)['trees'] == exported['trees']
+else:
+    weights = classifier.feature_log_prob_ if active_model == 'naive_bayes' else classifier.coef_
+    assert np.allclose(weights, exported['weights'], rtol=0, atol=1e-12)
 assert winner == experiment['cv_winner']
 print('Modelo y vectorizador reproducidos coinciden con la versión documentada:', export_path.name)
-print('CV, dos modelos y métricas reproducidos. No se alteraron datos ni modelos protegidos.')
+print('CV, modelos y métricas reproducidos. No se alteraron datos ni modelos protegidos.')
 """),
     ], metadata={
         'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},

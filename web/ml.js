@@ -16,7 +16,7 @@ export function createClassifier(model) {
     return (normalized.match(/[a-z0-9]+/g) || []).filter(word => !stopwords.has(word)).map(word => lemmas[word] || word);
   }
 
-  function predict(text) {
+  function predict(text, trace = false) {
     const tokens = tokenize(text);
     const terms = [...tokens];
     for (let i = 0; i < tokens.length - 1; i++) terms.push(`${tokens[i]} ${tokens[i + 1]}`);
@@ -25,6 +25,7 @@ export function createClassifier(model) {
       const index = vocabulary.get(term);
       if (index !== undefined) counts.set(index, (counts.get(index) || 0) + 1);
     }
+    // El vector disperso guarda únicamente los términos presentes en el vocabulario.
     const vector = [];
     let squaredNorm = 0;
     for (const [index, count] of counts) {
@@ -33,25 +34,50 @@ export function createClassifier(model) {
       squaredNorm += value * value;
     }
     const norm = Math.sqrt(squaredNorm) || 1;
-    const scores = model.weights.map((weights, classIndex) => {
-      let score = model.intercept[classIndex];
-      for (const [index, value] of vector) score += weights[index] * value / norm;
-      return score;
-    });
-    const max = Math.max(...scores);
-    const exp = scores.map(score => Math.exp(score - max));
-    const total = exp.reduce((sum, value) => sum + value, 0);
-    const probabilities = exp.map(value => value / total);
+    const treePaths = [];
+    let probabilities;
+    if (model.model_type === 'random_forest') {
+      // scikit-learn converts prediction inputs to float32 before the splits.
+      const features = new Map(vector.map(([index, value]) => [index, Math.fround(value / norm)]));
+      probabilities = model.classes.map(() => 0);
+      for (const tree of model.trees) {
+        let index = 0;
+        const steps = [];
+        while (tree[index].length === 4) {
+          const [feature, threshold, left, right] = tree[index];
+          const value = features.get(feature) || 0;
+          const goesLeft = value <= threshold;
+          if (trace) steps.push({term: model.features[feature], value, threshold, goesLeft});
+          index = goesLeft ? left : right;
+        }
+        const [leaf] = tree[index]; // Class distribution at the terminal node.
+        leaf.forEach((value, classIndex) => { probabilities[classIndex] += value; });
+        if (trace) treePaths.push({steps, probabilities: leaf});
+      }
+      probabilities = probabilities.map(value => value / model.trees.length);
+    } else {
+      const scores = model.weights.map((weights, classIndex) => {
+        let score = model.intercept[classIndex];
+        for (const [index, value] of vector) score += weights[index] * value / norm;
+        return score;
+      });
+      const max = Math.max(...scores);
+      const exp = scores.map(score => Math.exp(score - max));
+      const total = exp.reduce((sum, value) => sum + value, 0);
+      probabilities = exp.map(value => value / total);
+    }
     const alternatives = model.classes.map((intent, i) => ({intent, confidence: probabilities[i]}))
       .sort((a, b) => b.confidence - a.confidence || a.intent.localeCompare(b.intent));
     const confidence = alternatives[0].confidence;
+    // La clase con mayor probabilidad debe superar también el margen y la cobertura.
     const margin = confidence - alternatives[1].confidence;
     const knownRatio = tokens.length ? tokens.filter(token => vocabulary.has(token)).length / tokens.length : 0;
     return {
       intent: alternatives[0].intent, confidence, margin, knownRatio,
       accepted: tokens.length > 0 && confidence >= thresholds.confidence && margin >= thresholds.margin && knownRatio >= thresholds.knownRatio,
       alternatives: alternatives.slice(0, 3), probabilities, tokens,
-      model: model.model_type
+      model: model.model_type,
+      ...(trace && {treePaths, classes: model.classes})
     };
   }
   return {predict, tokenize, modelName: model.model_type, classes: [...model.classes], thresholds: {...thresholds}};

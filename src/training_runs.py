@@ -25,6 +25,8 @@ from uuid import UUID, uuid4
 ROOT = Path(__file__).resolve().parents[1]
 AUTHORS = {'alumno-a', 'alumno-b', 'sergio', 'raynier', 'system'}
 MODEL_NAMES = ('naive_bayes', 'logistic_regression')
+FOREST_PARAMS = {'n_estimators': 48, 'random_state': 42, 'n_jobs': 1}
+CURRENT_MODELS = (*MODEL_NAMES, 'random_forest')
 
 
 class WorkflowError(ValueError):
@@ -234,6 +236,7 @@ class Registry:
         return {'active_id': None, 'model_url': './simulation/day-15.json', 'version': None,
                 'baseline': {'model': 'naive_bayes', 'examples': 240, 'note': 'Modelo base conservado hasta aprobar una jornada.'}}
 
+    # Congela el conjunto antes de ajustar el modelo para poder reproducir la jornada.
     def reserve(self, snapshot, author='system'):
         author_value(author)
         source = read_json(ROOT / 'data/simulation.json')
@@ -264,7 +267,7 @@ class Registry:
                    'author': author, 'initiated_by': 'programmatic_execution' if author == 'system' else 'selected_responsible',
                    'timezone': 'America/Mexico_City', 'timestamp_kind': 'recorded',
                    'status': 'running', 'approval_status': 'provisional', 'dataset_version': dataset_version,
-                   'approved_revision': snapshot_content['approved_revision'], 'message': 'Jornada reservada; entrenando dos clasificadores.',
+                   'approved_revision': snapshot_content['approved_revision'], 'message': 'Jornada reservada; entrenando tres clasificadores.',
                    'counts': {'base': len(base), 'additional': len(extras), 'total': len(training), 'test': 80,
                               'intents': len(labels), 'per_intent': dict(sorted(counts.items()))},
                    'labels': labels, 'process_id': None, 'storage_path': str(folder.relative_to(self.folder)).replace('\\', '/')}
@@ -302,6 +305,7 @@ class Registry:
         matplotlib.use('Agg')
         import matplotlib.pyplot as plt
         import numpy as np
+        from sklearn.ensemble import RandomForestClassifier
         from sklearn.linear_model import LogisticRegression
         from sklearn.metrics import ConfusionMatrixDisplay
         from sklearn.model_selection import StratifiedKFold, cross_validate
@@ -323,7 +327,8 @@ class Registry:
         if min(run['counts']['per_intent'].values()) < 5:
             raise WorkflowError('La validación de cinco pliegues necesita al menos cinco ejemplos por intención.')
         pipelines = {'naive_bayes': make_pipeline(),
-                     'logistic_regression': make_pipeline().set_params(classifier=LogisticRegression(C=8.0, max_iter=2000, random_state=42))}
+                     'logistic_regression': make_pipeline().set_params(classifier=LogisticRegression(C=8.0, max_iter=2000, random_state=42)),
+                     'random_forest': make_pipeline().set_params(classifier=RandomForestClassifier(**FOREST_PARAMS))}
         texts, targets = [row['text'] for row in training], [row['intent'] for row in training]
         cv, cv_errors = {}, []
         folds = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -333,7 +338,8 @@ class Registry:
                         'f1_macro_std': float(scores['test_f1_macro'].std()),
                         'accuracy_mean': float(scores['test_accuracy'].mean()), 'fold_f1_macro': scores['test_f1_macro'].tolist()}
             pipeline.fit(texts, targets)
-        selected = max(MODEL_NAMES, key=lambda name: (cv[name]['f1_macro_mean'], name == 'logistic_regression'))
+        cv_winner = max(pipelines, key=lambda name: (cv[name]['f1_macro_mean'], name == 'logistic_regression'))
+        selected = 'random_forest'
         # Only now open the development benchmark. The final holdout is NEVER
         # read in this method, not even for feature construction or selection.
         evaluation = read_evaluation(training)
@@ -373,23 +379,23 @@ class Registry:
             prior = previous['models'][previous['selected_model']]
             comparison.update(accuracy_delta=models[selected]['accuracy'] - prior['accuracy'], f1_macro_delta=models[selected]['f1_macro'] - prior['f1_macro'],
                               same_dataset=run['dataset_version'] == previous['dataset_version'], note='Comparación sobre el mismo benchmark de desarrollo; cambios de datos no demuestran generalización.')
-        artifact_names = ['snapshot.json', 'benchmark.json', 'model.json'] + [f'{name}{suffix}' for name in MODEL_NAMES for suffix in ('.json', '.joblib')] + [f'confusion-{name}.png' for name in MODEL_NAMES]
+        artifact_names = ['snapshot.json', 'benchmark.json', 'model.json'] + [f'{name}{suffix}' for name in pipelines for suffix in ('.json', '.joblib')] + [f'confusion-{name}.png' for name in pipelines]
         metrics_valid = all(np.isfinite(values[key]) and 0 <= values[key] <= 1 for values in models.values() for key in ('accuracy', 'precision_macro', 'recall_macro', 'f1_macro'))
         checks = {'dataset_valid': True, 'two_models': True, 'metrics_valid': metrics_valid, 'export_parity': parity['passed'],
                   'python_javascript_parity': parity.get('javascript_verified'), 'artifacts_complete': all((folder / name).is_file() for name in artifact_names)}
         if not all(checks[name] for name in ('dataset_valid', 'two_models', 'metrics_valid', 'export_parity', 'artifacts_complete')):
             raise WorkflowError('La jornada no pasó sus comprobaciones de integración.')
         missing = {label: max(0, 20 - count) for label, count in run['counts']['per_intent'].items()}
-        run.update(status='succeeded', finished_at=now(), process_id=None, message='Dos clasificadores evaluados. Versión provisional lista para revisar y activar.',
-                   selected_model=selected, cv_winner=selected, active_model=selected, cv=cv, models=models, errors=errors, predictions=predictions,
+        run.update(status='succeeded', finished_at=now(), process_id=None, message='Tres clasificadores evaluados. Random Forest listo para revisar y activar.',
+                   selected_model=selected, cv_winner=cv_winner, active_model=selected, cv=cv, models=models, errors=errors, predictions=predictions,
                    acceptance=acceptance, comparison=comparison, checks=checks, parity=parity,
                    requirements={'minimum_training': 200, 'minimum_intents': 10, 'minimum_per_intent': 20, 'minimum_test': 50,
                                  'training_total_met': len(training) >= 200, 'intents_met': len(run['labels']) >= 10,
                                  'per_intent_met': not any(missing.values()), 'test_total_met': final_test_size() >= 50,
                                  'per_intent_missing': missing, 'missing_examples_total': sum(missing.values())},
                    protocol={'seed': 42, 'cv': 'StratifiedKFold(5, shuffle=True, random_state=42)',
-                             'selection': 'Mayor F1 macro medio de validación cruzada; empate: regresión logística.',
-                             'parameters': {'naive_bayes': {'alpha': .25}, 'logistic_regression': {'C': 8.0, 'max_iter': 2000}},
+                             'selection': 'Random Forest seleccionado para el chat. Se informa por separado el ganador por F1 macro medio de validación cruzada.',
+                             'parameters': {'naive_bayes': {'alpha': .25}, 'logistic_regression': {'C': 8.0, 'max_iter': 2000}, 'random_forest': FOREST_PARAMS},
                              'evaluation_policy': '80 consultas conocidas de desarrollo; el conjunto final reservado no participa en entrenamiento ni selección.'},
                    artifact_hashes={name: digest(folder / name) for name in artifact_names},
                    hashes={'base_file_sha256': digest(ROOT / 'data/simulation.json'), 'evaluation_file_sha256': digest(ROOT / 'data/test.csv'),
@@ -398,17 +404,19 @@ class Registry:
         atomic_json(folder / 'run.json', run)
         return self.version(run['id'])
 
+    # Verifica el manifiesto y los archivos antes de permitir una activación.
     def validate_artifacts(self, run_id):
         run = self.raw(run_id)
         if run['status'] != 'succeeded':
             raise WorkflowError('Solo una jornada terminada correctamente puede activarse.', 409)
-        required = {'snapshot.json', 'benchmark.json', 'model.json'} | {f'{name}{suffix}' for name in MODEL_NAMES for suffix in ('.json', '.joblib')} | {f'confusion-{name}.png' for name in MODEL_NAMES}
+        names = CURRENT_MODELS if run.get('selected_model') == 'random_forest' else MODEL_NAMES
+        required = {'snapshot.json', 'benchmark.json', 'model.json'} | {f'{name}{suffix}' for name in names for suffix in ('.json', '.joblib')} | {f'confusion-{name}.png' for name in names}
         checks = run.get('checks', {})
         hashes = run.get('artifact_hashes', {})
         if set(hashes) != required or not all(checks.get(name) is True for name in ('dataset_valid', 'two_models', 'metrics_valid', 'export_parity', 'artifacts_complete')):
             raise WorkflowError('La versión no tiene todas las comprobaciones y archivos necesarios para activarse.', 409)
-        if run.get('selected_model') not in MODEL_NAMES or set(run.get('models', {})) != set(MODEL_NAMES):
-            raise WorkflowError('La versión no documenta los dos modelos y la selección.', 409)
+        if run.get('selected_model') not in names or set(run.get('models', {})) != set(names):
+            raise WorkflowError('La versión no documenta sus modelos y la selección.', 409)
         try:
             for name, expected in hashes.items():
                 if Path(name).name != name or digest(self.run_folder(run_id) / name) != expected:
@@ -419,6 +427,7 @@ class Registry:
             raise WorkflowError('Falta un archivo de la versión. No se reemplazó el modelo activo.', 409)
         return run
 
+    # El cambio de puntero se hace bajo el mismo bloqueo que protege el historial.
     def activate(self, run_id, author='system'):
         author_value(author)
         with lock(self.folder / 'registry.lock'):
@@ -500,24 +509,46 @@ def export_pipeline(pipeline, count, name):
     from src.preprocessing import STOPWORDS, LEMMA_MAP
     from src.simulation import THRESHOLDS
     vectorizer, classifier = pipeline.named_steps['tfidf'], pipeline.named_steps['classifier']
-    return {'format_version': 1, 'model_type': name, 'classes': classifier.classes_.tolist(),
+    result = {'format_version': 1, 'model_type': name, 'classes': classifier.classes_.tolist(),
             'features': vectorizer.get_feature_names_out().tolist(), 'idf': vectorizer.idf_.tolist(),
-            'weights': (classifier.coef_ if name == 'logistic_regression' else classifier.feature_log_prob_).tolist(),
-            'intercept': (classifier.intercept_ if name == 'logistic_regression' else classifier.class_log_prior_).tolist(),
             'preprocessing': {'stopwords': STOPWORDS, 'lemma_map': LEMMA_MAP, 'ngram_range': [1, 2], 'sublinear_tf': True,
                               'norm': 'l2', 'unicode': 'NFD', 'token_pattern': '[a-z0-9]+'},
             'thresholds': THRESHOLDS, 'trained_examples': count,
             'note': 'Modelo entrenado localmente. La confianza no es exactitud ni diagnóstico físico.'}
+    if name == 'random_forest':
+        # Internal nodes store a split and two child indices; leaves store class probabilities.
+        result['trees'] = [
+            [[(values / values.sum()).tolist()] if left == right else [int(feature), float(threshold), int(left), int(right)]
+             for feature, threshold, left, right, values in zip(
+                 tree.feature, tree.threshold, tree.children_left, tree.children_right, tree.value[:, 0])]
+            for tree in (estimator.tree_ for estimator in classifier.estimators_)
+        ]
+    else:
+        result['weights'] = (classifier.coef_ if name == 'logistic_regression' else classifier.feature_log_prob_).tolist()
+        result['intercept'] = (classifier.intercept_ if name == 'logistic_regression' else classifier.class_log_prior_).tolist()
+    return result
 
 
 def verify_export(pipeline, exported, texts):
     import numpy as np
     vectorizer = pipeline.named_steps['tfidf']
     matrix = vectorizer.transform(texts)
-    scores = matrix @ np.asarray(exported['weights']).T + np.asarray(exported['intercept'])
-    values = np.exp(scores - scores.max(axis=1, keepdims=True))
-    values /= values.sum(axis=1, keepdims=True)
     expected = pipeline.predict_proba(texts)
+    if exported['model_type'] == 'random_forest':
+        values = np.zeros_like(expected)
+        rows = matrix.toarray().astype(np.float32)
+        for tree in exported['trees']:
+            for row_index, row in enumerate(rows):
+                index = 0
+                while len(tree[index]) == 4:
+                    feature, threshold, left, right = tree[index]
+                    index = left if float(row[feature]) <= threshold else right
+                values[row_index] += tree[index][0]
+        values /= len(exported['trees'])
+    else:
+        scores = matrix @ np.asarray(exported['weights']).T + np.asarray(exported['intercept'])
+        values = np.exp(scores - scores.max(axis=1, keepdims=True))
+        values /= values.sum(axis=1, keepdims=True)
     discrepancy = float(np.max(np.abs(values - expected)))
     if discrepancy > 1e-10:
         raise WorkflowError('La exportación no reproduce las probabilidades de Python.')
@@ -629,13 +660,13 @@ def load_run_for_documents(version_id=None, runtime=None):
         raise WorkflowError('No se puede documentar una jornada incompleta.')
     registry.validate_artifacts(version_id)
     snapshot = read_json(registry.run_folder(version_id) / 'snapshot.json')
-    run.update(generated_at=run['finished_at'], active_model=run['selected_model'], active_matches_cv_winner=True,
+    run.update(generated_at=run['finished_at'], active_model=run['selected_model'], active_matches_cv_winner=run['selected_model'] == run['cv_winner'],
                version_id=run['id'], registry_active_id=registry.active_id(), model_path=str(registry.run_folder(version_id) / 'model.json'),
                snapshot_data={**snapshot, 'evaluation': read_json(registry.run_folder(version_id) / 'benchmark.json')},
                team=read_json(ROOT / 'docs/equipo.json'),
                provenance={'base': 'Base sintética conservada, con sus fechas originales.', 'additional': 'Solo aportaciones aprobadas presentes en la instantánea de esta jornada.',
                            'evaluation': 'Benchmark de desarrollo conocido; no es el conjunto final reservado.', 'timestamps': 'Fecha real de ejecución de la jornada.'},
-               artifacts={'folder': str(registry.run_folder(version_id)), 'matrices': {name: str(registry.run_folder(version_id) / f'confusion-{name}.png') for name in MODEL_NAMES}})
+               artifacts={'folder': str(registry.run_folder(version_id)), 'matrices': {name: str(registry.run_folder(version_id) / f'confusion-{name}.png') for name in run['models']}})
     return run
 
 

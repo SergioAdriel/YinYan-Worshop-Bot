@@ -6,7 +6,7 @@ bitacora y una curva de referencia. El modelo personalizado se sobrescribia.
 
 AHORA: cuatro responsables con los nombres indicados por el equipo; ejemplos
 pendientes, aprobados y rechazados; edicion, reapertura y duplicados controlados.
-Cada entrenamiento ajusta Naive Bayes y regresion logistica con validacion
+Cada entrenamiento compara Naive Bayes, regresion logistica y Random Forest con validacion
 comparable, guarda una jornada provisional y conserva las anteriores.
 
 PARA TRABAJAR:
@@ -23,7 +23,7 @@ sustituye automaticamente el modelo activo. Se puede recuperar una anterior.
 
 GUARDADO: data/team/ contiene consultas, ejemplos y revisiones. data/training/
 conserva jornadas, modelos, vectorizadores, configuracion, matrices y active.json.
-data/local/ guarda caches; references/avance-2026-11-18/ conserva el estado previo.
+data/local/ guarda caches; references/captura/ conserva el estado previo.
 
 DOCUMENTACION: reproducir-notebook.cmd y generar-reporte.cmd admiten --version
 UUID. El PDF comprueba el notebook y los artefactos al regenerarse. README y

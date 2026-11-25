@@ -24,7 +24,7 @@ const label = intent => state.manifest?.labels?.[intent] || intent || 'Sin ident
 const PEOPLE = {'alumno-a': 'Erick Mendoza Mendoza', 'alumno-b': 'Daniel Gibran Luciano Tellez', sergio: 'Sergio Adriel Muñoz Camarena', raynier: 'Raynier Jetsahe Torres Flores', system: 'Verificación del sistema'};
 const person = id => PEOPLE[id] || state.manifest?.participants.find(item => item.id === id)?.name || id;
 const historicalPerson = id => state.manifest?.participants.find(item => item.id === id)?.name || id;
-const modelName = id => ({naive_bayes:'Naive Bayes', logistic_regression:'Regresión logística'}[id]) || id || '—';
+const modelName = id => ({naive_bayes:'Naive Bayes', logistic_regression:'Regresión logística', random_forest:'Random Forest'}[id]) || id || '—';
 const statusName = status => ({pending:'Pendiente',approved:'Aprobado',rejected:'Rechazado',running:'En curso',succeeded:'Completada',failed:'Fallida',provisional:'Provisional',active:'Activa',historical:'Histórica'}[status]) || status || 'Pendiente';
 const shortened = value => typeof value === 'string' ? value.slice(0, 12) : '—';
 const currentDay = () => state.manifest?.days.find(item => item.day === state.day);
@@ -88,6 +88,44 @@ function refreshControls() {
   $('cancel-edit').disabled = storageDisabled;
   document.querySelectorAll('.version-action').forEach(button => { button.disabled = state.versionBusy || state.modelLoading || state.sending; });
 }
+// El mapa se abre bajo demanda y muestra solo el último turno de la sesión.
+let latestDecision = null;
+function renderDecisionMap(response, prediction, thresholds, previousStage, contextual) {
+  const map = node('div', 'decision-map');
+  const percent = value => `${(100 * value).toFixed(2)} %`;
+  if (prediction) {
+    map.append(node('p', '', contextual ? 'Entrada: mensajes del caso en curso' : 'Entrada: mensaje actual'));
+    map.append(node('p', '', `${modelName(prediction.model)} · ${prediction.tokens.join(' · ') || 'Sin términos'}`));
+    map.append(node('p', '', prediction.alternatives.map(item => `${label(item.intent)} ${percent(item.confidence)}`).join(' · ')));
+    map.append(node('p', '', `${prediction.accepted ? 'Predicción aceptada' : 'Predicción rechazada'} · Confianza ${percent(prediction.confidence)} (mín. ${percent(thresholds.confidence)}) · Margen ${percent(prediction.margin)} (mín. ${percent(thresholds.margin)}) · Vocabulario ${percent(prediction.knownRatio)} (mín. ${percent(thresholds.knownRatio)})`));
+    if (prediction.treePaths.length) {
+      const forest = node('details', '');
+      forest.append(node('summary', '', `Rutas de los ${prediction.treePaths.length} árboles · promedio de probabilidades`));
+      prediction.treePaths.forEach(({steps, probabilities}, index) => {
+        const tree = node('details', '');
+        const leaf = probabilities.map((value, i) => ({value, intent: prediction.classes[i]}))
+          .filter(item => item.value > 0).sort((a, b) => b.value - a.value);
+        tree.append(node('summary', '', `Árbol ${index + 1} · ${label(leaf[0].intent)} ${percent(leaf[0].value)}`));
+        tree.addEventListener('toggle', () => {
+          if (!tree.open || tree.querySelector('ol')) return;
+          const path = node('ol', '');
+          for (const step of steps) {
+            path.append(node('li', '', `“${step.term}” · ${step.value} ${step.goesLeft ? '≤' : '>'} ${step.threshold} → ${step.goesLeft ? 'izquierda' : 'derecha'}`));
+          }
+          path.append(node('li', '', `Hoja · ${leaf.map(item => `${label(item.intent)} ${percent(item.value)}`).join(' · ')}`));
+          tree.append(path);
+        });
+        forest.append(tree);
+      });
+      map.append(forest);
+    }
+  } else {
+    map.append(node('p', '', response.safety ? 'Una regla de seguridad respondió antes de clasificar.' : 'Este turno terminó sin una predicción.'));
+  }
+  const stage = response.context?.stage;
+  map.append(node('p', '', `Diálogo → ${label(response.intent)}${stage ? ` · ${previousStage} → ${stage}` : ''}`));
+  return map;
+}
 function appendMessage(text, role = 'assistant', response = {}) {
   const row = node('div', `message ${role}${response.safety ? ' safety' : ''}`);
   row.append(node('div', 'sender', role === 'user' ? 'Tú' : 'Bot YinYan'), node('div', 'bubble', text));
@@ -123,6 +161,9 @@ function resetConversation(focus = true) {
   if (!state.conversation) return;
   state.sessionId = crypto.randomUUID();
   const response = state.conversation.reset() || {};
+  latestDecision = null;
+  $('open-decision-map').disabled = true;
+  $('decision-content').replaceChildren();
   $('messages').replaceChildren();
   $('quick-start').hidden = false;
   $('message-input').value = '';
@@ -131,6 +172,7 @@ function resetConversation(focus = true) {
   updateContext(response);
   if (focus) $('message-input').focus();
 }
+// Captura el ID del modelo y la sesión antes de enviar. El guardado puede terminar más tarde.
 async function send(raw) {
   const text = raw.trim();
   if (!text || state.modelLoading || state.sending || !state.conversation) return;
@@ -144,13 +186,21 @@ async function send(raw) {
   const author = state.author;
   try {
     await new Promise(resolve => requestAnimationFrame(resolve));
-    let response;
-    try { response = conversation.reply(text); }
+    let response, prediction, thresholds, contextual;
+    const previousStage = conversation.state.stage;
+    try {
+      response = conversation.reply(text, (value, limits, usedContext) => {
+        prediction = value; thresholds = limits; contextual = usedContext;
+      });
+    }
     catch (error) {
       console.error('Consulta local:', error);
       response = {text: 'No pude procesar esa consulta. Intenta describir una sola falla o inicia una consulta nueva.', intent: 'desconocida', accepted: false};
     }
-    appendMessage(response.text, 'assistant', response); updateContext(response);
+    latestDecision = [response, prediction, thresholds, previousStage, contextual];
+    $('open-decision-map').disabled = false;
+    appendMessage(response.text, 'assistant', response);
+    updateContext(response);
     const query = {
       id: crypto.randomUUID(), session_id: sessionId, author, text, response: response.text,
       intent: response.intent || 'desconocida', accepted: Boolean(response.accepted),
@@ -303,6 +353,7 @@ function loadedModelIdentity(url, descriptor) {
   }
   return {id, referenceStage:referenceStage ? Number(referenceStage) : null};
 }
+// La carga crea un diálogo nuevo para que una vista previa no herede el caso anterior.
 async function changeModel(url, custom, descriptor = null) {
   const customSnapshot = custom ? {...state.training.result, revision: trainingRevision()} : null;
   state.modelLoading = true; refreshControls();
@@ -372,6 +423,7 @@ async function api(path, method = 'GET', body) {
     throw error;
   } finally { clearTimeout(timeout); }
 }
+// La cola del navegador conserva consultas cuyo envío al servidor quedó pendiente.
 function persistPendingQueries() {
   try {
     if (state.pendingQueries.length) localStorage.setItem(PENDING_KEY, JSON.stringify(state.pendingQueries));
@@ -608,7 +660,7 @@ function summaryMetrics(version) {return version?.models?.[version.selected_mode
 function versionById(id) {return state.versions.find(version => version.id === id);}
 function renderTraining() {
   const training=state.training;
-  let message=training.message || ({idle:'Puedes entrenar con la base y los ejemplos aprobados.',running:'Entrenando dos clasificadores…',succeeded:'Jornada completada: revisa la versión provisional.',failed:'La jornada falló. El modelo activo se conserva.'}[training.status]) || 'Estado no disponible.';
+  let message=training.message || ({idle:'Puedes entrenar con la base y los ejemplos aprobados.',running:'Entrenando tres clasificadores…',succeeded:'Jornada completada: revisa la versión provisional.',failed:'La jornada falló. El modelo activo se conserva.'}[training.status]) || 'Estado no disponible.';
   if (training.stale) message+=' Hay cambios aprobados posteriores a esa instantánea.';
   $('training-status').textContent=message;
   const result=training.result;
@@ -624,6 +676,7 @@ function renderTraining() {
   }
   renderSnapshot(); refreshControls();
 }
+// Consultar el progreso del proceso de Python permite que el chat siga disponible.
 function schedulePoll() {
   clearTimeout(state.poll);
   if (state.training.status !== 'running') return;
@@ -729,7 +782,7 @@ function renderVersionDetails(version) {
   $('version-detail-meta').textContent=`${version.id} · dataset ${version.dataset_version || '—'} · ${dateText(version.finished_at || version.created_at)}`;
   const content=$('version-detail-content'); content.replaceChildren();
   if (version.status!=='succeeded') {content.append(node('p','form-status',version.error || version.message || 'Esta ejecución todavía no tiene resultados completos.')); return;}
-  content.append(node('p','',`Seleccionado por validación: ${modelName(version.selected_model)}. ${version.id===state.activeVersionId ? 'Esta es la versión activa.' : 'Consultar estos resultados no cambia el chatbot.'}`),
+  content.append(node('p','',`Modelo de la jornada: ${modelName(version.selected_model)}. ${version.cv_winner ? `Ganador por F1 macro de validación: ${modelName(version.cv_winner)}. ` : ''}${version.id===state.activeVersionId ? 'Esta es la versión activa.' : 'Consultar estos resultados no cambia el chatbot.'}`),
     node('p','small muted','La selección usa F1 macro de validación cruzada. Las otras cuatro métricas corresponden al benchmark conocido de desarrollo.'),metricTable(version.models,version.cv));
   if (version.comparison?.previous_id) {
     const comparison=version.comparison;
@@ -845,6 +898,11 @@ document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListen
 $('chat-form').addEventListener('submit',event=>{event.preventDefault(); send($('message-input').value);});
 $('message-input').addEventListener('keydown',event=>{if (event.key==='Enter' && !event.shiftKey && !event.isComposing) {event.preventDefault(); send(event.currentTarget.value);}});
 $('new-chat').addEventListener('click',()=>resetConversation());
+$('open-decision-map').addEventListener('click', () => {
+  if (!latestDecision) return;
+  $('decision-content').replaceChildren(renderDecisionMap(...latestDecision));
+  $('decision-dialog').showModal();
+});
 $('copy-summary').addEventListener('click',copySummary);
 $('active-author').addEventListener('change',event=>{
   state.author=event.target.value; updateAuthor();

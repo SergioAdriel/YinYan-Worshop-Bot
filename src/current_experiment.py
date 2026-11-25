@@ -81,7 +81,7 @@ def _figures(result):
                                display_labels=result["labels"]).plot(
             ax=axis, cmap="Blues", colorbar=False,
             xticks_rotation=65, values_format="d")
-        title = {"naive_bayes": "Naive Bayes", "logistic_regression": "Regresión logística"}[name]
+        title = {"naive_bayes": "Naive Bayes", "logistic_regression": "Regresión logística", "random_forest": "Random Forest"}[name]
         title += " (versión documentada)" if name == result["active_model"] else " (comparación)"
         axis.set_title(f"{title}\n{metrics['correct']}/{metrics['total']} aciertos; datos actuales")
         axis.set_xlabel("Intención predicha")

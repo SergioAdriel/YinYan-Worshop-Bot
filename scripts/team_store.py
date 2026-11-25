@@ -221,6 +221,7 @@ class TeamStore:
             row['record_version'] = hashlib.sha256(compact(versions).encode('utf-8')).hexdigest()
         return row
 
+    # Prepara la vista del equipo y la lista aprobada que consume el entrenamiento.
     def snapshot(self):
         self.migrate()
         deleted = {row['example_id'] for row in self.records('deletions')}

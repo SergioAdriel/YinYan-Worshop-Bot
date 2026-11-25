@@ -32,7 +32,7 @@ BLUE = colors.HexColor("#27382f")
 GREEN = colors.HexColor("#315340")
 MUTED = colors.HexColor("#647265")
 PALE = colors.HexColor("#edf1e9")
-MODEL_NAMES = {"naive_bayes": "Naive Bayes", "logistic_regression": "Regresión logística"}
+MODEL_NAMES = {"naive_bayes": "Naive Bayes", "logistic_regression": "Regresión logística", "random_forest": "Random Forest"}
 
 
 def fonts():
@@ -188,12 +188,12 @@ def build_sections(experiment, team, notebook):
             "Se convierte a minúsculas, se aplica Unicode NFD, se retiran diacríticos y se tokeniza con [a-z0-9]+. Se elimina puntuación y una lista breve de palabras vacías, conservando «no». Un diccionario explícito ofrece lematización ligera de flexiones frecuentes; no es un analizador morfológico completo.",
             "TF-IDF representa unigramas y bigramas, con frecuencia sublineal, IDF suavizado y normalización L2. El vocabulario y el IDF se aprenden exclusivamente con cada partición de entrenamiento. Python y JavaScript comparten las decisiones de preparación e inferencia, verificadas mediante pruebas de paridad.",
             "Se entrenan Multinomial Naive Bayes (alpha=0.25) y regresión logística (C=8, max_iter=2000) con los mismos ejemplos y representación. Se comparan con cinco pliegues estratificados, mezcla y semilla 42. La selección utiliza F1 macro promedio y el vectorizador se vuelve a ajustar dentro de cada pliegue.",
-            cv_text + f". La selección por validación favorece a {MODEL_NAMES[winner]}. La versión documentada contiene {MODEL_NAMES[active]}; su identificador es {experiment.get('version_id', 'base de referencia')}. Cada jornada conserva ambos pipelines, el vectorizador, parámetros, distribución, métricas y matrices. El resultado se guarda provisionalmente y solo una activación explícita, después de comprobar integridad y paridad, cambia la versión activa.",
+            cv_text + f". La selección por validación favorece a {MODEL_NAMES[winner]}. La versión documentada contiene {MODEL_NAMES[active]}; su identificador es {experiment.get('version_id', 'base de referencia')}. Cada jornada conserva los pipelines, el vectorizador, parámetros, distribución, métricas y matrices. El resultado se guarda provisionalmente y solo una activación explícita, después de comprobar integridad y paridad, cambia la versión activa.",
             "La elección por validación no consulta el resultado del conjunto de evaluación. Sin embargo, ese conjunto de 80 mensajes ya fue observado durante el desarrollo del proyecto. Sus cifras actuales son de evaluación de desarrollo; para una afirmación final independiente hace falta reservar una prueba nueva y no ajustarse a sus errores.",
             f"La curva de la base va de {curve_start['total_examples']} ejemplos y {curve_start['correct']}/{curve_start['total']} aciertos en la etapa inicial a {curve_end['total_examples']} ejemplos y {curve_end['correct']}/{curve_end['total']} en la etapa 15. Cada etapa ajusta un modelo real con los ejemplos acumulados; no se agregan errores aleatorios ni se fija un porcentaje de éxito.",
         ]),
         ("4. Resultados de la versión actual", [
-            "Las cuatro métricas se calculan sobre la categoría más probable de cada consulta: accuracy, precision macro, recall macro y F1 macro. Los promedios macro asignan el mismo peso a cada intención. La tabla compara ambos algoritmos ajustados con el corpus actual.",
+            "Las cuatro métricas se calculan sobre la categoría más probable de cada consulta: accuracy, precision macro, recall macro y F1 macro. Los promedios macro asignan el mismo peso a cada intención. La tabla compara los algoritmos ajustados con el corpus actual.",
             f"El modelo activo es {MODEL_NAMES[active]}; el ganador por F1 macro de validación es {MODEL_NAMES[winner]}. El porcentaje de esta tabla mide clasificación, no calidad de reparación ni probabilidad de diagnóstico físico correcto.",
             f"El modelo activo acierta {experiment['models'][active]['correct']}/{experiment['models'][active]['total']} etiquetas. Su F1 macro de validación ({percent(cv[active]['f1_macro_mean'])}) es mucho menor que el F1 del conjunto de evaluación ({percent(experiment['models'][active]['f1_macro'])}). La menor cantidad de entrenamiento por pliegue y diferencias de dificultad o estilo entre particiones sintéticas pueden contribuir a la brecha; esta observación no demuestra su causa. Se necesita una prueba nueva de origen independiente para valorar generalización.",
             f"Con confianza mínima 0.24, margen 0.045 y cobertura léxica 0.20, el modelo activo acepta directamente {acceptance['accepted']}/{acceptance['total']} consultas. Entre las aceptadas acierta {acceptance['correct_accepted']}. En el resto puede pedir aclaración. Cobertura de aceptación y accuracy global son medidas diferentes: se cuenta una categoría más probable incluso cuando se rechaza para conversar.",
@@ -263,7 +263,7 @@ def main():
     test = Counter(row.get("intent", row.get("expected")) for row in evaluation)
     errors = active_errors(experiment)
     sections = build_sections(experiment, team, notebook)
-    matrices = [REPORTS / f"current-confusion-{name}.png" for name in MODEL_NAMES]
+    matrices = [REPORTS / f"current-confusion-{name}.png" for name in experiment["models"]]
     width, height = A4[0] - 3.4 * cm, A4[1] - 3.4 * cm
     primary = team.get("desarrollador_principal", "Sergio Adriel Muñoz Camarena")
     members = "; ".join(team.get("integrantes", [])) or "Por completar"
@@ -299,14 +299,14 @@ def main():
         elif index == 3:
             body.append(para(paragraphs[0]))
             rows = [["Modelo", "Accuracy", "Precision macro", "Recall macro", "F1 macro"]]
-            for name in MODEL_NAMES:
+            for name in experiment["models"]:
                 model = experiment["models"][name]
                 rows.append([MODEL_NAMES[name], *[percent(model[key]) for key in ["accuracy", "precision_macro", "recall_macro", "f1_macro"]]])
             body.extend([table(rows, [width * .32] + [width * .17] * 4), Spacer(1, .2 * cm)])
             body.extend(para(text) for text in paragraphs[1:])
-            image_width = (width - .2 * cm) / 2
-            body.extend([Table([[graphic(path, image_width) for path in matrices]], colWidths=[image_width, image_width]),
-                         para("Matrices actuales: Naive Bayes y regresión logística, respectivamente. Originales ampliables en reports/.", "Small")])
+            image_width = (width - .2 * cm) / len(matrices)
+            body.extend([Table([[graphic(path, image_width) for path in matrices]], colWidths=[image_width] * len(matrices)),
+                         para("Matrices en el orden de la tabla. Originales ampliables en reports/.", "Small")])
             markdown.extend(["| Modelo | Accuracy | Precision macro | Recall macro | F1 macro |", "| --- | ---: | ---: | ---: | ---: |",
                              *["| " + " | ".join(row) + " |" for row in rows[1:]], "",
                              *[f"![{path.stem}](../reports/{path.name})\n" for path in matrices]])

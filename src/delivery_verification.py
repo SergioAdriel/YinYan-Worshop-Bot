@@ -42,8 +42,9 @@ def verify_delivery():
         registry = Registry()
         registry.validate_artifacts(version_id)
         assert registry.version(version_id)['selected_model'] == experiment['active_model']
-    reference = ROOT / 'references/avance-2026-11-18'
-    original = json.loads((reference / 'REFERENCE.json').read_text(encoding='utf-8'))
+    # La captura se verifica byte por byte usando su manifiesto original.
+    reference = ROOT / 'references/captura'
+    original = json.loads((reference / 'BACKUP.json').read_text(encoding='utf-8'))
     assert all(sha256((reference / row['path']).read_bytes()).hexdigest() == row['sha256'] for row in original['files']), 'Cambió la referencia histórica.'
     assert not (ROOT / 'entrega-yinyan-workshop.zip').exists()
     artifacts = ['notebooks/experimentacion.ipynb', 'docs/reporte-tecnico.pdf', 'docs/pdf-verification.json', 'reports/current-experiment.json']

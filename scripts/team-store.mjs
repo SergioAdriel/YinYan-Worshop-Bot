@@ -80,6 +80,7 @@ export function createTeamStore({project,runtime}) {
     return {normalized,base,evaluation};
   }
 
+  // Cada archivo es un registro independiente que se puede compartir por Git.
   async function append(path,value) {
     const directory = resolve(path,'..');
     await mkdir(directory,{recursive:true});
@@ -139,6 +140,7 @@ export function createTeamStore({project,runtime}) {
   const projection=row=>({id:row.id,text:row.text,intent:row.intent,author:row.author,
     review_status:row.review_status,record_version:row.record_version,review_conflict:row.review_conflict});
   const revisionFor=rows=>hash(JSON.stringify([...rows].sort((a,b)=>a.id.localeCompare(b.id)).map(projection)));
+  // El estado visible se reconstruye aplicando los eventos al ejemplo original.
   function materialize(original,events) {
     const clean=cleanExample(original);
     const row={id:original.id,...clean,created_at:original.created_at??null,timezone:TIMEZONE,
@@ -163,6 +165,7 @@ export function createTeamStore({project,runtime}) {
     }
     return row;
   }
+  // La revisión aprobada identifica los ejemplos que deben entrar al entrenamiento.
   async function snapshot() {
     await migrate();
     const [deletions,originals,events,normalized]=await Promise.all([records('deletions'),records('examples'),records('events'),tokenizer()]);

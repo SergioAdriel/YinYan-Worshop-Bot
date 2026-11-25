@@ -119,7 +119,7 @@ test('Los clones con autocrlf activado y desactivado conservan hashes y permiten
         await unlink(resolve(project, 'data/training/training_history.json'));
         assert.equal((await restoreTrainingCatalog(project)).created_files, 1);
         assert.deepEqual(await readFile(resolve(project, 'data/training/training_history.json')), expectedCatalog);
-        for (const relative of ['', 'references/avance-2026-11-18', 'references/pre-history-unification-2026-11-18']) {
+        for (const relative of ['', 'references/captura']) {
           const documents = resolve(project, relative);
           const verification = await readJson(resolve(documents, 'docs/pdf-verification.json'));
           assert.equal(digest(await readFile(resolve(documents, 'notebooks/experimentacion.ipynb'))), verification.notebook.sha256);
@@ -129,7 +129,7 @@ test('Los clones con autocrlf activado y desactivado conservan hashes y permiten
             assert.equal(digest(await readFile(resolve(documents, name))), expected, `${autocrlf}: ${relative}/${name}`);
           }
           if (relative) {
-            const manifest = await readJson(resolve(documents, relative.includes('pre-history') ? 'BACKUP.json' : 'REFERENCE.json'));
+            const manifest = await readJson(resolve(documents, 'BACKUP.json'));
             for (const record of manifest.files) {
               const bytes = await readFile(resolve(documents, record.path));
               assert.equal(digest(bytes), record.sha256, `${autocrlf}: ${relative}/${record.path}`);

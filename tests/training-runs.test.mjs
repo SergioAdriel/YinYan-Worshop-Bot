@@ -55,8 +55,11 @@ async function exercise(command, script) {
     const firstRun = (await request(`/api/versions/${firstId}`)).value;
     assert.equal(firstRun.journey, 1); assert.equal(firstRun.approval_status, 'provisional');
     assert.equal(firstRun.counts.additional, 1); assert.equal(firstRun.counts.total, 241);
-    assert.deepEqual(Object.keys(firstRun.models).sort(), ['logistic_regression', 'naive_bayes']);
-    assert.equal(firstRun.selected_model, Object.keys(firstRun.cv).sort((a, b) => firstRun.cv[b].f1_macro_mean - firstRun.cv[a].f1_macro_mean)[0]);
+    assert.deepEqual(Object.keys(firstRun.models).sort(), ['logistic_regression', 'naive_bayes', 'random_forest']);
+    assert.equal(firstRun.selected_model, 'random_forest');
+    assert.equal(firstRun.cv_winner, Object.keys(firstRun.cv).reduce((winner, name) =>
+      firstRun.cv[name].f1_macro_mean > firstRun.cv[winner].f1_macro_mean ||
+      (firstRun.cv[name].f1_macro_mean === firstRun.cv[winner].f1_macro_mean && name === 'logistic_regression') ? name : winner));
     for (const model of Object.values(firstRun.models)) {
       for (const name of ['accuracy', 'precision_macro', 'recall_macro', 'f1_macro']) assert.ok(model[name] >= 0 && model[name] <= 1);
       assert.equal(model.confusion_matrix.flat().reduce((a, b) => a + b), 80);
@@ -65,7 +68,7 @@ async function exercise(command, script) {
     const snapshotBytes = await readFile(join(firstFolder, 'snapshot.json'));
     const frozen = JSON.parse(snapshotBytes);
     assert.equal(frozen.additional_examples.length, 1); assert.equal(frozen.additional_examples[0].id, example.id);
-    for (const model of ['naive_bayes', 'logistic_regression']) assert.ok((await readFile(join(firstFolder, `${model}.joblib`))).length > 100);
+    for (const model of ['naive_bayes', 'logistic_regression', 'random_forest']) assert.ok((await readFile(join(firstFolder, `${model}.joblib`))).length > 100);
     assert.equal((await request('/api/models/active')).value.active_id, null, 'Entrenar no activa automáticamente.');
     assert.equal((await request(`/api/versions/${firstId}/activate`, 'POST', {author: 'sergio'})).status, 200);
     await stop(child); await start(); assert.equal((await request('/api/models/active')).value.active_id, firstId);
@@ -120,5 +123,5 @@ async function exercise(command, script) {
     await rm(target, {recursive: true, force: true, maxRetries: 5, retryDelay: 120});
   }
 }
-test('Jornadas Node: dos modelos, aprobación, historial, fallos y prueba final reservada', {timeout: 160000}, () => exercise(process.execPath, 'scripts/serve.mjs'));
+test('Jornadas Node: tres modelos, aprobación, historial, fallos y prueba final reservada', {timeout: 160000}, () => exercise(process.execPath, 'scripts/serve.mjs'));
 test('Jornadas Python: mismo protocolo, persistencia y activación controlada', {timeout: 160000}, () => exercise(python, 'scripts/serve.py'));

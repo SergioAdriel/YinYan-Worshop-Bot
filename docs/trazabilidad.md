@@ -6,4 +6,4 @@ La matriz vigente se genera a partir de las jornadas y la evidencia comprobada:
 
 [Flujo de incorporación, aprobación y entrenamiento](FLUJO-DE-TRABAJO.md).
 
-Los documentos históricos están conservados en references/avance-2026-11-18/.
+Los documentos históricos están conservados en references/captura/.

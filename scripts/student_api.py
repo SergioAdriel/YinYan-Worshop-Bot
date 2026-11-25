@@ -92,6 +92,7 @@ class StudentApi:
                                    'approval_status': latest['approval_status']}
         return state
 
+    # La instantánea aprobada es la entrada fija de esta ejecución.
     def train(self, data):
         if self.process:
             raise ApiError('Ya hay un entrenamiento en curso.', 409)
@@ -128,6 +129,7 @@ class StudentApi:
             except OSError:
                 pass
 
+    # Este servidor expone las mismas rutas que el servidor Node.
     def handle(self, handler):
         path = unquote(urlsplit(handler.path).path)
         if path != '/simulation/custom-model.json' and not path.startswith('/api/'):

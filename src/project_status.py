@@ -55,7 +55,7 @@ def write_status():
         ('Repositorio compartible con instalación Windows', functionality, 'README, .cmd, requirements-lock.txt y ayudantes Git probados con dos clones temporales.'),
         ('Notebook ejecutable de la versión elegida', checked['documents'], 'notebooks/experimentacion.ipynb; --version; CV y métricas reproducidas con su instantánea.'),
         ('PDF de máximo ocho cuartillas principales', checked['documents'], f"docs/reporte-tecnico.pdf: {delivery.get('main_content_pages', 'por verificar')} páginas principales; hashes en docs/pdf-verification.json."),
-        ('Referencia anterior conservada', 'Cumplido' if delivery.get('reference_files_intact') else 'Pendiente de verificación', 'references/avance-2026-11-18/REFERENCE.json y copia recuperable de 119 archivos.'),
+        ('Referencia anterior conservada', 'Cumplido' if delivery.get('reference_files_intact') else 'Pendiente de verificación', 'references/captura/BACKUP.json y copia recuperable de 152 archivos.'),
         ('URL del repositorio GitHub entregada al profesor', 'Pendiente de verificación', 'Configuración preparada; no se proporcionó una URL de repositorio para verificar publicación o entrega.'),
         ('Defensa y comprensión de todos los integrantes', 'Pendiente de verificación', 'Guía de demostración disponible; la presentación en vivo corresponde al equipo.'),
     ]
@@ -76,7 +76,7 @@ def write_status():
                   f"Benchmark conocido: {values['correct']}/{values['total']} aciertos ({100*values['accuracy']:.2f} %), F1 macro {100*values['f1_macro']:.2f} %. Se seleccionó por validación cruzada, no por estas cifras."]
     lines += ['', 'Las pruebas del sistema verifican componentes y flujos; no sustituyen la revisión lingüística, la nueva prueba reservada ni la demostración con preguntas del docente.', '']
     (ROOT / 'ESTADO-RUBRICA.md').write_text('\n'.join(lines), encoding='utf-8')
-    (ROOT / 'docs/trazabilidad.md').write_text('# Trazabilidad del avance\n\nLa matriz vigente se genera a partir de las jornadas y la evidencia comprobada:\n\n[Estado completo de la rúbrica](../ESTADO-RUBRICA.md).\n\n[Flujo de incorporación, aprobación y entrenamiento](FLUJO-DE-TRABAJO.md).\n\nLos documentos históricos están conservados en references/avance-2026-11-18/.\n', encoding='utf-8')
+    (ROOT / 'docs/trazabilidad.md').write_text('# Trazabilidad del avance\n\nLa matriz vigente se genera a partir de las jornadas y la evidencia comprobada:\n\n[Estado completo de la rúbrica](../ESTADO-RUBRICA.md).\n\n[Flujo de incorporación, aprobación y entrenamiento](FLUJO-DE-TRABAJO.md).\n\nLos documentos históricos están conservados en references/captura/.\n', encoding='utf-8')
     summary = f'''YINYAN WORKSHOP - PROTOTIPO FUNCIONAL
 AVANCE AL 18 DE NOVIEMBRE DE 2026. ENTREGA FINAL: 4 DE DICIEMBRE.
 
@@ -85,7 +85,7 @@ bitacora y una curva de referencia. El modelo personalizado se sobrescribia.
 
 AHORA: cuatro responsables con los nombres indicados por el equipo; ejemplos
 pendientes, aprobados y rechazados; edicion, reapertura y duplicados controlados.
-Cada entrenamiento ajusta Naive Bayes y regresion logistica con validacion
+Cada entrenamiento compara Naive Bayes, regresion logistica y Random Forest con validacion
 comparable, guarda una jornada provisional y conserva las anteriores.
 
 PARA TRABAJAR:
@@ -102,7 +102,7 @@ sustituye automaticamente el modelo activo. Se puede recuperar una anterior.
 
 GUARDADO: data/team/ contiene consultas, ejemplos y revisiones. data/training/
 conserva jornadas, modelos, vectorizadores, configuracion, matrices y active.json.
-data/local/ guarda caches; references/avance-2026-11-18/ conserva el estado previo.
+data/local/ guarda caches; references/captura/ conserva el estado previo.
 
 DOCUMENTACION: reproducir-notebook.cmd y generar-reporte.cmd admiten --version
 UUID. El PDF comprueba el notebook y los artefactos al regenerarse. README y

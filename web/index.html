@@ -42,9 +42,16 @@
         </section>
         <aside class="chat-aside">
           <section class="card snapshot"><h2 id="snapshot-title">Modelo activo</h2><p id="snapshot-description">Consultando la versión aprobada.</p><dl><div><dt>Ejemplos</dt><dd id="snapshot-examples">—</dd></div><div><dt>Aciertos de desarrollo</dt><dd id="snapshot-result">—</dd></div></dl><p class="small muted">El benchmark de desarrollo y la prueba final reservada se muestran por separado.</p><button id="restore-active-model" class="button secondary small" hidden>Volver al modelo activo</button><button class="text-button" data-open-view="teach">Agregar ejemplos y entrenar</button></section>
-          <section class="card context-card"><h2>Esta consulta</h2><dl><div><dt>Equipo</dt><dd id="context-device">Por identificar</dd></div><div><dt>Problema</dt><dd id="context-issue">Por identificar</dd></div></dl><button id="copy-summary" class="text-button" disabled>Copiar resumen</button></section>
+          <section class="card context-card"><h2>Esta consulta</h2><button id="open-decision-map" type="button" class="button secondary small" aria-haspopup="dialog" disabled>Ver mapa de decisiones</button><dl><div><dt>Equipo</dt><dd id="context-device">Por identificar</dd></div><div><dt>Problema</dt><dd id="context-issue">Por identificar</dd></div></dl><button id="copy-summary" class="text-button" disabled>Copiar resumen</button></section>
         </aside>
       </div>
+      <dialog id="decision-dialog" aria-labelledby="decision-title">
+        <div class="card-heading">
+          <h2 id="decision-title">Mapa de decisiones</h2>
+          <form method="dialog"><button class="button secondary small">Cerrar</button></form>
+        </div>
+        <div id="decision-content" class="details-content"></div>
+      </dialog>
     </section>
     <section id="view-queries" class="view" aria-labelledby="tab-queries" hidden>
       <div class="section-heading"><div><h2>Consultas guardadas</h2><p>Revisen una consulta y corrijan su categoría antes de usarla para entrenar.</p></div><button id="refresh-queries" class="button secondary small">Actualizar</button></div>

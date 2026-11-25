@@ -24,6 +24,7 @@ export function createWorkflowRegistry(project,runtime){
     }
     return local;
   }
+  // El puntero activo se lee por separado de la lista de jornadas.
   async function activeId(){return(await read(resolve(folder,'active.json'),{})).active_id||null;}
   async function version(id,full=true){
     let row;try{row=await read(resolve(runFolder(id),'run.json'));}catch(error){if(error.code==='ENOENT')throw apiError('No se encontró esa jornada.',404);throw error;}
@@ -70,6 +71,7 @@ export function createWorkflowRegistry(project,runtime){
     return{context:current&&dialogue.failed===0&&dialogue.passed>=7&&(dialogue.version_id||null)===id,documents};
   }
   async function active(){const id=await activeId();if(id)return{active_id:id,model_url:`./api/versions/${id}/model.json`,version:await version(id)};const initial=await baseline();return{active_id:null,model_url:initial.model_url,version:initial.version,baseline:initial};}
+  // Node conserva la API y delega el entrenamiento y las validaciones a Python.
   function child(command,args=[],stdio=['ignore','pipe','pipe']){return spawn(python,['-m','src.training_runs',command,'--runtime',runtime,...args],{cwd:project,env:{...process.env,PYTHONUTF8:'1',PYTHONDONTWRITEBYTECODE:'1',YINYAN_NODE:process.execPath},windowsHide:true,stdio});}
   function call(command,args=[]){return new Promise((done,reject)=>{const process=child(command,args);let output='',errors='';process.stdout.on('data',chunk=>{output=(output+chunk.toString('utf8')).slice(-3*1024*1024);});process.stderr.on('data',chunk=>{errors=(errors+chunk.toString('utf8')).slice(-2000);});process.once('error',error=>reject(apiError(`No se pudo abrir Python: ${error.message}`,503)));process.once('close',code=>{let value;try{value=JSON.parse(output.trim().split('\n').at(-1));}catch{reject(apiError(errors||'La operación no produjo un resultado válido.',500));return;}if(code!==0)reject(apiError(value.error||errors||'La operación falló.',value.status||500));else done(value);});});}
   async function progress(snapshot){

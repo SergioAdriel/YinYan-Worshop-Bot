@@ -28,7 +28,8 @@ FLUJO DE LOS EJEMPLOS
 
 ENTRENAR Y ACTIVAR
 1. Pulsa Entrenar modelo para crear una jornada nueva con fecha real.
-2. Se comparan Naive Bayes y regresion logistica con los mismos datos.
+2. Se comparan Naive Bayes, regresion logistica y Random Forest con los mismos
+   datos. La nueva jornada prepara Random Forest para el chat.
 3. La version nueva es PROVISIONAL: no cambia el chatbot automaticamente.
 4. En Jornadas revisa metricas, matrices, errores y comparacion anterior.
 5. Prueba la vista previa y activa la version cuando corresponda.

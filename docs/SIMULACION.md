@@ -49,7 +49,7 @@ y usa solo los ejemplos aprobados; no activa automáticamente su resultado.
 
 Los archivos originales están en `web/simulation/` y `reports/simulation-*`.
 La copia del avance anterior a la ampliación está en
-`references/avance-2026-11-18/`, con sus fechas y hashes intactos.
+`references/captura/`, con sus fechas y hashes intactos.
 
 ## Jornadas posteriores
 

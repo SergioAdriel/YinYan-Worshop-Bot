@@ -35,7 +35,7 @@ const QUESTIONS = {
   encendido: {
     first: 'Al intentar encenderlo, ¿hay alguna luz, vibración o sonido?',
     second: answer => answer === 'no' ? '¿Ya probaste otro enchufe y un cargador compatible en buen estado?' : '¿La pantalla permanece negra aunque haya señales de encendido?',
-    detail: /\b(luz|luces|led|vibra|vibracion|sonido|enciende|prende|nada|ninguna|negra|ventilador)\b/,
+    detail: /\b(luz|luces|led|vibra|vibracion|sonido|enciende|prende|nada|ninguna|negra|pantalla|imagen|ventilador|enchufe|cargador)\b/,
     advice: [
       'Si no hay ninguna señal, revisa solo el enchufe y un cable o cargador compatible en buen estado. Si hay luz o sonido pero no imagen, la revisión debe concentrarse en la pantalla o salida de video. No abras la fuente ni hagas puentes eléctricos.',
       'Las señales que describiste permiten distinguir alimentación de imagen, pero no confirmar una pieza dañada. Comprueba conexiones externas y, si persiste, solicita una revisión física. No desmontes baterías ni fuentes.',
@@ -220,14 +220,13 @@ function isDeviceOnly(text) {
 // Estas pistas se utilizan únicamente para pedir una aclaración entre síntomas;
 // nunca sustituyen al clasificador para elegir la intención de una consulta.
 function competingSymptoms(text) {
-  if (!/\b(y|ademas|tambien|pero)\b/.test(text)) return [];
   const hints = [
     ['encendido', /\b(no (enciende|prende|arranca))\b/],
     ['carga', /\b(no carga|no esta cargando|carga lento)\b/],
     ['temperatura', /\b(se calienta|sobrecalienta|muy caliente)\b/],
     ['conexion', /\b(sin internet|no conecta|no se conecta)\b/],
     ['pantalla', /\b(pantalla (negra|rota|quebrada)|lineas en la pantalla)\b/],
-    ['sonido', /\b(no se (oye|escucha)|sin sonido)\b/],
+    ['sonido', /\b(no (?:se (?:oye|escucha)|tiene sonido)|sin sonido)\b/],
     ['rendimiento', /\b(esta lent[oa]|muy lent[oa]|se traba)\b/],
   ];
   return hints.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
@@ -238,12 +237,14 @@ export function createConversation(classifier, config = {}) {
   const instagramUrl = config.instagramUrl || INSTAGRAM;
   const freshRecovery = () => ({attempts:0, description:null, referred:false});
   const state = { device: null, issue: null, stage: 'inicio', turnCount: 0, details: {}, lastIntent: null, history: [], pending: null, recovery:freshRecovery() };
+  // Cada cambio de falla abre un caso nuevo dentro de la misma conversación.
+  let caseStart = 1;
 
   function contact() { return [{ label: 'Contactar por Instagram', url: instagramUrl }]; }
   function activeQuestions() { return FOLLOWUP_QUESTIONS[state.details.variant] || QUESTIONS[state.issue]; }
 
-  function result(text, intent, prediction = {}, extra = {}) {
-    if (config.concise && !extra.safety) {
+  function result(text, intent, prediction = {}, {preserveText = false, ...extra} = {}) {
+    if (config.concise && !extra.safety && !preserveText) {
       if (QUESTIONS[intent]) {
         if (text.startsWith('Está bien.')) text = 'Está bien. Podemos dejar esa comprobación para el taller. ¿Tienes otro detalle de la falla?';
         else if (state.stage === 'dispositivo') text = '¿Te pasa en una computadora, un celular o una consola?';
@@ -268,6 +269,7 @@ export function createConversation(classifier, config = {}) {
   }
 
   function reset() {
+    caseStart = 1;
     Object.assign(state, { device: null, issue: null, stage: 'inicio', turnCount: 0, details: {}, lastIntent: null, history: [], pending: null, recovery:freshRecovery() });
     return result('Soy el asistente de YinYan Workshop. Cuéntame qué le pasa a tu computadora, celular o consola. Te haré unas preguntas para orientarte antes de la revisión.', 'saludo', {}, {
       suggestions: ['Mi computadora no enciende', 'Mi celular no carga', 'Mi consola se calienta'],
@@ -283,7 +285,10 @@ export function createConversation(classifier, config = {}) {
   }
 
   function beginFault(intent, prediction, variant = null, description = null) {
-    if (state.issue !== intent || variant !== (state.details.variant || null)) state.details = {};
+    if (state.issue !== intent || variant !== (state.details.variant || null)) {
+      if (state.issue) caseStart = state.turnCount;
+      state.details = {};
+    }
     state.recovery = freshRecovery();
     state.issue = intent;
     if (variant) state.details.variant = variant;
@@ -363,15 +368,15 @@ export function createConversation(classifier, config = {}) {
     return result(text, 'desconocida', prediction, {suggestions:BASIC_OPTIONS});
   }
 
-  function handleSlot(text, prediction) {
+  function handleSlot(text, prediction, contextual) {
     if (!state.pending || state.pending.kind !== 'diagnostico' || !QUESTIONS[state.issue]) return null;
     const question = activeQuestions();
     const shortAnswer = isShortAnswer(text);
     const activeIntent = prediction.accepted && prediction.intent === state.issue;
     const directObservation = /^(el|la|los|las|mi|mis) (cable|cargador|conector|bateria|pantalla|router|modem|control|mando|boton|botones|palanca|volumen|disco|unidad|tarjeta|memoria|indicador|porcentaje|altavoz|bocina|audifonos)\b/.test(text);
     const answerFragment = (/^(solo|solamente|unicamente|todo|todas|otros|otro|ningun|desde|despues|al |en |con |sin |hay |hace |no |si[, ])/.test(text) || directObservation) && !text.includes('?');
-    const matchedDetail = question.detail.test(text) && text.length <= 250 && (activeIntent || (!prediction.accepted && answerFragment));
-    if (prediction.accepted && !FAULTS.has(prediction.intent) && !shortAnswer) return null;
+    const matchedDetail = !text.includes('?') && question.detail.test(text) && text.length <= 250
+      && (contextual || activeIntent || (!prediction.accepted && answerFragment));
     if (!shortAnswer && !matchedDetail) return null;
     if (/^(no se|no estoy segur[oa])[.!?\s]*$/.test(text)) {
       state.recovery.attempts += 1;
@@ -394,20 +399,24 @@ export function createConversation(classifier, config = {}) {
     state.recovery = freshRecovery();
     state.stage = 'orientacion';
     state.pending = null;
+    if (state.issue === 'encendido' && answerKind(state.details.respuesta_1) !== 'no' && /\b(negra|sin imagen|no (?:da|muestra) imagen)\b/.test(text)) {
+      return result('Ya hay señales de encendido, pero la pantalla sigue sin imagen. Anota ambos síntomas en el resumen y solicita una revisión de la pantalla o la salida de video.', state.issue, prediction, {
+        actions: contact(), preserveText: true, suggestions: ['Nueva conversación'],
+      });
+    }
     return result(`Para tu ${state.device}, con el problema de ${LABELS[state.issue]}: ${pick(question.advice, state.turnCount)}\n\nEsto es orientación inicial, no un diagnóstico confirmado. Puedes copiar el resumen de esta conversación y compartirlo con el taller por Instagram.`, state.issue, prediction, {
       actions: contact(), suggestions: ['¿Cuánto costaría la revisión?', 'Nueva conversación'],
     });
   }
 
-  function reply(raw) {
+  function reply(raw, inspectPrediction) {
     const original = String(raw ?? '').trim();
     const text = normalize(original);
     if (/^(\/reset|reiniciar|reinicia|reinicia (la )?conversacion|reiniciar (la )?conversacion|nueva conversacion|nueva consulta|empezar de nuevo|borrar (el )?contexto)[.!?]*$/.test(text)) return reset();
     if (!text) return result('Escribe qué le pasa a tu equipo para poder orientarte.', 'aclaracion', { accepted: false });
     if (text.length > 1500) return result('Para poder revisar una consulta a la vez, resume el problema en menos de 1500 caracteres e indica qué equipo usas.', 'aclaracion', { accepted: false });
     state.turnCount += 1;
-    state.history.push({ role: 'user', text: original });
-    if (state.history.length > 80) state.history.splice(0, state.history.length - 80);
+    state.history.push({ role: 'user', text: original, turn: state.turnCount });
     const device = detectDevice(text);
     const changedDevice = Boolean(device && state.device && device !== state.device);
 
@@ -429,9 +438,25 @@ export function createConversation(classifier, config = {}) {
       return liquidResponse();
     }
 
+    const hints = competingSymptoms(text);
+    const question = state.pending?.kind === 'diagnostico' ? activeQuestions() : null;
+    const serviceQuery = /\b(cuanto (?:cuesta|cobran|sale)|precio|presupuesto|cotiza\w*|contact\w*|instagram|ubicaci[oó]n|ubicados|direcci[oó]n|horario)\b/.test(text);
+    const explicitChange = changedDevice || /\b(otro problema|otra falla|otra consulta|cambiando de tema)\b/.test(text);
+    const powerSignal = state.issue === 'encendido' && /\b(luz|luces|led|vibra|vibracion)\b/.test(text);
+    const slotDetail = question?.detail.test(text) && (!text.includes('?') || powerSignal || technicalDescription(text));
+    const related = Boolean(state.issue && !explicitChange && !serviceQuery && (
+      isShortAnswer(text) || isDeviceOnly(text) || slotDetail
+      || hints.includes(state.issue) || /\b(sigue igual|que hago|que sigue|no funciono|ya lo probe)\b/.test(text)
+    ) && !hints.some(hint => hint !== state.issue && !question?.detail.test(text)));
+    const contextual = related && state.turnCount > caseStart;
+    // El vector usa mensajes del usuario. Las preguntas del bot solo guían el paso pendiente.
+    const modelInput = contextual
+      ? state.history.filter(row => row.role === 'user' && row.turn >= caseStart).map(row => row.text).join('\n')
+      : original;
     let prediction;
-    try { prediction = classifier.predict(original) || {}; }
+    try { prediction = classifier.predict(modelInput, Boolean(inspectPrediction)) || {}; }
     catch { return result('No pude clasificar el mensaje. Intenta describir el síntoma y el tipo de equipo de nuevo.', 'desconocida', { accepted: false }); }
+    inspectPrediction?.(prediction, classifier.thresholds, contextual);
     const intent = prediction.intent;
     if (device && (prediction.accepted || isDeviceOnly(text) || (!state.issue && technicalDescription(text)))) state.device = device;
 
@@ -464,10 +489,10 @@ export function createConversation(classifier, config = {}) {
         state.pending = null; state.recovery = freshRecovery();
       } else return askSymptom(prediction, original, changedDevice && technicalDescription(text));
     }
-    if (!hazardActive && ambiguousSymptom(text) && (state.details.variant !== ambiguousSymptom(text) || changedDevice)) return askSymptom(prediction, original);
+    if (!contextual && !hazardActive && ambiguousSymptom(text) && (state.details.variant !== ambiguousSymptom(text) || changedDevice)) return askSymptom(prediction, original);
     if (state.recovery.referred && (!prediction.accepted || isShortAnswer(text))) return referUnclear(prediction);
 
-    if (/^(si|sip|simon|afirmativo|correcto|claro|no|nop|negativo|todavia no|aun no|no se|no estoy segur[oa])[.!?\s]*$/.test(text) && state.pending?.kind !== 'diagnostico') {
+    if (!contextual && /^(si|sip|simon|afirmativo|correcto|claro|no|nop|negativo|todavia no|aun no|no se|no estoy segur[oa])[.!?\s]*$/.test(text) && state.pending?.kind !== 'diagnostico') {
       if (state.recovery.attempts > 0) return recoverUnknown({...prediction,accepted:false}, original);
       state.recovery.attempts = 1;
       if (!state.pending) state.pending = {kind:'menu_falla'};
@@ -490,25 +515,37 @@ export function createConversation(classifier, config = {}) {
       return result(`¿Cuál revisamos primero: ${state.pending.candidates.map(item => LABELS[item]).join(' o ')}? Puedes usar uno de los botones.`, 'aclaracion', prediction, { suggestions: state.pending.candidates.map(item => LABELS[item]), actions:contact() });
     }
 
-    const multiple = competingSymptoms(text);
-    if (prediction.accepted && multiple.length > 1) {
+    if (!contextual && prediction.accepted && hints.length > 1 && /\b(y|ademas|tambien|pero)\b/.test(text)) {
+      const multiple = hints;
       state.pending = { kind: 'elegir_falla', candidates: multiple };
       return result(`Mencionas varios síntomas. Para no mezclar las pruebas, ¿qué revisamos primero: ${multiple.map(item => LABELS[item]).join(' o ')}?`, 'aclaracion', prediction, { suggestions: multiple.map(item => LABELS[item]) });
     }
 
-    if (changedDevice && prediction.accepted && FAULTS.has(intent) && intent !== 'liquidos') {
+    if (explicitChange && prediction.accepted && FAULTS.has(intent) && intent !== 'liquidos') {
+      caseStart = state.turnCount;
       state.details = {};
       return beginFault(intent, prediction);
     }
 
+    if (contextual && question && powerSignal
+        && (text.includes('?') || (state.pending.index === 2 && !/\b(pantalla|imagen|negra|enchufe|cargador)\b/.test(text)))) {
+      let next = 'Me refiero a una luz indicadora del equipo. La vibración también cuenta como señal de encendido.';
+      if (state.pending.index === 2) {
+        next = answerKind(state.details.respuesta_1 || '') === 'no'
+          ? 'Seguimos con la alimentación. Dime si pudiste probar otro enchufe y un cargador compatible.'
+          : 'Ya registré la señal de encendido. Ahora fíjate si la pantalla muestra imagen.';
+      }
+      return result(next, state.issue, prediction, {preserveText: true});
+    }
+    // Una respuesta a la pregunta pendiente se procesa antes de abrir una falla distinta.
+    const slot = !explicitChange && !serviceQuery && handleSlot(text, prediction, contextual);
+    if (slot) return slot;
+
     // Una nueva falla clasificada tiene prioridad sobre el formulario anterior.
-    if (prediction.accepted && FAULTS.has(intent) && intent !== state.issue && !isShortAnswer(text)) {
+    if (!contextual && prediction.accepted && FAULTS.has(intent) && intent !== state.issue && !isShortAnswer(text)) {
       if (intent === 'liquidos') { state.issue = intent; state.stage = 'orientacion'; state.pending = null; return liquidResponse(prediction); }
       return beginFault(intent, prediction);
     }
-
-    const slot = handleSlot(text, prediction);
-    if (slot) return slot;
 
     const contextualFollowup = /^(?:(?:y|ahora)\s+)*(que hago|que sigue|que puedo hacer|sigue igual|continua igual|no funciono|no mejoro|ya lo hice|ya lo probe|no sirvio)[.!?]*$/.test(text);
     if (contextualFollowup && state.issue && QUESTIONS[state.issue]) {
@@ -518,6 +555,13 @@ export function createConversation(classifier, config = {}) {
         return result(`Seguimos con el problema de ${LABELS[state.issue]} en tu ${state.device}. Para continuar: ${activeQuestion}`, state.issue, prediction, { suggestions: ['Sí', 'No', 'No estoy seguro'] });
       }
       return result(`Si tu ${state.device || 'equipo'} sigue con el problema de ${LABELS[state.issue]} después de las comprobaciones, solicita revisión física. ${pick(activeQuestions().advice, state.turnCount)}`, state.issue, prediction, { actions: contact() });
+    }
+
+    if (contextual && state.pending?.kind === 'diagnostico') {
+      return result('Seguimos con la misma falla. Dime qué observaste en la última comprobación.', state.issue, prediction, {preserveText: true});
+    }
+    if (contextual && state.stage === 'orientacion' && QUESTIONS[state.issue]) {
+      return result('Si el problema sigue después de las comprobaciones, comparte el resumen con el taller para continuar la revisión.', state.issue, prediction, {actions: contact(), preserveText: true});
     }
 
     if (!prediction.accepted) {

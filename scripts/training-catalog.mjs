@@ -24,6 +24,7 @@ export async function referenceSource(project) {
   return {labels:catalog.labels,examples,curve:catalog.reference_curve||[],base_id:catalog.references.base_id,
     stages:catalog.references.stages,model,version,folder};
 }
+// Las consultas antiguas por etapa se vinculan a su versión importada.
 export async function storedQueryModel(project,model) {
   if(model&&model.kind==='version'&&UUID.test(model.version_id||'')) return {kind:'version',version_id:model.version_id.toLowerCase()};
   if(model?.kind==='simulation'&&Number.isInteger(model.day)&&model.day>=1&&model.day<=15) {

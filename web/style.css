@@ -3,3 +3,15 @@
 @media(max-width:730px){.prototype-heading .eyebrow{font-size:11px}.prototype-heading{margin-top:18px}.header-right{min-width:0;max-width:220px}.header-right select{max-width:100%;font-size:11px}.site-header .brand{font-size:23px}.tabs{gap:17px;margin-top:8px}.tab{font-size:13px;padding-top:11px}.saved-row{display:block}.saved-row>.row-actions{max-width:none;margin-top:13px}.progress-counters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.progress-counter{padding:14px}.progress-counter strong{font-size:24px}.progress-counter span{font-size:11px}.version-row{display:block;padding:16px}.version-row>.row-actions{max-width:none;margin-top:13px;justify-content:flex-start}.progress-section{padding:16px}.progress-section dl>div{display:block;margin:15px 0}.progress-section dd{max-width:none}.rubric-row{grid-template-columns:1fr}.rubric-row>.review-badge{justify-self:start}.team-roles dd{text-align:left}.version-detail .card-heading{display:block}.version-detail .card-heading p{font-size:11px}.filter-label{min-width:110px}.saved-card .card-heading{align-items:flex-start}.local-note{font-size:11px}.version-detail .table-scroll{max-width:100%}.progress-section table{font-size:11px}}
 @media(max-width:390px){.site-header{gap:10px}.header-right{max-width:200px}.brand small{font-size:10px}.progress-counters{gap:8px}.card-heading{gap:10px}}
 .progress-counters{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:730px){.progress-counters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.decision-map {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid #d7ddd4;
+  border-radius: 5px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.decision-map summary { font-weight: 600; }
+.decision-map p, .decision-map details { margin: 6px 0; }
+.decision-map ol { margin: 4px 0 8px; padding-left: 24px; }

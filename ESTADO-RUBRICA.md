@@ -40,7 +40,7 @@ Estados: **Cumplido**, **Pendiente de datos**, **Pendiente de verificación**, *
 | Repositorio compartible con instalación Windows | Cumplido | README, .cmd, requirements-lock.txt y ayudantes Git probados con dos clones temporales. |
 | Notebook ejecutable de la versión elegida | Cumplido | notebooks/experimentacion.ipynb; --version; CV y métricas reproducidas con su instantánea. |
 | PDF de máximo ocho cuartillas principales | Cumplido | docs/reporte-tecnico.pdf: 7 páginas principales; hashes en docs/pdf-verification.json. |
-| Referencia anterior conservada | Cumplido | references/avance-2026-11-18/REFERENCE.json y copia recuperable de 119 archivos. |
+| Referencia anterior conservada | Cumplido | references/captura/BACKUP.json y copia recuperable de 152 archivos. |
 | URL del repositorio GitHub entregada al profesor | Pendiente de verificación | Configuración preparada; no se proporcionó una URL de repositorio para verificar publicación o entrega. |
 | Defensa y comprensión de todos los integrantes | Pendiente de verificación | Guía de demostración disponible; la presentación en vivo corresponde al equipo. |
 
